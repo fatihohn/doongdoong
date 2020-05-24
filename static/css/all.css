@@ -1,0 +1,73 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: "경기천년제목";
+    src: url('../../fonts/Title_Light.otf'), url('../../fonts/경기천년바탕_Regular.ttf');
+}
+
+@font-face {
+    font-family: "경기천년바탕";
+    src: url('../../fonts/Batang_Regular.otf'), url('../../fonts/Batang_Regular.eot'), url('../../fonts/Batang_Regular.woff'), url('../../fonts/경기천년바탕_Regular.ttf');
+}
+
+@font-face {
+    font-family: 'GyeonggiBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "경기천년볼드";
+    src: url('../../fonts/Batang_Bold.otf'), url('../../fonts/Batang_Bold.eot'), url('../../fonts/Batang_Bold.woff'), url('../../fonts/경기천년바탕_Bold.ttf');
+}
+
+.gg-bold {
+    font-family: "경기천년볼드", serif;
+    font-size: 1rem;
+}
+
+.gg-title {
+    font-family: "경기천년제목", sans-serif;
+    font-size: 0.9rem;
+}
+
+.gg-batang {
+    font-family: "GyeonggiBatang", sans-serif;
+    font-size: 1rem;
+}
+
+body {
+    width: 100%;
+    position: relative;
+    font-size: 1rem;
+    font-family: '경기천년바탕', 'Noto Serif SC', 'Noto Serif TC', sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background-color: rgb(6, 102, 152);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}
+
+[onclick] {
+    cursor: pointer;
+}
