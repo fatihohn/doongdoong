@@ -2,11 +2,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="format-detection" content="telephone=no">
-    <meta name="description" content="격월간 변방둥둥">
+    <meta name="description" content="변방의북소리-둥둥">
     <meta name="keywords" content="변방둥둥, 변방의북소리, 마을매거진, 둥둥, 동두천매거진, 동두천마을매거진, 웹진, 아카이빙">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="변방둥둥">
-    <meta property="og:description" content="변방둥둥">
+    <meta property="og:title" content="변방의북소리-둥둥">
+    <meta property="og:description" content="변방의북소리-둥둥">
+    <meta property="og:url" content="http://doongdoong.org">
+    <meta property="og:image" content="/android-icon-192x192.png">
     <title>변방의북소리-둥둥</title>
 
     <script src="static/js/scroll-hd-bar.js"></script>
@@ -28,18 +30,7 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150391932-3"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-150391932-3');
-    </script> -->
-    <!-- css -->
-    <!-- <link href="//fonts.googleapis.com/css?family=Noto+Serif+SC|Noto+Serif+TC&amp;display=swap" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&amp;display=swap" rel="stylesheet"> -->
+   
     <link rel="stylesheet" href="static/css/all.css?after" type="text/css">
     <link rel="stylesheet" href="static/css/header.css?after" type="text/css">
     <link rel="stylesheet" href="static/css/footer.css?after" type="text/css">

@@ -2,11 +2,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="format-detection" content="telephone=no">
-    <meta name="description" content="격월간 변방둥둥">
-    <meta name="keywords" content="웹진, 마을매거진, 변방의북소리, 변방둥둥, 둥둥, 동두천매거진, 동두천마을매거진, 아카이빙">
+    <meta name="description" content="변방의북소리-둥둥">
+    <meta name="keywords" content="변방둥둥, 변방의북소리, 마을매거진, 둥둥, 동두천매거진, 동두천마을매거진, 웹진, 아카이빙">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="변방둥둥">
-    <meta property="og:description" content="변방둥둥">
+    <meta property="og:title" content="변방의북소리-둥둥">
+    <meta property="og:description" content="변방의북소리-둥둥">
     <title>변방의북소리-둥둥 에디터</title>
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
