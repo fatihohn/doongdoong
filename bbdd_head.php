@@ -7,7 +7,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="변방둥둥">
     <meta property="og:description" content="변방둥둥">
-    <title>격월간변방둥둥</title>
+    <title>변방의북소리-둥둥</title>
 
     <script src="static/js/scroll-hd-bar.js"></script>
     
