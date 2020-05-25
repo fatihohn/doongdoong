@@ -30,14 +30,14 @@ if($titleCheck >= 1){
     // '{$uploadimg['img']}$filename',
     // '{$uploadimg['img']}$target_file',
         
-                $sqlThumbs = "
+                $sql = "
                     INSERT INTO `thumbs`
                         (username, author, img, img_dir, category, cat_detail, display, publish, created)
                     VALUES(
                         '{$username}',
                         '{$author}',
-                        $img,
-                        $img_dir,
+                        '{$img}',
+                        '{$img_dir}',
                         '{$category}',
                         '{$cat_detail}',
                         '{$display}',
@@ -45,7 +45,7 @@ if($titleCheck >= 1){
                         NOW()
                         )
                         ";
-                // $sqlThumbs = 
+                // $sql = 
                 // "INSERT INTO thumbs SET 
                 // `username`='$username', 
                 // `author`='$author', 
@@ -60,7 +60,7 @@ if($titleCheck >= 1){
         
     }
 
-$result = mysqli_query($conn, $sqlThumbs);
+$result = mysqli_query($conn, $sql);
 
 
     if($result === false){
