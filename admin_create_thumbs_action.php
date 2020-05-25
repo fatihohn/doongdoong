@@ -40,7 +40,7 @@ if($titleCheck >= 1){
                         '{$cat_detail}',
                         '{$display}',
                         '{$publish}',
-                        NOW()
+                        'NOW()'
                         )
                         ";
                 // $sqlThumbs = 
