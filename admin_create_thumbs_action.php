@@ -30,20 +30,31 @@ if($titleCheck >= 1){
     $uploadimg = include 'admin_create_thumbs_files.php';
         
         
-                $sql = "
-                    INSERT INTO `thumbs`
-                        (username, author, img, img_dir, category, cat_detail, display, publish, created)
-                    VALUES(
-                        '{$username}',
-                        '{$author}',
-                        '{$uploadimg['img']}$filename',
-                        '{$uploadimg['img']}$target_file',
-                        '{$category}',
-                        '{$cat_detail}',
-                        '{$display}',
-                        '{$publish}',
-                        NOW()
-                        )";
+                // $sql = "
+                //     INSERT INTO `thumbs`
+                //         (username, author, img, img_dir, category, cat_detail, display, publish, created)
+                //     VALUES(
+                //         '{$username}',
+                //         '{$author}',
+                //         '{$uploadimg['img']}$filename',
+                //         '{$uploadimg['img']}$target_file',
+                //         '{$category}',
+                //         '{$cat_detail}',
+                //         '{$display}',
+                //         '{$publish}',
+                //         NOW()
+                //         )";
+                $sql = 
+                "INSERT INTO thumbs SET 
+                `username`='$username', 
+                `author`='$author', 
+                `img`='{$uploadimg['img']}$filename',
+                `img_dir`='{$uploadimg['img']}$target_file',
+                `category`='$category', 
+                `cat_detail`='$cat_detail', 
+                `display`='$display', 
+                `publish`='$publish',
+                `created`=Now()";
             
         
 
