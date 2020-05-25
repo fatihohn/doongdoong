@@ -45,5 +45,5 @@ if ($uploadOk == 0) {
     }
 }
 $filename= $_FILES["img"]["name"];
-$sql = "INSERT INTO `thumbs`(`img`, `img_dir`) VALUES ('$filename', '$target_file')";
+$sql = "INSERT INTO thumbs (`img`, `img_dir`) VALUES ('$filename', '$target_file')";
 ?>
