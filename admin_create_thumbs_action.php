@@ -65,7 +65,7 @@ $result = mysqli_query($conn, $sqlThumbs);
 
     if($result === false){
         // if($result === false || $resultUpdate === false){
-            echo '저장실패. 관리자에게 문의해주세요'. mysqli_connect_error();
+            echo '저장실패. 관리자에게 문의해주세요'. mysqli_connect_error($conn);
             error_log(mysqli_error($conn));
         }
         else{
