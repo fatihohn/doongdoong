@@ -2,8 +2,6 @@
 
 include 'bbdd_db_conn.php';
 
-
-
 $username = $_POST['username'];
 $author = $_POST['author'];
 $author = mysqli_real_escape_string($conn, $author);
@@ -30,38 +28,37 @@ if($titleCheck >= 1){
     $uploadimg = include 'admin_create_thumbs_files.php';
         
         
-                // $sql = "
-                //     INSERT INTO `thumbs`
-                //         (username, author, img, img_dir, category, cat_detail, display, publish, created)
-                //     VALUES(
-                //         '{$username}',
-                //         '{$author}',
-                //         '{$uploadimg['img']}$filename',
-                //         '{$uploadimg['img']}$target_file',
-                //         '{$category}',
-                //         '{$cat_detail}',
-                //         '{$display}',
-                //         '{$publish}',
-                //         NOW()
-                //         )";
-                $sql = 
-                "INSERT INTO thumbs SET 
-                `username`='$username', 
-                `author`='$author', 
-                `img`='{$uploadimg['img']}$filename',
-                `img_dir`='{$uploadimg['img']}$target_file',
-                `category`='$category', 
-                `cat_detail`='$cat_detail', 
-                `display`='$display', 
-                `publish`='$publish',
-                `created`=Now()";
+                $sqlThumbs = "
+                    INSERT INTO `thumbs`
+                        (username, author, img, img_dir, category, cat_detail, display, publish, created)
+                    VALUES(
+                        '{$username}',
+                        '{$author}',
+                        '{$uploadimg['img']}$filename',
+                        '{$uploadimg['img']}$target_file',
+                        '{$category}',
+                        '{$cat_detail}',
+                        '{$display}',
+                        '{$publish}',
+                        NOW()
+                        )
+                        ";
+                // $sqlThumbs = 
+                // "INSERT INTO thumbs SET 
+                // `username`='$username', 
+                // `author`='$author', 
+                // `img`='{$uploadimg['img']}$filename',
+                // `img_dir`='{$uploadimg['img']}$target_file',
+                // `category`='$category', 
+                // `cat_detail`='$cat_detail', 
+                // `display`='$display', 
+                // `publish`='$publish',
+                // `created`=Now()";
             
         
-
-
     }
 
-$result = mysqli_query($conn, $sql);
+$result = mysqli_query($conn, $sqlThumbs);
 
 
     if($result === false){
