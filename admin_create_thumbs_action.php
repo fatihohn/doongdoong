@@ -65,7 +65,7 @@ $result = mysqli_query($conn, $sql);
 
     if($result === false){
         // if($result === false || $resultUpdate === false){
-            echo '저장실패. 관리자에게 문의해주세요<br>'.$sql.'<br>'.$img.'<br>'.$img_dir. mysqli_connect_error($conn);
+            echo '저장실패. 관리자에게 문의해주세요<br>'.$sql.'<br>'.$img.'<br>'.$img_dir.'<br>'.$result.'<br>'. mysqli_connect_error($conn);
             error_log(mysqli_error($conn));
         }
         else{
