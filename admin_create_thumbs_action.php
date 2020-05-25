@@ -8,8 +8,6 @@ $author = mysqli_real_escape_string($conn, $author);
 // $author = mysql_real_escape_string($author);
 $category = $_POST['category'];
 $category = mysqli_real_escape_string($conn, $category);
-// $img = {$uploadimg['img']}$filename;
-// $img_dir = {$uploadimg['img']}$target_file;
 $cat_detail = $_POST['cat_detail'];
 $cat_detail = mysqli_real_escape_string($conn, $cat_detail);
 // $zin_detail = mysql_real_escape_string($zin_detail);
@@ -26,7 +24,11 @@ if($titleCheck >= 1){
 }else{
     
     $uploadimg = include 'admin_create_thumbs_files.php';
+    $img = "{$uploadimg['img']}$filename";
+    $img_dir = "{$uploadimg['img']}$target_file";
         
+    // '{$uploadimg['img']}$filename',
+    // '{$uploadimg['img']}$target_file',
         
                 $sqlThumbs = "
                     INSERT INTO `thumbs`
@@ -34,13 +36,13 @@ if($titleCheck >= 1){
                     VALUES(
                         '{$username}',
                         '{$author}',
-                        '{$uploadimg['img']}$filename',
-                        '{$uploadimg['img']}$target_file',
+                        $img,
+                        $img_dir,
                         '{$category}',
                         '{$cat_detail}',
                         '{$display}',
                         '{$publish}',
-                        'NOW()'
+                        NOW()
                         )
                         ";
                 // $sqlThumbs = 
