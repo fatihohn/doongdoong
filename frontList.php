@@ -217,18 +217,17 @@ $resultCatPast = $conn->query($sqlCatPast) or die($conn->error);
 
 
 //과월호 연재물별 게시물 리스트
-if ($resultCatPast->num_rows > 0) {
+if ($resultCatPast->num_rows >= 1) {
     echo "
     <div class = 'sc_mega_area'>
         <div class = 'sc_mega_contain'>
-            
+            <div class = 'mega_title'>
+                <h2 class = 'gg-batang'>지난호 연재물</h2>
+            </div>
+    <ul class = 'mega_list'>
     ";
     // output data of each row
     while($rowCatPast = $resultCatPast->fetch_assoc()) {
-        echo "<div class = 'mega_title'>
-        <h2 class = 'gg-batang'>지난호 연재물</h2>
-    </div>
-<ul class = 'mega_list'>";
         // echo "{$rowCatPast['category']}";
         $sqlRowCatPastCont = ${"sqlContPast".$rowCatPast['category']};
         $resultCatPastCont = ${"resultContPast".$rowCatPast['category']};
