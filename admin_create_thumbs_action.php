@@ -31,7 +31,7 @@ if($titleCheck >= 1){
         
         
                 $sql = "
-                    INSERT INTO thumbs
+                    INSERT INTO `thumbs`
                         (username, author, img, img_dir, category, cat_detail, display, publish, created)
                     VALUES(
                         '{$username}',
