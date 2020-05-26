@@ -5,11 +5,11 @@ include "bbdd_db_conn.php";
 // function init($conn) {
 $username = $_POST['username'];
 $author = $_POST['author'];
-$author = mysqli_real_escape_string($conn, $author);
+// $author = mysqli_real_escape_string($conn, $author);
 $category = $_POST['category'];
-$category = mysqli_real_escape_string($conn, $category);
+// $category = mysqli_real_escape_string($conn, $category);
 $cat_detail = $_POST['cat_detail'];
-$cat_detail = mysqli_real_escape_string($conn, $cat_detail);
+// $cat_detail = mysqli_real_escape_string($conn, $cat_detail);
 $display = $_POST['display'];
 $publish = $_POST['publish'];
 
@@ -32,7 +32,8 @@ if($titleCheck >= 1){
     // '{$uploadimg['img']}$target_file',
         
     
-    $sql = "INSERT INTO `thumbs`
+    $sql = "
+                    INSERT INTO `thumbs`
                         (username, author, img, img_dir, category, cat_detail, display, publish, created)
                     VALUES(
                         '{$username}',
