@@ -30,30 +30,30 @@ if($titleCheck >= 1){
     // '{$uploadimg['img']}$filename',
     // '{$uploadimg['img']}$target_file',
         
-                $sql = "INSERT INTO `thumbs`
-                        (username, author, img, img_dir, category, cat_detail, display, publish, created)
-                    VALUES(
-                        '{$username}',
-                        '{$author}',
-                        '{$img}',
-                        '{$img_dir}',
-                        '{$category}',
-                        '{$cat_detail}',
-                        '{$display}',
-                        '{$publish}',
-                        'NOW()'
-                        )";
-                // $sql = 
-                // "INSERT INTO thumbs SET 
-                // `username`='$username', 
-                // `author`='$author', 
-                // `img`='{$uploadimg['img']}$filename',
-                // `img_dir`='{$uploadimg['img']}$target_file',
-                // `category`='$category', 
-                // `cat_detail`='$cat_detail', 
-                // `display`='$display', 
-                // `publish`='$publish',
-                // `created`=Now()";
+                // $sql = "INSERT INTO `thumbs`
+                //         (username, author, img, img_dir, category, cat_detail, display, publish, created)
+                //     VALUES(
+                //         '{$username}',
+                //         '{$author}',
+                //         '{$img}',
+                //         '{$img_dir}',
+                //         '{$category}',
+                //         '{$cat_detail}',
+                //         '{$display}',
+                //         '{$publish}',
+                //         NOW()
+                //         )";
+                $sql = 
+                "INSERT INTO thumbs SET 
+                `username`='$username', 
+                `author`='$author', 
+                `img`='{$uploadimg['img']}$filename',
+                `img_dir`='{$uploadimg['img']}$target_file',
+                `category`='$category', 
+                `cat_detail`='$cat_detail', 
+                `display`='$display', 
+                `publish`='$publish',
+                `created`=Now()";
             
         
     }
