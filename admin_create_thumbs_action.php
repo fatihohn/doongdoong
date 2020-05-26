@@ -24,19 +24,19 @@ if($titleCheck >= 1){
 }else{
     
     $uploadimg = include 'admin_create_thumbs_files.php';
-    $img = "{$uploadimg['img']}$filename";
-    $img_dir = "{$uploadimg['img']}$target_file";
+    // $img = "{$uploadimg['img']}$filename";
+    // $img_dir = "{$uploadimg['img']}$target_file";
+    // '{$img}',
+    // '{$img_dir}',
         
-    // '{$uploadimg['img']}$filename',
-    // '{$uploadimg['img']}$target_file',
-        
-                $sql = "INSERT INTO `thumbs`
+    
+    $sql = "INSERT INTO `thumbs`
                         (username, author, img, img_dir, category, cat_detail, display, publish, created)
                     VALUES(
                         '{$username}',
                         '{$author}',
-                        '{$img}',
-                        '{$img_dir}',
+                        '{$uploadimg['img']}$filename',
+                        '{$uploadimg['img']}$target_file',
                         '{$category}',
                         '{$cat_detail}',
                         '{$display}',
