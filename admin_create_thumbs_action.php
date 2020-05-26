@@ -1,16 +1,15 @@
 <?php
 
 include "bbdd_db_conn.php";
-
+init($conn);
+function init($conn) {
 $username = $_POST['username'];
 $author = $_POST['author'];
 $author = mysqli_real_escape_string($conn, $author);
-// $author = mysql_real_escape_string($author);
 $category = $_POST['category'];
 $category = mysqli_real_escape_string($conn, $category);
 $cat_detail = $_POST['cat_detail'];
 $cat_detail = mysqli_real_escape_string($conn, $cat_detail);
-// $zin_detail = mysql_real_escape_string($zin_detail);
 $display = $_POST['display'];
 $publish = $_POST['publish'];
 
@@ -72,7 +71,7 @@ $result = mysqli_query($conn, $sql);
             echo("<script>alert('연재물이 생성되었습니다.');location.href='admin_thumbsList.php';</script>");
         }
 
-
+    }
 
 
 ?>
