@@ -34,7 +34,7 @@ if($titleCheck >= 1){
     
     $sql = "
                     INSERT INTO `thumbs`
-                        ('username', 'author', 'img', 'img_dir', 'category', 'cat_detail', 'display', 'publish', 'created')
+                        (username, author, img, img_dir, category, cat_detail, display, publish, created)
                     VALUES(
                         '{$username}',
                         '{$author}',
@@ -67,7 +67,7 @@ $result = mysqli_query($conn, $sql);
     if($result === false){
         // if($result === false || $resultUpdate === false){
             // echo '저장실패. 관리자에게 문의해주세요<br>'.$sql.'<br>'.$result.'<br>'.mysqli_connect_error($conn).'<br>'.error_log(mysqli_error($conn));
-            echo '저장실패. 관리자에게 문의해주세요<br>'.$sql.'<br>'."{$image}$filename".'<br>'."{$image}$target_file".'<br>'.$result.'<br>'. mysqli_connect_error($conn);
+            echo '저장실패. 관리자에게 문의해주세요<br>'.$sql.'<br>'."{$image}$filename".'<br>'."{$image}$target_file".'<br>'.$result.'<br>'. mysqli_error($conn);
             error_log(mysqli_error($conn));
             error_log(mysqli_connect_error($conn));
         }
