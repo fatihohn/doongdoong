@@ -33,17 +33,17 @@ if($titleCheck >= 1){
         
     
     $sql = "
-                    INSERT INTO `thumbs`
-                        (`username`, `author`, `img`, `img_dir`, `category`, `cat_detail`, `display`, `publish`, `created`)
+                    INSERT INTO thumbs
+                        (username, author, img, img_dir, category, cat_detail, display, publish, created)
                     VALUES(
-                        '{$username}',
-                        '{$author}',
-                        '{$image}$filename',
-                        '{$image}$target_file',
-                        '{$category}',
-                        '{$cat_detail}',
-                        '{$display}',
-                        '{$publish}',
+                        `{$username}`,
+                        `{$author}`,
+                        `{$image}$filename`,
+                        `{$image}$target_file`,
+                        `{$category}`,
+                        `{$cat_detail}`,
+                        `{$display}`,
+                        `{$publish}`,
                         NOW()
                         )";
                 // $sql = 
