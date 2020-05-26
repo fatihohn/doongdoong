@@ -41,7 +41,7 @@ if($titleCheck >= 1){
                         '{$cat_detail}',
                         '{$display}',
                         '{$publish}',
-                        NOW()
+                        'NOW()'
                         )";
                 // $sql = 
                 // "INSERT INTO thumbs SET 
