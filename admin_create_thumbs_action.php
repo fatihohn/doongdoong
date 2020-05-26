@@ -30,8 +30,7 @@ if($titleCheck >= 1){
     // '{$uploadimg['img']}$filename',
     // '{$uploadimg['img']}$target_file',
         
-                $sql = "
-                    INSERT INTO `thumbs`
+                $sql = "INSERT INTO `thumbs`
                         (username, author, img, img_dir, category, cat_detail, display, publish, created)
                     VALUES(
                         '{$username}',
@@ -43,8 +42,7 @@ if($titleCheck >= 1){
                         '{$display}',
                         '{$publish}',
                         NOW()
-                        )
-                        ";
+                        )";
                 // $sql = 
                 // "INSERT INTO thumbs SET 
                 // `username`='$username', 
