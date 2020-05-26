@@ -1,6 +1,6 @@
 <?php
 
-include 'bbdd_db_conn.php';
+include "bbdd_db_conn.php";
 
 $username = $_POST['username'];
 $author = $_POST['author'];
