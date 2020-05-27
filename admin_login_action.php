@@ -24,8 +24,8 @@
         // while($rowSalt = $resultSalt->fetch_assoc()) {
         // $salt[] = $rowSalt['salt'];
         // }
-        // var_export($salt);
-        // $stmt->close();
+        var_export($salt);
+        $stmt->close();
 
 
         $password=$_POST['password'];
