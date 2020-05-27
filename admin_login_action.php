@@ -10,7 +10,7 @@
         $resultSalt = $conn->query($querySalt);
         $salt = mysqli_fetch_assoc($resultSalt)['salt'];
 
-        // $querySalt = "SELECT * FROM user_data WHERE username = ?";
+        // $querySalt = "SELECT salt FROM user_data WHERE username = ?";
         // // $resultSalt = $conn->query($querySalt);
         
         // $stmt = $mysqli->prepare($querySalt);
