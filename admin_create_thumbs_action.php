@@ -67,9 +67,10 @@ $result = mysqli_query($conn, $sql);
     if($result === false){
         // if($result === false || $resultUpdate === false){
             // echo '저장실패. 관리자에게 문의해주세요<br>'.$sql.'<br>'.$result.'<br>'.mysqli_connect_error($conn).'<br>'.error_log(mysqli_error($conn));
-            echo '저장실패. 관리자에게 문의해주세요<br>'.$sql.'<br>'."{$image}$filename".'<br>'."{$image}$target_file".'<br>'.$result.'<br>'. mysqli_error($conn);
+            // echo '저장실패. 관리자에게 문의해주세요<br>'.$sql.'<br>'."{$image}$filename".'<br>'."{$image}$target_file".'<br>'.$result.'<br>'. mysqli_error($conn);
+            echo '저장실패. 관리자에게 문의해주세요';
             error_log(mysqli_error($conn));
-            error_log(mysqli_connect_error($conn));
+            // error_log(mysqli_connect_error($conn));
         }
         else{
             echo("<script>alert('연재물이 생성되었습니다.');location.href='admin_thumbsList.php';</script>");
