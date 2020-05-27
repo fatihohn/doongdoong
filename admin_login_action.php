@@ -10,13 +10,13 @@
         // $resultSalt = $conn->query($querySalt);
         // $salt = mysqli_fetch_assoc($resultSalt)['salt'];
 
-        $querySalt = "SELECT salt FROM user_data WHERE username = ?";
+        $querySalt = "SELECT * FROM user_data WHERE username = ?";
         // $resultSalt = $conn->query($querySalt);
         
-        // $stmt = $mysqli->prepare($querySalt);
-        // $stmt->bind_param("s", $username);
-        $stmt = $mysqli->prepare("SELECT salt FROM user_data WHERE username = ?");
-        $stmt->bind_param("s", $_POST['username']);
+        $stmt = $mysqli->prepare($querySalt);
+        $stmt->bind_param("s", $username);
+        // $stmt = $mysqli->prepare("SELECT salt FROM user_data WHERE username = ?");
+        // $stmt->bind_param("s", $_POST['username']);
         $stmt->execute();
         $resultSalt = $stmt->get_result();
         $rowsalt = $resultSalt->fetch_assoc();
