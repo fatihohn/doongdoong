@@ -364,6 +364,12 @@ article {
     }
 }
 
+@media all and (max-width: 801px) {
+    #bbdd_hd_area .hd_contain .hd_ad_logIn {
+        left: 100px;
+    }
+}
+
 @media all and (max-width: 481px) {
     #bbdd_hd_area .hd_contain .hd_ad_logIn {
         left: 85px;
