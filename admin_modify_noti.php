@@ -214,7 +214,7 @@
      oAppRef: oEditors,
      elPlaceHolder: "ir1",
     //  sSkinURI: "se2/SmartEditor2Skin.html",
-     sSkinURI: "SmartEditor2Skin.html",
+     sSkinURI: "SmartEditor2Skin_noti.html",
      fCreator: "createSEditor2"
     });
 
@@ -247,70 +247,6 @@
     }
     displaySet();
 
-    //     //발행설정
-    //     function publishSet() {
-    //     let publish = document.querySelectorAll(".publish_btn");
-    //     let publishVal = "<?=$publish?>";
-    //     let b;
-    //     for(b=0; b < publish.length; b++) {
-    //         if(publish[b].value == publishVal) {
-    //             publish[b].checked = true;
-    //         }
-    //     }
-    // }
-    // publishSet();
-
-    //     //작가설정
-    //     function authorSet() {
-    //     let author = document.querySelectorAll(".author_slct");
-    //     let authorVal = "<?=$author?>";
-    //     let c;
-    //     for(c=0; c < author.length; c++) {
-    //         if(author[c].value == authorVal) {
-    //             author[c].selected = true;
-    //         }
-    //     }
-    // }
-    // authorSet();
-
-    //     //연재물 설정
-    //     function categorySet() {
-    //     let category = document.querySelectorAll(".authCat_slct");
-    //     let categoryVal = "<?=$category?>";
-    //     let d;
-    //     for(d=0; d < category.length; d++) {
-    //         if(category[d].value == categoryVal) {
-    //             category[d].selected = true;
-    //         }
-    //     }
-    // }
-    // categorySet();
-
-    //     //회차 설정
-    //     function sessSet() {
-    //     let sess = document.querySelectorAll(".sess_slct");
-    //     let sessVal = "<?=$sess?>";
-    //     let e;
-    //     for(e=0; e < sess.length; e++) {
-    //         if(sess[e].value == sessVal) {
-    //             sess[e].selected = true;
-    //         }
-    //     }
-    // }
-    // sessSet();
-
-    //     //매거진 설정
-    //     function zinSet() {
-    //     let zin = document.querySelectorAll(".zin_slct");
-    //     let zinVal = "<?=$zin?>";
-    //     let f;
-    //     for(f=0; f < zin.length; f++) {
-    //         if(zin[f].value == zinVal) {
-    //             zin[f].selected = true;
-    //         }
-    //     }
-    // }
-    // zinSet();
 
     //구분 설정
     function notiCatSet() {
