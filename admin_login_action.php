@@ -9,7 +9,7 @@
         // $querySalt = "SELECT salt FROM user_data WHERE username='$username'";
         // $resultSalt = $conn->query($querySalt);
         // $salt = mysqli_fetch_assoc($resultSalt)['salt'];
-        $querySalt = "SELECT salt FROM user_data WHERE username=?";
+        $querySalt = "SELECT salt FROM user_data WHERE username = ?";
         // $resultSalt = $conn->query($querySalt);
         
         $stmt = $mysqli->prepare($querySalt);
@@ -22,7 +22,7 @@
 
 if($resultSalt->num_rows === 0) exit('No rows');
 while($rowSalt = $resultSalt->fetch_assoc()) {
-  $salt = $rowSalt['salt'];
+  $salt[] = $rowSalt['salt'];
 }
 var_export($salt);
 $stmt->close();
