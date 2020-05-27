@@ -6,28 +6,28 @@
         //입력 받은 id와 password
         $username=$_POST['username'];
 
-        // $querySalt = "SELECT salt FROM user_data WHERE username='$username'";
-        // $resultSalt = $conn->query($querySalt);
-        // $salt = mysqli_fetch_assoc($resultSalt)['salt'];
+        $querySalt = "SELECT salt FROM user_data WHERE username='$username'";
+        $resultSalt = $conn->query($querySalt);
+        $salt = mysqli_fetch_assoc($resultSalt)['salt'];
 
-        $querySalt = "SELECT * FROM user_data WHERE username = ?";
-        // $resultSalt = $conn->query($querySalt);
+        // $querySalt = "SELECT * FROM user_data WHERE username = ?";
+        // // $resultSalt = $conn->query($querySalt);
         
-        $stmt = $mysqli->prepare($querySalt);
-        $stmt->bind_param("s", $username);
-        // $stmt = $mysqli->prepare("SELECT salt FROM user_data WHERE username = ?");
-        // $stmt->bind_param("s", $_POST['username']);
-        $stmt->execute();
-        $resultSalt = $stmt->get_result();
-        $rowsalt = $resultSalt->fetch_assoc();
-        $salt = $rowSalt['salt'];
-        // $salt = mysqli_fetch_assoc($resultSalt)['salt'];
-        // if($resultSalt->num_rows === 0) exit('No rows');
-        // while($rowSalt = $resultSalt->fetch_assoc()) {
-        // $salt[] = $rowSalt['salt'];
-        // }
-        var_export($salt);
-        $stmt->close();
+        // $stmt = $mysqli->prepare($querySalt);
+        // $stmt->bind_param("s", $username);
+        // // $stmt = $mysqli->prepare("SELECT salt FROM user_data WHERE username = ?");
+        // // $stmt->bind_param("s", $_POST['username']);
+        // $stmt->execute();
+        // $resultSalt = $stmt->get_result();
+        // $rowsalt = $resultSalt->fetch_assoc();
+        // $salt = $rowSalt['salt'];
+        // // $salt = mysqli_fetch_assoc($resultSalt)['salt'];
+        // // if($resultSalt->num_rows === 0) exit('No rows');
+        // // while($rowSalt = $resultSalt->fetch_assoc()) {
+        // // $salt[] = $rowSalt['salt'];
+        // // }
+        // var_export($salt);
+        // $stmt->close();
 
 
         $password=$_POST['password'];
