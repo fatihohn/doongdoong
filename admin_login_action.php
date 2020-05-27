@@ -6,16 +6,35 @@
         //입력 받은 id와 password
         $username=$_POST['username'];
 
-        $querySalt = "SELECT salt FROM user_data WHERE username='$username'";
-        $resultSalt = $conn->query($querySalt);
-        $salt = mysqli_fetch_assoc($resultSalt)['salt'];
+        // $querySalt = "SELECT salt FROM user_data WHERE username='$username'";
+        // $resultSalt = $conn->query($querySalt);
+        // $salt = mysqli_fetch_assoc($resultSalt)['salt'];
+        $querySalt = "SELECT salt FROM user_data WHERE username=?";
+        // $resultSalt = $conn->query($querySalt);
+        
+        $stmt = $mysqli->prepare($querySalt);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $resultSalt = $stmt->get_result();
+        // $salt = mysqli_fetch_assoc($resultSalt)['salt'];
+
+
+
+if($resultSalt->num_rows === 0) exit('No rows');
+while($rowSalt = $resultSalt->fetch_assoc()) {
+  $salt = $rowSalt['salt'];
+}
+var_export($salt);
+$stmt->close();
+
+
         $password=$_POST['password'];
         
         $pwSalt = $password.$salt;
         $password = base64_encode(hash('sha512', $pwSalt, true));
  
         //아이디가 있는지 검사
-        $query = "select * from user_data where username='$username'";
+        $query = "SELECT * FROM user_data WHERE username='$username'";
         $result = $conn->query($query);
         // $rowUser = $result->fetch_assoc();
         // $author = $rowUser['author'];
