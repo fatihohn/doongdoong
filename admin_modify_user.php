@@ -7,18 +7,7 @@
 </head>
 
 <body>
-    <!-- <header> -->
-        <!-- <?php 
-        // include 'admin_header.php'; 
-        ?> -->
-<!-- </header> -->
-        
-    <!-- <article class="adArticle adminMenu">
-        <?php 
-        // include 'admin_article.php'; 
-        ?>
-
-    </article> -->
+   
 
 
     <div id="bbdd_body">
@@ -30,15 +19,13 @@
     <section id="bbdd_sc">
     <div id="bbdd_sc_wrap">
         <div id="bbdd_sc_area">
-            <!-- <div class="sc_contain">
-                <div class="sc_list_area"> -->
+            
                 <div class="view_wrap">
     <div class="view_wrap_line">
         <div class="contEditor">
 <?php    
            include 'bbdd_db_conn.php';   
                 
-                // $id = $_POST['username'];
                 $q = intval($_GET['id']);
                 $query = "SELECT * FROM user_data WHERE id= $q";
                 $result = $conn->query($query);
@@ -69,7 +56,6 @@
         <?php   }
                 //cast: admin인 경우
                 else if($_SESSION['cast']==$adminCast) {
-                // else if($_SESSION['username']==$username || $_SESSION['cast']==$admin) {
         ?>
         
         <form class="createForm" action="admin_modify_user_action.php" method="POST" enctype="multipart/form-data">
@@ -104,7 +90,7 @@
                 <div>
                         <p style="font-size:0.8rem; margin-top:10px; margin-left:30px">
         
-                            * 10자~12자리의 영문(대소문자)+숫자+특수문자 중 2종류 이상을 조합하여 사용할 수 있습니다.
+                            * 8자~12자리의 영문(대소문자)+숫자+특수문자 중 2종류 이상을 조합하여 사용할 수 있습니다.
                             <br>
                             * 아이디와 중복되는 패스워드는 사용이 불가능 합니다.
                             <br>
@@ -213,7 +199,7 @@
                 <div>
                         <p style="font-size:0.8rem; margin-top:10px; margin-left:30px">
         
-                            * 10자~12자리의 영문(대소문자)+숫자+특수문자 중 2종류 이상을 조합하여 사용할 수 있습니다.
+                            * 8자~12자리의 영문(대소문자)+숫자+특수문자 중 2종류 이상을 조합하여 사용할 수 있습니다.
                             <br>
                             * 아이디와 중복되는 패스워드는 사용이 불가능 합니다.
                             <br>
@@ -318,19 +304,6 @@
                 
             </p>
 
-            <!-- <p>
-                <div class="createInput">
-                <label class="createGrid1">비밀번호 수정</label>
-                <input class="createGrid2" type="password" id="pwOne" name="password" placeholder="비밀번호 수정"  />
-                </div>    
-            </p>
-            <p>
-                <div class="createInput">
-                <label class="createGrid1">비밀번호 수정 확인</label>
-                <input class="createGrid2" type="password" id="pwTwo" name="password_conf" placeholder="비밀번호 수정 확인"  />
-                <div class="createGrid3" id="pwConf"></div>
-                </div>    
-            </p> -->
 
             <p>
                 <div class="createInput">
@@ -426,7 +399,7 @@
                 <div>
                         <p style="font-size:0.8rem; margin-top:10px; margin-left:30px">
         
-                            * 10자~12자리의 영문(대소문자)+숫자+특수문자 중 2종류 이상을 조합하여 사용할 수 있습니다.
+                            * 8자~12자리의 영문(대소문자)+숫자+특수문자 중 2종류 이상을 조합하여 사용할 수 있습니다.
                             <br>
                             * 아이디와 중복되는 패스워드는 사용이 불가능 합니다.
                             <br>
@@ -531,7 +504,7 @@
                 <div>
                         <p style="font-size:0.8rem; margin-top:10px; margin-left:30px">
         
-                            * 10자~12자리의 영문(대소문자)+숫자+특수문자 중 2종류 이상을 조합하여 사용할 수 있습니다.
+                            * 8자~12자리의 영문(대소문자)+숫자+특수문자 중 2종류 이상을 조합하여 사용할 수 있습니다.
                             <br>
                             * 아이디와 중복되는 패스워드는 사용이 불가능 합니다.
                             <br>
@@ -605,7 +578,6 @@
 
                 <script>
                                 alert("권한이 없습니다.");
-                                // location.replace("<?php echo $URL?>");
                                 history.back();
                         </script>
                         
