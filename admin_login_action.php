@@ -30,6 +30,12 @@
                 $stmt->close();
                 // $conn->close();
 
+        } else {
+                ?>
+                <script>
+                alert("stmt error");
+                </script>
+                <?php
         }
 
 
