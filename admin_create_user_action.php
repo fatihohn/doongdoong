@@ -3,8 +3,8 @@
 include 'bbdd_db_conn.php';
 
 function getSalt() {
-    $charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    // $charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/\][{};:?.>,<!@#$%^&*()-_=+|';
+    // $charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    $charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/\][{};:?.>,<!@#$%^&*()-_=+|';
     $randStringLen = 64;
 
     $randString = "";
@@ -16,23 +16,39 @@ function getSalt() {
 }
 
 $realname = $_POST['realname'];
+$realname = mysqli_real_escape_string($conn, $realname);
+
 $username = $_POST['username'];
+$username = mysqli_real_escape_string($conn, $username);
+
 $password=$_POST['password'];
-$salt = getSalt();
+$password = mysqli_real_escape_string($conn, $password);
+// $salt = getSalt();
+$salt = mysqli_real_escape_string($conn, getSalt());
 $pwSalt = $password.$salt;
 $password = base64_encode(hash('sha512', $pwSalt, true));
+
 $email = $_POST['email'];
+$email = mysqli_real_escape_string($conn, $email);
+
 $author = $_POST['author'];
 $author = mysqli_real_escape_string($conn, $author);
 // $author = mysql_real_escape_string($author);
 
 $auth_detail = $_POST['auth_detail'];
 $auth_detail = mysqli_real_escape_string($conn, $auth_detail);
-// $auth_detail = mysql_real_escape_string($auth_detail);
+
 $cast = $_POST['cast'];
+$cast = mysqli_real_escape_string($conn, $cast);
+
 $active = $_POST['active'];
+$active = mysqli_real_escape_string($conn, $active);
+
 $pw_one = $_POST['password'];
+$pw_one = mysqli_real_escape_string($conn, $pw_one);
+
 $pw_two = $_POST['password_conf'];
+$pw_two = mysqli_real_escape_string($conn, $pw_two);
 
 
 $nameSql = "SELECT * FROM user_data WHERE username='$username'";
