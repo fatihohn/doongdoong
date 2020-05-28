@@ -28,7 +28,7 @@
                 $rowSalt[] = $resultSalt;
                 $salt = $rowSalt['salt'];
                 $stmt->close();
-                $conn->close();
+                // $conn->close();
 
         }
 
