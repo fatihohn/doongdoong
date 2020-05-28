@@ -5,17 +5,24 @@ include 'bbdd_db_conn.php';
 
 
 $uploadimg = include 'admin_create_thumbs_files.php';
+
 $author = $_POST['author'];
 $author = mysqli_real_escape_string($conn, $author);
-// $author = mysql_real_escape_string($author);
+
 $username = $_POST['username'];
+$username = mysqli_real_escape_string($conn, $username);
+
 $title = $_POST['title'];
+$title = mysqli_real_escape_string($conn, $title);
 
 $zin_detail = $_POST['zin_detail'];
 $zin_detail = mysqli_real_escape_string($conn, $zin_detail);
-// $zin_detail = mysql_real_escape_string($zin_detail);
+
 $display = $_POST['display'];
+$display = mysqli_real_escape_string($conn, $display);
+
 $publish = $_POST['publish'];
+$publish = mysqli_real_escape_string($conn, $publish);
 
 
 

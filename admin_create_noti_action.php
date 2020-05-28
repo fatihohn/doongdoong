@@ -6,13 +6,21 @@ include 'bbdd_db_conn.php';
 
 $author = $_POST['author'];
 $author = mysqli_real_escape_string($conn, $author);
+
 $username = $_POST['username'];
+$username = mysqli_real_escape_string($conn, $username);
+
 $category = $_POST['category'];
+$category = mysqli_real_escape_string($conn, $category);
+
 $title = $_POST['title'];
 $title = mysqli_real_escape_string($conn, $title);
+
 $content = $_POST['ir1'];
 $content = mysqli_real_escape_string($conn, $content);
+
 $display = $_POST['display'];
+$display = mysqli_real_escape_string($conn, $display);
 
 $sqlNo = "SELECT `no` FROM notice ORDER BY id DESC LIMIT 1";
 $resultNo = $conn->query($sqlNo) or die($conn->error);

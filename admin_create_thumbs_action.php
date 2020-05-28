@@ -4,6 +4,7 @@ include "bbdd_db_conn.php";
 // init($conn);
 // function init($conn) {
 $username = $_POST['username'];
+$username = mysqli_real_escape_string($conn, $username);
 $author = $_POST['author'];
 $author = mysqli_real_escape_string($conn, $author);
 $category = $_POST['category'];
@@ -11,7 +12,9 @@ $category = mysqli_real_escape_string($conn, $category);
 $cat_detail = $_POST['cat_detail'];
 $cat_detail = mysqli_real_escape_string($conn, $cat_detail);
 $display = $_POST['display'];
+$display = mysqli_real_escape_string($conn, $display);
 $publish = $_POST['publish'];
+$publish = mysqli_real_escape_string($conn, $publish);
 
 
 
