@@ -6,37 +6,37 @@
         //입력 받은 id와 password
         // $username=$_POST['username'];
         
-        // $querySalt = "SELECT salt FROM user_data WHERE username='$username'";
-        // $resultSalt = $conn->query($querySalt);
-        // $salt = mysqli_fetch_assoc($resultSalt)['salt'];
+        $querySalt = "SELECT salt FROM user_data WHERE username='$username'";
+        $resultSalt = $conn->query($querySalt);
+        $salt = mysqli_fetch_assoc($resultSalt)['salt'];
         
         
-        $querySalt = "SELECT salt FROM user_data WHERE username=?";
+        // $querySalt = "SELECT salt FROM user_data WHERE username=?";
         
-        if ($stmt = $conn->prepare($querySalt)) {
-                $username=$_POST['username'];
-                $stmt->bind_param("s", $username);
-                $stmt->execute();
-                if (!$stmt->errno) {
-                        echo mysqli_error($conn);
-                        echo "stmt error";
-                }
+        // if ($stmt = $conn->prepare($querySalt)) {
+        //         $username=$_POST['username'];
+        //         $stmt->bind_param("s", $username);
+        //         $stmt->execute();
+        //         if (!$stmt->errno) {
+        //                 echo mysqli_error($conn);
+        //                 echo "stmt error";
+        //         }
 
-                $stmt->bind_result($resultSalt);
+        //         $stmt->bind_result($resultSalt);
 
-                $stmt->fetch();
-                $rowSalt[] = $resultSalt;
-                $salt = $rowSalt['salt'];
-                $stmt->close();
-                // $conn->close();
+        //         $stmt->fetch();
+        //         $rowSalt[] = $resultSalt;
+        //         $salt = $rowSalt['salt'];
+        //         $stmt->close();
+        //         $conn->close();
 
-        } else {
-                ?>
-                <script>
-                alert("stmt error");
-                </script>
-                <?php
-        }
+        // } else {
+        //         ?>
+        //         <script>
+        //         alert("stmt error");
+        //         </script>
+        //         <?php
+        // }
 
 
 
@@ -75,9 +75,36 @@
         //아이디가 있는지 검사
         $query = "SELECT * FROM user_data WHERE username='$username'";
         $result = $conn->query($query);
-        // $rowUser = $result->fetch_assoc();
-        // $author = $rowUser['author'];
- 
+
+        ////// $rowUser = $result->fetch_assoc();
+        ////// $author = $rowUser['author'];
+        
+        // $query = "SELECT id, username, author, cast, password FROM user_data WHERE username=?";
+        // if ($stmt = $conn->prepare($query)) {
+        //         $username=$_POST['username'];
+        //         $stmt->bind_param("s", $username);
+        //         $stmt->execute();
+        //         if (!$stmt->errno) {
+        //                 echo mysqli_error($conn);
+        //                 echo "stmt error";
+        //         }
+
+        //         $stmt->bind_result($resultSalt);
+
+        //         $stmt->fetch();
+        //         $rowSalt[] = $resultSalt;
+        //         $salt = $rowSalt['salt'];
+        //         $stmt->close();
+        //         $conn->close();
+
+        // } else {
+        //         ?>
+        //         <script>
+        //         alert("stmt error");
+        //         </script>
+        //         <?php
+        // }
+        // // $result = $conn->query($query);
  
         //아이디가 있다면 비밀번호 검사
         if(mysqli_num_rows($result)==1) {
