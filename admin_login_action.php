@@ -4,11 +4,42 @@
         include 'bbdd_db_conn.php';
         
         //입력 받은 id와 password
-        $username=$_POST['username'];
+        // $username=$_POST['username'];
+        
+        // $querySalt = "SELECT salt FROM user_data WHERE username='$username'";
+        // $resultSalt = $conn->query($querySalt);
+        // $salt = mysqli_fetch_assoc($resultSalt)['salt'];
+        
+        
+        $querySalt = "SELECT salt FROM user_data WHERE username=?";
+        
+        if ($stmt = $conn->prepare($querySalt)) {
+                $username=$_POST['username'];
+                $stmt->bind_param("s", $username);
+                $stmt->execute();
+                if (!$stmt->errno) {
+                        echo mysqli_error($conn);
+                        echo "stmt error";
+                }
 
-        $querySalt = "SELECT salt FROM user_data WHERE username='$username'";
-        $resultSalt = $conn->query($querySalt);
-        $salt = mysqli_fetch_assoc($resultSalt)['salt'];
+                $stmt->bind_result($resultSalt);
+
+                $stmt->fetch();
+                $rowSalt[] = $resultSalt;
+                $salt = $rowSalt['salt'];
+                $stmt->close();
+                $conn->close();
+
+        }
+
+
+
+        // $resultSalt = $conn->query($querySalt);
+        // $salt = mysqli_fetch_assoc($resultSalt)['salt'];
+
+
+
+
 
         // $querySalt = "SELECT salt FROM user_data WHERE username = ?";
         // // $resultSalt = $conn->query($querySalt);
