@@ -32,11 +32,22 @@ $display = mysqli_real_escape_string($conn, $display);
 $memo = $_POST['memo'];
 $memo = mysqli_real_escape_string($conn, $memo);
 
+$created = NOW();
 
-$sqlNo = "SELECT `no` FROM contents ORDER BY id DESC LIMIT 1";
+$id = "id";
+// $sqlNo = "SELECT `no` FROM contents ORDER BY id DESC LIMIT 1";
+$sqlNo = "SELECT `no` FROM contents ORDER BY ? DESC LIMIT 1";
+$stmt = mysqli_stmt_init($conn);
+if (!mysqli_stmt_prepare($stmt, $sqlNo)) {
+        echo "sqlNo error";
+} else {
+        mysqli_stmt_bind_param($stmt, "s", $id);
+        mysqli_stmt_execute($stmt);
+        $resultNo = mysqli_stmt_get_result($stmt);
+        mysqli_stmt_close();
+}
 
-
-$resultNo = $conn->query($sqlNo) or die($conn->error);
+// $resultNo = $conn->query($sqlNo) or die($conn->error);
 if($resultNo->num_rows > 0) {
     $rowNo = mysqli_fetch_assoc($resultNo);
     $no = $rowNo['no'];
@@ -44,93 +55,46 @@ if($resultNo->num_rows > 0) {
 } else {
     $no = "1";
 }
-// $zin_detail = mysql_real_escape_string($zin_detail);
 
-
-
-// $titleSql = "SELECT * FROM zin WHERE title='$title'";
-// $titleCheck = mysqli_query($conn, $titleSql);
-// $titleCheck = $titleCheck->fetch_array();
-//     if($titleCheck >= 1){
-// 		echo "<script>alert('매거진 제목이 중복됩니다.'); history.back();</script>";
-// 	}else{
-
-//         if($publish == "ready") {
         
-                $sql = "
-                    INSERT INTO contents
+                // $sql = "INSERT INTO contents
+                //         (no, author, username, category, sess, zin, title, content, display, memo, created)
+                //     VALUES(
+                //         '{$no}',
+                //         '{$author}',
+                //         '{$username}',
+                //         '{$category}',
+                //         '{$sess}',
+                //         '{$zin}',
+                //         '{$title}',
+                //         '{$content}',
+                //         '{$display}',
+                //         '{$memo}',
+                //         NOW()
+                //         )";
+                $sql = "INSERT INTO contents
                         (no, author, username, category, sess, zin, title, content, display, memo, created)
-                    VALUES(
-                        '{$no}',
-                        '{$author}',
-                        '{$username}',
-                        '{$category}',
-                        '{$sess}',
-                        '{$zin}',
-                        '{$title}',
-                        '{$content}',
-                        '{$display}',
-                        '{$memo}',
-                        NOW()
-                        )";
-    //         } else if ($publish == "now") {
-    //             $sql = "
-    //             INSERT INTO zin
-    //                 (author, username, title, zin_detail, display, publish, created)
-    //             VALUES(
-    //                 '{$author}',
-    //                 '{$username}',
-    //                 '{$title}',
-    //                 '{$zin_detail}',
-    //                 '{$display}',
-    //                 '{$publish}',
-    //                 NOW()
-    //                 )
-    //                 ";
-    //                 // ON DUPLICATE KEY UPDATE `publish`='ready'
-    //                 // UPDATE INTO zin WHERE title !='$title'
-    //                 //     (publish)
-    //                 // VALUES('ready')  
-    //             $updateSql= 
-    //                 "UPDATE zin SET
-    //                 `publish`='ready'
-    //                 WHERE title != '$title'"; 
-                
+                    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-    //         }
-        
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+                echo "sql error";
+        } else {
+                mysqli_stmt_bind_param($stmt, "sssssssssss", $no, $author, $username, $category, $sess, $zin, $title, $content, $display, $memo, $created);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+                mysqli_stmt_close();
+        }
 
+// $result = mysqli_query($conn, $sql);
 
-    // }
-
-$result = mysqli_query($conn, $sql);
-
-// if(isset($updateSql)) {
-//     $resultNow = mysqli_query($conn, $updateSql);
-
-//     if($result === false){
-//         // if($result === false || $resultUpdate === false){
-//             echo '저장실패. 관리자에게 문의해주세요';
-//             error_log(mysqli_error($conn));
-//         }
-//         else{
-//             echo("<script>alert('현재 발행중 매거진이 생성되었습니다.');location.href='admin_zinList.php';</script>");
-//         }
-
-
-// } else {
-
-// $resultUpdate = mysqli_query($conn, $updateSql);
 if($result === false){
-// if($result === false || $resultUpdate === false){
     echo '저장실패. 관리자에게 문의해주세요';
     error_log(mysqli_error($conn));
 }
 else{
     echo("<script>alert('게시물이 생성되었습니다.');location.href='admin_contList.php';</script>");
 }
-// }
-// echo $sql;
 
 
 ?>
