@@ -84,11 +84,21 @@ $memo = mysqli_real_escape_string($conn, $memo);
                     
                     $created = mysqli_real_escape_string($conn, NOW());
                     $sql = "
-                INSERT INTO contents 
-                (no, author, username, category, sess, zin, title, content, display, memo, created)
-                    VALUES(
-                        ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
-                    );";
+                    INSERT INTO contents
+                            (no, author, username, category, sess, zin, title, content, display, memo, created)
+                        VALUES(
+                                ?,
+                                ?,
+                                ?,
+                                ?,
+                                ?,
+                                ?,
+                                ?,
+                                ?,
+                                ?,
+                                ?,
+                                ?
+                                )";
 
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
