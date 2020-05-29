@@ -37,7 +37,17 @@
  
         //아이디가 있는지 검사
         $query = "SELECT * FROM user_data WHERE username='$username'";
-        $result = $conn->query($query);
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $query)) {
+                echo "query error";
+        } else {
+                mysqli_stmt_bind_param($stmt, "s", $username);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+                mysqli_stmt_close();
+        }
+
+        // $result = $conn->query($query);
 
  
         //아이디가 있다면 비밀번호 검사
