@@ -6,11 +6,27 @@
         //입력 받은 id와 password
         $username=mysqli_real_escape_string($conn, $_POST['username']);
         
-        $querySalt = "SELECT salt FROM user_data WHERE username='$username'";
-        $resultSalt = $conn->query($querySalt);
-        $salt = mysqli_fetch_assoc($resultSalt)['salt'];
+        // $querySalt = "SELECT salt FROM user_data WHERE username='$username'";
+        // $resultSalt = $conn->query($querySalt);
+        // $salt = mysqli_fetch_assoc($resultSalt)['salt'];
         
         
+        $querySalt = "SELECT salt FROM user_data WHERE username=?";
+
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $querySalt)) {
+                echo "queryS error";
+        } else {
+                mysqli_stmt_bind_param($stmt, "s", $username);
+                mysqli_stmt_execute($stmt);
+                $resultSalt = mysqli_stmt_get_result($stmt);
+                $salt = mysqli_fetch_assoc($resultSalt)['salt'];
+
+        }
+        
+
+        // $resultSalt = $conn->query($querySalt);
+        // $salt = mysqli_fetch_assoc($resultSalt)['salt'];
 
 
         // $password=$_POST['password'];
