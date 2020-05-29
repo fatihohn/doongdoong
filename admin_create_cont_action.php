@@ -44,17 +44,17 @@ if (!mysqli_stmt_prepare($stmt, $sqlNo)) {
         mysqli_stmt_bind_param($stmt, "s", $id);
         mysqli_stmt_execute($stmt);
         $resultNo = mysqli_stmt_get_result($stmt);
+        if($resultNo->num_rows > 0) {
+            $rowNo = mysqli_fetch_assoc($resultNo);
+            $no = $rowNo['no'];
+            $no = intval(intval($no) + 1);
+        } else {
+            $no = "1";
+        }
         mysqli_stmt_close();
 }
 
 // $resultNo = $conn->query($sqlNo) or die($conn->error);
-if($resultNo->num_rows > 0) {
-    $rowNo = mysqli_fetch_assoc($resultNo);
-    $no = $rowNo['no'];
-    $no = intval(intval($no) + 1);
-} else {
-    $no = "1";
-}
 
         
                 // $sql = "INSERT INTO contents
