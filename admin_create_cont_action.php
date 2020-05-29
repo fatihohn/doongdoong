@@ -64,7 +64,8 @@ $resultNo = $conn->query($sqlNo) or die($conn->error);
             }
 
         
-                $sql = "INSERT INTO contents
+                $sql = "
+                INSERT INTO contents
                         (no, author, username, category, sess, zin, title, content, display, memo, created)
                     VALUES(
                         '{$no}',
