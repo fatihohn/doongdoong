@@ -72,7 +72,7 @@ if (!mysqli_stmt_prepare($stmt, $sqlNo)) {
                 //         '{$memo}',
                 //         NOW()
                 //         )";
-                $sql = "INSERT INTO contents (no, author, username, category, sess, zin, title, content, display, memo, created)
+                $sql = "INSERT INTO contents ('no', 'author', 'username', 'category', 'sess', 'zin', 'title', 'content', 'display', 'memo', 'created')
                     VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         $stmt = mysqli_stmt_init($conn);
