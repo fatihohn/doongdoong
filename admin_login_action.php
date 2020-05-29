@@ -21,7 +21,7 @@
                 mysqli_stmt_execute($stmt);
                 $resultSalt = mysqli_stmt_get_result($stmt);
                 $salt = mysqli_fetch_assoc($resultSalt)['salt'];
-
+                mysqli_stmt_close();
         }
         
 
