@@ -97,7 +97,6 @@ $resultNo = $conn->query($sqlNo) or die($conn->error);
                 mysqli_stmt_bind_param($stmt, "issssssssss", $no, $author, $username, $category, $sess, $zin, $title, $content, $display, $memo, $created);
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
-                mysqli_stmt_close();
                 if($result === false){
                     echo '저장실패. 관리자에게 문의해주세요';
                     error_log(mysqli_error($conn));
@@ -105,6 +104,7 @@ $resultNo = $conn->query($sqlNo) or die($conn->error);
                 else{
                     echo("<script>alert('게시물이 생성되었습니다.');location.href='admin_contList.php';</script>");
                 }
+                // mysqli_stmt_close();
             }
             
             // $result = mysqli_query($conn, $sql);
