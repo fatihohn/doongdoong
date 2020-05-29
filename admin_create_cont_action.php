@@ -93,7 +93,7 @@ if (!mysqli_stmt_prepare($stmt, $sqlNo)) {
                     $created = mysqli_real_escape_string($conn, NOW());
                     $sql = "
                     INSERT INTO contents
-                            (no, author, username, category, sess, zin, title, content, display, memo, created)
+                            ('no', 'author', 'username', 'category', 'sess', 'zin', 'title', 'content', 'display', 'memo', 'created')
                         VALUES(
                                 ?,
                                 ?,
