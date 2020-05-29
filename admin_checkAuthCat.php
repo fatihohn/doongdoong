@@ -1,18 +1,45 @@
 <?php
 	include "bbdd_db_conn.php";
 	$authCat = $_GET["q"];
-	
+	$displayOn = "on";
+	$displayOk = "ok";
 	
 	// echo $authCat; 
-	$sessOnSql = "SELECT * FROM contents WHERE `category` = '$authCat' AND `display`='on' ORDER BY sess*1 DESC LIMIT 1 ";
-	$resultSessOn = $conn->query($sessOnSql);    
-	$rowSessOn = $resultSessOn->fetch_assoc();
+	// $sessOnSql = "SELECT * FROM contents WHERE `category` = '$authCat' AND `display`='on' ORDER BY sess*1 DESC LIMIT 1 ";
+	$sessOnSql = "SELECT * FROM contents WHERE `category` = ? AND `display` = ? ORDER BY sess*1 DESC LIMIT 1 ";
+	
+	$stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sessOnSql)) {
+                echo "sessOnSql error";
+        } else {
+                mysqli_stmt_bind_param($stmt, "ss", $authCat, $displayOn);
+                mysqli_stmt_execute($stmt);
+                $resultSessOn = mysqli_stmt_get_result($stmt);
+                $rowSessOn = mysqli_fetch_assoc($resultSessOn);
+                // mysqli_stmt_close();
+        }
+	
+	// $resultSessOn = $conn->query($sessOnSql);    
+	// $rowSessOn = $resultSessOn->fetch_assoc();
 	$sessOnLatest = intval($rowSessOn['sess']);
 
 
-	$sessOkSql = "SELECT * FROM contents WHERE (`category` = '$authCat' AND `display`='on') OR (`category` = '$authCat' AND `display`='ok') ORDER BY sess*1 DESC LIMIT 1 ";
-	$resultSessOk = $conn->query($sessOkSql);    
-	$rowSessOk = $resultSessOk->fetch_assoc();
+	// $sessOkSql = "SELECT * FROM contents WHERE (`category` = '$authCat' AND `display`='on') OR (`category` = '$authCat' AND `display`='ok') ORDER BY sess*1 DESC LIMIT 1 ";
+	$sessOkSql = "SELECT * FROM contents WHERE (`category` = ? AND `display`=?) OR (`category` = ? AND `display`=?) ORDER BY sess*1 DESC LIMIT 1 ";
+	
+	$stmt = mysqli_stmt_init($conn);
+	if (!mysqli_stmt_prepare($stmt, $sessOkSql)) {
+			echo "sessOkSql error";
+	} else {
+			mysqli_stmt_bind_param($stmt, "ssss", $authCat, $displayOn, $authCat, $displayOk);
+			mysqli_stmt_execute($stmt);
+			$resultSessOk = mysqli_stmt_get_result($stmt);
+			$rowSessOk = mysqli_fetch_assoc($resultSessOk);
+			// mysqli_stmt_close();
+	}
+	
+	// $resultSessOk = $conn->query($sessOkSql);    
+	// $rowSessOk = $resultSessOk->fetch_assoc();
 	$sessOk = intval($rowSessOk['sess']);
 	$sessOkLatest = intval($rowSessOk['sess']);
 	
