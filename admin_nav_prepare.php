@@ -62,12 +62,12 @@ $stmt = mysqli_stmt_init($conn);
                     </div>
                     <ul class="nav_main">
                         <li class="nav_main_list">
-                            <a class="gg-title"  id='<?php echo $rowCatNow["id"]?>' class='txt cat' onclick = 'adminIntroShow(this.id)'>
+                            <a class="gg-title" class='txt cat' onclick = 'adminIntroShow(this.id)'>
                                 변방의 북소리 '둥둥' 소개
                             </a>
                         </li>
                         <li class="nav_main_list">
-                            <a class="gg-title" id='<?php echo $rowCatNow["id"]?>' class='txt cat' onclick = 'adminNoticeShow(this.id)'>
+                            <a class="gg-title" class='txt cat' onclick = 'adminNoticeShow(this.id)'>
                                 공지사항
                             </a>
                         </li>
@@ -88,7 +88,8 @@ if ($resultCatNow->num_rows > 0) {
 
     echo "<ul class='nav_sub'>";
 
-    while($rowCatNow = $resultCatNow->fetch_assoc()) {
+    // while($rowCatNow = $resultCatNow->fetch_assoc()) {
+    while($rowCatNow = mysqli_fetch_assoc($resultCatNow)) {
         $sess = "sess";
         $catTitle = $rowCatNow['category'];
         $sqlRowCatNowCont = ${"sqlContNow".$catTitle};
@@ -176,8 +177,8 @@ if ($resultCatPast->num_rows > 0) {
     <ul class = 'nav_sub'>
     ";
     // output data of each row
-    while($rowCatPast = $resultCatPast->fetch_assoc()) {
-    // while($rowCatPast = mysqli_fetch_assoc($resultCatPast)) {
+    // while($rowCatPast = $resultCatPast->fetch_assoc()) {
+    while($rowCatPast = mysqli_fetch_assoc($resultCatPast)) {
        
         $catTitlePast = $rowCatPast['category'];
         // $sqlContPast = "SELECT * FROM contents WHERE zin!='$zinTitle' AND category='$catTitlePast' AND display='on'";
@@ -248,8 +249,8 @@ if ($resultCatOk->num_rows > 0) {
     <ul class = 'nav_sub'>
     ";
     // output data of each row
-    while($rowCatOk = $resultCatOk->fetch_assoc()) {
-    // while($rowCatOk = mysqli_fetch_assoc($resultCatOk)) {
+    // while($rowCatOk = $resultCatOk->fetch_assoc()) {
+    while($rowCatOk = mysqli_fetch_assoc($resultCatOk)) {
        
         $catTitleOk = $rowCatOk['category'];
         // $sqlContOk = "SELECT * FROM contents WHERE zin!='$zinTitle' AND category='$catTitleOk' AND display='on' OR display='ok'";
