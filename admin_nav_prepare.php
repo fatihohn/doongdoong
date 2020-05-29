@@ -19,7 +19,7 @@ $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sqlZinNow)) {
                 echo "sqlZinNow error";
         } else {
-                mysqli_stmt_bind_param($stmt, "ssi", $publishNow, $displayOn, $id);
+                mysqli_stmt_bind_param($stmt, "sss", $publishNow, $displayOn, $id);
                 mysqli_stmt_execute($stmt);
                 $resultZinNow = mysqli_stmt_get_result($stmt);
                 $rowZinNow = mysqli_fetch_assoc($resultZinNow);
