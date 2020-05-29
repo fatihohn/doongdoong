@@ -34,6 +34,8 @@ $memo = mysqli_real_escape_string($conn, $memo);
 
 
 $sqlNo = "SELECT `no` FROM contents ORDER BY id DESC LIMIT 1";
+
+
 $resultNo = $conn->query($sqlNo) or die($conn->error);
 if($resultNo->num_rows > 0) {
     $rowNo = mysqli_fetch_assoc($resultNo);

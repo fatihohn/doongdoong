@@ -36,7 +36,8 @@
         $password = base64_encode(hash('sha512', $pwSalt, true));
  
         //아이디가 있는지 검사
-        $query = "SELECT * FROM user_data WHERE username='$username'";
+        // $query = "SELECT * FROM user_data WHERE username='$username'";
+        $query = "SELECT * FROM user_data WHERE username=?";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $query)) {
                 echo "query error";
