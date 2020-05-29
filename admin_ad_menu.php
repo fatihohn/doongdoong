@@ -6,16 +6,43 @@ if ($conn->connect_error) {
 }
 // //연재중 연재물(category) 목록
 
+$publishNow = "now";
+$displayOn = "on";
+$id = "id";
+$author = "author";
+// $sqlZinNow = "SELECT * FROM zin WHERE publish='now' AND display = 'on' ORDER BY id DESC LIMIT 1";
+$sqlZinNow = "SELECT * FROM zin WHERE publish=? AND display = ? ORDER BY ? DESC LIMIT 1";
 
-$sqlZinNow = "SELECT * FROM zin WHERE publish='now' AND display = 'on' ORDER BY id DESC LIMIT 1";
-$resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
-$rowZinNow = $resultZinNow->fetch_assoc();
+$stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sqlZinNow)) {
+                echo "sqlZinNow error";
+        } else {
+                mysqli_stmt_bind_param($stmt, "ssi", $publishNow, $displayOn, $id);
+                mysqli_stmt_execute($stmt);
+                $resultZinNow = mysqli_stmt_get_result($stmt);
+                $rowZinNow = mysqli_fetch_assoc($resultZinNow);
+                // mysqli_stmt_close();
+        }
+
+// $resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
+// $rowZinNow = $resultZinNow->fetch_assoc();
 
 $zinTitle = $rowZinNow['title'];
 
 //연재중 연재물(category) 목록
-$sqlCatNow = "SELECT * FROM thumbs WHERE zin= '$zinTitle' AND display = 'on' ORDER BY author DESC";
-$resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
+// $sqlCatNow = "SELECT * FROM thumbs WHERE zin= '$zinTitle' AND display = 'on' ORDER BY author DESC";
+$sqlCatNow = "SELECT * FROM thumbs WHERE zin= ? AND display = ? ORDER BY ? DESC";
+
+$stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sqlCatNow)) {
+                echo "sqlCatNow error";
+        } else {
+                mysqli_stmt_bind_param($stmt, "sss", $zinTitle, $displayOn, $author);
+                mysqli_stmt_execute($stmt);
+                $resultCatNow = mysqli_stmt_get_result($stmt);
+        }
+
+// $resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
 
 
 
@@ -37,7 +64,7 @@ $resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
                     <ul class="nav_main">
                         <li class="nav_main_list">
                             <a class="gg-title"  id='<?php echo $rowCatNow["id"]?>' class='txt cat' onclick = 'adminThumbsShow(this.id)'>
-                                격월간 변방둥둥 소개
+                                변방의 북소리 '둥둥' 소개
                             </a>
                         </li>
                         <li class="nav_main_list">
