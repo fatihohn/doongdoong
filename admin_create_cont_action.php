@@ -32,7 +32,7 @@ $display = mysqli_real_escape_string($conn, $display);
 $memo = $_POST['memo'];
 $memo = mysqli_real_escape_string($conn, $memo);
 
-$created = NOW();
+// $created = NOW();
 
 $id = "id";
 // $sqlNo = "SELECT `no` FROM contents ORDER BY id DESC LIMIT 1";
@@ -72,9 +72,10 @@ if (!mysqli_stmt_prepare($stmt, $sqlNo)) {
                 //         '{$memo}',
                 //         NOW()
                 //         )";
-                $sql = "INSERT INTO contents
+                $sql = "
+                INSERT INTO contents
                         (no, author, username, category, sess, zin, title, content, display, memo, created)
-                    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
 
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
