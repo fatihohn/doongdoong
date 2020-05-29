@@ -113,7 +113,7 @@ if (!mysqli_stmt_prepare($stmt, $sqlNo)) {
                 echo "sql error";
         } else {
                 mysqli_stmt_bind_param($stmt, "isssssssss", $no, $author, $username, $category, $sess, $zin, $title, $content, $display, $memo);
-                mysqli_stmt_execute($stmt);
+                // mysqli_stmt_execute($stmt);
                 // $result = mysqli_stmt_get_result($stmt);
                 if(!mysqli_stmt_execute($stmt)){
                 // if($result === false){
