@@ -21,7 +21,7 @@
                 mysqli_stmt_execute($stmt);
                 $resultSalt = mysqli_stmt_get_result($stmt);
                 $salt = mysqli_fetch_assoc($resultSalt)['salt'];
-                mysqli_stmt_close();
+                // mysqli_stmt_close();
         }
         
 
@@ -45,7 +45,7 @@
                 mysqli_stmt_bind_param($stmt, "s", $username);
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
-                mysqli_stmt_close();
+                // mysqli_stmt_close();
         }
 
         // $result = $conn->query($query);
