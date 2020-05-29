@@ -32,7 +32,7 @@ $display = mysqli_real_escape_string($conn, $display);
 $memo = $_POST['memo'];
 $memo = mysqli_real_escape_string($conn, $memo);
 
-$created = mysqli_real_escape_string($conn, NOW());
+// $created = mysqli_real_escape_string($conn, NOW());
 
 // $id = "id";
 // $sqlNo = "SELECT `no` FROM contents ORDER BY ? DESC LIMIT 1";
