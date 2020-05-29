@@ -81,17 +81,17 @@ if (!mysqli_stmt_prepare($stmt, $sqlNo)) {
         if (!mysqli_stmt_prepare($stmt, $sql)) {
                 echo "sql error";
         } else {
-                mysqli_stmt_bind_param($stmt, "ssssssssss", $no, $author, $username, $category, $sess, $zin, $title, $content, $display, $memo);
+                mysqli_stmt_bind_param($stmt, "isssssssss", $no, $author, $username, $category, $sess, $zin, $title, $content, $display, $memo);
                 mysqli_stmt_execute($stmt);
-                $result = mysqli_stmt_get_result($stmt);
-                mysqli_stmt_close();
-                if($result === false){
-                    echo '저장실패. 관리자에게 문의해주세요';
-                    error_log(mysqli_error($conn));
-                }
-                else{
-                    echo("<script>alert('게시물이 생성되었습니다.');location.href='admin_contList.php';</script>");
-                }
+                // $result = mysqli_stmt_get_result($stmt);
+                // mysqli_stmt_close();
+                // if($result === false){
+                //     echo '저장실패. 관리자에게 문의해주세요';
+                //     error_log(mysqli_error($conn));
+                // }
+                // else{
+                //     echo("<script>alert('게시물이 생성되었습니다.');location.href='admin_contList.php';</script>");
+                // }
         }
 
 // $result = mysqli_query($conn, $sql);
