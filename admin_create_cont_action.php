@@ -32,63 +32,63 @@ $display = mysqli_real_escape_string($conn, $display);
 $memo = $_POST['memo'];
 $memo = mysqli_real_escape_string($conn, $memo);
 
-$created = mysqli_real_escape_string($conn, NOW());
 
 // $id = "id";
 // $sqlNo = "SELECT `no` FROM contents ORDER BY ? DESC LIMIT 1";
 // $stmt = mysqli_stmt_init($conn);
 // if (!mysqli_stmt_prepare($stmt, $sqlNo)) {
-//     echo "sqlNo error";
-// } else {
-//     mysqli_stmt_bind_param($stmt, "s", $id);
-//     mysqli_stmt_execute($stmt);
-//     $resultNo = mysqli_stmt_get_result($stmt);
-//     if($resultNo->num_rows > 0) {
-//         $rowNo = mysqli_fetch_assoc($resultNo);
-//         $no = $rowNo['no'];
-//         $no = intval(intval($no) + 1);
-//     } else {
-//         $no = "1";
-//     }
-//     mysqli_stmt_close();
-// }
-
-$sqlNo = "SELECT `no` FROM contents ORDER BY id DESC LIMIT 1";
-$resultNo = $conn->query($sqlNo) or die($conn->error);
-            if($resultNo->num_rows > 0) {
-                $rowNo = mysqli_fetch_assoc($resultNo);
-                $no = $rowNo['no'];
-                $no = intval(intval($no) + 1);
-            } else {
-                $no = "1";
-            }
-
-        
+    //     echo "sqlNo error";
+    // } else {
+        //     mysqli_stmt_bind_param($stmt, "s", $id);
+        //     mysqli_stmt_execute($stmt);
+        //     $resultNo = mysqli_stmt_get_result($stmt);
+        //     if($resultNo->num_rows > 0) {
+            //         $rowNo = mysqli_fetch_assoc($resultNo);
+            //         $no = $rowNo['no'];
+            //         $no = intval(intval($no) + 1);
+            //     } else {
+                //         $no = "1";
+                //     }
+                //     mysqli_stmt_close();
+                // }
+                
+                $sqlNo = "SELECT `no` FROM contents ORDER BY id DESC LIMIT 1";
+                $resultNo = $conn->query($sqlNo) or die($conn->error);
+                if($resultNo->num_rows > 0) {
+                    $rowNo = mysqli_fetch_assoc($resultNo);
+                    $no = $rowNo['no'];
+                    $no = intval(intval($no) + 1);
+                } else {
+                    $no = "1";
+                }
+                
+                
                 // $sql = "
                 // INSERT INTO contents
                 //         (no, author, username, category, sess, zin, title, content, display, memo, created)
                 //     VALUES(
-                //         '{$no}',
-                //         '{$author}',
-                //         '{$username}',
-                //         '{$category}',
-                //         '{$sess}',
-                //         '{$zin}',
-                //         '{$title}',
-                //         '{$content}',
-                //         '{$display}',
-                //         '{$memo}',
-                //         NOW()
-                //         )";
-
-
-
-                $sql = "
+                    //         '{$no}',
+                    //         '{$author}',
+                    //         '{$username}',
+                    //         '{$category}',
+                    //         '{$sess}',
+                    //         '{$zin}',
+                    //         '{$title}',
+                    //         '{$content}',
+                    //         '{$display}',
+                    //         '{$memo}',
+                    //         NOW()
+                    //         )";
+                    
+                    
+                    
+                    $created = mysqli_real_escape_string($conn, NOW());
+                    $sql = "
                 INSERT INTO contents 
                 (no, author, username, category, sess, zin, title, content, display, memo, created)
                     VALUES(
                         ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
-                        )";
+                    );";
 
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
