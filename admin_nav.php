@@ -41,7 +41,7 @@ $resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
                     <ul class="nav_main">
                         <li class="nav_main_list">
                             <a class="gg-title"  id='<?php echo $rowCatNow["id"]?>' class='txt cat' onclick = 'adminIntroShow(this.id)'>
-                                격월간 변방둥둥 소개
+                                변방의 북소리 '둥둥' 소개
                             </a>
                         </li>
                         <li class="nav_main_list">
