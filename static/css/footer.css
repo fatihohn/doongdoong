@@ -21,3 +21,9 @@
     font-size: 0.64rem;
     line-height: 1rem;
 }
+
+#bbdd_ft_area .ft_contain>p .logo_wrap {
+    width: 596px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
