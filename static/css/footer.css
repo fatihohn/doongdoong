@@ -37,7 +37,7 @@
 
 @media all and (max-width: 481px) {
     .ft_contain .logo_wrap {
-        width: 100%;
+        width: 80%;
         /* grid-template-columns: 30% 30% 30%; */
         grid-gap: 15px;
         margin: 20px auto;
