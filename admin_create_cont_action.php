@@ -39,7 +39,7 @@ $stmt = mysqli_stmt_init($conn);
 if (!mysqli_stmt_prepare($stmt, $sqlNo)) {
         echo "sqlNo error";
     } else {
-            mysqli_stmt_bind_param($stmt, "", );
+            // mysqli_stmt_bind_param($stmt);
             mysqli_stmt_execute($stmt);
             $resultNo = mysqli_stmt_get_result($stmt);
             if($resultNo->num_rows > 0) {
