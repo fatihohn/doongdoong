@@ -13,7 +13,7 @@
                     <img src="/static/img/rcda_logo.png" alt="지역문화진흥원">
                 </div>
                 <div class="org_logo">
-                    <img src="/static/img/cornerstool.jpg" alt="코너스툴">
+                    <img src="/static/img/cornerstool.png" alt="코너스툴">
                 </div>
                 <div class="org_logo">
                     <img src="/static/img/farawaybooksound.png" alt="변방의 북소리">
