@@ -27,3 +27,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+#bbdd_ft_area .ft_contain>p .logo_wrap .org_logo {
+    max-width: 150px;
+}
