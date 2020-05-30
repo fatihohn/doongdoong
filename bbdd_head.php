@@ -19,7 +19,7 @@
     <meta property="og:description" content="변방의북소리 웹진 '둥둥' Doong-Doong">
     <meta property="og:url" content="http://doongdoong.org">
     <meta property="og:image" content="/android-icon-192x192.png">
-    <title>변방의북소리-둥둥</title>
+    <title>변방의북소리 웹진 '둥둥' Doong-Doong</title>
 
     <script src="static/js/scroll-hd-bar.js"></script>
     
