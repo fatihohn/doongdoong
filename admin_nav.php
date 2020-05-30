@@ -116,13 +116,13 @@ $resultCatPast = $conn->query($sqlCatPast) or die($conn->error);
 
 //지난호 연재물별 게시물 리스트
 if ($resultCatPast->num_rows > 0) {
-    echo "
-    <li class = 'nav_main_list'>
-    <a class = 'gg-title' href = '#'>
-    지난호 연재물
-    </a>
-    <ul class = 'nav_sub'>
-    ";
+    // echo "
+    // <li class = 'nav_main_list'>
+    // <a class = 'gg-title' href = '#'>
+    // 지난호 연재물
+    // </a>
+    // <ul class = 'nav_sub'>
+    // ";
     // output data of each row
     while($rowCatPast = $resultCatPast->fetch_assoc()) {
         // echo "{$rowCatPast['category']}";
@@ -155,6 +155,13 @@ if ($resultCatPast->num_rows > 0) {
                 // }
                 
                 if ($resultContPast->num_rows > 0) {
+                    echo "
+                    <li class = 'nav_main_list'>
+                    <a class = 'gg-title' href = '#'>
+                    지난호 연재물
+                    </a>
+                    <ul class = 'nav_sub'>
+                    ";
 
                 echo '
                 <li class = "nav_sub_list">
@@ -169,14 +176,18 @@ if ($resultCatPast->num_rows > 0) {
                     </a>
                 </li>        
                 ';
+                echo "</ul>
+        </li>
+    
+    ";
                 }
 
 
     }
-    echo "</ul>
-        </li>
+    // echo "</ul>
+    //     </li>
     
-    ";
+    // ";
 }
 
 
