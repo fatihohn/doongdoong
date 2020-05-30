@@ -22,12 +22,12 @@
     line-height: 1rem;
 }
 
-#bbdd_ft_area .ft_contain>p .logo_wrap {
+#bbdd_ft_area .ft_contain .logo_wrap {
     width: 596px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-#bbdd_ft_area .ft_contain>p .logo_wrap .org_logo {
+#bbdd_ft_area .ft_contain .logo_wrap .org_logo img {
     max-width: 150px;
 }
