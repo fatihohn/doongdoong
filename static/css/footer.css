@@ -25,7 +25,7 @@
 .ft_contain .logo_wrap {
     width: 600px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 50px;
     margin: 30px auto;
 }
