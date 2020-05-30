@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="변방의북소리-둥둥">
-    <meta name="keywords" content="변방둥둥, 변방의북소리, 마을매거진, 둥둥, 동두천매거진, 동두천마을매거진, 웹진, 아카이빙">
+    <meta name="keywords" content="변방의 북소리, 동두천, doong-doong, doong doong, DoongDoong, doongdoong, 동두천 웹진, 동두천웹진, 매거진, webzine, 웹진 둥둥, 변방둥둥, 변방의북소리, 마을매거진, 둥둥, 동두천매거진, 동두천마을매거진, 웹진, 아카이빙">
     <meta property="og:type" content="website">
     <meta property="og:title" content="변방의북소리-둥둥">
     <meta property="og:description" content="변방의북소리-둥둥">
