@@ -245,7 +245,7 @@ if ($resultCatPast->num_rows >= 1) {
             <div class = 'sc_mega_area'>
                 <div class = 'sc_mega_contain'>
                     <div class = 'mega_title'>
-                        <h2 class = 'gg-batang'>지난호 연재물</h2>
+                        <h2 class = 'gg-batang'>변방의 북소리</h2>
                     </div>
             <ul class = 'mega_list'>
             ";

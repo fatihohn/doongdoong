@@ -154,7 +154,7 @@ if ($resultCatPast->num_rows > 0) {
                     echo "
                     <li class = 'nav_main_list'>
                     <a class = 'gg-title' href = '#'>
-                    지난호 연재물
+                    변방의 북소리
                     </a>
                     <ul class = 'nav_sub'>
                     ";
