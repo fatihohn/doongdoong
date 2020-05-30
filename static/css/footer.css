@@ -26,6 +26,8 @@
     width: 600px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 50px;
+    margin: 30px auto;
 }
 
 .ft_contain .logo_wrap .org_logo img {
