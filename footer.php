@@ -15,6 +15,9 @@
                 <div class="org_logo">
                     <img src="/static/img/cornerstool.jpg" alt="코너스툴">
                 </div>
+                <div class="org_logo">
+                    <img src="/static/img/farawaybooksound.png" alt="변방의 북소리">
+                </div>
             </div>
             </p>
         </div>
