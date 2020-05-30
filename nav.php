@@ -37,12 +37,12 @@ $resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
                     </div>
                     <ul class="nav_main">
                         <li class="nav_main_list">
-                            <a class="gg-title"  id='<?php echo $rowCatNow["id"]?>' class='txt cat' onclick = 'frontIntroShow(this.id)'>
-                                격월간 변방둥둥 소개
+                            <a class="gg-title" class='txt cat' onclick = 'frontIntroShow(this.id)'>
+                                변방의 북소리 '둥둥' 소개
                             </a>
                         </li>
                         <li class="nav_main_list">
-                            <a class="gg-title" id='<?php echo $rowCatNow["id"]?>' class='txt cat' onclick = 'frontNoticeShow(this.id)'>
+                            <a class="gg-title" class='txt cat' onclick = 'frontNoticeShow(this.id)'>
                                 공지사항
                             </a>
                         </li>
