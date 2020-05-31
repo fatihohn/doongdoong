@@ -13,10 +13,14 @@
                     <img src="/static/img/rcda_logo.png" alt="지역문화진흥원">
                 </div>
                 <div class="org_logo">
+                <a href="https://www.facebook.com/cornerstool">
                     <img src="/static/img/cornerstool.png" alt="코너스툴">
+                </a>
                 </div>
                 <div class="org_logo">
+                <a href="https://www.facebook.com/ddcbooksori/">
                     <img src="/static/img/farawaybooksound.png" alt="변방의 북소리">
+                </a>
                 </div>
             </div>
             </p>
