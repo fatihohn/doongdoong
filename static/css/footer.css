@@ -34,22 +34,26 @@
 }
 
 /* .ft_contain .logo_wrap .org_logo {
-margin: 0 auto;
+    margin: 0 auto;
 } */
 .ft_contain .logo_wrap .org_logo img {
     max-width: 100px;
+    grid-template-columns: 100px 100px 100px 100px;
 }
-@media all and (max-width: 801px) {
+@media all and (max-width: 601px) {
+    .ft_contain .logo_wrap {
+        width: 100%;
+    }
     .ft_contain .logo_wrap .org_logo img {
         max-width: 100px;
     }
-
+    
 }
 @media all and (max-width: 481px) {
     .ft_contain .logo_wrap {
         width: 100%;
         /* grid-template-columns: 30% 30% 30%; */
-        grid-template-columns: 75px 75px 75px;
+        grid-template-columns: 100px 100px 100px;
         grid-gap: 15px;
         margin: 20px auto;
     }
