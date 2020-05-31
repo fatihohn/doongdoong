@@ -3,7 +3,7 @@
                     <div class="hd_contain">
                         <div class="hd_logo">
                             <a href="./">
-                                <img src="static/img/logo.png" alt="변방둥둥">
+                                <img src="static/img/logo.png" alt="변방의북소리 웹진 둥둥">
                             </a>
                         </div>
                         <div class="hd_menu">

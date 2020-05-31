@@ -3,7 +3,7 @@
                     <div class="hd_contain">
                         <div class="hd_logo">
                             <a href="/admin_index.php">
-                                <img src="static/img/editor_logo.png" alt="변방둥둥">
+                                <img src="static/img/editor_logo.png" alt="변방의북소리 웹진 둥둥 에디터">
                                 <!-- <div class="ad_tag">
                                 관리자
                                 </div> -->
