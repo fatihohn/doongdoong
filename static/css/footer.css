@@ -31,6 +31,9 @@
     text-align: center;
 }
 
+.ft_contain .logo_wrap .org_logo {
+margin: 0 auto;
+}
 .ft_contain .logo_wrap .org_logo img {
     max-width: 150px;
 }
