@@ -40,7 +40,7 @@
     max-width: 75px;
     grid-template-columns: 75px 75px 75px 75px;
 }
-@media all and (max-width: 601px) {
+/* @media all and (max-width: 601px) {
     .ft_contain .logo_wrap {
         width: 100%;
     }
@@ -48,7 +48,7 @@
         max-width: 100px;
     }
     
-}
+} */
 @media all and (max-width: 481px) {
     .ft_contain .logo_wrap {
         width: 100%;
