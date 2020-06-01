@@ -459,4 +459,13 @@
     #bbdd_nav_area .nav_contain .nav_top {
         margin-bottom: 10px;
     }
+    #bbdd_nav_area .nav_contain .nav_main>li>ul>li>a>p {
+        
+        font-size: 0.8rem;
+        line-height: 1rem;
+    }
+    .gg-title {
+        font-size: 0.9rem;
+    }
+
 }
