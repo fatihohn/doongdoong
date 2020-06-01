@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
   <?php include "bbdd_head.php"; ?>
   
 </head>
-<body>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <div id="bbdd_body">
         <header id="bbdd_hd">
         
