@@ -27,8 +27,10 @@ if($titleCheck >= 1){
     
     $uploadimg = include "admin_create_thumbs_files.php";
     $image = $uploadimg['img'];
-    $imageName = {$image}$filename;
-    $imageDir = {$image}$target_file;
+    $imageName = "{$image}$filename";
+    $imageName = strval($imageName);
+    $imageDir = "{$image}$target_file";
+    $imageDir = strval($imageDir);
         
     
     // $sql = "
