@@ -68,6 +68,6 @@
     }
     .ft_contain .logo_wrap .org_logo img {
         max-width: 75px;
-        margin: 0 20px;
+        /* margin: 0 20px; */
     }
 }
