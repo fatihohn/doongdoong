@@ -17,13 +17,14 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="변방의북소리 웹진 '둥둥' Doong-Doong">
     <meta property="og:description" content="변방의북소리 웹진 '둥둥' Doong-Doong">
-    <meta property="og:url" content="http://doongdoong.org">
+    <meta property="og:url" content="https://www.doongdoong.org">
     <meta property="og:image" content="/android-icon-192x192.png">
     <title>변방의북소리 웹진 '둥둥' Doong-Doong</title>
+    <link rel="canonical" href="https://www.doongdoong.org" />
 
     <script src="static/js/scroll-hd-bar.js"></script>
     
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
