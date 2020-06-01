@@ -32,30 +32,57 @@ if($resultNo->num_rows > 0) {
     $no = "1";
 }
         
+                // $sql = "
+                //     INSERT INTO notice
+                //         (no, author, username, category, title, content, display, created)
+                //     VALUES(
+                //         '{$no}',
+                //         '{$author}',
+                //         '{$username}',
+                //         '{$category}',
+                //         '{$title}',
+                //         '{$content}',
+                //         '{$display}',
+                //         NOW()
+                //         )";
                 $sql = "
-                    INSERT INTO notice
-                        (no, author, username, category, title, content, display, created)
+                    INSERT INTO `notice`
+                        (`no`, `author`, `username`, `category`, `title`, `content`, `display`, `created`)
                     VALUES(
-                        '{$no}',
-                        '{$author}',
-                        '{$username}',
-                        '{$category}',
-                        '{$title}',
-                        '{$content}',
-                        '{$display}',
+                        ?,
+                        ?,
+                        ?,
+                        ?,
+                        ?,
+                        ?,
+                        ?,
                         NOW()
                         )";
     
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+                echo "sql error";
+        } else {
+                mysqli_stmt_bind_param($stmt, "issssss", $no, $author, $username, $category, $title, $content, $display);
+                
+                if(!mysqli_stmt_execute($stmt)){
+                    echo '저장실패. 관리자에게 문의해주세요';
+                    error_log(mysqli_error($conn));
+                }
+                else{
+                    echo("<script>alert('게시물이 생성되었습니다.');location.href='admin_notiList.php';</script>");
+                }
+            }
 
-$result = mysqli_query($conn, $sql);
+// $result = mysqli_query($conn, $sql);
 
-if($result === false){
-    echo '저장실패. 관리자에게 문의해주세요';
-    error_log(mysqli_error($conn));
-}
-else{
-    echo("<script>alert('게시물이 생성되었습니다.');location.href='admin_notiList.php';</script>");
-}
+// if($result === false){
+//     echo '저장실패. 관리자에게 문의해주세요';
+//     error_log(mysqli_error($conn));
+// }
+// else{
+//     echo("<script>alert('게시물이 생성되었습니다.');location.href='admin_notiList.php';</script>");
+// }
 
 
 
