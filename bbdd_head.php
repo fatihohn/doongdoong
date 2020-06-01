@@ -5,14 +5,13 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'UA-167489791-1');
 </script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="format-detection" content="telephone=no">
-    <meta name="description" content="변방의북소리 웹진 '둥둥' Doong-Doong">
+    <meta name="description" content="동두천 아카이빙 프로젝트 변방의북소리 웹진 '둥둥' Doong-Doong">
     <meta name="keywords" content="변방의북소리 웹진, 변방의 북소리, 동두천, doong-doong, doong doong, DoongDoong, doongdoong, 동두천 웹진, 동두천웹진, 매거진, webzine, 웹진 둥둥, 변방둥둥, 변방의북소리, 마을매거진, 둥둥, 동두천매거진, 동두천마을매거진, 웹진, 아카이빙, 동두천 아카이빙">
     <meta property="og:type" content="website">
     <meta property="og:title" content="변방의북소리 웹진 '둥둥' Doong-Doong">
@@ -22,7 +21,6 @@
     <title>변방의북소리 웹진 '둥둥' Doong-Doong</title>
     <link rel="canonical" href="https://www.doongdoong.org" />
     <meta name="naver-site-verification" content="8f1d95aa979c8acf9e027d0b341619949d16a500" />
-
     <script src="static/js/scroll-hd-bar.js"></script>
     
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
