@@ -53,12 +53,15 @@
 }
 
 @media all and (max-width: 481px) {
+    /* .ft_contain .logo_area {
+        
+    } */
     .ft_contain .logo_wrap {
-        width: 100%;
+        width: 255px;
         /* grid-template-columns: 30% 30% 30%; */
         grid-template-columns: 75px 75px 75px;
         grid-gap: 15px;
-        margin: 20px 8%;
+        margin: 20px auto;
     }
     .ft_contain .logo_wrap .org_logo {
         max-width: 75px;
