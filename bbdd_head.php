@@ -21,6 +21,7 @@
     <meta property="og:image" content="/android-icon-192x192.png">
     <title>변방의북소리 웹진 '둥둥' Doong-Doong</title>
     <link rel="canonical" href="https://www.doongdoong.org" />
+    <meta name="naver-site-verification" content="8f1d95aa979c8acf9e027d0b341619949d16a500" />
 
     <script src="static/js/scroll-hd-bar.js"></script>
     
