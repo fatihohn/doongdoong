@@ -24,7 +24,7 @@
                                 location.replace("<?php echo $URL?>");
                         </script>
         <?php   }
-                else if($_SESSION['cast']==$admin) {
+                else if($_SESSION['cast']==$admin || $_SESSION['username']==$username) {
         
                 $result = $conn->query($query1);
                 echo "삭제되었습니다"
