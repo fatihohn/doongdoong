@@ -27,7 +27,8 @@ if($titleCheck >= 1){
     
     $uploadimg = include "admin_create_thumbs_files.php";
     $image = $uploadimg['img'];
-   
+    $imageName = {$image}$filename;
+    $imageDir = {$image}$target_file;
         
     
     // $sql = "
@@ -63,7 +64,7 @@ if($titleCheck >= 1){
                         if (!mysqli_stmt_prepare($stmt, $sql)) {
                                 echo "sql error";
                         } else {
-                                mysqli_stmt_bind_param($stmt, "ssssssss", $username, $author, {$image}$filename, {$image}$target_file, $category, $cat_detail, $display, $publish);
+                                mysqli_stmt_bind_param($stmt, "ssssssss", $username, $author, $imageName, $imageDir, $category, $cat_detail, $display, $publish);
                                 
                                 if(!mysqli_stmt_execute($stmt)){
                                     echo '저장실패. 관리자에게 문의해주세요';
