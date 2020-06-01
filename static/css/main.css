@@ -371,7 +371,7 @@
     }
     
     #bbdd_sc_area .view_wrap .view_wrap_line {
-        border: 2px dashed rgba(6, 102, 152);
+        border: 2px dashed rgba(6, 102, 152, 0.6);
         border-radius: 15px;
         text-align: center;
         padding: 40px 30px;
