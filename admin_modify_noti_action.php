@@ -33,13 +33,13 @@ $display = mysqli_real_escape_string($conn, $display);
         //         WHERE `id`='$q'";
         $sql = 
                 "UPDATE notice SET 
-                `author` = ?, 
-                `username` = ?, 
-                `category` = ?, 
-                `title` = ?, 
-                `content` = ?, 
-                `display` = ? 
-                WHERE `id` = ?";
+                author = ?, 
+                username = ?, 
+                category = ?, 
+                title = ?, 
+                content = ?, 
+                display = ? 
+                WHERE id = ?";
 
 $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
