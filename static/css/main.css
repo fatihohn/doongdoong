@@ -335,7 +335,7 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         padding-top: calc(960px/64);
-        color: rgba(0, 0, 0);
+        color: rgb(0, 0, 0);
     }
     
     #bbdd_sc_area .mega_list>.mega_box .mega_list_auther {
@@ -348,7 +348,7 @@
         font-size: 0.9rem;
         font-weight: 600;
         line-height: 0.9rem;
-        color: rgba(6, 102, 152);
+        color: rgb(6, 102, 152);
     }
     
     #bbdd_sc_area .mega_list>.mega_box a:hover .mega_list_auther>p {
