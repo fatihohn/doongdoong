@@ -297,6 +297,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     }
     
     #bbdd_sc_area .mega_list>.mega_box .mega_box_sub .mega_list_wrap {
