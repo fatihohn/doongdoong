@@ -36,9 +36,9 @@ $resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
 if ($resultCatNow->num_rows > 0) {
     echo "
         <div class = 'mega_title'>
-            <h2 class = 'gg-batang zin_title' title='";
-    echo $zinDetail;
-    echo"'>";
+            <h2 class = 'gg-batang zin_title' title=";
+    echo '"'.$zinDetail.'"';
+    echo">";
     echo $zinTitle;
     echo "</h2>
         </div>";
