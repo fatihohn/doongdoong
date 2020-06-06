@@ -342,7 +342,7 @@ if ($resultCatOk->num_rows > 0) {
         }
 
 
-        $resultContOk = $conn->query($sqlContOk) or die($conn->error);
+        // $resultContOk = $conn->query($sqlContOk) or die($conn->error);
        
         if ($resultContOk->num_rows >= 0) {
 
