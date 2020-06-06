@@ -12,10 +12,10 @@ $resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
 $rowZinNow = $resultZinNow->fetch_assoc();
 
 $zinTitle = $rowZinNow['title'];
-$zinTitle = mysqli_real_string_escape($conn, $zinTitle);
+// $zinTitle = mysqli_real_string_escape($conn, $zinTitle);
 
 $zinDetail = $rowZinNow['zin_detail'];
-$zinDetail = mysqli_real_string_escape($conn, $zinDetail);
+// $zinDetail = mysqli_real_string_escape($conn, $zinDetail);
 
 //이번호 연재물(category) 목록
 $sqlCatNow = "SELECT * FROM thumbs WHERE  display = 'on' ORDER BY author DESC";
@@ -43,7 +43,7 @@ if ($resultCatNow->num_rows > 0) {
     while($rowCatNow = $resultCatNow->fetch_assoc()) {
         // echo "{$rowCatNow['category']}";
         $catTitle = $rowCatNow['category'];
-        $catTitle = mysqli_real_string_escape($conn, $catTitle);
+        // $catTitle = mysqli_real_string_escape($conn, $catTitle);
 
         $sqlRowCatNowCont = ${"sqlContNow".$catTitle};
         $resultCatNowCont = ${"resultContNow".$catTitle};
@@ -151,13 +151,13 @@ if ($resultCatPast->num_rows >= 1) {
         $sqlRowCatPastCont = ${"sqlContPast".$rowCatPast['category']};
         $resultCatPastCont = ${"resultContPast".$rowCatPast['category']};
         $rowCatPastCat = $rowCatPast['category'];
-        $rowCatPastCat = mysqli_real_string_escape($conn, $rowCatPastCat);
+        // $rowCatPastCat = mysqli_real_string_escape($conn, $rowCatPastCat);
         $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = '$rowCatPastCat' ORDER BY sess*1 DESC LIMIT 3";
         $resultCatPastCont = $conn->query($sqlRowCatPastCont) or die($conn->error);
         $rowCatPastCont = ${"rowCatPast".$rowCatPast['category']};
         
         $catTitlePast = $rowCatPast['category'];
-        $catTitlePast = mysqli_real_string_escape($conn, $catTitlePast);
+        // $catTitlePast = mysqli_real_string_escape($conn, $catTitlePast);
         $sqlContPast = "SELECT * FROM contents WHERE zin!='$zinTitle' AND category='$catTitlePast' AND display='on'";
         $resultContPast = $conn->query($sqlContPast) or die($conn->error);
        
@@ -244,13 +244,13 @@ if ($resultCatOk->num_rows > 0) {
         $sqlRowCatOkCont = ${"sqlContOk".$rowCatOk['category']};
         $resultCatOkCont = ${"resultContOk".$rowCatOk['category']};
         $rowCatOkCat = $rowCatOk['category'];
-        $rowCatOkCat = mysqli_real_string_escape($conn, $rowCatOkCat);
+        // $rowCatOkCat = mysqli_real_string_escape($conn, $rowCatOkCat);
         $sqlRowCatOkCont = "SELECT * FROM contents WHERE display = 'on' OR display = 'ok' AND category = '$rowCatOkCat' ORDER BY sess*1 DESC LIMIT 3";
         $resultCatOkCont = $conn->query($sqlRowCatOkCont) or die($conn->error);
         $rowCatOkCont = ${"rowCatOk".$rowCatOk['category']};
         
         $catTitleOk = $rowCatOk['category'];
-        $catTitleOk = mysqli_real_string_escape($conn, $catTitleOk);
+        // $catTitleOk = mysqli_real_string_escape($conn, $catTitleOk);
         $sqlContOk = "SELECT * FROM contents WHERE category='$catTitleOk' AND display='on' OR display='ok'";
         $resultContOk = $conn->query($sqlContOk) or die($conn->error);
        
