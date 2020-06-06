@@ -15,11 +15,11 @@ $stmt = mysqli_stmt_init($conn);
     } else {
         mysqli_stmt_execute($stmt);
         $resultZinNow = mysqli_stmt_get_result($stmt);
-        $rowZinNow = mysqli_fetch_assoc($resultZinNow);
+        // $rowZinNow = mysqli_fetch_assoc($resultZinNow);
         }
 
 // $resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
-// $rowZinNow = $resultZinNow->fetch_assoc();
+$rowZinNow = $resultZinNow->fetch_assoc();
 
 $zinTitle = mysqli_real_escape_string($conn, $rowZinNow['title']);
 $zinDetail = mysqli_real_escape_string($conn, $rowZinNow['zin_detail']);
