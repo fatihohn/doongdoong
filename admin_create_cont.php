@@ -48,30 +48,20 @@
            $editorCast = "editor";
            $authorCast = "author";
            
-    
-            if($_SESSION['cast']==$adminCast || $_SESSION['cast']==$editorCast){
+           if($_SESSION['cast']==$adminCast || $_SESSION['cast']==$editorCast){
            $authCatSql = "SELECT * FROM thumbs";
-        //    $resultAuthCat = $conn->query($authCatSql);     
+           $resultAuthCat = $conn->query($authCatSql);    
             } else if ($_SESSION['cast']==$authorCast) {
-            $authCatSql = "SELECT * FROM thumbs WHERE `author` = '$author'"; 
-            // $resultAuthCat = $conn->query($authCatSql);    
-        } else {
+            $authCatSql = "SELECT * FROM thumbs WHERE `author` = '$author'";
+            $resultAuthCat = $conn->query($authCatSql);    
+            
+           } else {
             ?>              <script>
             alert("권한이 없습니다.");
             location.replace("<?php echo $URL?>");
     </script>
-    <?php
-
-        }
-
-        $stmt = mysqli_stmt_init($conn);
-    if (!mysqli_stmt_prepare($stmt, $authCatSql)) {
-            // echo "authCatSql error";
-    } else {
-        mysqli_stmt_execute($stmt);
-        $resultAuthCat = mysqli_stmt_get_result($stmt);
-        // $rowZinNow = mysqli_fetch_assoc($resultZinNow);
-        }
+<?php   }
+           
 
 
 
@@ -203,9 +193,9 @@
                     <?php
                         if ($resultAuthCat->num_rows > 0) {
                             while($rowAuthCat = $resultAuthCat->fetch_assoc()){
-                                echo "<option value=";
-                                echo '"'.$rowAuthCat['category'].'"';
-                                echo ">[";
+                                echo "<option value='";
+                                echo $rowAuthCat['category'];
+                                echo "'>[";
                                 echo $rowAuthCat['author'];
                                 echo "] ";
                                 echo $rowAuthCat['category'];
@@ -242,7 +232,6 @@
                         
                         <!-- // $sessSql = "SELECT * FROM contents WHERE `category` = '' AND `display`='on' OR `display`='ok'";
                         // $resultSess = $conn->query($sessSql);    
-
                         // if ($resultAuthCat->num_rows > 0) {
                         //     while($rowAuthCat = $resultAuthCat->fetch_assoc()){
                         //         echo "<option value='";
@@ -269,9 +258,9 @@
                     <?php
                         if ($resultZin->num_rows > 0) {
                             while($rowZin = $resultZin->fetch_assoc()){
-                                echo "<option value=";
-                                echo '"'.$rowZin['title'].'"';
-                                echo ">[";
+                                echo "<option value='";
+                                echo $rowZin['title'];
+                                echo "'>[";
                                 echo $rowZin['publish'];
                                 echo "] ";
                                 echo $rowZin['title'];
@@ -416,5 +405,3 @@
 </body>
 
 </html>
-
-

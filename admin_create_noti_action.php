@@ -14,10 +14,10 @@ $category = $_POST['category'];
 $category = mysqli_real_escape_string($conn, $category);
 
 $title = $_POST['title'];
-// $title = mysqli_real_escape_string($conn, $title);
+$title = mysqli_real_escape_string($conn, $title);
 
 $content = $_POST['ir1'];
-// $content = mysqli_real_escape_string($conn, $content);
+$content = mysqli_real_escape_string($conn, $content);
 
 $display = $_POST['display'];
 $display = mysqli_real_escape_string($conn, $display);

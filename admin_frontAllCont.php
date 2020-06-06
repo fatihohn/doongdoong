@@ -24,37 +24,17 @@ session_start();
 // $catCategory = $rowCatCategory['category'];
 // $catCategoryId = $rowCatCategory['id'];
 
-$sql = "SELECT * FROM contents WHERE id = ? ";
-// $sql = "SELECT * FROM contents WHERE id = $q ";
-
-$stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sql)) {
-                // echo "sql error";
-        } else {
-                mysqli_stmt_bind_param($stmt, "i", $q);
-                mysqli_stmt_execute($stmt);
-                $result = mysqli_stmt_get_result($stmt);
-        }
-
-// $result = $conn->query($sql) or die($conn->error);
+$sql = "SELECT * FROM contents WHERE id = $q ";
+// $sql = "SELECT * FROM contents WHERE id = $q AND display='on' OR (id = $q AND display='ok')";
+// $sql = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory')";
+$result = $conn->query($sql) or die($conn->error);
 $rows = mysqli_fetch_assoc($result);
 $contCategory = $rows['category'];
 
-$sqlCatCategory = "SELECT * FROM thumbs WHERE category = ?";
-// $sqlCatCategory = "SELECT * FROM thumbs WHERE category = '$contCategory'";
+$sqlCatCategory = "SELECT * FROM thumbs WHERE category = '$contCategory'";
 // $sqlCatCategory = "SELECT * FROM thumbs WHERE category = '$contCategory' AND display = 'on' OR ( category = '$contCategory' AND display = 'ok')";
 // $sqlCatCategory = "SELECT * FROM thumbs WHERE category = '$contCategory' AND display = 'on' AND publish = 'now'";
-
-$stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sqlCatCategory)) {
-                // echo "sqlCatCategory error";
-        } else {
-                mysqli_stmt_bind_param($stmt, "s", $contCategory);
-                mysqli_stmt_execute($stmt);
-                $resultCatCategory = mysqli_stmt_get_result($stmt);
-        }
-
-// $resultCatCategory = $conn->query($sqlCatCategory) or die($conn->error);
+$resultCatCategory = $conn->query($sqlCatCategory) or die($conn->error);
 $rowCatCategory = mysqli_fetch_assoc($resultCatCategory);
 $catCategory = $rowCatCategory['category'];
 // $catCategoryZin = $rowCatCategory['zin'];
@@ -68,7 +48,45 @@ $authorCast = "author";
 
 $uname = $_SESSION['username'];
 
+// $sql = "SELECT * FROM zin ORDER BY id DESC";
 
+
+
+
+
+
+// $sqlIdMax = "SELECT id FROM contents WHERE category='$catCategory' ORDER BY sess*1 DESC LIMIT 1";
+// // $sqlIdMax = "SELECT id FROM contents WHERE display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory') ORDER BY sess*1 DESC LIMIT 1";
+// // $sqlIdMax = "SELECT MAX(id) FROM contents WHERE display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory')";
+// $resultIdMax = $conn->query($sqlIdMax) or die($conn->error);
+// $rowsIdMax = mysqli_fetch_assoc($resultIdMax);
+// $idMax = $rowsIdMax['id'];
+
+// $sqlIdMin = "SELECT id FROM contents WHERE category='$catCategory' ORDER BY sess*1 ASC LIMIT 1";
+// // $sqlIdMin = "SELECT id FROM contents WHERE display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory') ORDER BY sess*1 ASC LIMIT 1";
+// // $sqlIdMin = "SELECT MIN(id) FROM contents WHERE display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory')";
+// $resultIdMin = $conn->query($sqlIdMin) or die($conn->error);
+// $rowsIdMin = mysqli_fetch_assoc($resultIdMin);
+// $idMin = $rowsIdMin['id'];
+
+// $sqlNext = "SELECT * FROM contents WHERE id > $q AND category='$catCategory' ORDER BY sess*1 ASC LIMIT 1";
+// $sqlPrev = "SELECT * FROM contents WHERE id < $q AND category='$catCategory' ORDER BY sess*1 DESC LIMIT 1";
+
+// if($q < $idMax && $q > $idMin) {
+//     $sqlNext = "SELECT * FROM contents WHERE id > $q AND category='$catCategory' ORDER BY sess*1 ASC LIMIT 1";
+//     $sqlPrev = "SELECT * FROM contents WHERE id < $q AND category='$catCategory' ORDER BY sess*1 DESC LIMIT 1";
+// } else if($q == $idMax && $q > $idMin) {
+//     // $sqlNext = "";
+//     $sqlNext = "SELECT * FROM contents WHERE id = $q AND category='$catCategory'";
+// } else if($q == $idMin && $q < $idMax) {
+//     // $sqlPrev = "";
+//     $sqlPrev = "SELECT * FROM contents WHERE id = $q AND category='$catCategory'";
+// } else if($q ==$idMin && $q == $idMax) {
+//     // $sqlNext = "";
+//     // $sqlPrev = "";
+//     $sqlNext = "SELECT * FROM contents WHERE id = $q AND category='$catCategory' ";
+//     $sqlPrev = "SELECT * FROM contents WHERE id = $q AND category='$catCategory' ";
+// }
 
 
 if(!isset($_SESSION['username'])) {
@@ -80,121 +98,78 @@ if(!isset($_SESSION['username'])) {
             //cast: admin인 경우
             else if($_SESSION['cast']==$adminCast || $_SESSION['cast']==$editorCast) {
                 
-               
-                // $sqlIdMax = "SELECT id FROM contents WHERE category='$catCategory' ORDER BY sess*1 DESC LIMIT 1";
-                // $sqlIdMin = "SELECT id FROM contents WHERE category='$catCategory' ORDER BY sess*1 ASC LIMIT 1";
-                $sqlIdMax = "SELECT id FROM contents WHERE category=? ORDER BY sess*1 DESC LIMIT 1";
-                $sqlIdMin = "SELECT id FROM contents WHERE category=? ORDER BY sess*1 ASC LIMIT 1";
-
+                // $sql = "SELECT * FROM contents ORDER BY id DESC";
+                $sqlIdMax = "SELECT id FROM contents WHERE category='$catCategory' ORDER BY sess*1 DESC LIMIT 1";
+                $sqlIdMin = "SELECT id FROM contents WHERE category='$catCategory' ORDER BY sess*1 ASC LIMIT 1";
                 $sqlNext = "SELECT * FROM contents WHERE id > $q AND category='$catCategory' ORDER BY sess*1 ASC LIMIT 1";
                 $sqlPrev = "SELECT * FROM contents WHERE id < $q AND category='$catCategory' ORDER BY sess*1 DESC LIMIT 1";
-                // $sqlNext = "SELECT * FROM contents WHERE id > ? AND category=? ORDER BY sess*1 ASC LIMIT 1";
-                // $sqlPrev = "SELECT * FROM contents WHERE id < ? AND category=? ORDER BY sess*1 DESC LIMIT 1";
-                
-                
-                $stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sqlIdMax)) {
-                // echo "sqlIdMax error";
-        } else {
-                mysqli_stmt_bind_param($stmt, "s", $catCategory);
-                mysqli_stmt_execute($stmt);
-                $resultIdMax = mysqli_stmt_get_result($stmt);
-        }
-        
-// $resultIdMax = $conn->query($sqlIdMax) or die($conn->error);
+                $resultIdMax = $conn->query($sqlIdMax) or die($conn->error);
 $rowsIdMax = mysqli_fetch_assoc($resultIdMax);
 $idMax = $rowsIdMax['id'];
 
-
-$stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sqlIdMin)) {
-                // echo "sqlIdMin error";
-        } else {
-                mysqli_stmt_bind_param($stmt, "s", $catCategory);
-                mysqli_stmt_execute($stmt);
-                $resultIdMin = mysqli_stmt_get_result($stmt);
-        }
-
-// $resultIdMin = $conn->query($sqlIdMin) or die($conn->error);
+$resultIdMin = $conn->query($sqlIdMin) or die($conn->error);
 $rowsIdMin = mysqli_fetch_assoc($resultIdMin);
 $idMin = $rowsIdMin['id'];
 
 
                 if($qVal < $idMax && $qVal > $idMin) {
-                
+                // if($q < $idMax && $q > $idMin) {
                     $sqlNext = "SELECT * FROM contents WHERE id > $q AND category='$catCategory' ORDER BY sess*1 ASC LIMIT 1";
                     $sqlPrev = "SELECT * FROM contents WHERE id < $q AND category='$catCategory' ORDER BY sess*1 DESC LIMIT 1";
-                    // $sqlNext = "SELECT * FROM contents WHERE id > ? AND category=? ORDER BY sess*1 ASC LIMIT 1";
-                    // $sqlPrev = "SELECT * FROM contents WHERE id < ? AND category=? ORDER BY sess*1 DESC LIMIT 1";
                 } else if($qVal == $idMax && $qVal > $idMin) {
-                
+                // } else if($q == $idMax && $q > $idMin) {
+                    // $sqlNext = "";
                     $sqlNext = "SELECT * FROM contents WHERE id = $q AND category='$catCategory'";
-                    // $sqlNext = "SELECT * FROM contents WHERE id = ? AND category=?";
                 } else if($qVal == $idMin && $qVal < $idMax) {
-                
+                // } else if($q == $idMin && $q < $idMax) {
+                    // $sqlPrev = "";
                     $sqlPrev = "SELECT * FROM contents WHERE id = $q AND category='$catCategory'";
-                    // $sqlPrev = "SELECT * FROM contents WHERE id = ? AND category=?";
                 } else if($qVal ==$idMin && $qVal == $idMax) {
-                
+                // } else if($q ==$idMin && $q == $idMax) {
+                    // $sqlNext = "";
+                    // $sqlPrev = "";
                     $sqlNext = "SELECT * FROM contents WHERE id = $q AND category='$catCategory' ";
                     $sqlPrev = "SELECT * FROM contents WHERE id = $q AND category='$catCategory' ";
-                    // $sqlNext = "SELECT * FROM contents WHERE id = ? AND category=? ";
-                    // $sqlPrev = "SELECT * FROM contents WHERE id = ? AND category=? ";
                 }
                 
             } else if ($_SESSION['cast']!==$adminCast && $_SESSION['cast']!==$editorCast && $_SESSION['cast']==$authorCast) {
                 
+                // $sql = "SELECT * FROM contents WHERE display='on' OR display='ok' OR username='$uname' ORDER BY id DESC";
                 $sqlIdMax = "SELECT id FROM contents WHERE category='$catCategory' AND display='on' OR (category='$catCategory' AND display='ok') OR (category='$catCategory' AND username='$uname') ORDER BY sess*1 DESC LIMIT 1";
                 $sqlIdMin = "SELECT id FROM contents WHERE category='$catCategory' AND display='on' OR (category='$catCategory' AND display='ok') OR (category='$catCategory' AND username='$uname') ORDER BY sess*1 ASC LIMIT 1";
                 $sqlNext = "SELECT * FROM contents WHERE id > $q AND category='$catCategory' AND display='on' OR (id > $q AND category='$catCategory' AND display='ok') OR (id > $q AND category='$catCategory' AND username='$uname') ORDER BY sess*1 ASC LIMIT 1";
                 $sqlPrev = "SELECT * FROM contents WHERE id < $q AND category='$catCategory' AND display='on' OR (id < $q AND category='$catCategory' AND display='ok') OR (id < $q AND category='$catCategory' AND username='$uname') ORDER BY sess*1 DESC LIMIT 1";
-                
-                $stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sqlIdMax)) {
-                // echo "sqlIdMax error";
-        } else {
-                // mysqli_stmt_bind_param($stmt, "s", $catCategory);
-                mysqli_stmt_execute($stmt);
-                $resultIdMax = mysqli_stmt_get_result($stmt);
-        }
-                
-                // $resultIdMax = $conn->query($sqlIdMax) or die($conn->error);
+                $resultIdMax = $conn->query($sqlIdMax) or die($conn->error);
 $rowsIdMax = mysqli_fetch_assoc($resultIdMax);
 $idMax = $rowsIdMax['id'];
 
-
-
-$stmt = mysqli_stmt_init($conn);
-if (!mysqli_stmt_prepare($stmt, $sqlIdMin)) {
-        // echo "sqlIdMin error";
-} else {
-        // mysqli_stmt_bind_param($stmt, "s", $catCategory);
-        mysqli_stmt_execute($stmt);
-        $resultIdMin = mysqli_stmt_get_result($stmt);
-}
-
-// $resultIdMin = $conn->query($sqlIdMin) or die($conn->error);
+$resultIdMin = $conn->query($sqlIdMin) or die($conn->error);
 $rowsIdMin = mysqli_fetch_assoc($resultIdMin);
 $idMin = $rowsIdMin['id'];
                 
                 if($qVal < $idMax && $qVal > $idMin) {
-                    
+                // if($q < $idMax && $q > $idMin) {
                     $sqlNext = "SELECT * FROM contents WHERE id > $q AND category='$catCategory' AND display='on' OR (id > $q AND category='$catCategory' AND display='ok') OR (id > $q AND category='$catCategory' AND username='$uname') ORDER BY sess*1 ASC LIMIT 1";
                     $sqlPrev = "SELECT * FROM contents WHERE id < $q AND category='$catCategory' AND display='on' OR (id < $q AND category='$catCategory' AND display='ok') OR (id < $q AND category='$catCategory' AND username='$uname') ORDER BY sess*1 DESC LIMIT 1";
                     
                 } else if($qVal == $idMax && $qVal > $idMin) {
-                    
+                // } else if($q == $idMax && $q > $idMin) {
+                    // $sqlNext = "";
                     $sqlNext = "SELECT * FROM contents WHERE id = $q AND category='$catCategory' AND display='on' OR (id > $q AND category='$catCategory' AND display='ok') OR (id > $q AND category='$catCategory' AND username='$uname')";
-                   
+                    // $sqlNext = "SELECT * FROM contents WHERE id = $q AND category='$catCategory'";
                 } else if($qVal == $idMin && $qVal < $idMax) {
-               
+                // } else if($q == $idMin && $q < $idMax) {
+                    // $sqlPrev = "";
                     $sqlPrev = "SELECT * FROM contents WHERE id = $q AND category='$catCategory' AND display='on' OR (id < $q AND category='$catCategory' AND display='ok') OR (id < $q AND category='$catCategory' AND username='$uname')";
-                  
+                    // $sqlPrev = "SELECT * FROM contents WHERE id = $q AND category='$catCategory'";
                 } else if($qVal == $idMin && $qVal == $idMax) {
-               
+                // } else if($q == $idMin && $q == $idMax) {
+                    // $sqlNext = "";
+                    // $sqlPrev = "";
                     $sqlNext = "SELECT * FROM contents WHERE id = $q AND category='$catCategory' AND display='on' OR (id > $q AND category='$catCategory' AND display='ok') OR (id > $q AND category='$catCategory' AND username='$uname')";
                     $sqlPrev = "SELECT * FROM contents WHERE id = $q AND category='$catCategory' AND display='on' OR (id < $q AND category='$catCategory' AND display='ok') OR (id < $q AND category='$catCategory' AND username='$uname')";
-                   
+                    // $sqlNext = "SELECT * FROM contents WHERE id = $q AND category='$catCategory' ";
+                    // $sqlPrev = "SELECT * FROM contents WHERE id = $q AND category='$catCategory' ";
                 }
             
             } else if ($_SESSION['cast']!==$adminCast && $_SESSION['cast']!==$editorCast && $_SESSION['cast']!==$authorCast) {
@@ -211,30 +186,13 @@ $idMin = $rowsIdMin['id'];
 
 
 
-            $stmt = mysqli_stmt_init($conn);
-            if (!mysqli_stmt_prepare($stmt, $sqlNext)) {
-                    // echo "sqlNext error";
-            } else {
-                    // mysqli_stmt_bind_param($stmt, "s", $catCategory);
-                    mysqli_stmt_execute($stmt);
-                    $resultNext = mysqli_stmt_get_result($stmt);
-            }
 
-// $resultNext = $conn->query($sqlNext) or die($conn->error);
+
+$resultNext = $conn->query($sqlNext) or die($conn->error);
 $rowsNext = mysqli_fetch_assoc($resultNext);
 $idNext = $rowsNext['id'];
 
-
-$stmt = mysqli_stmt_init($conn);
-            if (!mysqli_stmt_prepare($stmt, $sqlPrev)) {
-                    // echo "sqlPrev error";
-            } else {
-                    // mysqli_stmt_bind_param($stmt, "s", $catCategory);
-                    mysqli_stmt_execute($stmt);
-                    $resultPrev = mysqli_stmt_get_result($stmt);
-            }
-
-// $resultPrev = $conn->query($sqlPrev) or die($conn->error);
+$resultPrev = $conn->query($sqlPrev) or die($conn->error);
 $rowsPrev = mysqli_fetch_assoc($resultPrev);
 $idPrev = $rowsPrev['id'];
 
@@ -405,28 +363,3 @@ if($qVal < $idMax && $qVal > $idMin) {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-

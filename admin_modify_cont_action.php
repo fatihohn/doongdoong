@@ -24,7 +24,7 @@ $content = $_POST['ir1'];
 $display = $_POST['display'];
 $display = mysqli_real_escape_string($conn, $display);
 $memo = $_POST['memo'];
-// $memo = mysqli_real_escape_string($conn, $memo);
+$memo = mysqli_real_escape_string($conn, $memo);
 
 
 
