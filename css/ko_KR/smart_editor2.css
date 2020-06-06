@@ -1146,3 +1146,7 @@ body,
 #smart_editor2 .se2_text_tool .active .se2_text_tool_more {
     background-position: -26px -41px
 }
+
+#smart_editor2 {
+    max-width: 632px;
+}
