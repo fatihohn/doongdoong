@@ -12,7 +12,9 @@ $resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
 $rowZinNow = $resultZinNow->fetch_assoc();
 
 $zinTitle = $rowZinNow['title'];
+$zinTitle = mysqli_real_escape_string($conn,$zinTitle);
 $zinDetail = $rowZinNow['zin_detail'];
+$zinDetail = mysqli_real_escape_string($conn,$zinDetail);
 
 //이번호 연재물(category) 목록
 $sqlCatNow = "SELECT * FROM thumbs WHERE  display = 'on' ORDER BY author DESC";
@@ -40,6 +42,7 @@ if ($resultCatNow->num_rows > 0) {
     while($rowCatNow = $resultCatNow->fetch_assoc()) {
         // echo "{$rowCatNow['category']}";
         $catTitle = $rowCatNow['category'];
+        $catTitle = mysqli_real_escape_string($conn, $catTitle);
         $sqlRowCatNowCont = ${"sqlContNow".$catTitle};
         $resultCatNowCont = ${"resultContNow".$catTitle};
         $sqlRowCatNowCont = "SELECT * FROM contents WHERE display = 'on'  AND zin= '$zinTitle' AND category = '$catTitle' ORDER BY sess*1 DESC LIMIT 2";
@@ -76,12 +79,12 @@ if ($resultCatNow->num_rows > 0) {
         echo '
         <div class="cat_title">
             <h2 class="gg-bold">';
-echo $rowCatNow['category'];
+echo mysqli_real_escape_string($conn, $rowCatNow['category']);
 echo '</h2>
         
         <div class="cat_author">
             <p>';
-echo $rowCatNow['author'];
+echo mysqli_real_escape_string($conn, $rowCatNow['author']);
 echo '</p>
         </div>
         </div>
@@ -105,7 +108,7 @@ echo '</p>
                                                             </div>
                                                             <div class="li_title">
                                                                 <p>';
-                echo $rowCatNowCont['title'];
+                echo mysqli_real_escape_string($conn, $rowCatNowCont['title']);
                 echo '</p>
                                                             </div>
                                                         
@@ -231,6 +234,7 @@ if ($resultCatPast->num_rows >= 1) {
         $rowCatPastCont = ${"rowCatPast".$rowCatPast['category']};
         
         $catTitlePast = $rowCatPast['category'];
+        $catTitlePast = mysqli_real_escape_string($conn, $catTitlePast);
         $sqlContPast = "SELECT * FROM contents WHERE zin!='$zinTitle' AND category='$catTitlePast' AND display='on'";
         $resultContPast = $conn->query($sqlContPast) or die($conn->error);
        
@@ -260,12 +264,12 @@ if ($resultCatPast->num_rows >= 1) {
         
         <div class="mega_list_title">
                         <h2 class="gg-bold">';
-        echo $rowCatPast['category'];
+        echo mysqli_real_escape_string($conn, $rowCatPast['category']);
         echo '</h2>
         </div>
         <div class="mega_list_auther">
         <p>';
-        echo $rowCatPast['author'];
+        echo mysqli_real_escape_string($conn, $rowCatPast['author']);
         echo '</p>
         </div>
         </div>
@@ -339,6 +343,7 @@ if ($resultCatOk->num_rows > 0) {
         $rowCatOkCont = ${"rowCatOk".$rowCatOk['category']};
         
         $catTitleOk = $rowCatOk['category'];
+        $catTitleOk = mysqli_real_escape_string($conn, $catTitleOk);
         $sqlContOk = "SELECT * FROM contents WHERE category='$catTitleOk' AND display='on' OR display='ok'";
         // $sqlContOk = "SELECT * FROM contents WHERE zin!='$zinTitle' AND category='$catTitleOk' AND display='on' OR display='ok'";
         $resultContOk = $conn->query($sqlContOk) or die($conn->error);
@@ -361,12 +366,12 @@ if ($resultCatOk->num_rows > 0) {
         
         <div class="mega_list_title">
                         <h2 class="gg-bold">';
-        echo $rowCatOk['category'];
+        echo mysqli_real_escape_string($conn, $rowCatOk['category']);
         echo '</h2>
         </div>
         <div class="mega_list_auther">
         <p>';
-        echo $rowCatOk['author'];
+        echo mysqli_real_escape_string($conn, $rowCatOk['author']);
         echo '</p>
         </div>
         </div>
