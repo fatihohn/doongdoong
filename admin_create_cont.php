@@ -194,7 +194,8 @@
                         if ($resultAuthCat->num_rows > 0) {
                             while($rowAuthCat = $resultAuthCat->fetch_assoc()){
                                 echo "<option value='";
-                                echo $rowAuthCat['category'];
+                                echo mysqli_real_escape_string($conn, $rowAuthCat['category']);
+                                // echo $rowAuthCat['category'];
                                 echo "'>[";
                                 echo $rowAuthCat['author'];
                                 echo "] ";
