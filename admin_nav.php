@@ -14,6 +14,7 @@ $resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
 $rowZinNow = $resultZinNow->fetch_assoc();
 
 $zinTitle = $rowZinNow['title'];
+$zinTitle = mysqli_real_string_escape($conn, $zinTitle);
 
 //연재중 연재물(category) 목록
 // $sqlCatNow = "SELECT * FROM thumbs WHERE publish='now' AND zin= '$zinTitle' AND display = 'on' ORDER BY author DESC";
@@ -69,6 +70,10 @@ if ($resultCatNow->num_rows > 0) {
     while($rowCatNow = $resultCatNow->fetch_assoc()) {
  
         $catTitle = $rowCatNow['category'];
+        $catTitle = mysqli_real_string_escape($conn, $catTitle);
+
+
+
         $sqlRowCatNowCont = ${"sqlContNow".$catTitle};
         $resultCatNowCont = ${"resultContNow".$catTitle};
         $sqlRowCatNowCont = "SELECT * FROM contents WHERE display = 'on'  AND zin= '$zinTitle' AND category = '$catTitle' ORDER BY sess DESC LIMIT 2";
