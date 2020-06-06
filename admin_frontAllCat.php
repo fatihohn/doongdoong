@@ -98,7 +98,7 @@ $zinTitle = $rowZinNow['title'];
             
             $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sqlCont)) {
-                echo "sqlCont error";
+                // echo "sqlCont error";
         } else {
                 mysqli_stmt_execute($stmt);
                 $resultCont = mysqli_stmt_get_result($stmt);
