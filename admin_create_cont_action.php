@@ -12,7 +12,7 @@ $username = $_POST['username'];
 $username = mysqli_real_escape_string($conn, $username);
 
 $category = $_POST['category'];
-$category = mysqli_real_escape_string($conn, $category);
+// $category = mysqli_real_escape_string($conn, $category);
 
 $sess = $_POST['sess'];
 $sess = mysqli_real_escape_string($conn, $sess);
