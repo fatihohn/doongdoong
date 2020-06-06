@@ -21,8 +21,8 @@ $stmt = mysqli_stmt_init($conn);
 // $resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
 // $rowZinNow = $resultZinNow->fetch_assoc();
 
-$zinTitle = $rowZinNow['title'];
-$zinDetail = $rowZinNow['zin_detail'];
+$zinTitle = mysqli_real_escape_string($conn, $rowZinNow['title']);
+$zinDetail = mysqli_real_escape_string($conn, $rowZinNow['zin_detail']);
 
 //이번호 연재물(category) 목록
 $sqlCatNow = "SELECT * FROM thumbs WHERE  display = 'on' ORDER BY author DESC";
