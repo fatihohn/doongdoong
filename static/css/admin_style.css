@@ -162,7 +162,7 @@ article {
 #ir1 {
     min-height: 500px;
     /* width: 100%; */
-    min-width: 630px;
+    /* min-width: 630px; */
     max-width: 100%;
     /* max-width: 640px; */
 }
