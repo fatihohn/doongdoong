@@ -10,38 +10,16 @@ if ($conn->connect_error) {
 // $resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
 
 $sqlZinNow = "SELECT * FROM zin WHERE publish='now' AND display = 'on' ORDER BY id DESC LIMIT 1";
-
-$stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sqlZinNow)) {
-                // echo "sqlZinNow error";
-        } else {
-                mysqli_stmt_execute($stmt);
-                $resultZinNow = mysqli_stmt_get_result($stmt);
-                // $rowZinNow = mysqli_fetch_assoc($resultZinNow);
-                // mysqli_stmt_close();
-        }
-
-// $resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
+$resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
 $rowZinNow = $resultZinNow->fetch_assoc();
 
 $zinTitle = $rowZinNow['title'];
-$zinTitle = mysqli_real_escape_string($conn, $zinTitle);
+
 //연재중 연재물(category) 목록
 // $sqlCatNow = "SELECT * FROM thumbs WHERE publish='now' AND zin= '$zinTitle' AND display = 'on' ORDER BY author DESC";
 $sqlCatNow = "SELECT * FROM thumbs WHERE display = 'on' ORDER BY author DESC";
 // $sqlCatNow = "SELECT * FROM thumbs WHERE zin= '$zinTitle' AND display = 'on' ORDER BY author DESC";
-
-$stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sqlCatNow)) {
-                // echo "sqlCatNow error";
-        } else {
-                mysqli_stmt_execute($stmt);
-                $resultCatNow = mysqli_stmt_get_result($stmt);
-                // $rowZinNow = mysqli_fetch_assoc($resultZinNow);
-                // mysqli_stmt_close();
-        }
-
-// $resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
+$resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
 
 
 
@@ -91,33 +69,11 @@ if ($resultCatNow->num_rows > 0) {
         $sqlRowCatNowCont = ${"sqlContNow".$catTitle};
         $resultCatNowCont = ${"resultContNow".$catTitle};
         $sqlRowCatNowCont = "SELECT * FROM contents WHERE display = 'on'  AND zin= '$zinTitle' AND category = '$catTitle' ORDER BY sess DESC LIMIT 2";
-        
-        $stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sqlRowCatNowCont)) {
-                // echo "sqlRowCatNowCont error";
-        } else {
-                mysqli_stmt_execute($stmt);
-                $resultCatNowCont = mysqli_stmt_get_result($stmt);
-                // $rowZinNow = mysqli_fetch_assoc($resultZinNow);
-                // mysqli_stmt_close();
-        }
-        
-        // $resultCatNowCont = $conn->query($sqlRowCatNowCont) or die($conn->error);
+        $resultCatNowCont = $conn->query($sqlRowCatNowCont) or die($conn->error);
         $rowCatNowCont = ${"rowCatNow".$catTitle};
        
         $sqlCatOfNowCont = "SELECT * FROM thumbs WHERE display='on' AND zin='$zinTitle' AND category = '$catTitle' ORDER BY id DESC LIMIT 1";
-        
-        $stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sqlCatOfNowCont)) {
-                // echo "sqlCatOfNowCont error";
-        } else {
-                mysqli_stmt_execute($stmt);
-                $resultCatOfNowCont = mysqli_stmt_get_result($stmt);
-                // $rowZinNow = mysqli_fetch_assoc($resultZinNow);
-                // mysqli_stmt_close();
-        }
-        
-        // $resultCatOfNowCont = $conn->query($sqlCatOfNowCont) or die($conn->error);
+        $resultCatOfNowCont = $conn->query($sqlCatOfNowCont) or die($conn->error);
         $rowCatOfNowCont = $resultCatOfNowCont->fetch_assoc();
         $catId = $rowCatOfNowCont['id'];
         if ($resultCatNowCont->num_rows >0) {
@@ -151,18 +107,7 @@ if ($resultCatNow->num_rows > 0) {
 
 // $sqlCatPast = "SELECT * FROM thumbs WHERE zin != '$zinTitle' AND display = 'on' ORDER BY author DESC";
 $sqlCatPast = "SELECT * FROM thumbs WHERE display = 'on' ORDER BY author DESC";
-
-$stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sqlCatPast)) {
-                // echo "sqlCatPast error";
-        } else {
-                mysqli_stmt_execute($stmt);
-                $resultCatPast = mysqli_stmt_get_result($stmt);
-                // $rowZinNow = mysqli_fetch_assoc($resultZinNow);
-                // mysqli_stmt_close();
-        }
-
-// $resultCatPast = $conn->query($sqlCatPast) or die($conn->error);
+$resultCatPast = $conn->query($sqlCatPast) or die($conn->error);
 
 
 //지난호 연재물별 게시물 리스트
@@ -184,20 +129,7 @@ if ($resultCatPast->num_rows > 0) {
         // $rowCatPastCont = ${"rowCatPast".$rowCatPast['category']};
         $catTitlePast = $rowCatPast['category'];
         $sqlContPast = "SELECT * FROM contents WHERE zin!='$zinTitle' AND category='$catTitlePast' AND display='on'";
-        
-        $stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sqlContPast)) {
-                // echo "sqlContPast error";
-        } else {
-                mysqli_stmt_execute($stmt);
-                $resultContPast = mysqli_stmt_get_result($stmt);
-                // $rowZinNow = mysqli_fetch_assoc($resultZinNow);
-                // mysqli_stmt_close();
-        }
-        
-        // $resultContPast = $conn->query($sqlContPast) or die($conn->error);
-        
-        
+        $resultContPast = $conn->query($sqlContPast) or die($conn->error);
         // $rowContPast = $resultContPast->fetch_assoc();
         // if ($resultContPast->num_rows > 0) {
             
