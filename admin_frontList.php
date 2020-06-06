@@ -338,7 +338,9 @@ if ($resultCatOk->num_rows > 0) {
         // echo "{$rowCatOk['category']}";
         $sqlRowCatOkCont = ${"sqlContOk".$rowCatOk['category']};
         $resultCatOkCont = ${"resultContOk".$rowCatOk['category']};
-        $sqlRowCatOkCont = "SELECT * FROM contents WHERE display = 'on' OR display = 'ok' AND category = '{$rowCatOk['category']}' ORDER BY sess*1 DESC LIMIT 3";
+        $catOk = mysqli_real_escape_string($conn, $rowCatOk['category']);
+        $sqlRowCatOkCont = "SELECT * FROM contents WHERE display = 'on' OR display = 'ok' AND category = '$catOk' ORDER BY sess*1 DESC LIMIT 3";
+        // $sqlRowCatOkCont = "SELECT * FROM contents WHERE display = 'on' OR display = 'ok' AND category = '{$rowCatOk['category']}' ORDER BY sess*1 DESC LIMIT 3";
         $resultCatOkCont = $conn->query($sqlRowCatOkCont) or die($conn->error);
         $rowCatOkCont = ${"rowCatOk".$rowCatOk['category']};
         
