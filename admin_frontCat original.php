@@ -21,48 +21,18 @@ $q = intval($_GET['q']);
 $r = intval($_GET['r']);
 $rVal = $_GET['r'];
 session_start();
-$sql = "SELECT * FROM thumbs WHERE id = ?";
-// $sql = "SELECT * FROM thumbs WHERE id = $q";
-$stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sql)) {
-                // echo "sql error";
-        } else {
-                mysqli_stmt_bind_param($stmt, "i", $q);
-                mysqli_stmt_execute($stmt);
-                $result = mysqli_stmt_get_result($stmt);
-        }
-// $result = $conn->query($sql) or die($conn->error);
+$sql = "SELECT * FROM thumbs WHERE id = $q";
+$result = $conn->query($sql) or die($conn->error);
 $rows = mysqli_fetch_assoc($result);
 
 $author = $rows['author'];
 
-$sqlAuth = "SELECT author, auth_detail FROM user_data WHERE author = ?";
-// $sqlAuth = "SELECT author, auth_detail FROM user_data WHERE author = '$author'";
-
-$stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sqlAuth)) {
-                // echo "sqlAuth error";
-        } else {
-                mysqli_stmt_bind_param($stmt, "s", $author);
-                mysqli_stmt_execute($stmt);
-                $resultAuth = mysqli_stmt_get_result($stmt);
-        }
-
-// $resultAuth = $conn->query($sqlAuth) or die($conn->error);
+$sqlAuth = "SELECT author, auth_detail FROM user_data WHERE author = '$author'";
+$resultAuth = $conn->query($sqlAuth) or die($conn->error);
 $rowsAuth = mysqli_fetch_assoc($resultAuth);
 
 $sqlZinNow = "SELECT * FROM zin WHERE publish='now' AND display = 'on' ORDER BY id DESC LIMIT 1";
-
-$stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sqlZinNow)) {
-                // echo "sqlZinNow error";
-        } else {
-                // mysqli_stmt_bind_param($stmt, "s", $author);
-                mysqli_stmt_execute($stmt);
-                $resultZinNow = mysqli_stmt_get_result($stmt);
-        }
-
-// $resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
+$resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
 $rowZinNow = $resultZinNow->fetch_assoc();
 
 $zinTitle = $rowZinNow['title'];
@@ -92,17 +62,7 @@ $zinTitle = $rowZinNow['title'];
             <?php 
             //발행중 매거진 콘텐츠만
             $sqlCont = "SELECT * FROM contents WHERE display = 'on' AND zin = '$zinTitle' AND category = '{$rows['category']}' ORDER BY sess*1 DESC";
-            
-            $stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sqlCont)) {
-                // echo "sqlCont error";
-        } else {
-                // mysqli_stmt_bind_param($stmt, "s", $author);
-                mysqli_stmt_execute($stmt);
-                $resultCont = mysqli_stmt_get_result($stmt);
-        }
-            
-            // $resultCont = $conn->query($sqlCont) or die($conn->error);
+            $resultCont = $conn->query($sqlCont) or die($conn->error);
             
             if($resultCont->num_rows >0){
                 while($rowCont = $resultCont->fetch_assoc()) {
