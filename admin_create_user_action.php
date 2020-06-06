@@ -32,11 +32,11 @@ $email = $_POST['email'];
 $email = mysqli_real_escape_string($conn, $email);
 
 $author = $_POST['author'];
-$author = mysqli_real_escape_string($conn, $author);
+// $author = mysqli_real_escape_string($conn, $author);
 // $author = mysql_real_escape_string($author);
 
 $auth_detail = $_POST['auth_detail'];
-$auth_detail = mysqli_real_escape_string($conn, $auth_detail);
+// $auth_detail = mysqli_real_escape_string($conn, $auth_detail);
 
 $cast = $_POST['cast'];
 $cast = mysqli_real_escape_string($conn, $cast);
