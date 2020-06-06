@@ -48,7 +48,7 @@
            $editorCast = "editor";
            $authorCast = "author";
            
-           if($_SESSION['cast']!==$adminCast || $_SESSION['cast']!==$editorCast || $_SESSION['cast'] !== $authorCast){
+           if($_SESSION['cast'] !== $adminCast || $_SESSION['cast'] !== $editorCast || $_SESSION['cast'] !== $authorCast){
             ?>              <script>
             alert("권한이 없습니다.");
             location.replace("<?php echo $URL?>");
@@ -61,16 +61,16 @@
             } else if ($_SESSION['cast']==$authorCast) {
             $authCatSql = "SELECT * FROM thumbs WHERE `author` = '$author'"; 
         }
-        $stmt = mysqli_stmt_init($conn);
-    if (!mysqli_stmt_prepare($stmt, $authCatSql)) {
-            // echo "authCatSql error";
-    } else {
-        mysqli_stmt_execute($stmt);
-        $resultAuthCat = mysqli_stmt_get_result($stmt);
-        // $rowZinNow = mysqli_fetch_assoc($resultZinNow);
-        }
+    //     $stmt = mysqli_stmt_init($conn);
+    // if (!mysqli_stmt_prepare($stmt, $authCatSql)) {
+    //         // echo "authCatSql error";
+    // } else {
+    //     mysqli_stmt_execute($stmt);
+    //     $resultAuthCat = mysqli_stmt_get_result($stmt);
+    //     // $rowZinNow = mysqli_fetch_assoc($resultZinNow);
+    //     }
 
-        // $resultAuthCat = $conn->query($authCatSql);    
+        $resultAuthCat = $conn->query($authCatSql);    
         }
 
 
