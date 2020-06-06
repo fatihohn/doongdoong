@@ -33,63 +33,63 @@ if($titleCheck >= 1){
     $imageDir = strval($imageDir);
         
     
-    // $sql = "
-    //                 INSERT INTO `thumbs`
-    //                     (username, author, img, img_dir, category, cat_detail, display, publish, created)
-    //                 VALUES(
-    //                     '{$username}',
-    //                     '{$author}',
-    //                     '{$image}$filename',
-    //                     '{$image}$target_file',
-    //                     '{$category}',
-    //                     '{$cat_detail}',
-    //                     '{$display}',
-    //                     '{$publish}',
-    //                     NOW()
-    //                     )";
-                    $sql = "
+    $sql = "
                     INSERT INTO `thumbs`
-                        (`username`, `author`, `img`, `img_dir`, `category`, `cat_detail`, `display`, `publish`, `created`)
+                        (username, author, img, img_dir, category, cat_detail, display, publish, created)
                     VALUES(
-                        ?,
-                        ?,
-                        ?,
-                        ?,
-                        ?,
-                        ?,
-                        ?,
-                        ?,
+                        '{$username}',
+                        '{$author}',
+                        '{$image}$filename',
+                        '{$image}$target_file',
+                        '{$category}',
+                        '{$cat_detail}',
+                        '{$display}',
+                        '{$publish}',
                         NOW()
                         )";
+                    // $sql = "
+                    // INSERT INTO `thumbs`
+                    //     (`username`, `author`, `img`, `img_dir`, `category`, `cat_detail`, `display`, `publish`, `created`)
+                    // VALUES(
+                    //     ?,
+                    //     ?,
+                    //     ?,
+                    //     ?,
+                    //     ?,
+                    //     ?,
+                    //     ?,
+                    //     ?,
+                    //     NOW()
+                    //     )";
 
-                        $stmt = mysqli_stmt_init($conn);
-                        if (!mysqli_stmt_prepare($stmt, $sql)) {
-                                echo "sql error";
-                        } else {
-                                mysqli_stmt_bind_param($stmt, "ssssssss", $username, $author, $imageName, $imageDir, $category, $cat_detail, $display, $publish);
+                    //     $stmt = mysqli_stmt_init($conn);
+                    //     if (!mysqli_stmt_prepare($stmt, $sql)) {
+                    //             echo "sql error";
+                    //     } else {
+                    //             mysqli_stmt_bind_param($stmt, "ssssssss", $username, $author, $imageName, $imageDir, $category, $cat_detail, $display, $publish);
                                 
-                                if(!mysqli_stmt_execute($stmt)){
-                                    echo '저장실패. 관리자에게 문의해주세요';
-                                    error_log(mysqli_error($conn));
-                                }
-                                else{
-                                    echo("<script>alert('연재물이 생성되었습니다.');location.href='admin_thumbsList.php';</script>");
-                                }
-                            }
+                    //             if(!mysqli_stmt_execute($stmt)){
+                    //                 echo '저장실패. 관리자에게 문의해주세요';
+                    //                 error_log(mysqli_error($conn));
+                    //             }
+                    //             else{
+                    //                 echo("<script>alert('연재물이 생성되었습니다.');location.href='admin_thumbsList.php';</script>");
+                    //             }
+                    //         }
             
         
     }
 
-// $result = mysqli_query($conn, $sql);
+$result = mysqli_query($conn, $sql);
 
 
-//     if($result === false){
-//             echo '저장실패. 관리자에게 문의해주세요';
-//             error_log(mysqli_error($conn));
-//         }
-//         else{
-//             echo("<script>alert('연재물이 생성되었습니다.');location.href='admin_thumbsList.php';</script>");
-//         }
+    if($result === false){
+            echo '저장실패. 관리자에게 문의해주세요';
+            error_log(mysqli_error($conn));
+        }
+        else{
+            echo("<script>alert('연재물이 생성되었습니다.');location.href='admin_thumbsList.php';</script>");
+        }
 
 
 
