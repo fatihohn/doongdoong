@@ -51,18 +51,38 @@ if ($resultCatNow->num_rows > 0) {
         $sqlRowCatNowCont = ${"sqlContNow".$catTitle};
         $resultCatNowCont = ${"resultContNow".$catTitle};
         // $sqlRowCatNowCont = "SELECT * FROM contents WHERE display = 'on'  AND zin= '$zinTitle' AND category = '$catTitle' ORDER BY sess*1 DESC LIMIT 2";
-        $sqlRowCatNowCont = "SELECT * FROM contents WHERE display = 'on'  AND zin= '".$zinTitle."' AND category = '".$catTitle."' ORDER BY sess*1 DESC LIMIT 2";
-        $sqlRowCatNowCont = mysqli_real_string_escape($conn, $sqlRowCatNowCont);
-        
-        $resultCatNowCont = $conn->query($sqlRowCatNowCont) or die($conn->error);
+        $sqlRowCatNowCont = "SELECT * FROM contents WHERE display = 'on'  AND zin= ? AND category = ? ORDER BY sess*1 DESC LIMIT 2";
+        // $sqlRowCatNowCont = "SELECT * FROM contents WHERE display = 'on'  AND zin= '".$zinTitle."' AND category = '".$catTitle."' ORDER BY sess*1 DESC LIMIT 2";
+        // $sqlRowCatNowCont = mysqli_real_string_escape($conn, $sqlRowCatNowCont);
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sqlRowCatNowCont)) {
+                // echo "sqlRowCatNowCont error";
+        } else {
+                mysqli_stmt_bind_param($stmt, "ss", $zinTitle, $catTitle);
+                mysqli_stmt_execute($stmt);
+                $resultCatNowCont = mysqli_stmt_get_result($stmt);
+        }
+        // $resultCatNowCont = $conn->query($sqlRowCatNowCont) or die($conn->error);
         $rowCatNowCont = ${"rowCatNow".$catTitle};
         
         
         // $sqlCatOfNowCont = "SELECT * FROM thumbs WHERE display='on' AND zin='$zinTitle' AND category = '$catTitle' ORDER BY id DESC LIMIT 1";
-        $sqlCatOfNowCont = "SELECT * FROM thumbs WHERE display='on' AND zin='".$zinTitle."' AND category = '".$catTitle."' ORDER BY id DESC LIMIT 1";
-        $sqlCatOfNowCont = mysqli_real_string_escape($conn, $sqlCatOfNowCont);
+        $sqlCatOfNowCont = "SELECT * FROM thumbs WHERE display='on' AND zin='$zinTitle' AND category = '$catTitle' ORDER BY id DESC LIMIT 1";
+        // $sqlCatOfNowCont = "SELECT * FROM thumbs WHERE display='on' AND zin='".$zinTitle."' AND category = '".$catTitle."' ORDER BY id DESC LIMIT 1";
+        // $sqlCatOfNowCont = mysqli_real_string_escape($conn, $sqlCatOfNowCont);
         
-        $resultCatOfNowCont = $conn->query($sqlCatOfNowCont) or die($conn->error);
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sqlCatOfNowCont)) {
+                // echo "sqlCatOfNowCont error";
+        } else {
+                mysqli_stmt_bind_param($stmt, "ss", $zinTitle, $catTitle);
+                mysqli_stmt_execute($stmt);
+                $resultCatOfNowCont = mysqli_stmt_get_result($stmt);
+        }
+
+
+
+        // $resultCatOfNowCont = $conn->query($sqlCatOfNowCont) or die($conn->error);
         $rowCatOfNowCont = $resultCatOfNowCont->fetch_assoc();
         $catId = $rowCatOfNowCont['id'];
         
@@ -159,21 +179,46 @@ if ($resultCatPast->num_rows >= 1) {
         $resultCatPastCont = ${"resultContPast".$rowCatPast['category']};
         $rowCatPastCat = $rowCatPast['category'];
         // $rowCatPastCat = mysqli_real_string_escape($conn, $rowCatPastCat);
+
         // $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = '$rowCatPastCat' ORDER BY sess*1 DESC LIMIT 3";
-        $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = '".$rowCatPastCat."' ORDER BY sess*1 DESC LIMIT 3";
-        $sqlRowCatPastCont = mysqli_real_string_escape($conn, $sqlRowCatPastCont);
+        $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = ? ORDER BY sess*1 DESC LIMIT 3";
+        // $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = '".$rowCatPastCat."' ORDER BY sess*1 DESC LIMIT 3";
+        // $sqlRowCatPastCont = mysqli_real_string_escape($conn, $sqlRowCatPastCont);
         
-        $resultCatPastCont = $conn->query($sqlRowCatPastCont) or die($conn->error);
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sqlRowCatPastCont)) {
+                // echo "sqlRowCatPastCont error";
+        } else {
+                mysqli_stmt_bind_param($stmt, "s", $rowCatPastCat);
+                mysqli_stmt_execute($stmt);
+                $resultCatPastCont = mysqli_stmt_get_result($stmt);
+        }
+
+
+        // $resultCatPastCont = $conn->query($sqlRowCatPastCont) or die($conn->error);
         $rowCatPastCont = ${"rowCatPast".$rowCatPast['category']};
         
         $catTitlePast = $rowCatPast['category'];
         // $catTitlePast = mysqli_real_string_escape($conn, $catTitlePast);
+
         // $sqlContPast = "SELECT * FROM contents WHERE zin!='$zinTitle' AND category='$catTitlePast' AND display='on'";
-        $sqlContPast = "SELECT * FROM contents WHERE zin!='".$zinTitle."' AND category='".$catTitlePast."' AND display='on'";
-        $sqlContPast = mysqli_real_string_escape($conn, $sqlContPast);
+        $sqlContPast = "SELECT * FROM contents WHERE zin!=? AND category=? AND display='on'";
+        // $sqlContPast = "SELECT * FROM contents WHERE zin!='".$zinTitle."' AND category='".$catTitlePast."' AND display='on'";
+        // $sqlContPast = mysqli_real_string_escape($conn, $sqlContPast);
         
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sqlContPast)) {
+                // echo "sqlContPast error";
+        } else {
+                mysqli_stmt_bind_param($stmt, "ss", $zinTitle, $catTitlePast);
+                mysqli_stmt_execute($stmt);
+                $resultContPast = mysqli_stmt_get_result($stmt);
+        }
+
+
+
         
-        $resultContPast = $conn->query($sqlContPast) or die($conn->error);
+        // $resultContPast = $conn->query($sqlContPast) or die($conn->error);
        
         if ($resultContPast->num_rows > 0) {
             echo "
@@ -259,19 +304,42 @@ if ($resultCatOk->num_rows > 0) {
         $resultCatOkCont = ${"resultContOk".$rowCatOk['category']};
         $rowCatOkCat = $rowCatOk['category'];
         // $rowCatOkCat = mysqli_real_string_escape($conn, $rowCatOkCat);
+
         // $sqlRowCatOkCont = "SELECT * FROM contents WHERE display = 'on' OR display = 'ok' AND category = '$rowCatOkCat' ORDER BY sess*1 DESC LIMIT 3";
-        $sqlRowCatOkCont = "SELECT * FROM contents WHERE display = 'on' OR display = 'ok' AND category = '".$rowCatOkCat."' ORDER BY sess*1 DESC LIMIT 3";
-        $sqlRowCatOkCont = mysqli_real_string_escape($conn, $sqlRowCatOkCont);
+        $sqlRowCatOkCont = "SELECT * FROM contents WHERE display = 'on' OR display = 'ok' AND category = ? ORDER BY sess*1 DESC LIMIT 3";
+        // $sqlRowCatOkCont = "SELECT * FROM contents WHERE display = 'on' OR display = 'ok' AND category = '".$rowCatOkCat."' ORDER BY sess*1 DESC LIMIT 3";
+        // $sqlRowCatOkCont = mysqli_real_string_escape($conn, $sqlRowCatOkCont);
         
-        $resultCatOkCont = $conn->query($sqlRowCatOkCont) or die($conn->error);
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sqlRowCatOkCont)) {
+                // echo "sqlRowCatOkCont error";
+        } else {
+                mysqli_stmt_bind_param($stmt, "s", $rowCatOkCat);
+                mysqli_stmt_execute($stmt);
+                $resultCatOkCont = mysqli_stmt_get_result($stmt);
+        }
+
+
+
+        // $resultCatOkCont = $conn->query($sqlRowCatOkCont) or die($conn->error);
         $rowCatOkCont = ${"rowCatOk".$rowCatOk['category']};
         
         $catTitleOk = $rowCatOk['category'];
         // $catTitleOk = mysqli_real_string_escape($conn, $catTitleOk);
+        
         // $sqlContOk = "SELECT * FROM contents WHERE category='$catTitleOk' AND display='on' OR display='ok'";
-        $sqlContOk = "SELECT * FROM contents WHERE category='".$catTitleOk."' AND display='on' OR display='ok'";
-        $sqlContOk = mysqli_real_string_escape($conn, $sqlContOk);
+        $sqlContOk = "SELECT * FROM contents WHERE category=? AND display='on' OR display='ok'";
+        // $sqlContOk = "SELECT * FROM contents WHERE category='".$catTitleOk."' AND display='on' OR display='ok'";
+        // $sqlContOk = mysqli_real_string_escape($conn, $sqlContOk);
 
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sqlContOk)) {
+                // echo "sqlContOk error";
+        } else {
+                mysqli_stmt_bind_param($stmt, "s", $catTitleOk);
+                mysqli_stmt_execute($stmt);
+                $resultContOk = mysqli_stmt_get_result($stmt);
+        }
 
 
         $resultContOk = $conn->query($sqlContOk) or die($conn->error);
