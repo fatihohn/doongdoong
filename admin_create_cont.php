@@ -48,20 +48,13 @@
            $editorCast = "editor";
            $authorCast = "author";
            
-    //        if($_SESSION['cast'] !== $adminCast || $_SESSION['cast'] !== $editorCast || $_SESSION['cast'] !== $authorCast){
-    //         ?>              <script>
-    //         alert("권한이 없습니다.");
-    //         location.replace("<?php echo $URL?>");
-    // </script>
-    // <?php
-    //        } else {
+    
             if($_SESSION['cast']==$adminCast || $_SESSION['cast']==$editorCast){
            $authCatSql = "SELECT * FROM thumbs";
-           $resultAuthCat = $conn->query($authCatSql);    
-        //    $resultAuthCat = $conn->query($authCatSql);    
+        //    $resultAuthCat = $conn->query($authCatSql);     
             } else if ($_SESSION['cast']==$authorCast) {
             $authCatSql = "SELECT * FROM thumbs WHERE `author` = '$author'"; 
-            $resultAuthCat = $conn->query($authCatSql);    
+            // $resultAuthCat = $conn->query($authCatSql);    
         } else {
             ?>              <script>
             alert("권한이 없습니다.");
@@ -70,18 +63,15 @@
     <?php
 
         }
-    //     $stmt = mysqli_stmt_init($conn);
-    // if (!mysqli_stmt_prepare($stmt, $authCatSql)) {
-    //         // echo "authCatSql error";
-    // } else {
-    //     mysqli_stmt_execute($stmt);
-    //     $resultAuthCat = mysqli_stmt_get_result($stmt);
-    //     // $rowZinNow = mysqli_fetch_assoc($resultZinNow);
-    //     }
 
-        // $resultAuthCat = $conn->query($authCatSql);    
-        // }
-
+        $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $authCatSql)) {
+            // echo "authCatSql error";
+    } else {
+        mysqli_stmt_execute($stmt);
+        $resultAuthCat = mysqli_stmt_get_result($stmt);
+        // $rowZinNow = mysqli_fetch_assoc($resultZinNow);
+        }
 
 
 
