@@ -24,7 +24,7 @@ $rowZinNow = $resultZinNow->fetch_assoc();
 $zinTitle = $rowZinNow['title'];
 // $zinTitle = mysqli_real_escape_string($conn, $zinTitle);
 $zinDetail = $rowZinNow['zin_detail'];
-$zinDetail = mysqli_real_escape_string($conn, $zinDetail);
+// $zinDetail = mysqli_real_escape_string($conn, $zinDetail);
 
 //이번호 연재물(category) 목록
 $sqlCatNow = "SELECT * FROM thumbs WHERE  display = 'on' ORDER BY author DESC";
@@ -51,7 +51,7 @@ if ($resultCatNow->num_rows > 0) {
     echo "
         <div class = 'mega_title'>
             <h2 class = 'gg-batang zin_title' title=";
-    echo '"'.$zinDetail.'"';
+    echo '`'.$zinDetail.'`';
     echo">";
             // <h2 class = 'sm3-kk gg-bold zin_title'>";
     // echo $rowZinNow['title'];
