@@ -13,10 +13,10 @@ $username = $_POST['username'];
 $username = mysqli_real_escape_string($conn, $username);
 
 $title = $_POST['title'];
-$title = mysqli_real_escape_string($conn, $title);
+// $title = mysqli_real_escape_string($conn, $title);
 
 $zin_detail = $_POST['zin_detail'];
-$zin_detail = mysqli_real_escape_string($conn, $zin_detail);
+// $zin_detail = mysqli_real_escape_string($conn, $zin_detail);
 
 $display = $_POST['display'];
 $display = mysqli_real_escape_string($conn, $display);
