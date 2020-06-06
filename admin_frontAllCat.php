@@ -97,7 +97,7 @@ $zinTitle = $rowZinNow['title'];
         <ul class = 'view_contList'>
             <?php 
             //모든 매거진 콘텐츠
-            $thisCat = $rows['category']
+            $thisCat = $rows['category'];
             // $sqlCont = "SELECT * FROM contents WHERE display = 'on'  AND category = '{$rows['category']}' OR (display = 'ok'  AND category = '{$rows['category']}') ORDER BY sess*1 DESC";
             $sqlCont = "SELECT * FROM contents WHERE display = 'on'  AND category = ? OR (display = 'ok'  AND category = ?) ORDER BY sess*1 DESC";
             
