@@ -97,13 +97,15 @@ $zinTitle = $rowZinNow['title'];
         <ul class = 'view_contList'>
             <?php 
             //모든 매거진 콘텐츠
-            $sqlCont = "SELECT * FROM contents WHERE display = 'on'  AND category = '{$rows['category']}' OR (display = 'ok'  AND category = '{$rows['category']}') ORDER BY sess*1 DESC";
-            // $sqlCont = "SELECT * FROM contents WHERE display = 'on' AND zin!='$zinTitle' AND category = '{$rows['category']}' ORDER BY sess DESC";
+            $thisCat = $rows['category']
+            // $sqlCont = "SELECT * FROM contents WHERE display = 'on'  AND category = '{$rows['category']}' OR (display = 'ok'  AND category = '{$rows['category']}') ORDER BY sess*1 DESC";
+            $sqlCont = "SELECT * FROM contents WHERE display = 'on'  AND category = ? OR (display = 'ok'  AND category = ?) ORDER BY sess*1 DESC";
             
             $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sqlCont)) {
                 // echo "sqlCont error";
         } else {
+                mysqli_stmt_bind_param($stmt, "ss", $thisCat, $thisCat);
                 mysqli_stmt_execute($stmt);
                 $resultCont = mysqli_stmt_get_result($stmt);
                 // mysqli_stmt_close();
