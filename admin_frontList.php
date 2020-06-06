@@ -22,9 +22,9 @@ $stmt = mysqli_stmt_init($conn);
 $rowZinNow = $resultZinNow->fetch_assoc();
 
 $zinTitle = $rowZinNow['title'];
-$zinTitle = mysqli_real_escape_string($conn, $rowZinNow['title']);
+$zinTitle = mysqli_real_escape_string($conn, $zinTitle);
 $zinDetail = $rowZinNow['zin_detail'];
-$zinDetail = mysqli_real_escape_string($conn, $rowZinNow['zin_detail']);
+$zinDetail = mysqli_real_escape_string($conn, $zinDetail);
 
 //이번호 연재물(category) 목록
 $sqlCatNow = "SELECT * FROM thumbs WHERE  display = 'on' ORDER BY author DESC";
