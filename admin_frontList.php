@@ -419,7 +419,7 @@ if ($resultCatOk->num_rows > 0) {
         
         $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sqlRowCatOkCont)) {
-            echo "sqlRowCatOkCont error";
+            // echo "sqlRowCatOkCont error";
     } else {
         mysqli_stmt_execute($stmt);
         $resultCatOkCont = mysqli_stmt_get_result($stmt);
@@ -435,7 +435,7 @@ if ($resultCatOk->num_rows > 0) {
         
         $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sqlContOk)) {
-            echo "sqlContOk error";
+            // echo "sqlContOk error";
     } else {
         mysqli_stmt_execute($stmt);
         $resultContOk = mysqli_stmt_get_result($stmt);
