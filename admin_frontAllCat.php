@@ -21,12 +21,14 @@ $q = intval($_GET['q']);
 $r = intval($_GET['r']);
 $rVal = $_GET['r'];
 session_start();
-$sql = "SELECT * FROM thumbs WHERE id = $q";
+// $sql = "SELECT * FROM thumbs WHERE id = $q";
+$sql = "SELECT * FROM thumbs WHERE id = ?";
 
 $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
                 // echo "sql error";
         } else {
+                mysqli_stmt_bind_param($stmt, "i", $q);
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
                 // mysqli_stmt_close();
@@ -37,12 +39,14 @@ $rows = mysqli_fetch_assoc($result);
 
 $author = $rows['author'];
 
-$sqlAuth = "SELECT author, auth_detail FROM user_data WHERE author = '$author'";
+// $sqlAuth = "SELECT author, auth_detail FROM user_data WHERE author = '$author'";
+$sqlAuth = "SELECT author, auth_detail FROM user_data WHERE author = ?";
 
 $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sqlAuth)) {
                 // echo "sqlAuth error";
         } else {
+                mysqli_stmt_bind_param($stmt, "s", $author);
                 mysqli_stmt_execute($stmt);
                 $resultAuth = mysqli_stmt_get_result($stmt);
                 // mysqli_stmt_close();
