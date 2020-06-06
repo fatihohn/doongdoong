@@ -11,7 +11,7 @@ $sqlZinNow = "SELECT * FROM zin WHERE publish='now' AND display = 'on' ORDER BY 
 
 $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sqlZinNow)) {
-            echo "sqlZinNow error";
+            // echo "sqlZinNow error";
     } else {
         mysqli_stmt_execute($stmt);
         $resultZinNow = mysqli_stmt_get_result($stmt);
@@ -31,7 +31,7 @@ $sqlCatNow = "SELECT * FROM thumbs WHERE  display = 'on' ORDER BY author DESC";
 
 $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sqlCatNow)) {
-            echo "sqlCatNow error";
+            // echo "sqlCatNow error";
     } else {
         mysqli_stmt_execute($stmt);
         $resultCatNow = mysqli_stmt_get_result($stmt);
@@ -66,7 +66,7 @@ if ($resultCatNow->num_rows > 0) {
         
         $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sqlRowCatNowCont)) {
-            echo "sqlRowCatNowCont error";
+            // echo "sqlRowCatNowCont error";
     } else {
         mysqli_stmt_execute($stmt);
         $resultCatNowCont = mysqli_stmt_get_result($stmt);
@@ -86,7 +86,7 @@ if ($resultCatNow->num_rows > 0) {
         // $sqlCatOfNowCont = "SELECT * FROM thumbs WHERE display='on' AND publish='now' AND zin='$zinTitle' AND category = '$catTitle' ORDER BY id DESC LIMIT 1";
         $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sqlCatOfNowCont)) {
-            echo "sqlCatOfNowCont error";
+            // echo "sqlCatOfNowCont error";
     } else {
         mysqli_stmt_execute($stmt);
         $resultCatOfNowCont = mysqli_stmt_get_result($stmt);
@@ -257,7 +257,7 @@ echo '</p>
 $sqlCatPast = "SELECT * FROM thumbs WHERE  display = 'on' ORDER BY author DESC";
 $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sqlCatPast)) {
-            echo "sqlCatPast error";
+            // echo "sqlCatPast error";
     } else {
         mysqli_stmt_execute($stmt);
         $resultCatPast = mysqli_stmt_get_result($stmt);
@@ -279,7 +279,7 @@ if ($resultCatPast->num_rows >= 1) {
         
         $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sqlRowCatPastCont)) {
-            echo "sqlRowCatPastCont error";
+            // echo "sqlRowCatPastCont error";
     } else {
         mysqli_stmt_execute($stmt);
         $resultCatPastCont = mysqli_stmt_get_result($stmt);
@@ -295,7 +295,7 @@ if ($resultCatPast->num_rows >= 1) {
         
         $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sqlContPast)) {
-            echo "sqlContPast error";
+            // echo "sqlContPast error";
     } else {
         mysqli_stmt_execute($stmt);
         $resultContPast = mysqli_stmt_get_result($stmt);
@@ -373,7 +373,7 @@ $sqlCatOk = "SELECT * FROM thumbs WHERE  display = 'ok' OR display = 'on' ORDER 
 
 $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sqlCatOk)) {
-            echo "sqlCatOk error";
+            // echo "sqlCatOk error";
     } else {
         mysqli_stmt_execute($stmt);
         $resultCatOk = mysqli_stmt_get_result($stmt);
