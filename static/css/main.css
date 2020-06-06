@@ -90,6 +90,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat:hover .cat_img {
