@@ -10,6 +10,7 @@ $author = mysqli_real_escape_string($conn, $author);
 // $author = mysql_real_escape_string($author);
 $username = $_POST['username'];
 $title = $_POST['title'];
+$title = mysqli_real_escape_string($conn, $title);
 
 $zin_detail = $_POST['zin_detail'];
 $zin_detail = mysqli_real_escape_string($conn, $zin_detail);
