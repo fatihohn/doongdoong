@@ -20,14 +20,23 @@ $publish = $_POST['publish'];
 
 
 
-$titleSql = "SELECT * FROM thumbs WHERE category='$category'";
-$titleCheck = mysqli_query($conn, $titleSql);
+// $titleSql = "SELECT * FROM thumbs WHERE category='$category'";
+$titleSql = "SELECT * FROM thumbs WHERE category=?";
+$stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $titleSql)) {
+                // echo "titleSql error";
+        } else {
+                mysqli_stmt_bind_param($stmt, "s", $category);
+                mysqli_stmt_execute($stmt);
+                $titleCheck = mysqli_stmt_get_result($stmt);
+        }
+// $titleCheck = mysqli_query($conn, $titleSql);
 $titleCheck = $titleCheck->fetch_array();
 
 $tIdSql = "SELECT * FROM thumbs WHERE id=$q";
 $tIdCheck = mysqli_query($conn, $tIdSql);
 $tIdCheck = $tIdCheck->fetch_assoc();
-    if($titleCheck >= 1 && $tIdCheck['category'] !== $category){
+    if($titleCheck >= 1 && mysqli_real_escape_string($conn, $tIdCheck['category']) !== $category){
 		echo "<script>alert('연재물 제목이 중복됩니다.'); history.back();</script>";
 	}else{
         
