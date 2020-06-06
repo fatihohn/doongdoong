@@ -27,9 +27,9 @@
 
     $email = $_POST['email'];
     $author = $_POST['author'];
-    // $author = mysqli_real_escape_string($conn, $author);
+    $author = mysqli_real_escape_string($conn, $author);
     $auth_detail = $_POST['auth_detail'];
-    // $auth_detail = mysqli_real_escape_string($conn, $auth_detail);
+    $auth_detail = mysqli_real_escape_string($conn, $auth_detail);
     // $auth_detail = mysql_real_escape_string($auth_detail);
     $cast = $_POST['cast'];
     $active = $_POST['active'];

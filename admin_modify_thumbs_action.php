@@ -10,10 +10,10 @@ $author = mysqli_real_escape_string($conn, $author);
 // $author = mysql_real_escape_string($author);
 $username = $_POST['username'];
 $category = $_POST['category'];
-// $category = mysqli_real_escape_string($conn, $category);
+$category = mysqli_real_escape_string($conn, $category);
 
 $cat_detail = $_POST['cat_detail'];
-// $cat_detail = mysqli_real_escape_string($conn, $cat_detail);
+$cat_detail = mysqli_real_escape_string($conn, $cat_detail);
 // $zin_detail = mysql_real_escape_string($zin_detail);
 $display = $_POST['display'];
 $publish = $_POST['publish'];
