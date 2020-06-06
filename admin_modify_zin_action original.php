@@ -10,7 +10,6 @@ $author = mysqli_real_escape_string($conn, $author);
 // $author = mysql_real_escape_string($author);
 $username = $_POST['username'];
 $title = $_POST['title'];
-$title = mysqli_real_escape_string($conn, $title);
 
 $zin_detail = $_POST['zin_detail'];
 $zin_detail = mysqli_real_escape_string($conn, $zin_detail);
@@ -20,36 +19,12 @@ $publish = $_POST['publish'];
 
 
 
-// $titleSql = "SELECT * FROM zin WHERE title='$title'";
-$titleSql = "SELECT * FROM zin WHERE title=?";
+$titleSql = "SELECT * FROM zin WHERE title='$title'";
+$titleCheck = mysqli_query($conn, $titleSql);
+$titleCheck = $titleCheck->fetch_array();
 
-$stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $titleSql)) {
-                // echo "titleSql error";
-        } else {
-            mysqli_stmt_bind_param($stmt, "s", $title);
-            mysqli_stmt_execute($stmt);
-            $titleCheck = mysqli_stmt_get_result($stmt);
-            // mysqli_stmt_close();
-        }
-        
-        // $titleCheck = mysqli_query($conn, $titleSql);
-        $titleCheck = $titleCheck->fetch_array();
-        
-        // $tIdSql = "SELECT * FROM zin WHERE id=$q";
-        $tIdSql = "SELECT * FROM zin WHERE id=?";
-        
-        $stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $tIdSql)) {
-            // echo "tIdSql error";
-        } else {
-            mysqli_stmt_bind_param($stmt, "i", $q);
-                mysqli_stmt_execute($stmt);
-                $tIdCheck = mysqli_stmt_get_result($stmt);
-                // mysqli_stmt_close();
-        }
-
-// $tIdCheck = mysqli_query($conn, $tIdSql);
+$tIdSql = "SELECT * FROM zin WHERE id=$q";
+$tIdCheck = mysqli_query($conn, $tIdSql);
 $tIdCheck = $tIdCheck->fetch_assoc();
     if($titleCheck >= 1 && $tIdCheck['title'] !== $title){
 		echo "<script>alert('매거진 제목이 중복됩니다.'); history.back();</script>";
