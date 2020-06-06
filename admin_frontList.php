@@ -330,7 +330,7 @@ if ($resultCatOk->num_rows > 0) {
         // $sqlContOk = "SELECT * FROM contents WHERE category='$catTitleOk' AND display='on' OR display='ok'";
         $sqlContOk = "SELECT * FROM contents WHERE category=? AND display='on' OR display='ok'";
         // $sqlContOk = "SELECT * FROM contents WHERE category='".$catTitleOk."' AND display='on' OR display='ok'";
-        $sqlContOk = mysqli_real_string_escape($conn, $sqlContOk);
+        // $sqlContOk = mysqli_real_string_escape($conn, $sqlContOk);
 
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sqlContOk)) {
