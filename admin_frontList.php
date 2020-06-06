@@ -325,10 +325,10 @@ if ($resultCatOk->num_rows > 0) {
         $rowCatOkCont = ${"rowCatOk".$rowCatOk['category']};
         
         $catTitleOk = $rowCatOk['category'];
-        $catTitleOk = mysqli_real_string_escape($conn, $catTitleOk);
+        // $catTitleOk = mysqli_real_string_escape($conn, $catTitleOk);
         
-        $sqlContOk = "SELECT * FROM contents WHERE category='$catTitleOk' AND display='on' OR display='ok'";
-        // $sqlContOk = "SELECT * FROM contents WHERE category=? AND display='on' OR display='ok'";
+        // $sqlContOk = "SELECT * FROM contents WHERE category='$catTitleOk' AND display='on' OR display='ok'";
+        $sqlContOk = "SELECT * FROM contents WHERE category=? AND display='on' OR display='ok'";
         // $sqlContOk = "SELECT * FROM contents WHERE category='".$catTitleOk."' AND display='on' OR display='ok'";
         $sqlContOk = mysqli_real_string_escape($conn, $sqlContOk);
 
@@ -336,7 +336,7 @@ if ($resultCatOk->num_rows > 0) {
         if (!mysqli_stmt_prepare($stmt, $sqlContOk)) {
                 // echo "sqlContOk error";
         } else {
-                // mysqli_stmt_bind_param($stmt, "s", $catTitleOk);
+                mysqli_stmt_bind_param($stmt, "s", $catTitleOk);
                 mysqli_stmt_execute($stmt);
                 $resultContOk = mysqli_stmt_get_result($stmt);
         }
