@@ -21,11 +21,31 @@ $publish = $_POST['publish'];
 
 
 $titleSql = "SELECT * FROM zin WHERE title='$title'";
-$titleCheck = mysqli_query($conn, $titleSql);
+
+$stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $titleSql)) {
+                // echo "titleSql error";
+        } else {
+                mysqli_stmt_execute($stmt);
+                $titleCheck = mysqli_stmt_get_result($stmt);
+                // mysqli_stmt_close();
+        }
+
+// $titleCheck = mysqli_query($conn, $titleSql);
 $titleCheck = $titleCheck->fetch_array();
 
 $tIdSql = "SELECT * FROM zin WHERE id=$q";
-$tIdCheck = mysqli_query($conn, $tIdSql);
+
+$stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $tIdSql)) {
+                // echo "tIdSql error";
+        } else {
+                mysqli_stmt_execute($stmt);
+                $tIdCheck = mysqli_stmt_get_result($stmt);
+                // mysqli_stmt_close();
+        }
+
+// $tIdCheck = mysqli_query($conn, $tIdSql);
 $tIdCheck = $tIdCheck->fetch_assoc();
     if($titleCheck >= 1 && $tIdCheck['title'] !== $title){
 		echo "<script>alert('매거진 제목이 중복됩니다.'); history.back();</script>";
