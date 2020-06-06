@@ -12,9 +12,11 @@ $resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
 $rowZinNow = $resultZinNow->fetch_assoc();
 
 $zinTitle = $rowZinNow['title'];
+$zinTitle = strval($zinTitle);
 // $zinTitle = mysqli_real_string_escape($conn, $zinTitle);
 
 $zinDetail = $rowZinNow['zin_detail'];
+$zinDetail = strval($zinDetail);
 // $zinDetail = mysqli_real_string_escape($conn, $zinDetail);
 
 //이번호 연재물(category) 목록
@@ -43,6 +45,7 @@ if ($resultCatNow->num_rows > 0) {
     while($rowCatNow = $resultCatNow->fetch_assoc()) {
         // echo "{$rowCatNow['category']}";
         $catTitle = $rowCatNow['category'];
+        $catTitle = strval($catTitle);
         // $catTitle = mysqli_real_string_escape($conn, $catTitle);
 
         $sqlRowCatNowCont = ${"sqlContNow".$catTitle};
