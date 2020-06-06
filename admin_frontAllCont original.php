@@ -24,37 +24,17 @@ session_start();
 // $catCategory = $rowCatCategory['category'];
 // $catCategoryId = $rowCatCategory['id'];
 
-$sql = "SELECT * FROM contents WHERE id = ? ";
-// $sql = "SELECT * FROM contents WHERE id = $q ";
-
-$stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sql)) {
-                // echo "sql error";
-        } else {
-                mysqli_stmt_bind_param($stmt, "i", $q);
-                mysqli_stmt_execute($stmt);
-                $result = mysqli_stmt_get_result($stmt);
-        }
-
-// $result = $conn->query($sql) or die($conn->error);
+$sql = "SELECT * FROM contents WHERE id = $q ";
+// $sql = "SELECT * FROM contents WHERE id = $q AND display='on' OR (id = $q AND display='ok')";
+// $sql = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory')";
+$result = $conn->query($sql) or die($conn->error);
 $rows = mysqli_fetch_assoc($result);
 $contCategory = $rows['category'];
 
-$sqlCatCategory = "SELECT * FROM thumbs WHERE category = ?";
-// $sqlCatCategory = "SELECT * FROM thumbs WHERE category = '$contCategory'";
+$sqlCatCategory = "SELECT * FROM thumbs WHERE category = '$contCategory'";
 // $sqlCatCategory = "SELECT * FROM thumbs WHERE category = '$contCategory' AND display = 'on' OR ( category = '$contCategory' AND display = 'ok')";
 // $sqlCatCategory = "SELECT * FROM thumbs WHERE category = '$contCategory' AND display = 'on' AND publish = 'now'";
-
-$stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sqlCatCategory)) {
-                // echo "sqlCatCategory error";
-        } else {
-                mysqli_stmt_bind_param($stmt, "s", $contCategory);
-                mysqli_stmt_execute($stmt);
-                $resultCatCategory = mysqli_stmt_get_result($stmt);
-        }
-
-// $resultCatCategory = $conn->query($sqlCatCategory) or die($conn->error);
+$resultCatCategory = $conn->query($sqlCatCategory) or die($conn->error);
 $rowCatCategory = mysqli_fetch_assoc($resultCatCategory);
 $catCategory = $rowCatCategory['category'];
 // $catCategoryZin = $rowCatCategory['zin'];
