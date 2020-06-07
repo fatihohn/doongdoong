@@ -440,7 +440,7 @@ if (document.getElementById("zinTitle")) {
         }
         }
     }
-
+    document.getElementById("zinDetail").style.display = "none";
     document.getElementById("zinTitle").addEventListener("click", showZinDetail);
 
 </script>
