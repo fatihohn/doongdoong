@@ -64,9 +64,9 @@ if ($resultCatNow->num_rows > 0) {
     echo $zinTitle;
     echo "</h2>
     
-    <p id='zinDetail' class='zin_detail'>";
+    <div id='zinDetail' class='zin_detail'>";
     echo $zinDetail;
-    echo "</p>
+    echo "</div>
     </div>
     
     ";
