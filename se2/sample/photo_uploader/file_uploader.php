@@ -15,7 +15,8 @@ if($bSuccessUpload) {
 
 	$tmp_name = $_FILES['Filedata']['tmp_name'];
 	// $name = $_FILES['Filedata']['name'];
-	$name = "c".$contNoThis."_".$_FILES['Filedata']['name'];
+	// $name = "c".$contNoThis."_".$_FILES['Filedata']['name'];
+	$name = "c".$contNoThis."_".date("YmdHis").mt_rand().$_FILES['Filedata']['name'];
 	
 	$filename_ext = strtolower(array_pop(explode('.',$name)));
 	$allow_file = array("jpg", "png", "bmp", "gif");
