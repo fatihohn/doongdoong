@@ -282,9 +282,13 @@ if($qVal < $idMax && $qVal > $idMin) {
 <?php
 //변수 테스트
 echo $idMax;
+echo "<br>";
 echo $idMin;
+echo "<br>";
 echo $q;
+echo "<br>";
 echo $qVal;
+echo "<br>";
 
 ?>
 
