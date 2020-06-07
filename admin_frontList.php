@@ -50,7 +50,13 @@ if ($resultCatNow->num_rows > 0) {
     // echo $rowZinNow['title'];
     echo $zinTitle;
     echo "</h2>
-    </div>";
+    </div>
+    <div class='zin_detail'>
+    <p>";
+    echo $zinDetail;
+    echo "</p>
+    </div>
+    ";
     // output data of each row
     while($rowCatNow = $resultCatNow->fetch_assoc()) {
         // echo "{$rowCatNow['category']}";
