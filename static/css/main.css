@@ -264,6 +264,13 @@
         line-height: 5rem;
         font-weight: 600;
     }
+    #bbdd_sc_area .mega_title .zin_detail {
+        font-size: 1rem;
+        /* line-height: 5rem; */
+        /* font-weight: 600; */
+        display: none;
+    }
+   
     
     #bbdd_sc_area .mega_list {
         width: 100%;

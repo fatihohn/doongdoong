@@ -424,3 +424,13 @@ echo "</div>
 
     
 ?>
+<script>
+if (document.querySelector(".zin_title")) {
+    function showZinDetail() {
+        document.querySelector(".zin_detail").style.display = "initial";
+        }
+    }
+
+    document.querySelector(".zin_title").addEventListener("hover", showZinDetail);
+
+</script>
