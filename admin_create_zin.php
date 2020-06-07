@@ -77,7 +77,12 @@
                 <div class="createInput">
                 <label class="createGrid1">매거진 제목</label>
                 <input class="createGrid2" id="zin_title" name="title" placeholder="매거진 제목" required />
-                <div class="createGrid3" id="zinTitleConf"></div>    
+                <div class="createGrid3" id="zinTitleConf"></div>   
+                <div>
+                <p>
+                따옴표('), 큰따옴표(")는 사용할 수 없습니다.
+                </p>
+                </div> 
             </div>
             </p>
        
