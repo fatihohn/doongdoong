@@ -431,6 +431,6 @@ if (document.getElementById("zinTitle")) {
         }
     }
 
-    document.getElementById("zinTitle").addEventListener("hover", showZinDetail);
+    document.getElementById("zinTitle").addEventListener("click", showZinDetail);
 
 </script>
