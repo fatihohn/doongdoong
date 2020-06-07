@@ -114,14 +114,14 @@ if ($resultCatNow->num_rows > 0) {
         $catId = $rowCatOfNowCont['id'];
         
         if($resultCatNowCont->num_rows > 0) {
-        echo "
-        <div class='category'>";
+        // echo "  <div class='category'>";
+        echo "  <li class='category'>";
         
         
           
                                 
-            //  echo "                       <div class='category_list'>";
-             echo "                       <li class='category_list'>";
+             echo "                       <div class='category_list'>";
+            //  echo "                       <li class='category_list'>";
              echo "
                                         <a id='{$rowCatNow["id"]}' class='cat frontCat' name='$catId' onclick='adminAllCatShow(this.id, this.name)' >";
                                         // <a href='#' id='{$rowCatNow["id"]}' class='txt frontCat' onclick = 'frontCatList(this.id)'>";
@@ -178,8 +178,8 @@ echo '</p>
             }
             echo '</ul>
             </div>';
-            // echo '</div>';
-            echo '</li>';
+            echo '</div>';
+            // echo '</li>';
         }
     
     
@@ -188,8 +188,8 @@ echo '</p>
     }
 
     echo "</ul>";
-    // echo "        </li>";
-    echo "        </div>";
+    echo "        </li>";
+    // echo "        </div>";
 };
 
 
