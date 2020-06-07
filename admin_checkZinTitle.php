@@ -22,8 +22,9 @@
 
 	if($member==0){
 
-		if(strpos($zinTitle, $dQuote) == true || strpos($title, $sQuote) == true) {
-		// if(strpos($title, $sQuote) !== false) {
+		// if(strpos($zinTitle, $dQuote) == true || strpos($title, $sQuote) == true) {
+		if(strpos($zinTitle, $dQuote) == true || preg_match("/'/u", $zinTitle)) {
+		
 			?>
 	<div style='font-family:"malgun gothic"; color:red;'><?php echo $zinTitle; ?>는 사용불가능한 매거진입니다.<div>
 <?php
