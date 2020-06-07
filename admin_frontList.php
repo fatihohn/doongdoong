@@ -8,7 +8,17 @@ if ($conn->connect_error) {
 
 
 $sqlZinNow = "SELECT * FROM zin WHERE publish='now' AND display = 'on' ORDER BY id DESC LIMIT 1";
-$resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
+
+$stmt = mysqli_stmt_init($conn);
+                if (!mysqli_stmt_prepare($stmt, $sqlZinNow)) {
+                    // echo "sqlZinNow error";
+                } else {
+                //     mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
+                    mysqli_stmt_execute($stmt);
+                    $resultZinNow = mysqli_stmt_get_result($stmt);
+                }
+
+// $resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
 $rowZinNow = $resultZinNow->fetch_assoc();
 
 $zinTitle = $rowZinNow['title'];
