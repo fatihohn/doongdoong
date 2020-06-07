@@ -167,10 +167,10 @@ if($q < $idMax && $q > $idMin) {
 
         // $resultPrev = $conn->query($sqlPrev) or die($conn->error);
 
-} else if($q ==$idMin && $q == $idMax) {
+} else if($q == $idMin && $q == $idMax) {
     
     // $sqlNext = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory' ";
-    $sqlNext = "SELECT * FROM contents WHERE id = ? AND display='on' AND category=? ";
+    $sqlNext = "SELECT * FROM contents WHERE id = ? AND display='on' AND category=?";
 
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sqlNext)) {
