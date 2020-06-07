@@ -366,15 +366,15 @@ if (document.getElementById("zinTitle")) {
     function showZinDetail() {
         
         let detailStatus = document.getElementById("zinDetail").style.display;
-        if(detailStatus == "none"){
+        if(detailStatus !== "none"){
                 // document.getElementById("zinDetail").style.display = "initial";
                 // document.getElementById("zinTitle").style.paddingBottom = "15px";
-                document.getElementById("zinDetail").style.display = "initial";
-                document.getElementById("zinTitle").style.paddingBottom = "15px";
-                
-        } else {
                 document.getElementById("zinDetail").style.display = "none";
                 document.getElementById("zinTitle").style.paddingBottom = "0px";
+                
+            } else {
+                document.getElementById("zinDetail").style.display = "initial";
+                document.getElementById("zinTitle").style.paddingBottom = "15px";
 
         }
         }
