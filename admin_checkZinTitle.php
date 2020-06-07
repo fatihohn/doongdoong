@@ -18,7 +18,7 @@
 	$member = mysqli_fetch_assoc($result);
 	
 	$dQuote = '"';
-	$sQuote = "'";
+	$sQuote = "\'";
 
 	if($member==0){
 
