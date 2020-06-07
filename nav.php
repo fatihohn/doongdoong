@@ -14,6 +14,7 @@ $resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
 $rowZinNow = $resultZinNow->fetch_assoc();
 
 $zinTitle = $rowZinNow['title'];
+$zinTitle = mysqli_real_escape_string($conn, $zinTitle);
 
 //연재중 연재물(category) 목록
 // $sqlCatNow = "SELECT * FROM thumbs WHERE publish='now' AND zin= '$zinTitle' AND display = 'on' ORDER BY author DESC";
@@ -66,6 +67,8 @@ if ($resultCatNow->num_rows > 0) {
     while($rowCatNow = $resultCatNow->fetch_assoc()) {
  
         $catTitle = $rowCatNow['category'];
+        $catTitle = mysqli_real_escape_string($conn, $catTitle);
+
         $sqlRowCatNowCont = ${"sqlContNow".$catTitle};
         $resultCatNowCont = ${"resultContNow".$catTitle};
         // $sqlRowCatNowCont = "SELECT * FROM contents WHERE display = 'on'  AND zin= '$zinTitle' AND category = '$catTitle' ORDER BY sess DESC LIMIT 2";
@@ -136,7 +139,7 @@ $resultCatPast = $conn->query($sqlCatPast) or die($conn->error);
 
 
 //지난호 연재물별 게시물 리스트
-if ($resultCatPast->num_rows > 0) {
+if ($resultCatPast->num_rows >= 1) {
     // echo "
     // <li class = 'nav_main_list'>
     // <a class = 'gg-title' href = '#'>
@@ -153,8 +156,10 @@ if ($resultCatPast->num_rows > 0) {
         // $resultCatPastCont = $conn->query($sqlRowCatPastCont) or die($conn->error);
         // $rowCatPastCont = ${"rowCatPast".$rowCatPast['category']};
         $catTitlePast = $rowCatPast['category'];
+        $catTitlePast = mysqli_real_escape_string($conn, $catTitlePast);
+
         // $sqlContPast = "SELECT * FROM contents WHERE zin!='$zinTitle' AND category='$catTitlePast' AND display='on'";
-        $sqlContPast = "SELECT * FROM contents WHERE zin!='$zinTitle' AND category='$catTitlePast' AND display='on'";
+        $sqlContPast = "SELECT * FROM contents WHERE zin!=? AND category=? AND display='on'";
         
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sqlContPast)) {
