@@ -56,7 +56,8 @@ if (!mysqli_stmt_prepare($stmt, $sqlIdMax)) {
     $rowsIdMax = mysqli_fetch_assoc($resultIdMax);
     $idMax = $rowsIdMax['id'];
 
-$sqlIdMin = "SELECT id FROM contents WHERE display='on' AND category='$catCategory' ORDER BY sess*1 ASC LIMIT 1";
+// $sqlIdMin = "SELECT id FROM contents WHERE display='on' AND category='$catCategory' ORDER BY sess*1 ASC LIMIT 1";
+$sqlIdMin = "SELECT id FROM contents WHERE display='on' AND category=? ORDER BY sess*1 ASC LIMIT 1";
 
 $stmt = mysqli_stmt_init($conn);
 if (!mysqli_stmt_prepare($stmt, $sqlIdMin)) {
