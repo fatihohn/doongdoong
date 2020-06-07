@@ -269,6 +269,7 @@
     }
     #bbdd_sc_area .mega_title #zinDetail {
         font-size: 1rem;
+        color: rgb(255, 255, 255);
         /* line-height: 5rem; */
         /* font-weight: 600; */
         white-space: pre-line;
