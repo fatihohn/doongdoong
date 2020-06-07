@@ -26,9 +26,15 @@ $publish = mysqli_real_escape_string($conn, $publish);
 $titleSql = "SELECT * FROM thumbs WHERE category='$category'";
 $titleCheck = mysqli_query($conn, $titleSql);
 $titleCheck = $titleCheck->fetch_array();
+
+$dQuote = '"';
+
 if($titleCheck >= 1){
     echo "<script>alert('연재물 제목이 중복됩니다.'); history.back();</script>";
-}else{
+}else if(strpos($category, $dQuote) == true){
+    
+    echo "<script>alert('사용불가능한 연재물 제목입니다.'); history.back();</script>";
+} else {
     
     $uploadimg = include "admin_create_thumbs_files.php";
     $image = $uploadimg['img'];
