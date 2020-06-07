@@ -177,10 +177,9 @@ echo '</p>
 
             }
             echo '</ul>
-            </div>
-            </div>
-            
-            ';
+            </div>';
+            // echo '</div>';
+            echo '</li>';
         }
     
     
@@ -189,8 +188,8 @@ echo '</p>
     }
 
     echo "</ul>";
-    echo "        </li>";
-    // echo "        </div>";
+    // echo "        </li>";
+    echo "        </div>";
 };
 
 
