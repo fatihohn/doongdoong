@@ -8,92 +8,235 @@
         <?php
 include 'bbdd_db_conn.php';
 $q = intval($_GET['q']);
-// $r = intval($_GET['r']);
 $qVal = $_GET['q'];
-// $rVal = $_GET['r'];
 
 session_start();
-// $sql = "SELECT * FROM contents WHERE id = $q AND display='on' AND publish='now'";
-// 개발중
 
+// $sql = "SELECT * FROM contents WHERE id = $q AND display='on' ";
+$sql = "SELECT * FROM contents WHERE id = ? AND display='on' ";
 
+$stmt = mysqli_stmt_init($conn);
+if (!mysqli_stmt_prepare($stmt, $sql)) {
+    // echo "sql error";
+} else {
+    mysqli_stmt_bind_param($stmt, "i", $q);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+}
 
-// $sqlCatCategory = "SELECT * FROM thumbs WHERE id = $r AND display = 'on' AND publish = 'now'";
-// $resultCatCategory = $conn->query($sqlCatCategory) or die($conn->error);
-// $rowCatCategory = mysqli_fetch_assoc($resultCatCategory);
-// $catCategory = $rowCatCategory['category'];
-// $catCategoryId = $rowCatCategory['id'];
-
-$sql = "SELECT * FROM contents WHERE id = $q AND display='on' ";
-// $sql = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory'";
-$result = $conn->query($sql) or die($conn->error);
+// $result = $conn->query($sql) or die($conn->error);
 $rows = mysqli_fetch_assoc($result);
 $contCategory = $rows['category'];
 
-$sqlCatCategory = "SELECT * FROM thumbs WHERE category = '$contCategory' AND display = 'on'";
-// $sqlCatCategory = "SELECT * FROM thumbs WHERE category = '$contCategory' AND display = 'on' AND publish = 'now'";
-$resultCatCategory = $conn->query($sqlCatCategory) or die($conn->error);
+// $sqlCatCategory = "SELECT * FROM thumbs WHERE category = '$contCategory' AND display = 'on'";
+$sqlCatCategory = "SELECT * FROM thumbs WHERE category = ? AND display = 'on'";
+
+$stmt = mysqli_stmt_init($conn);
+if (!mysqli_stmt_prepare($stmt, $sqlCatCategory)) {
+    // echo "sqlCatCategory error";
+} else {
+    mysqli_stmt_bind_param($stmt, "s", $contCategory);
+    mysqli_stmt_execute($stmt);
+    $resultCatCategory = mysqli_stmt_get_result($stmt);
+}
+
+// $resultCatCategory = $conn->query($sqlCatCategory) or die($conn->error);
 $rowCatCategory = mysqli_fetch_assoc($resultCatCategory);
 $catCategory = $rowCatCategory['category'];
-// $catCategoryZin = $rowCatCategory['zin'];
 $catCategoryId = $rowCatCategory['id'];
 
-$sqlIdMax = "SELECT id FROM contents WHERE display='on' AND category='$catCategory' ORDER BY sess*1 DESC LIMIT 1";
-// $sqlIdMax = "SELECT MAX(id) FROM contents WHERE display='on' AND category='$catCategory'";
-$resultIdMax = $conn->query($sqlIdMax) or die($conn->error);
+// $sqlIdMax = "SELECT id FROM contents WHERE display='on' AND category='$catCategory' ORDER BY sess*1 DESC LIMIT 1";
+$sqlIdMax = "SELECT id FROM contents WHERE display='on' AND category=? ORDER BY sess*1 DESC LIMIT 1";
+
+$stmt = mysqli_stmt_init($conn);
+if (!mysqli_stmt_prepare($stmt, $sqlIdMax)) {
+    // echo "sqlIdMax error";
+} else {
+    mysqli_stmt_bind_param($stmt, "s", $catCategory);
+    mysqli_stmt_execute($stmt);
+    $resultIdMax = mysqli_stmt_get_result($stmt);
+}
+
+// $resultIdMax = $conn->query($sqlIdMax) or die($conn->error);
 $rowsIdMax = mysqli_fetch_assoc($resultIdMax);
 $idMax = $rowsIdMax['id'];
 
-$sqlIdMin = "SELECT id FROM contents WHERE display='on' AND category='$catCategory' ORDER BY sess*1 ASC LIMIT 1";
-// $sqlIdMin = "SELECT MIN(id) FROM contents WHERE display='on' AND category='$catCategory'";
-$resultIdMin = $conn->query($sqlIdMin) or die($conn->error);
+// $sqlIdMin = "SELECT id FROM contents WHERE display='on' AND category='$catCategory' ORDER BY sess*1 ASC LIMIT 1";
+$sqlIdMin = "SELECT id FROM contents WHERE display='on' AND category=? ORDER BY sess*1 ASC LIMIT 1";
+
+$stmt = mysqli_stmt_init($conn);
+if (!mysqli_stmt_prepare($stmt, $sqlIdMin)) {
+    // echo "sqlIdMin error";
+} else {
+    mysqli_stmt_bind_param($stmt, "s", $catCategory);
+    mysqli_stmt_execute($stmt);
+    $resultIdMin = mysqli_stmt_get_result($stmt);
+}
+
+// $resultIdMin = $conn->query($sqlIdMin) or die($conn->error);
 $rowsIdMin = mysqli_fetch_assoc($resultIdMin);
 $idMin = $rowsIdMin['id'];
 
-$sqlNext = "SELECT * FROM contents WHERE id > $q AND display='on' AND category='$catCategory' ORDER BY sess*1 ASC LIMIT 1";
-$sqlPrev = "SELECT * FROM contents WHERE id < $q AND display='on' AND category='$catCategory' ORDER BY sess*1 DESC LIMIT 1";
+
+// $sqlNext = "SELECT * FROM contents WHERE id > $q AND display='on' AND category='$catCategory' ORDER BY sess*1 ASC LIMIT 1";
+$sqlNext = "SELECT * FROM contents WHERE id > ? AND display='on' AND category=? ORDER BY sess*1 ASC LIMIT 1";
+
+$stmt = mysqli_stmt_init($conn);
+if (!mysqli_stmt_prepare($stmt, $sqlNext)) {
+    // echo "sqlNext error";
+} else {
+    mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
+    mysqli_stmt_execute($stmt);
+    $resultNext = mysqli_stmt_get_result($stmt);
+}
+
+// $resultNext = $conn->query($sqlNext) or die($conn->error);
+
+
+// $sqlPrev = "SELECT * FROM contents WHERE id < $q AND display='on' AND category='$catCategory' ORDER BY sess*1 DESC LIMIT 1";
+$sqlPrev = "SELECT * FROM contents WHERE id < ? AND display='on' AND category=? ORDER BY sess*1 DESC LIMIT 1";
+
+$stmt = mysqli_stmt_init($conn);
+if (!mysqli_stmt_prepare($stmt, $sqlPrev)) {
+    // echo "sqlPrev error";
+} else {
+    mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
+    mysqli_stmt_execute($stmt);
+    $resultPrev = mysqli_stmt_get_result($stmt);
+}
+
+// $resultPrev = $conn->query($sqlPrev) or die($conn->error);
 
 if($q < $idMax && $q > $idMin) {
-    $sqlNext = "SELECT * FROM contents WHERE id > $q AND display='on' AND category='$catCategory' ORDER BY sess*1 ASC LIMIT 1";
-    $sqlPrev = "SELECT * FROM contents WHERE id < $q AND display='on' AND category='$catCategory' ORDER BY sess*1 DESC LIMIT 1";
+    // $sqlNext = "SELECT * FROM contents WHERE id > $q AND display='on' AND category='$catCategory' ORDER BY sess*1 ASC LIMIT 1";
+    $sqlNext = "SELECT * FROM contents WHERE id > ? AND display='on' AND category=? ORDER BY sess*1 ASC LIMIT 1";
+    
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sqlNext)) {
+        // echo "sqlNext error";
+    } else {
+    mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
+    mysqli_stmt_execute($stmt);
+    $resultNext = mysqli_stmt_get_result($stmt);
+    }
+    
+    // $resultNext = $conn->query($sqlNext) or die($conn->error);
+    
+    
+    // $sqlPrev = "SELECT * FROM contents WHERE id < $q AND display='on' AND category='$catCategory' ORDER BY sess*1 DESC LIMIT 1";
+    $sqlPrev = "SELECT * FROM contents WHERE id < ? AND display='on' AND category=? ORDER BY sess*1 DESC LIMIT 1";
+    
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sqlPrev)) {
+        // echo "sqlPrev error";
+    } else {
+    mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
+    mysqli_stmt_execute($stmt);
+    $resultPrev = mysqli_stmt_get_result($stmt);
+    }
+    
+    // $resultPrev = $conn->query($sqlPrev) or die($conn->error);
+
 } else if($q == $idMax && $q > $idMin) {
-    // $sqlNext = "";
-    $sqlNext = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory'";
+    
+    // $sqlNext = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory'";
+    $sqlNext = "SELECT * FROM contents WHERE id = ? AND display='on' AND category=?";
+
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sqlNext)) {
+        // echo "sqlNext error";
+    } else {
+    mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
+    mysqli_stmt_execute($stmt);
+    $resultNext = mysqli_stmt_get_result($stmt);
+    }
+
+    // $resultNext = $conn->query($sqlNext) or die($conn->error);
+
 } else if($q == $idMin && $q < $idMax) {
-    // $sqlPrev = "";
-    $sqlPrev = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory'";
+    
+    // $sqlPrev = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory'";
+    $sqlPrev = "SELECT * FROM contents WHERE id = ? AND display='on' AND category=?";
+    
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sqlPrev)) {
+        // echo "sqlPrev error";
+    } else {
+    mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
+    mysqli_stmt_execute($stmt);
+    $resultPrev = mysqli_stmt_get_result($stmt);
+    }
+
+    // $resultPrev = $conn->query($sqlPrev) or die($conn->error);
+
 } else if($q ==$idMin && $q == $idMax) {
-    // $sqlNext = "";
-    // $sqlPrev = "";
-    $sqlNext = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory' ";
-    $sqlPrev = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory' ";
+    
+    // $sqlNext = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory' ";
+    $sqlNext = "SELECT * FROM contents WHERE id = ? AND display='on' AND category=? ";
+
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sqlNext)) {
+        // echo "sqlNext error";
+    } else {
+    mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
+    mysqli_stmt_execute($stmt);
+    $resultNext = mysqli_stmt_get_result($stmt);
+    }
+
+    // $resultNext = $conn->query($sqlNext) or die($conn->error);
+
+
+    // $sqlPrev = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory' ";
+    $sqlPrev = "SELECT * FROM contents WHERE id = ? AND display='on' AND category=? ";
+
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sqlPrev)) {
+        // echo "sqlPrev error";
+    } else {
+    mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
+    mysqli_stmt_execute($stmt);
+    $resultPrev = mysqli_stmt_get_result($stmt);
+    }
+
+    // $resultPrev = $conn->query($sqlPrev) or die($conn->error);
 }
 
 
 
 
-$resultNext = $conn->query($sqlNext) or die($conn->error);
+// $resultNext = $conn->query($sqlNext) or die($conn->error);
+// $resultPrev = $conn->query($sqlPrev) or die($conn->error);
 $rowsNext = mysqli_fetch_assoc($resultNext);
 $idNext = $rowsNext['id'];
 
-$resultPrev = $conn->query($sqlPrev) or die($conn->error);
 $rowsPrev = mysqli_fetch_assoc($resultPrev);
 $idPrev = $rowsPrev['id'];
 
 $noCont = "noCont";
 
-if($qVal < $idMax && $qVal > $idMin) {
+// if($qVal < $idMax && $qVal > $idMin) {
+//     $idNext = $rowsNext['id'];
+//     $idPrev = $rowsPrev['id'];
+// } else if($qVal == $idMax && $qVal !== $idMin) {
+//     $idNext = $noCont;
+// } else if($qVal == $idMin && $qVal !== $idMax) {
+//     $idPrev = $noCont;
+// } else if($qVal == $idMin && $qVal == $idMax) {
+//     $idNext = $noCont;
+//     $idPrev = $noCont;
+// }
+
+if($q < intval($idMax) && $q > intval($idMin)) {
     $idNext = $rowsNext['id'];
     $idPrev = $rowsPrev['id'];
-} else if($qVal == $idMax && $qVal !== $idMin) {
+} else if($q == intval($idMax) && $q !== intval($idMin)) {
     $idNext = $noCont;
-} else if($qVal == $idMin && $qVal !== $idMax) {
+} else if($q == intval($idMin) && $q !== intval($idMax)) {
     $idPrev = $noCont;
-} else if($qVal == $idMin && $qVal == $idMax) {
+} else if($q == intval($idMin) && $q == intval($idMax)) {
     $idNext = $noCont;
     $idPrev = $noCont;
 }
-
 
 
 ?>
@@ -105,7 +248,7 @@ if($qVal < $idMax && $qVal > $idMin) {
                         <div class="hd_zin gg-batang">
                           
                                 <?php 
-                                // echo $catCategoryZin;
+                                
                                 echo $rows['zin'];
                                 ?>
                         </div>
@@ -140,43 +283,7 @@ if($qVal < $idMax && $qVal > $idMin) {
             <?php echo $rows['sess']?>회
 
 
-            <!-- 인수 테스트 중 -->
-            <!-- <?php
-        // echo "<br>";
-        // echo "q ";
-        // echo var_dump($q);
-        // echo "<br>";
-        // echo "qVal ";
-        // echo var_dump($qVal);
-        // echo "<br>";
-        // echo "r ";
-        // echo var_dump($r);
-        // echo "<br>";
-        // echo "rVal ";
-        // echo var_dump($rVal);
-        // echo "<br>";
-        // echo "catCategory ";
-        // echo var_dump($catCategory);
-        // echo "<br>";
-        // echo "catCategoryId ";
-        // echo var_dump($catCategoryId);
-        // echo "<br>";
-        // echo "noCont ";
-        // echo var_dump($noCont);
-        // echo "<br>";
-        // echo "idPrev ";
-        // echo var_dump($idPrev);
-        // echo "<br>";
-        // echo "idNext ";
-        // echo var_dump($idNext);
-        // echo "<br>";
-        // echo "idMax ";
-        // echo var_dump($idMax);
-        // echo "<br>";
-        // echo "idMin ";
-        // echo var_dump($idMin);
-        // echo "<br>";
-        ?> -->
+
 
 
 
@@ -212,38 +319,7 @@ if($qVal < $idMax && $qVal > $idMin) {
                     ";
                     
                     ?>
-                    <!-- <div class='view_btn_past <?= "$idPrev"?>' id = '<?= "$idPrev"?>' name = '<?="$catCategoryId"?>' onclick='viewContShow(this.id, this.name)'>
-                 
-                            ←
-                       
-                    </div>
-                    <div class='view_btn_list' id = '<?="$catCategoryId"?>' name = '<?=$rVal?>' onclick='viewCatShow(this.id, this.name)'>
                     
-                            ≡
-                        
-                    </div>
-                    <div class='view_btn_next <?= "$idNext"?>' id = '<?= "$idNext"?>' name = '<?="$catCategoryId"?>' onclick='viewContShow(this.id, this.name)'>
-                    
-                            →
-                     
-                    </div> -->
-
-
-                <!-- <div class='view_btn_past <?= "$idPrev"?>' id = '<?= "$idPrev"?>' name = '<?="$catCategoryId"?>' onclick='viewContShow(this.id, this.name)'>
-             
-                        ←
-                   
-                </div>
-                <div class='view_btn_list' id = '<?="$catCategoryId"?>' name = '<?=$rVal?>' onclick='viewCatShow(this.id, this.name)'>
-                
-                        ≡
-                    
-                </div>
-                <div class='view_btn_next <?= "$idNext"?>' id = '<?= "$idNext"?>' name = '<?="$catCategoryId"?>' onclick='viewContShow(this.id, this.name)'>
-                
-                        →
-                 
-                </div> -->
             </div>
         </div>
     </div>
@@ -256,15 +332,7 @@ if($qVal < $idMax && $qVal > $idMin) {
 
 
         <footer id="bbdd_ft">
-            <!-- <div id="bbdd_ft_wrap">
-                <div id="bbdd_ft_area">
-                    <div class="ft_con">
-                        <p class="gg-title">
-                            COPYRIGHT 2020 변방의북소리.
-                        </p>
-                    </div>
-                </div>
-            </div> -->
+        
             <?php include "footer.php";?>
         </footer>
         
