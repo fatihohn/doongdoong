@@ -417,23 +417,34 @@ $idPrev = $rowsPrev['id'];
 
 $noCont = "noCont";
 
-if($qVal < $idMax && $qVal > $idMin) {
+// if($qVal < $idMax && $qVal > $idMin) {
+//     $idNext = $rowsNext['id'];
+//     $idPrev = $rowsPrev['id'];
+// // } else if( $idNext==null) {
+// } else if($qVal == $idMax && $qVal !== $idMin || $idNext==null) {
+//     $idNext = $noCont;
+// // } else if($idPrev==null) {
+// } else if($qVal == $idMin && $qVal !== $idMax || $idPrev==null) {
+//     $idPrev = $noCont;
+// } else if($qVal == $idMin && $qVal == $idMax ) {
+//     $idNext = $noCont;
+//     $idPrev = $noCont;
+// } else if ($idNext==null && $idPrev==null) {
+//     $idNext = $noCont;
+//     $idPrev = $noCont;
+// }
+
+if($q < intval($idMax) && $q > intval($idMin)) {
     $idNext = $rowsNext['id'];
     $idPrev = $rowsPrev['id'];
-// } else if( $idNext==null) {
-} else if($qVal == $idMax && $qVal !== $idMin || $idNext==null) {
+} else if($q == intval($idMax) && $q !== intval($idMin)) {
     $idNext = $noCont;
-// } else if($idPrev==null) {
-} else if($qVal == $idMin && $qVal !== $idMax || $idPrev==null) {
+} else if($q == intval($idMin) && $q !== intval($idMax)) {
     $idPrev = $noCont;
-} else if($qVal == $idMin && $qVal == $idMax ) {
-    $idNext = $noCont;
-    $idPrev = $noCont;
-} else if ($idNext==null && $idPrev==null) {
+} else if($q == intval($idMin) && $q == intval($idMax)) {
     $idNext = $noCont;
     $idPrev = $noCont;
 }
-
 
 
 ?>
