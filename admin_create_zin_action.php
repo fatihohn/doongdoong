@@ -29,9 +29,16 @@ $publish = mysqli_real_escape_string($conn, $publish);
 $titleSql = "SELECT * FROM zin WHERE title='$title'";
 $titleCheck = mysqli_query($conn, $titleSql);
 $titleCheck = $titleCheck->fetch_array();
+
+$dQuote = '"';
+$sQuote = "'";
+
     if($titleCheck >= 1){
 		echo "<script>alert('매거진 제목이 중복됩니다.'); history.back();</script>";
-	}else{
+    }else if(strpos($title, $dQuote) == true || strpos($title, $sQuote) == true) {
+		echo "<script>alert('사용불가능한 매거진 제목입니다.'); history.back();</script>";
+
+    } else {
         if($publish == "ready") {
         
                 // $sql = "
