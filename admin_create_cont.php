@@ -193,9 +193,9 @@
                     <?php
                         if ($resultAuthCat->num_rows > 0) {
                             while($rowAuthCat = $resultAuthCat->fetch_assoc()){
-                                echo "<option value='";
-                                echo $rowAuthCat['category'];
-                                echo "'>[";
+                                echo "<option value=";
+                                echo '"'.$rowAuthCat['category'].'"';
+                                echo ">[";
                                 echo $rowAuthCat['author'];
                                 echo "] ";
                                 echo $rowAuthCat['category'];
@@ -258,9 +258,9 @@
                     <?php
                         if ($resultZin->num_rows > 0) {
                             while($rowZin = $resultZin->fetch_assoc()){
-                                echo "<option value='";
-                                echo $rowZin['title'];
-                                echo "'>[";
+                                echo "<option value=";
+                                echo '"'.$rowZin['title'].'"';
+                                echo ">[";
                                 echo $rowZin['publish'];
                                 echo "] ";
                                 echo $rowZin['title'];
