@@ -290,19 +290,6 @@ if($q < intval($idMax) && $q > intval($idMin)) {
             <?php echo $rows['sess']?>회
 
 
-<?php
-//변수 테스트
-echo "<br>";
-echo $idMax;
-echo "<br>";
-echo $idMin;
-echo "<br>";
-echo $q;
-echo "<br>";
-echo $qVal;
-echo "<br>";
-
-?>
 
 
 
