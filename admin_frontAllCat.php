@@ -27,8 +27,21 @@ $rows = mysqli_fetch_assoc($result);
 
 $author = $rows['author'];
 
-$sqlAuth = "SELECT author, auth_detail FROM user_data WHERE author = '$author'";
-$resultAuth = $conn->query($sqlAuth) or die($conn->error);
+// $sqlAuth = "SELECT author, auth_detail FROM user_data WHERE author = '$author'";
+$sqlAuth = "SELECT author, auth_detail FROM user_data WHERE author = ?";
+
+$stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sqlAuth)) {
+                // echo "sqlAuth error";
+        } else {
+                mysqli_stmt_bind_param($stmt, "s", $author);
+                mysqli_stmt_execute($stmt);
+                $resultAuth = mysqli_stmt_get_result($stmt);
+        }
+
+
+
+// $resultAuth = $conn->query($sqlAuth) or die($conn->error);
 $rowsAuth = mysqli_fetch_assoc($resultAuth);
 
 $sqlZinNow = "SELECT * FROM zin WHERE publish='now' AND display = 'on' ORDER BY id DESC LIMIT 1";
@@ -63,9 +76,21 @@ $zinTitle = $rowZinNow['title'];
         <ul class = 'view_contList'>
             <?php 
             //모든 매거진 콘텐츠
-            $sqlCont = "SELECT * FROM contents WHERE display = 'on'  AND category = '{$rows['category']}' OR (display = 'ok'  AND category = '{$rows['category']}') ORDER BY sess*1 DESC";
-            // $sqlCont = "SELECT * FROM contents WHERE display = 'on' AND zin!='$zinTitle' AND category = '{$rows['category']}' ORDER BY sess DESC";
-            $resultCont = $conn->query($sqlCont) or die($conn->error);
+            // $thisCat = $rows['category'];
+            // $sqlCont = "SELECT * FROM contents WHERE display = 'on'  AND category = '$thisCat' OR (display = 'ok'  AND category = '$thisCat') ORDER BY sess*1 DESC";
+            $sqlCont = "SELECT * FROM contents WHERE display = 'on'  AND category = ? OR (display = 'ok'  AND category = ?) ORDER BY sess*1 DESC";
+            
+            $stmt = mysqli_stmt_init($conn);
+            if (!mysqli_stmt_prepare($stmt, $sqlCont)) {
+                // echo "sqlCont error";
+            } else {
+                mysqli_stmt_bind_param($stmt, "ss", $thisCat, $thisCat);
+                mysqli_stmt_execute($stmt);
+                $resultCont = mysqli_stmt_get_result($stmt);
+            }
+            
+            
+            // $resultCont = $conn->query($sqlCont) or die($conn->error);
             
             if($resultCont->num_rows >0){
                 while($rowCont = $resultCont->fetch_assoc()) {
@@ -103,30 +128,7 @@ $zinTitle = $rowZinNow['title'];
                     </li>';
                 }
             }
-            //         echo "
-            //     <li class='cont_li'>
-            //                                         <a href='#' id = '{$rowCont['id']}' onclick = 'frontContList(this.id)'>
-            
-            //                                                 <div class='li_number'>
-            //                                                     <p>";
-            //     echo $rowCont['sess'];
-            //     echo '</p>
-            //                                                 </div>
-            //                                                 <div class="li_title">
-            //                                                     <p>';
-            //     echo $rowCont['title'];
-            //     echo '</p>
-            //                                                 </div>
-            //                                                 <div class="li_created">
-            //                                                     <p>';
-            //     echo $rowCont['created'];
-            //     echo '</p>
-            //                                                 </div>
-            
-            //                                         </a>
-            //     </li>';
-            //     }
-            // }
+          
             
             
             ?>
@@ -145,15 +147,7 @@ $zinTitle = $rowZinNow['title'];
 
 
         <footer id="bbdd_ft">
-            <!-- <div id="bbdd_ft_wrap">
-                <div id="bbdd_ft_area">
-                    <div class="ft_con">
-                        <p class="gg-title">
-                            COPYRIGHT 2020 변방의북소리.
-                        </p>
-                    </div>
-                </div>
-            </div> -->
+            
             <?php include "footer.php";?>
         </footer>
         
