@@ -56,11 +56,9 @@ if ($resultCatNow->num_rows > 0) {
 //     ";
     echo "
     <div class = 'mega_title'>
-    <h2 id='zinTitle' class = 'gg-batang zin_title' title=";
-    echo '"'.$zinDetail.'"';
-    echo">";
-    // <h2 class = 'sm3-kk gg-bold zin_title'>";
-    // echo $rowZinNow['title'];
+    <h2 id='zinTitle' class = 'gg-batang zin_title'>";
+    
+ 
     echo $zinTitle;
     echo "</h2>
     
