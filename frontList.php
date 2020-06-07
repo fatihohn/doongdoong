@@ -24,14 +24,31 @@ $resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
 
 //이번호 연재물별 게시물 리스트
 if ($resultCatNow->num_rows > 0) {
+    // echo "
+    //     <div class = 'mega_title'>
+    //         <h2 class = 'gg-batang zin_title' title=";
+    // echo '"'.$zinDetail.'"';
+    // echo">";
+    // echo $zinTitle;
+    // echo "</h2>
+    //     </div>";
+
     echo "
-        <div class = 'mega_title'>
-            <h2 class = 'gg-batang zin_title' title=";
-    echo '"'.$zinDetail.'"';
-    echo">";
+    <div class = 'mega_title'>
+    <h2 id='zinTitle' class = 'gg-batang zin_title'>";
+    
+ 
     echo $zinTitle;
     echo "</h2>
-        </div>";
+    
+    <div id='zinDetail' class='zin_detail'>";
+    echo $zinDetail;
+    echo "</div>
+    </div>
+    
+    ";
+
+
     // output data of each row
     while($rowCatNow = $resultCatNow->fetch_assoc()) {
         // echo "{$rowCatNow['category']}";
@@ -344,3 +361,14 @@ echo "</div>
 
 
 ?>
+<script>
+if (document.getElementById("zinTitle")) {
+    function showZinDetail() {
+        document.getElementById("zinDetail").style.display = "initial";
+        document.getElementById("zinTitle").style.paddingBottom = "15px";
+        }
+    }
+
+    document.getElementById("zinTitle").addEventListener("click", showZinDetail);
+
+</script>
