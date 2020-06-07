@@ -399,6 +399,7 @@
         max-width: 100%;
         height: auto;
         border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     }
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_detail {
