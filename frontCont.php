@@ -221,14 +221,25 @@ $idPrev = $rowsPrev['id'];
 
 $noCont = "noCont";
 
-if($qVal < $idMax && $qVal > $idMin) {
+// if($qVal < $idMax && $qVal > $idMin) {
+//     $idNext = $rowsNext['id'];
+//     $idPrev = $rowsPrev['id'];
+// } else if($qVal == $idMax && $qVal !== $idMin) {
+//     $idNext = $noCont;
+// } else if($qVal == $idMin && $qVal !== $idMax) {
+//     $idPrev = $noCont;
+// } else if($qVal == $idMin && $qVal == $idMax) {
+//     $idNext = $noCont;
+//     $idPrev = $noCont;
+// }
+if($q < intval($idMax) && $q > intval($idMin)) {
     $idNext = $rowsNext['id'];
     $idPrev = $rowsPrev['id'];
-} else if($qVal == $idMax && $qVal !== $idMin) {
+} else if($q == intval($idMax) && $q !== intval($idMin)) {
     $idNext = $noCont;
-} else if($qVal == $idMin && $qVal !== $idMax) {
+} else if($q == intval($idMin) && $q !== intval($idMax)) {
     $idPrev = $noCont;
-} else if($qVal == $idMin && $qVal == $idMax) {
+} else if($q == intval($idMin) && $q == intval($idMax)) {
     $idNext = $noCont;
     $idPrev = $noCont;
 }
@@ -281,6 +292,7 @@ if($qVal < $idMax && $qVal > $idMin) {
 
 <?php
 //변수 테스트
+echo "<br>";
 echo $idMax;
 echo "<br>";
 echo $idMin;
