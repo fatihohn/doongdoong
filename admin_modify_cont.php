@@ -181,14 +181,36 @@ $zinSql = "SELECT * FROM zin WHERE `display` = 'on' OR `display`='ok'";
                     <select class="createGrid2" name="sess" id="sessCat" required>
 
                     <?php
-                    $sessOnSql = "SELECT * FROM contents WHERE `category` = '$category' AND `display`='on' ORDER BY sess*1 DESC LIMIT 1 ";
-                    $resultSessOn = $conn->query($sessOnSql);    
+                    // $sessOnSql = "SELECT * FROM contents WHERE `category` = '$category' AND `display`='on' ORDER BY sess*1 DESC LIMIT 1 ";
+                    $sessOnSql = "SELECT * FROM contents WHERE `category` = ? AND `display`='on' ORDER BY sess*1 DESC LIMIT 1 ";
+
+                    $stmt = mysqli_stmt_init($conn);
+                        if (!mysqli_stmt_prepare($stmt, $sessOnSql)) {
+                                // echo "sessOnSql error";
+                        } else {
+                                mysqli_stmt_bind_param($stmt, "s", $category);
+                                mysqli_stmt_execute($stmt);
+                                $resultSessOn = mysqli_stmt_get_result($stmt);
+                        }
+
+                    // $resultSessOn = $conn->query($sessOnSql);    
                     $rowSessOn = $resultSessOn->fetch_assoc();
                     $sessOnLatest = intval($rowSessOn['sess']);
                 
                 
-                    $sessSql = "SELECT * FROM contents WHERE `category` = '$category' AND `display`='on' OR `display`='ok' ORDER BY sess*1 DESC LIMIT 1 ";
-                    $resultSess = $conn->query($sessSql);    
+                    // $sessSql = "SELECT * FROM contents WHERE `category` = '$category' AND `display`='on' OR `display`='ok' ORDER BY sess*1 DESC LIMIT 1 ";
+                    $sessSql = "SELECT * FROM contents WHERE `category` = ? AND `display`='on' OR `display`='ok' ORDER BY sess*1 DESC LIMIT 1 ";
+                    
+                    $stmt = mysqli_stmt_init($conn);
+                        if (!mysqli_stmt_prepare($stmt, $sessSql)) {
+                                // echo "sessSql error";
+                        } else {
+                                mysqli_stmt_bind_param($stmt, "s", $category);
+                                mysqli_stmt_execute($stmt);
+                                $resultSess = mysqli_stmt_get_result($stmt);
+                        }
+                    
+                    // $resultSess = $conn->query($sessSql);    
                     $rowSess = $resultSess->fetch_assoc();
                     $sessAll = intval($rowSess['sess']);
                     $sessOkLatest = intval($rowSess['sess']);
