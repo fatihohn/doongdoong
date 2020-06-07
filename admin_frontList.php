@@ -56,7 +56,7 @@ if ($resultCatNow->num_rows > 0) {
 //     ";
     echo "
     <div class = 'mega_title'>
-    <h2 class = 'gg-batang zin_title' title=";
+    <h2 id='zinTitle' class = 'gg-batang zin_title' title=";
     echo '"'.$zinDetail.'"';
     echo">";
     // <h2 class = 'sm3-kk gg-bold zin_title'>";
@@ -64,7 +64,7 @@ if ($resultCatNow->num_rows > 0) {
     echo $zinTitle;
     echo "</h2>
     
-    <p class='zin_detail'>";
+    <p id='zinDetail' class='zin_detail'>";
     echo $zinDetail;
     echo "</p>
     </div>
@@ -425,12 +425,12 @@ echo "</div>
     
 ?>
 <script>
-if (document.querySelector(".zin_title")) {
+if (document.getElementById("zinTitle")) {
     function showZinDetail() {
-        document.querySelector(".zin_detail").style.display = "initial";
+        document.getElementById("zinDetail").style.display = "initial";
         }
     }
 
-    document.querySelector(".zin_title").addEventListener("hover", showZinDetail);
+    document.getElementById("zinTitle").addEventListener("hover", showZinDetail);
 
 </script>
