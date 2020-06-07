@@ -123,8 +123,8 @@ if ($resultCatNow->num_rows > 0) {
                                     <div class='category_list'>
                                         <a id='{$rowCatNow["id"]}' class='cat frontCat' name='$catId' onclick='adminAllCatShow(this.id, this.name)' >";
                                         // <a href='#' id='{$rowCatNow["id"]}' class='txt frontCat' onclick = 'frontCatList(this.id)'>";
-        // echo "<div class='cat_img' style=background-image:url(";
-        echo "<li class='cat_img' style=background-image:url(";
+        echo "<div class='cat_img' style=background-image:url(";
+        // echo "<li class='cat_img' style=background-image:url(";
         echo '"';
         echo $rowCatNow['img_dir'];
         echo '");';
@@ -142,13 +142,14 @@ echo '</p>
         </div>
         </div>';
 
-        // echo '  </div>';
-        echo '  </li>';
+        echo '  </div>';
+        // echo '  </li>';
 
         echo '
                                             
                                             
                                             </a>
+                                            </div>
                                             <ul class="cat_list">
                                             ';
 
