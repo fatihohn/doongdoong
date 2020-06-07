@@ -29,7 +29,8 @@ if($bSuccessUpload) {
 			mkdir($uploadDir, 0777);
 		}
 		
-		$newPath = $uploadDir.urlencode("c".$contNoThis."_".$_FILES['Filedata']['name']);
+		// $newPath = $uploadDir.urlencode("c".$contNoThis."_".$_FILES['Filedata']['name']);
+		$newPath = $uploadDir.urlencode("c".$contNoThis."_".date("YmdHis").mt_rand().$_FILES['Filedata']['name']);
 		
 		@move_uploaded_file($tmp_name, $newPath);
 		
