@@ -41,6 +41,19 @@ echo "<ul class='sc_list_contain'>";
 
 //이번호 연재물별 게시물 리스트
 if ($resultCatNow->num_rows > 0) {
+//     echo "
+//     <div class = 'mega_title'>
+//     <h2 class = 'gg-batang zin_title' title=";
+//     echo '"'.$zinDetail.'"';
+//     echo">";
+//     // <h2 class = 'sm3-kk gg-bold zin_title'>";
+//     // echo $rowZinNow['title'];
+//     echo $zinTitle;
+//     echo "</h2>
+//     </div>
+    
+    
+//     ";
     echo "
     <div class = 'mega_title'>
     <h2 class = 'gg-batang zin_title' title=";
@@ -50,11 +63,11 @@ if ($resultCatNow->num_rows > 0) {
     // echo $rowZinNow['title'];
     echo $zinTitle;
     echo "</h2>
-    </div>
     
     <p class='zin_detail'>";
     echo $zinDetail;
     echo "</p>
+    </div>
     
     ";
     // output data of each row
