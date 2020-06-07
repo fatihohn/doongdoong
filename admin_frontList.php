@@ -428,6 +428,7 @@ echo "</div>
 if (document.getElementById("zinTitle")) {
     function showZinDetail() {
         document.getElementById("zinDetail").style.display = "initial";
+        document.getElementById("zinTitle").style.paddingBottom = "15px";
         }
     }
 

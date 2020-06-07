@@ -264,6 +264,9 @@
         line-height: 5rem;
         font-weight: 600;
     }
+    #bbdd_sc_area .mega_title .zin_title:hover {
+        cursor: pointer;
+    }
     #bbdd_sc_area .mega_title #zinDetail {
         font-size: 1rem;
         /* line-height: 5rem; */
