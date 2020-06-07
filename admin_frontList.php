@@ -51,11 +51,11 @@ if ($resultCatNow->num_rows > 0) {
     echo $zinTitle;
     echo "</h2>
     </div>
-    <div class='zin_detail'>
-    <p>";
+    
+    <p class='zin_detail'>";
     echo $zinDetail;
     echo "</p>
-    </div>
+    
     ";
     // output data of each row
     while($rowCatNow = $resultCatNow->fetch_assoc()) {
