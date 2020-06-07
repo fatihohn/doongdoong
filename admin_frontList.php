@@ -114,8 +114,8 @@ if ($resultCatNow->num_rows > 0) {
         $catId = $rowCatOfNowCont['id'];
         
         if($resultCatNowCont->num_rows > 0) {
-        // echo "  <div class='category'>";
-        echo "  <li class='category'>";
+        echo "  <div class='category'>";
+        // echo "  <li class='category'>";
         
         
           
@@ -188,8 +188,8 @@ echo '</p>
     }
 
     echo "</ul>";
-    echo "        </li>";
-    // echo "        </div>";
+    // echo "        </li>";
+    echo "        </div>";
 };
 
 
