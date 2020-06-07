@@ -380,6 +380,6 @@ if (document.getElementById("zinTitle")) {
         }
     }
 
-    document.getElementById("zinTitle").addEventListener("click", showZinDetail);
+    document.getElementById("zinTitle").addEventListener("click", showZinDetail());
 
 </script>
