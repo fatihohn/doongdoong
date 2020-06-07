@@ -36,8 +36,13 @@ $titleCheck = $titleCheck->fetch_array();
 $tIdSql = "SELECT * FROM thumbs WHERE id=$q";
 $tIdCheck = mysqli_query($conn, $tIdSql);
 $tIdCheck = $tIdCheck->fetch_assoc();
+
+$dQuote = '"';
     if($titleCheck >= 1 && mysqli_real_escape_string($conn, $tIdCheck['category']) !== $category){
-		echo "<script>alert('연재물 제목이 중복됩니다.'); history.back();</script>";
+        echo "<script>alert('연재물 제목이 중복됩니다.'); history.back();</script>";
+    }else if(strpos($category, $dQuote) == true){
+    
+        echo "<script>alert('사용불가능한 연재물 제목입니다.'); history.back();</script>";
 	}else{
         
         

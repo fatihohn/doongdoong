@@ -26,8 +26,14 @@ $titleCheck = $titleCheck->fetch_array();
 $tIdSql = "SELECT * FROM zin WHERE id=$q";
 $tIdCheck = mysqli_query($conn, $tIdSql);
 $tIdCheck = $tIdCheck->fetch_assoc();
+
+$dQuote = '"';
+$sQuote = "'";
+
     if($titleCheck >= 1 && $tIdCheck['title'] !== $title){
-		echo "<script>alert('매거진 제목이 중복됩니다.'); history.back();</script>";
+        echo "<script>alert('매거진 제목이 중복됩니다.'); history.back();</script>";
+    }else if(strpos($title, $dQuote) == true || strpos($title, $sQuote) == true) {
+		echo "<script>alert('사용불가능한 매거진 제목입니다.'); history.back();</script>";
 	}else{
 
         $sql = 
