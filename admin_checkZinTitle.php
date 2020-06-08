@@ -28,6 +28,12 @@
 			?>
 	<div style='font-family:"malgun gothic"; color:red;'><?php echo $zinTitle; ?>는 사용불가능한 매거진입니다.<div>
 <?php
+}else if(strlen($title) > 7) {
+			?>
+	<div style='font-family:"malgun gothic"; color:red;'><?php echo $zinTitle; ?>는 사용불가능한 매거진입니다.<div>
+<?php
+	
+
 		} else {
 
 			
