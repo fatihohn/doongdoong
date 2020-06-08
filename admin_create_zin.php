@@ -80,7 +80,8 @@
                 <div class="createGrid3" id="zinTitleConf"></div>   
                 <div>
                 <p>
-                따옴표('), 큰따옴표(")는 사용할 수 없습니다.
+                * 따옴표('), 큰따옴표(")는 사용할 수 없습니다.
+                ** 7글자 이내.
                 </p>
                 </div> 
             </div>
