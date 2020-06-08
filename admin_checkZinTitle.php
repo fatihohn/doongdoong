@@ -28,40 +28,12 @@
 			?>
 	<div style='font-family:"malgun gothic"; color:red;'><?php echo $zinTitle; ?>는 사용불가능한 매거진입니다.<div>
 <?php
-	
-
 		} else {
-			//한글인 경우
-			if (preg_match("/[\xA1-\xFE][\xA1-\xFE]/", $zinTitle) == 1) {
-				if (mb_strlen($zinTitle, "UTF-8") >= 8) {
-			?>
-			<div style='font-family:"malgun gothic"; color:red;'><?php echo $zinTitle; ?>는 사용불가능한 매거진입니다.<div>
-			<?php
-				} else {
-			?>
-			<div style='font-family:"malgun gothic"';><?php echo $zinTitle; ?>는 사용가능한 매거진입니다.</div>
-			<?php 
-
-				}
-			} else {
-				if (mb_strlen($zinTitle, "UTF-8") >= 16) {
-			?>
-			<div style='font-family:"malgun gothic"; color:red;'><?php echo $zinTitle; ?>는 사용불가능한 매거진입니다.<div>
-			<?php
-				} else {
-			?>
-			<div style='font-family:"malgun gothic"';><?php echo $zinTitle; ?>는 사용가능한 매거진입니다.</div>
-			<?php 
-
-				}
-			}
-
-
 
 			
-			
-
-
+			?>
+	<div style='font-family:"malgun gothic"';><?php echo $zinTitle; ?>는 사용가능한 매거진입니다.</div>
+<?php 
 		}
 	}else{
 ?>
@@ -69,8 +41,3 @@
 <?php
 	}
 ?>
-
-<!-- }else if(mb_strlen($zinTitle, "UTF-8") > 7 || strlen($zinTitle) > 16) {
-			?>
-	<div style='font-family:"malgun gothic"; color:red;'><?php echo $zinTitle; ?>는 사용불가능한 매거진입니다.<div>
-<?php -->
