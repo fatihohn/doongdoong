@@ -20,7 +20,8 @@
 	$dQuote = '"';
 	$sQuote = '\'';
 
-	if($member!==0){
+	// if($member!== 0){
+	if(!isset($member)){
 		?>
 			<div style='font-family:"malgun gothic"; color:red;'><?php echo $zinTitle; ?>는 중복된 매거진입니다.<div>
 		<?php
