@@ -209,6 +209,14 @@ $resultCatPast = $conn->query($sqlCatPast) or die($conn->error);
 //과월호 연재물별 게시물 리스트
 if ($resultCatPast->num_rows >= 1) {
     // output data of each row
+    echo "
+            <div class = 'sc_mega_area'>
+                <div class = 'sc_mega_contain'>
+                    <div class = 'mega_title'>
+                        <h2 class = 'gg-batang'>변방의 북소리</h2>
+                    </div>
+            <ul class = 'mega_list'>
+            ";
     while($rowCatPast = $resultCatPast->fetch_assoc()) {
         $sqlRowCatPastCont = ${"sqlContPast".$rowCatPast['category']};
         $resultCatPastCont = ${"resultContPast".$rowCatPast['category']};
@@ -255,15 +263,8 @@ if ($resultCatPast->num_rows >= 1) {
         
         // $resultContPast = $conn->query($sqlContPast) or die($conn->error);
        
-        echo "
-        <div class = 'sc_mega_area'>
-            <div class = 'sc_mega_contain'>
-                <div class = 'mega_title'>
-                    <h2 class = 'gg-batang'>변방의 북소리</h2>
-                </div>
-        <ul class = 'mega_list'>
-        ";
         if ($resultContPast->num_rows > 0) {
+            
             
 
         echo "
