@@ -36,14 +36,14 @@ $sQuote = "'";
 		echo "<script>alert('매거진 제목이 중복됩니다.'); history.back();</script>";
     }else if(strpos($title, $dQuote) == true || strpos($title, $sQuote) == true) {
 		echo "<script>alert('사용불가능한 매거진 제목입니다.'); history.back();</script>";
-    }else if(preg_match('/[\x{3130}-\x{318F}\x{AC00}-\x{D7AF}]/u', $zinTitle)) {
-        if(mb_strlen($zinTitle, "UTF-8") >= 8) {
+    }else if(preg_match('/[\x{3130}-\x{318F}\x{AC00}-\x{D7AF}]/u', $zinTitle) && mb_strlen($zinTitle, "UTF-8") >= 8) {
+     
         echo "<script>alert('사용불가능한 매거진 제목입니다.'); history.back();</script>";
-        }
-    }else if(!preg_match('/[\x{3130}-\x{318F}\x{AC00}-\x{D7AF}]/u', $zinTitle)) {
-        if(strlen($zinTitle) >= 18) {
+       
+    }else if(!preg_match('/[\x{3130}-\x{318F}\x{AC00}-\x{D7AF}]/u', $zinTitle) && strlen($zinTitle) >= 18) {
+ 
         echo "<script>alert('사용불가능한 매거진 제목입니다.'); history.back();</script>";
-        }
+      
 
     } else {
         if($publish == "ready") {
