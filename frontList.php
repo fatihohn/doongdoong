@@ -261,6 +261,14 @@ if ($resultCatPast->num_rows >= 1) {
     // <ul class = 'mega_list'>
     // ";
     // output data of each row
+    echo "
+    <div class = 'sc_mega_area'>
+        <div class = 'sc_mega_contain'>
+            <div class = 'mega_title'>
+                <h2 class = 'gg-batang'>변방의 북소리</h2>
+            </div>
+    <ul class = 'mega_list'>
+    ";
     while($rowCatPast = $resultCatPast->fetch_assoc()) {
         // echo "{$rowCatPast['category']}";
         $sqlRowCatPastCont = ${"sqlContPast".$rowCatPast['category']};
@@ -301,14 +309,14 @@ if ($resultCatPast->num_rows >= 1) {
         // $resultContPast = $conn->query($sqlContPast) or die($conn->error);
        
         if ($resultContPast->num_rows > 0) {
-            echo "
-            <div class = 'sc_mega_area'>
-                <div class = 'sc_mega_contain'>
-                    <div class = 'mega_title'>
-                        <h2 class = 'gg-batang'>변방의 북소리</h2>
-                    </div>
-            <ul class = 'mega_list'>
-            ";
+            // echo "
+            // <div class = 'sc_mega_area'>
+            //     <div class = 'sc_mega_contain'>
+            //         <div class = 'mega_title'>
+            //             <h2 class = 'gg-batang'>변방의 북소리</h2>
+            //         </div>
+            // <ul class = 'mega_list'>
+            // ";
 
         echo "
         <li class='mega_box'>
@@ -344,13 +352,17 @@ if ($resultCatPast->num_rows >= 1) {
         </li>
         
         ';
-        echo "</ul>";
+//         echo "</ul>";
+
+// echo "</div>
+// </div>";
+} 
+
+}
+echo "</ul>";
 
 echo "</div>
 </div>";
-        } 
-        
-    }
     
     
 };
