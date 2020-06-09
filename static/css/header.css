@@ -263,9 +263,9 @@
 }
 
 #bbdd_nav_area .nav_contain .nav_main>li {
-    /* border-top: 1px dashed #fff; */
-    border-top: 1px dashed rgb(6, 102, 152);
-    /* border-top: 1px dashed rgb(0, 55, 107); */
+   
+    /* border-top: 1px dashed rgb(6, 102, 152); */
+    border-top: 1px solid rgba(6, 102, 152, 0.2);
     padding: 6px 0;
 }
 
