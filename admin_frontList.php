@@ -301,13 +301,13 @@ if ($resultCatPast->num_rows >= 1) {
         
         ';
         
-        echo "</ul>";
-        
-        echo "</div>
-        </div>";
-        } 
-        
-    }
+    } 
+    
+}
+echo "</ul>";
+
+echo "</div>
+</div>";
     
     
 };
