@@ -148,6 +148,16 @@ if ($resultCatPast->num_rows >= 1) {
     // <ul class = 'nav_sub'>
     // ";
     // output data of each row
+
+
+    echo "
+                    <li class = 'nav_main_list'>
+                    <a class = 'gg-title' href = '#'>
+                    변방의 북소리
+                    </a>
+                    <ul class = 'nav_sub'>
+                    ";
+
     while($rowCatPast = $resultCatPast->fetch_assoc()) {
         // echo "{$rowCatPast['category']}";
         // $sqlRowCatPastCont = ${"sqlContPast".$rowCatPast['category']};
@@ -175,13 +185,13 @@ if ($resultCatPast->num_rows >= 1) {
         
                 
                 if ($resultContPast->num_rows > 0) {
-                    echo "
-                    <li class = 'nav_main_list'>
-                    <a class = 'gg-title' href = '#'>
-                    변방의 북소리
-                    </a>
-                    <ul class = 'nav_sub'>
-                    ";
+                    // echo "
+                    // <li class = 'nav_main_list'>
+                    // <a class = 'gg-title' href = '#'>
+                    // 변방의 북소리
+                    // </a>
+                    // <ul class = 'nav_sub'>
+                    // ";
 
                 echo '
                 <li class = "nav_sub_list">
@@ -197,18 +207,18 @@ if ($resultCatPast->num_rows >= 1) {
                 </li>        
                 ';
                 
-                echo "</ul>
-        </li>
+        //         echo "</ul>
+        // </li>
     
-    ";
+    // ";
                 }
 
 
     }
-    // echo "</ul>
-    //     </li>
+    echo "</ul>
+        </li>
     
-    // ";
+    ";
 }
 
 ?>
