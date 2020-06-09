@@ -4,7 +4,6 @@ include 'bbdd_db_conn.php';
 
 
 
-$uploadimg = include 'admin_create_thumbs_files.php';
 
 $author = $_POST['author'];
 $author = mysqli_real_escape_string($conn, $author);
