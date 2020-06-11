@@ -151,7 +151,7 @@ if ($resultCatPast->num_rows >= 1) {
 
 
     echo "
-                    <li class = 'nav_main_list'>
+                    <li id = 'standing_wrap_nav' class = 'nav_main_list'>
                     <a class = 'gg-title' href = '#'>
                     변방의 북소리
                     </a>
@@ -194,7 +194,7 @@ if ($resultCatPast->num_rows >= 1) {
                     // ";
 
                 echo '
-                <li class = "nav_sub_list">
+                <li class = "nav_sub_list standing_cat_nav">
                     <a id="';
                 echo $rowCatPast['id'];
                 echo '" name="';
@@ -229,3 +229,12 @@ if ($resultCatPast->num_rows >= 1) {
                 </div>
             </div>
         </div>
+
+        <script>
+
+if (document.querySelector(".standing_cat_nav")) {
+    document.getElementById("standing_wrap_nav").style.display = "auto";
+} else {
+    document.getElementById("standing_wrap_nav").style.display = "none";
+}
+        </script>
