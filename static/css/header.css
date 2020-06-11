@@ -263,6 +263,25 @@
     border-radius: 10px;
     /* border-right: none; */
 }
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #ffffff; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(6, 102, 152, 0.2); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(6, 102, 152, 0.9); 
+  }
 
 #bbdd_nav_area .nav_contain .nav_main>li {
    
