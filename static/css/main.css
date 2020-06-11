@@ -267,7 +267,7 @@
     }
     #bbdd_sc_area .mega_title .zin_title:hover {
         cursor: pointer;
-        color: rgba(255, 255, 255, 0.3);
+        color: rgba(255, 255, 255, 1.0);
     }
     #bbdd_sc_area .mega_title #zinDetail {
         font-size: 1rem;
