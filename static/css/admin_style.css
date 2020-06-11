@@ -251,6 +251,10 @@ article {
 .zin_table td:nth-child(6) {
     width: 60px;
 }
+.zin_table th:nth-child(7),
+.zin_table td:nth-child(7) {
+    width: 75px;
+}
 
 
 /* 연재물 게시판 */
