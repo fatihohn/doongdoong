@@ -530,7 +530,7 @@
         height: min-content;
         margin: 0 auto;
         font-size: 1.05rem;
-        font-weight: 600;
+        /* font-weight: 600; */
         letter-spacing: 1.8px;
         line-height: 1.9rem;
         color: rgba(0, 0, 0, 0.75);
