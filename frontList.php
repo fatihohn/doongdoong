@@ -264,7 +264,7 @@ if ($resultCatPast->num_rows >= 1) {
     echo "
     <div class = 'sc_mega_area'>
         <div class = 'sc_mega_contain'>
-            <div class = 'mega_title'>
+            <div id = 'standing_wrap' class = 'mega_title'>
                 <h2 class = 'gg-batang'>변방의 북소리</h2>
             </div>
     <ul class = 'mega_list'>
@@ -319,7 +319,7 @@ if ($resultCatPast->num_rows >= 1) {
             // ";
 
         echo "
-        <li class='mega_box'>
+        <li class='mega_box standing_cat'>
         <a  id='{$rowCatPast["id"]}' class='txt cat' name='$catId' onclick = 'frontAllCatShow(this.id, this.name)'>";
         // <a  id='{$rowCatPast["id"]}' class='txt cat' name='$catId' onclick = 'frontCatShow(this.id, this.name)'>";
         echo "      <div class='mega_box_sub' style='background-image:url(";
