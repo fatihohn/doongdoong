@@ -457,7 +457,7 @@ if (document.getElementById("zinTitle")) {
 
     document.getElementById("standing_wrap").style.display = "none";
 if (document.querySelectorAll(".standing_cat")) {
-    document.getElementById("standing_wrap").style.display = "initial";
+    document.getElementById("standing_wrap").style.display = "auto";
 } else {
     document.getElementById("standing_wrap").style.display = "none";
 }
