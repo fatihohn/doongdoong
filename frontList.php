@@ -394,4 +394,10 @@ if (document.getElementById("zinTitle")) {
     document.getElementById("zinDetail").style.display = "none";
     document.getElementById("zinTitle").addEventListener("click", showZinDetail);
 
+
+    if (document.querySelector(".standing_cat")) {
+    document.getElementById("standing_wrap").style.display = "auto";
+} else {
+    document.getElementById("standing_wrap").style.display = "none";
+}
 </script>
