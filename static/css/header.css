@@ -275,12 +275,12 @@
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgba(6, 102, 152, 0.2); 
+    background: rgba(6, 102, 152, 0.0); 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(6, 102, 152, 0.9); 
+    background: rgba(6, 102, 152, 0.2); 
   }
 
 #bbdd_nav_area .nav_contain .nav_main>li {
