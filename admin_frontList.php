@@ -212,7 +212,7 @@ if ($resultCatPast->num_rows >= 1) {
     echo "
             <div class = 'sc_mega_area'>
                 <div class = 'sc_mega_contain'>
-                    <div class = 'mega_title'>
+                    <div id = 'standing_wrap' class = 'mega_title'>
                         <h2 class = 'gg-batang'>변방의 북소리</h2>
                     </div>
             <ul class = 'mega_list'>
@@ -268,7 +268,7 @@ if ($resultCatPast->num_rows >= 1) {
             
 
         echo "
-        <li class='mega_box'>
+        <li class='mega_box standing_cat'>
         <a  id='{$rowCatPast["id"]}' class='txt cat' name='$catId' onclick = 'adminAllCatShow(this.id, this.name)'>";
         echo "      <div class='mega_box_sub' style='background-image:url(";
         echo '"';
@@ -452,4 +452,31 @@ if (document.getElementById("zinTitle")) {
     document.getElementById("zinDetail").style.display = "none";
     document.getElementById("zinTitle").addEventListener("click", showZinDetail);
 
+
+
+
+    document.getElementById("standing_wrap").style.display = "none";
+if (document.querySelectorAll(".standing_cat")) {
+    document.getElementById("standing_wrap").style.display = "initial";
+} else {
+    document.getElementById("standing_wrap").style.display = "none";
+}
+        
+// //     function showStandingTitle() {
+        
+//         let standingStatus = document.getElementById("standing_wrap").style.display;
+//         if(detailStatus == "none"){
+//                 // document.getElementById("zinDetail").style.display = "initial";
+//                 // document.getElementById("zinTitle").style.paddingBottom = "15px";
+//                 document.getElementById("zinDetail").style.display = "initial";
+//                 document.getElementById("zinTitle").style.paddingBottom = "15px";
+                
+//         } else {
+//                 document.getElementById("zinDetail").style.display = "none";
+//                 document.getElementById("zinTitle").style.paddingBottom = "0px";
+
+//         }
+//         }
+//     }
+// //     document.getElementById("zinTitle").addEventListener("click", showZinDetail);
 </script>
