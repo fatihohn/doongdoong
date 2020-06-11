@@ -230,9 +230,12 @@ article {
 
 /* 매거진 게시판 */
 
+.zin_table th:nth-child(1),
+.zin_table td:nth-child(1) {
+    width: 30px;
+}
 .zin_table th:nth-child(2),
 .zin_table td:nth-child(2) {
-    font-weight: 900;
     width: 95px;
 }
 .zin_table th:nth-child(3),
@@ -242,12 +245,10 @@ article {
 }
 .zin_table th:nth-child(5),
 .zin_table td:nth-child(5) {
-    font-weight: 900;
     width: 60px;
 }
 .zin_table th:nth-child(6),
 .zin_table td:nth-child(6) {
-    font-weight: 900;
     width: 60px;
 }
 
