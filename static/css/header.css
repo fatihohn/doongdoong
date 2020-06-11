@@ -254,6 +254,8 @@
     width: 100%;
     padding-right: 0;
     min-height: 50vh;
+    max-height: 70vh;
+    overflow: auto;
     background-color: #ffffff;
     border: 2px dashed rgba(6, 102, 152, 0.9);
     /* border: 2px dashed rgba(0, 55, 107, 0.9); */
