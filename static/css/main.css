@@ -11,6 +11,7 @@
         background-color: rgba(6, 102, 152);
         margin-top: 80px;
         padding-top: 2px;
+        overflow-x: hidden;
     }
     
     #bbdd_sc_area .sc_contain {
