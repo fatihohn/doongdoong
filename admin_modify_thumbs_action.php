@@ -3,8 +3,12 @@
 include 'bbdd_db_conn.php';
 
 
-
 $q = intval($_POST['id']); 
+$catOriginalSql = "SELECT * FROM thumbs WHERE id= $q";
+$resultCatOriginal = $conn->query($catOriginalSql);
+                $rowsCatOriginal = mysqli_fetch_assoc($resultCatOriginal);
+$category_original = $rowsCatOriginal['category'];
+
 $author = $_POST['author'];
 $author = mysqli_real_escape_string($conn, $author);
 // $author = mysql_real_escape_string($author);
@@ -78,6 +82,16 @@ if($_FILES['img']['size']!==0) {
                 WHERE `id`='$q'";
                 $sql = $sql0;
                 echo "<br>sql0";
+
+
+                if($category !== $category_original) {
+
+                    $updateCatSql = 
+                        "UPDATE contents SET
+                        `category`='$category'
+                        WHERE `category`='$category_original'";
+                }
+
             } else  {
                 $sql1 = 
                 "UPDATE thumbs SET 
@@ -92,6 +106,13 @@ if($_FILES['img']['size']!==0) {
                 $sql = $sql1;
                 echo "<br>sql1";
 
+                if($category !== $category_original) {
+                    
+                    $updateCatSql = 
+                        "UPDATE contents SET
+                        `category`='$category'
+                        WHERE `category`='$category_original'";
+                }
                 
 
             }
@@ -101,14 +122,28 @@ if($_FILES['img']['size']!==0) {
     }
 
 $result = mysqli_query($conn, $sql);
+// if ($category !== $category_original) {
+//     $resultUpdateCat = mysqli_query($conn, $updateCatSql);
+// }
+
+
 // $result = $conn->query($sql);
 
 
-   
-    if($result){
-        echo("<script>alert('연재물이 수정되었습니다.');location.href='admin_thumbsList.php';</script>");
-    }
-    else{
+
+if($result){
+    if ($category !== $category_original) {
+        $resultUpdateCat = mysqli_query($conn, $updateCatSql);
+            if ($resultUpdateCat) {
+                echo("<script>alert('연재물이 수정되었습니다.');location.href='admin_thumbsList.php';</script>");
+            } else {
+                echo '연재물 저장실패. 관리자에게 문의해주세요';
+                error_log(mysqli_error($conn));
+            }
+        } else {
+            echo("<script>alert('연재물이 수정되었습니다.');location.href='admin_thumbsList.php';</script>");
+        }
+    } else {
         echo '연재물 저장실패. 관리자에게 문의해주세요';
         error_log(mysqli_error($conn));
     }
