@@ -159,16 +159,9 @@ if ($resultCatPast->num_rows >= 1) {
                     ";
 
     while($rowCatPast = $resultCatPast->fetch_assoc()) {
-        // echo "{$rowCatPast['category']}";
-        // $sqlRowCatPastCont = ${"sqlContPast".$rowCatPast['category']};
-        // $resultCatPastCont = ${"resultContPast".$rowCatPast['category']};
-        // $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = '{$rowCatPast['category']}' ORDER BY sess DESC LIMIT 3";
-        // $resultCatPastCont = $conn->query($sqlRowCatPastCont) or die($conn->error);
-        // $rowCatPastCont = ${"rowCatPast".$rowCatPast['category']};
+ 
         $catTitlePast = $rowCatPast['category'];
-        // $catTitlePast = mysqli_real_escape_string($conn, $catTitlePast);
 
-        // $sqlContPast = "SELECT * FROM contents WHERE zin!='$zinTitle' AND category='$catTitlePast' AND display='on'";
         $sqlContPast = "SELECT * FROM contents WHERE zin!=? AND category=? AND display='on'";
         
         $stmt = mysqli_stmt_init($conn);
