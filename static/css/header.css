@@ -457,8 +457,11 @@
         padding-right: 10px;
     }
     #bbdd_hd_area .hd_contain .hd_zin {
-        font-size: 2.2rem;
+        font-size: 2rem;
         top: 25%;
+        width: 40%;
+        margin: 0 30%;
+        
     }
     #bbdd_nav {
         width: 100%;
