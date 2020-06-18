@@ -311,6 +311,11 @@
     text-decoration: underline;
 }
 
+#standing_wrap_nav a {
+    font-size: 1.3rem;
+    padding-bottom: 5px;
+}
+
 #bbdd_nav_area .nav_contain .nav_main>li>ul {
     width: 100%;
     margin-top: 6px;

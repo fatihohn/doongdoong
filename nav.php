@@ -104,7 +104,7 @@ if ($resultCatPast->num_rows >= 1) {
 if ($resultCatNow->num_rows > 0) {
     // output data of each row
     echo '      <li class="nav_main_list">';
-    echo '          <a href = "./" class="gg-batang nav_zin_title" >';
+    echo '          <a href = "./" class="gg-title nav_zin_title" >';
     echo                $rowZinNow['title'];
     echo '          </a>';
     echo "          <ul class='nav_sub'>";
