@@ -41,7 +41,65 @@ $resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
                         
 <?php
 
+//****지난호****//
+// //지난호 연재물(category) 목록
+$sqlCatPast = "SELECT * FROM thumbs WHERE display = 'on' ORDER BY author DESC";
+$resultCatPast = $conn->query($sqlCatPast) or die($conn->error);
 
+
+//지난호 연재물별 게시물 리스트
+if ($resultCatPast->num_rows >= 1) {
+
+    echo "
+                <li id = 'standing_wrap_nav' class = 'nav_main_list'>
+                    <a class = 'gg-title' href = '#'>
+                        둥둥
+                    </a>
+                    <ul class = 'nav_sub'>
+                ";
+
+    while($rowCatPast = $resultCatPast->fetch_assoc()) {
+ 
+        $catTitlePast = $rowCatPast['category'];
+
+        $sqlContPast = "SELECT * FROM contents WHERE zin!=? AND category=? AND display='on'";
+        
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sqlContPast)) {
+        } else {
+                mysqli_stmt_bind_param($stmt, "ss", $zinTitle, $catTitlePast);
+                mysqli_stmt_execute($stmt);
+                $resultContPast = mysqli_stmt_get_result($stmt);
+        }
+        
+        
+        
+                
+                if ($resultContPast->num_rows > 0) {
+
+                echo '
+                        <li class = "nav_sub_list standing_cat_nav">
+                            <a id="';
+                echo        $rowCatPast['id'];
+                echo        '" name="';
+                echo        $catId;
+                echo        '" onclick="frontAllCatShow(this.id, this.name)">
+                                <p>';
+                echo                $rowCatPast['category'];
+                echo '          </p>
+                            </a>
+                        </li>        
+                ';
+                }
+    }
+    echo "          </ul>
+                </li>
+    ";
+}
+//****지난호 끝****//
+
+
+//****연재중****//
 //연재중 연재물 리스트
 if ($resultCatNow->num_rows > 0) {
     // output data of each row
@@ -103,70 +161,18 @@ if ($resultCatNow->num_rows > 0) {
     echo "          </ul>
                 </li>";
 }
-
-// //지난호 연재물(category) 목록
-$sqlCatPast = "SELECT * FROM thumbs WHERE display = 'on' ORDER BY author DESC";
-$resultCatPast = $conn->query($sqlCatPast) or die($conn->error);
+//****연재중 끝****//
 
 
-//지난호 연재물별 게시물 리스트
-if ($resultCatPast->num_rows >= 1) {
 
-    echo "
-                <li id = 'standing_wrap_nav' class = 'nav_main_list'>
-                    <a class = 'gg-title' href = '#'>
-                        둥둥
-                    </a>
-                    <ul class = 'nav_sub'>
-                ";
 
-    while($rowCatPast = $resultCatPast->fetch_assoc()) {
- 
-        $catTitlePast = $rowCatPast['category'];
-
-        $sqlContPast = "SELECT * FROM contents WHERE zin!=? AND category=? AND display='on'";
-        
-        $stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sqlContPast)) {
-        } else {
-                mysqli_stmt_bind_param($stmt, "ss", $zinTitle, $catTitlePast);
-                mysqli_stmt_execute($stmt);
-                $resultContPast = mysqli_stmt_get_result($stmt);
-        }
-        
-        
-        
-                
-                if ($resultContPast->num_rows > 0) {
-
-                echo '
-                        <li class = "nav_sub_list standing_cat_nav">
-                            <a id="';
-                echo        $rowCatPast['id'];
-                echo        '" name="';
-                echo        $catId;
-                echo        '" onclick="frontAllCatShow(this.id, this.name)">
-                                <p>';
-                echo                $rowCatPast['category'];
-                echo '          </p>
-                            </a>
-                        </li>        
-                ';
-                }
-    }
-    echo "          </ul>
-                </li>
-    ";
-}
-
-?>
-                          
+?>           
             <!-- </li> -->
                         
-                    </ul>
-                </div>
-            </div>
+            </ul>
         </div>
+    </div>
+</div>
 
         <script>
 
