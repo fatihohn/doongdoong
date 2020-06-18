@@ -48,27 +48,29 @@ $sQuote = "'";
       
 
 	}else{
-
-        $sql = 
-                "UPDATE zin SET 
-                `author`='$author', 
-                `username`='$username', 
-                `title`='$title', 
-                `zin_detail`='$zin_detail', 
-                `display`='$display', 
-                `publish`='$publish'
-                WHERE `id`='$q'";
-
-
-
-
-        if($publish == "ready") {
+        if($_FILES['img']['size']!==0) {
+            unlink($tIdCheck['img_dir']);
+            $uploadimg = include 'admin_modify_zin_files.php';
+            $sql = 
+                    "UPDATE zin SET 
+                    `author`='$author', 
+                    `username`='$username', 
+                    `title`='$title', 
+                    `img`='{$uploadimg['img']}$filename',
+                    `img_dir`='{$uploadimg['img']}$target_file',
+                    `zin_detail`='$zin_detail', 
+                    `display`='$display', 
+                    `publish`='$publish'
+                    WHERE `id`='$q'";
+            if($publish == "ready") {
         
                 $sql0 = 
                 "UPDATE zin SET 
                 `author`='$author', 
                 `username`='$username', 
-                `title`='$title', 
+                `title`='$title',
+                `img`='{$uploadimg['img']}$filename',
+                `img_dir`='{$uploadimg['img']}$target_file', 
                 `zin_detail`='$zin_detail', 
                 `display`='$display', 
                 `publish`='$publish'
@@ -81,6 +83,8 @@ $sQuote = "'";
                 `author`='$author', 
                 `username`='$username', 
                 `title`='$title', 
+                `img`='{$uploadimg['img']}$filename',
+                `img_dir`='{$uploadimg['img']}$target_file',
                 `zin_detail`='$zin_detail', 
                 `display`='$display', 
                 `publish`='$publish'
@@ -92,11 +96,52 @@ $sQuote = "'";
                     "UPDATE zin SET
                     `publish`='ready'
                     WHERE `title` != '$title'"; 
-                echo "<br>updateNow";
-                
-
+                echo "<br>updateNow";    
             }
-        
+
+        } else {
+            $sql = 
+            "UPDATE zin SET 
+            `author`='$author', 
+            `username`='$username', 
+            `title`='$title', 
+            `zin_detail`='$zin_detail', 
+            `display`='$display', 
+            `publish`='$publish'
+            WHERE `id`='$q'";
+        if($publish == "ready") {
+            $sql0 = 
+            "UPDATE zin SET 
+            `author`='$author', 
+            `username`='$username', 
+            `title`='$title', 
+            `zin_detail`='$zin_detail', 
+            `display`='$display', 
+            `publish`='$publish'
+            WHERE `id`='$q'";
+            $sql = $sql0;
+            echo "<br>sql0";
+        } else if ($publish == "now") {
+            $sql1 = 
+            "UPDATE zin SET 
+            `author`='$author', 
+            `username`='$username', 
+            `title`='$title', 
+            `zin_detail`='$zin_detail', 
+            `display`='$display', 
+            `publish`='$publish'
+            WHERE `id`='$q'";
+            $sql = $sql1;
+            echo "<br>sql1";
+
+            $updateSql= 
+                "UPDATE zin SET
+                `publish`='ready'
+                WHERE `title` != '$title'"; 
+            echo "<br>updateNow";    
+        }
+            
+        }
 
 
     }
