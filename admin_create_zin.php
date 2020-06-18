@@ -81,13 +81,19 @@
                 <div>
                 <p>
                 * 따옴표('), 큰따옴표(")는 사용할 수 없습니다.<br>
-                ** 한글 7글자 이내, 영문 17글자 이내 (띄어쓰기 포함)
+                ** 한글 20글자 이내, 영문 24글자 이내 (띄어쓰기 포함)
                 </p>
                 </div> 
             </div>
             </p>
        
-            
+            <p>
+                <div class="createInput">
+                <label class="createGrid1">매거진 표지</label>
+                <input class="createGrid2" type="file" name="img"  required />
+                
+            </div>
+            </p>
 
             <p>
                 <div class="createInput">
