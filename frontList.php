@@ -286,23 +286,23 @@ echo "  </ul>
 
 ?>
 <script>
-if (document.getElementById("zinTitle")) {
-    function showZinDetail() {
+// if (document.getElementById("zinTitle")) {
+//     function showZinDetail() {
         
-        let detailStatus = document.getElementById("zinDetail").style.display;
-        if(detailStatus == "none"){
-                document.getElementById("zinDetail").style.display = "initial";
-                document.getElementById("zinTitle").style.paddingBottom = "15px";
+//         let detailStatus = document.getElementById("zinDetail").style.display;
+//         if(detailStatus == "none"){
+//                 document.getElementById("zinDetail").style.display = "initial";
+//                 document.getElementById("zinTitle").style.paddingBottom = "15px";
                 
-        } else {
-                document.getElementById("zinDetail").style.display = "none";
-                document.getElementById("zinTitle").style.paddingBottom = "0px";
+//         } else {
+//                 document.getElementById("zinDetail").style.display = "none";
+//                 document.getElementById("zinTitle").style.paddingBottom = "0px";
 
-        }
-        }
-    }
-    document.getElementById("zinDetail").style.display = "none";
-    document.getElementById("zinTitle").addEventListener("click", showZinDetail);
+//         }
+//         }
+//     }
+//     document.getElementById("zinDetail").style.display = "none";
+//     document.getElementById("zinTitle").addEventListener("click", showZinDetail);
 
 
     if (document.querySelector(".standing_cat")) {
