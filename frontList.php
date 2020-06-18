@@ -6,8 +6,8 @@ if ($conn->connect_error) {
 
 
 
-echo "<div class='sc_list_area'>    
-        <ul class='sc_list_contain'>";
+// echo "<div class='sc_list_area'>    
+//         <ul class='sc_list_contain'>";
 
 
 
@@ -20,7 +20,126 @@ $zinDetail = $rowZinNow['zin_detail'];
 
 
 
-//이번호 연재물(category) 목록
+//****과월호****//
+//과월호 SQL
+        
+//과월호 연재물(category) 목록
+$sqlCatPast = "SELECT * FROM thumbs WHERE  display = 'on' ORDER BY author DESC";
+$resultCatPast = $conn->query($sqlCatPast) or die($conn->error);
+
+
+//과월호 연재물별 게시물 리스트
+if ($resultCatPast->num_rows >= 1) {
+    
+
+    echo "
+    <div class = 'sc_mega_area'>
+        <div class = 'sc_mega_contain'>
+            <div id = 'standing_wrap' class = 'mega_title'>
+                <h2 class = 'gg-batang'>변방의 북소리</h2>
+            </div>
+    <ul class = 'mega_list'>
+    ";
+    while($rowCatPast = $resultCatPast->fetch_assoc()) {
+        // echo "{$rowCatPast['category']}";
+        $sqlRowCatPastCont = ${"sqlContPast".$rowCatPast['category']};
+        $resultCatPastCont = ${"resultContPast".$rowCatPast['category']};
+        $rowCatPastCat = $rowCatPast['category'];
+        // $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = '{$rowCatPast['category']}' ORDER BY sess*1 DESC LIMIT 3";
+        // $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = '$rowCatPastCat' ORDER BY sess*1 DESC LIMIT 3";
+        $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = ? ORDER BY sess*1 DESC LIMIT 3";
+
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sqlRowCatPastCont)) {
+                // echo "sqlRowCatPastCont error";
+        } else {
+                mysqli_stmt_bind_param($stmt, "s", $rowCatPastCat);
+                mysqli_stmt_execute($stmt);
+                $resultCatPastCont = mysqli_stmt_get_result($stmt);
+        }
+
+
+
+        $rowCatPastCont = ${"rowCatPast".$rowCatPast['category']};
+        
+        $catTitlePast = $rowCatPast['category'];
+        $sqlContPast = "SELECT * FROM contents WHERE zin!=? AND category=? AND display='on'";
+        
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sqlContPast)) {
+                // echo "sqlContPast error";
+        } else {
+                mysqli_stmt_bind_param($stmt, "ss", $zinTitle, $catTitlePast);
+                mysqli_stmt_execute($stmt);
+                $resultContPast = mysqli_stmt_get_result($stmt);
+        }
+        
+        
+       
+        if ($resultContPast->num_rows > 0) {
+
+
+        echo "
+        <li class='mega_box standing_cat'>
+        <a  id='{$rowCatPast["id"]}' class='txt cat' name='$catId' onclick = 'frontAllCatShow(this.id, this.name)'>";
+        echo "      <div class='mega_box_sub' style='background-image:url(";
+        echo '"';
+        echo    $rowCatPast['img_dir'];
+        echo    '");';
+        echo    "'>";
+        
+        echo '   
+        <div class="mega_list_wrap">
+        
+        <div class="mega_list_title">
+                        <h2 class="gg-bold">';
+        echo $rowCatPast['category'];
+        echo '</h2>
+        </div>
+        <div class="mega_list_auther">
+        <p>';
+        echo $rowCatPast['author'];
+        echo '</p>
+        </div>
+        </div>
+        ';
+        
+        
+        
+        echo '
+        </div>
+        </a>
+        </li>
+        
+        ';
+//         echo "</ul>";
+
+// echo "</div>
+// </div>";
+} 
+
+}
+echo "</ul>";
+
+echo "</div>
+</div>";
+    
+    
+};
+// echo "</ul>";
+
+// echo "</div>
+// </div>";
+//****과월호 끝****//
+
+
+
+
+
+
+
+
+//****이번호 연재물(category) 목록****//
 $sqlCatNow = "SELECT * FROM thumbs WHERE  display = 'on' ORDER BY author DESC";
 // $sqlCatNow = "SELECT * FROM thumbs WHERE zin= '$zinTitle' AND display = 'on' ORDER BY author DESC";
 // $sqlCatNow = "SELECT * FROM thumbs WHERE publish='now' AND zin= '$zinTitle' AND display = 'on' ORDER BY author DESC";
@@ -29,6 +148,8 @@ $resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
 
 
 //이번호 연재물별 게시물 리스트
+echo "<div class='sc_list_area'>    
+        <ul class='sc_list_contain'>";
 if ($resultCatNow->num_rows > 0) {
     // echo "
     //     <div class = 'mega_title'>
@@ -38,7 +159,6 @@ if ($resultCatNow->num_rows > 0) {
     // echo $zinTitle;
     // echo "</h2>
     //     </div>";
-
     echo "
         <div class = 'mega_title'>
             <h2 id='zinTitle' class = 'gg-batang zin_title'>";
@@ -152,123 +272,16 @@ if ($resultCatNow->num_rows > 0) {
 
 };
 
-echo "</ul>
-        </div>";
+echo "  </ul>
+    </div>";
+    //****이번호 끝****//
 
     
 
 
 
 
-//과월호 SQL
-        
-//과월호 연재물(category) 목록
-$sqlCatPast = "SELECT * FROM thumbs WHERE  display = 'on' ORDER BY author DESC";
-$resultCatPast = $conn->query($sqlCatPast) or die($conn->error);
 
-
-//과월호 연재물별 게시물 리스트
-if ($resultCatPast->num_rows >= 1) {
-    
-
-    echo "
-    <div class = 'sc_mega_area'>
-        <div class = 'sc_mega_contain'>
-            <div id = 'standing_wrap' class = 'mega_title'>
-                <h2 class = 'gg-batang'>변방의 북소리</h2>
-            </div>
-    <ul class = 'mega_list'>
-    ";
-    while($rowCatPast = $resultCatPast->fetch_assoc()) {
-        // echo "{$rowCatPast['category']}";
-        $sqlRowCatPastCont = ${"sqlContPast".$rowCatPast['category']};
-        $resultCatPastCont = ${"resultContPast".$rowCatPast['category']};
-        $rowCatPastCat = $rowCatPast['category'];
-        // $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = '{$rowCatPast['category']}' ORDER BY sess*1 DESC LIMIT 3";
-        // $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = '$rowCatPastCat' ORDER BY sess*1 DESC LIMIT 3";
-        $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = ? ORDER BY sess*1 DESC LIMIT 3";
-
-        $stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sqlRowCatPastCont)) {
-                // echo "sqlRowCatPastCont error";
-        } else {
-                mysqli_stmt_bind_param($stmt, "s", $rowCatPastCat);
-                mysqli_stmt_execute($stmt);
-                $resultCatPastCont = mysqli_stmt_get_result($stmt);
-        }
-
-
-
-        $rowCatPastCont = ${"rowCatPast".$rowCatPast['category']};
-        
-        $catTitlePast = $rowCatPast['category'];
-        $sqlContPast = "SELECT * FROM contents WHERE zin!=? AND category=? AND display='on'";
-        
-        $stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sqlContPast)) {
-                // echo "sqlContPast error";
-        } else {
-                mysqli_stmt_bind_param($stmt, "ss", $zinTitle, $catTitlePast);
-                mysqli_stmt_execute($stmt);
-                $resultContPast = mysqli_stmt_get_result($stmt);
-        }
-        
-        
-       
-        if ($resultContPast->num_rows > 0) {
-
-
-        echo "
-        <li class='mega_box standing_cat'>
-        <a  id='{$rowCatPast["id"]}' class='txt cat' name='$catId' onclick = 'frontAllCatShow(this.id, this.name)'>";
-        echo "      <div class='mega_box_sub' style='background-image:url(";
-        echo '"';
-        echo    $rowCatPast['img_dir'];
-        echo    '");';
-        echo    "'>";
-        
-        echo '   
-        <div class="mega_list_wrap">
-        
-        <div class="mega_list_title">
-                        <h2 class="gg-bold">';
-        echo $rowCatPast['category'];
-        echo '</h2>
-        </div>
-        <div class="mega_list_auther">
-        <p>';
-        echo $rowCatPast['author'];
-        echo '</p>
-        </div>
-        </div>
-        ';
-        
-        
-        
-        echo '
-        </div>
-        </a>
-        </li>
-        
-        ';
-//         echo "</ul>";
-
-// echo "</div>
-// </div>";
-} 
-
-}
-echo "</ul>";
-
-echo "</div>
-</div>";
-    
-    
-};
-// echo "</ul>";
-
-// echo "</div>
-// </div>";
 
 
 ?>
