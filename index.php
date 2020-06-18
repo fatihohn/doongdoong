@@ -17,7 +17,7 @@
         <div id="bbdd_sc_area">
             <div class="sc_contain">
                 <div class="sc_list_area">
-                    <ul class="sc_list_contain">
+                    <!-- <ul class="sc_list_contain"> -->
                         <?php include "frontList.php"; ?>
                            
                 

@@ -6,6 +6,9 @@ if ($conn->connect_error) {
 
 
 
+echo "<ul class='sc_list_contain'>";
+
+
 
 $sqlZinNow = "SELECT * FROM zin WHERE publish='now' AND display = 'on' ORDER BY id DESC LIMIT 1";
 $resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
@@ -13,6 +16,8 @@ $rowZinNow = $resultZinNow->fetch_assoc();
 
 $zinTitle = $rowZinNow['title'];
 $zinDetail = $rowZinNow['zin_detail'];
+
+
 
 //이번호 연재물(category) 목록
 $sqlCatNow = "SELECT * FROM thumbs WHERE  display = 'on' ORDER BY author DESC";
@@ -34,17 +39,15 @@ if ($resultCatNow->num_rows > 0) {
     //     </div>";
 
     echo "
-    <div class = 'mega_title'>
-    <h2 id='zinTitle' class = 'gg-batang zin_title'>";
+        <div class = 'mega_title'>
+            <h2 id='zinTitle' class = 'gg-batang zin_title'>";
+    echo        $zinTitle;
+    echo"   </h2>
     
- 
-    echo $zinTitle;
-    echo "</h2>
-    
-    <div id='zinDetail' class='zin_detail'>";
-    echo $zinDetail;
-    echo "</div>
-    </div>
+        <div id='zinDetail' class='zin_detail'>";
+    echo    $zinDetail;
+    echo "  </div>
+        </div>
     
     ";
 
@@ -90,62 +93,53 @@ if ($resultCatNow->num_rows > 0) {
         
         if($resultCatNowCont->num_rows >0) {
         echo "
-        <div class='category'>
-        
-        
-          
-                                
-                                    <div class='category_list'>
-                                        <a id='{$rowCatNow["id"]}' class='cat frontCat' name='$catId' onclick='frontCatShow(this.id, this.name)' >";
-                                        // <a href='#' id='{$rowCatNow["id"]}' class='txt frontCat' onclick = 'frontCatList(this.id)'>";
-        echo "<div class='cat_img' style=background-image:url(";
+                <div class='category'>
+                    <div class='category_list'>
+                        <a id='{$rowCatNow["id"]}' class='cat frontCat' name='$catId' onclick='frontCatShow(this.id, this.name)' >";
+        echo "              <div class='cat_img' style=background-image:url(";
         echo '"';
         echo $rowCatNow['img_dir'];
         echo '");';
         echo "'>";
         echo '
-        <div class="cat_title">
-            <h2 class="gg-bold">';
-        echo $rowCatNow['category'];
-        echo '</h2>
-                <div class="cat_author">
-                    <p>';
-        echo $rowCatNow['author'];
-        echo '</p>
-        </div>
-        </div>
-                                            </div>
-                                            
-                                            
-                                            </a>
-                                            <ul class="cat_list">
+                                <div class="cat_title">
+                                    <h2 class="gg-bold">';
+        echo                            $rowCatNow['category'];
+        echo '                      </h2>
+                                    <div class="cat_author">
+                                        <p>';
+        echo                                $rowCatNow['author'];
+        echo '                          </p>
+                                    </div>
+                                </div>
+                            </div>                              
+                        </a>
+                        <ul class="cat_list">
                                             ';
 
 
         // if($resultCatNowCont->num_rows > 0) {
             while($rowCatNowCont = $resultCatNowCont->fetch_assoc()) {
                 echo "
-                <li class='cat_li'>
-                                                    <a  id = '{$rowCatNowCont['id']}' class = 'cont frontCont' name = '$catId' onclick = 'frontContShow(this.id, this.name)'>
-                                                        
-                                                            <div class='li_number'>
-                                                                <p>";
-                echo $rowCatNowCont['sess'];
-                echo '회</p>
-                                                            </div>
-                                                            <div class="li_title">
-                                                                <p>';
-                echo $rowCatNowCont['title'];
-                echo '</p>
-                                                            </div>
-                                                        
-                                                    </a>
-                </li>';
-
+                            <li class='cat_li'>
+                                <a  id = '{$rowCatNowCont['id']}' class = 'cont frontCont' name = '$catId' onclick = 'frontContShow(this.id, this.name)'>
+                                     <div class='li_number'>
+                                        <p>";
+                echo                        $rowCatNowCont['sess'];
+                echo '                      회
+                                        </p>
+                                    </div>
+                                    <div class="li_title">
+                                        <p>';
+                echo                        $rowCatNowCont['title'];
+                echo '                  </p>
+                                    </div>                 
+                                </a>
+                            </li>';
             }
-            echo '</ul>
-            </div>
-            </div>
+            echo '      </ul>
+                    </div>
+                </div>
             
             ';
         }
