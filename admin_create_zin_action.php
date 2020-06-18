@@ -53,8 +53,8 @@ $sQuote = "'";
         if($publish == "ready") {
         
                 $sql = "
-                    INSERT INTO `zin`
-                        (`author`, `username`, `title`, `img`, `img_dir`, `zin_detail`, `display`, `publish`, `created`)
+                    INSERT INTO zin
+                        (author, username, title, img, img_dir, zin_detail, display, publish, created)
                     VALUES(
                         '{$author}',
                         '{$username}',
@@ -81,8 +81,8 @@ $sQuote = "'";
                 //         )";
             } else if ($publish == "now") {
                 $sql = "
-                INSERT INTO `zin`
-                    (`author`, `username`, `title`, `img`, `img_dir`, `zin_detail`, `display`, `publish`, `created`)
+                INSERT INTO zin
+                    (author, username, title, img, img_dir, zin_detail, display, publish, created)
                 VALUES(
                     '{$author}',
                     '{$username}',
