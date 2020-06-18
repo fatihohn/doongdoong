@@ -2,10 +2,9 @@
     <div id="bbdd_sc_wrap">
         <div id="bbdd_sc_area">
             <div class="sc_contain">
-                <div class="sc_list_area">
+                <!-- <div class="sc_list_area"> -->
                         <?php include "admin_frontList.php"; ?>
-                                     
-            <!-- </div> -->
+                       
             </div>
         </div>
     </div>
