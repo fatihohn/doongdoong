@@ -254,15 +254,15 @@
     }
     
     #bbdd_sc_area .mega_title h2 {
-        font-size: 1.2rem;
-        line-height: 1.2rem;
-        font-weight: 300;
+        font-size: 4rem;
+        line-height: 5rem;
+        font-weight: 900;
         color: rgba(255, 255, 255, 0.8);
     }
     
     #bbdd_sc_area .mega_title .zin_title {
-        font-size: 4rem;
-        line-height: 5rem;
+        font-size: 2rem;
+        line-height: 3rem;
         font-weight: 600;
     }
     #bbdd_sc_area .mega_title .zin_title:hover {
