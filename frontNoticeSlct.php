@@ -87,75 +87,74 @@ if($qVal < $idMax && $qVal > $idMin) {
                     <div class="view_wrap_line">
                         <div class = 'gg-batang view_cont_content'>
                             <!-- <?php// echo $rows['content']?> -->
-<?php
+                            <div class='cat_wrap'>
+
+                                <?php
 $sqlCat = "SELECT * FROM thumbs WHERE display = 'on'";
 $resultCat = $conn->query($sqlCat) or die($conn->error);
 
 if($resultCat->num_rows > 0) {
-    echo $zinTitle;
+    echo "<div class='magazin_title'>";
+    echo    $zinTitle;
+    echo "</div>";
     while($rowCat = $resultCat->fetch_assoc()) {
         $catTitle = $rowCat['category'];
         $sqlCatZinCont = "SELECT * FROM contents WHERE display = 'on' AND zin = '$zinTitle' AND category = '$catTitle' ORDER BY id DESC LIMIT 1";
         $resultCatZinCont = $conn->query($sqlCatZinCont) or die($conn->error);
         // $stmt = mysqli_stmt_init($conn);
         // if (!mysqli_stmt_prepare($stmt, $sqlZinCont)) {
-        //         // echo "sqlZinCont error";
-        // } else {
-        //         mysqli_stmt_bind_param($stmt, "ss", $zinTitle, $catTitle);
-        //         mysqli_stmt_execute($stmt);
-        //         $resultCatZinCont = mysqli_stmt_get_result($stmt);
-        // }
-        
-        $rowCatZinCont = $resultCatZinCont->fetch_assoc();
-
-
-        if($resultCatZinCont->num_rows > 0) {
-            echo "
-                    <div class='category'>
-                        <div class='category_list'>
-                            <a id='{$rowCat["id"]}' class='cat frontCat' onclick='frontAllCatShow(this.id)' >";
-            echo "              <div class='cat_img' style=background-image:url(";
-            echo '"';
-            echo $rowCat['img_dir'];
-            echo '");';
-            echo "'>";
-            echo '
-                                    <div class="cat_title">
-                                        <h2 class="gg-bold">';
-            echo                            $rowCat['category'];
-            echo '                      </h2>
-                                        <div class="cat_author">
-                                            <p>';
-            echo                                $rowCat['author'];
-            echo '                          </p>
-                                        </div>
-                                    </div>
-                                </div>                              
-                            </a>
-                            <ul class="cat_list">
-                                                ';
-    
-    
-         
-                echo '      </ul>
-                        </div>
-                    </div>
+            //         // echo "sqlZinCont error";
+            // } else {
+                //         mysqli_stmt_bind_param($stmt, "ss", $zinTitle, $catTitle);
+                //         mysqli_stmt_execute($stmt);
+                //         $resultCatZinCont = mysqli_stmt_get_result($stmt);
+                // }
                 
-                ';
+                $rowCatZinCont = $resultCatZinCont->fetch_assoc();
+                
+                
+                if($resultCatZinCont->num_rows > 0) {
+                    echo "
+                    <div class='category'>
+                    <div class='category_list'>
+                    <a id='{$rowCat["id"]}' class='cat frontCat' onclick='frontAllCatShow(this.id)' >";
+                    echo "              <div class='cat_img' style=background-image:url(";
+                    echo '"';
+                    echo $rowCat['img_dir'];
+                    echo '");';
+                    echo "'>";
+                    echo '
+                    <div class="cat_title">
+                    <h2 class="gg-bold">';
+                    echo                            $rowCat['category'];
+                    echo '                      </h2>
+                    <div class="cat_author">
+                    <p>';
+                    echo                                $rowCat['author'];
+                    echo '                          </p>
+                    </div>
+                    </div>
+                    </div>                              
+                    </a>
+                    </div>
+                    </div>
+                    ';
+                    
+                }
             }
-    }
-}
-?>
+        }
+        ?>
+</div>
 
 
-                            
-                            <div class = 'view_btn'>
-                <?php 
+
+<div class = 'view_btn'>
+    <?php 
                 echo "
-                                <div class='view_btn_past $idPrev' id='$idPrev'  onclick='frontNoticeSlctShow(this.id)'>
-                                ←
-                                </div>
-                                <div class='view_btn_list'   onclick='frontNoticeShow()'>
+                <div class='view_btn_past $idPrev' id='$idPrev'  onclick='frontNoticeSlctShow(this.id)'>
+                ←
+                </div>
+                <div class='view_btn_list'   onclick='frontNoticeShow()'>
                                 ≡
                                 </div>
                                 <div class='view_btn_next $idNext' id='$idNext'  onclick='frontNoticeSlctShow(this.id)'>
