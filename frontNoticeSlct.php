@@ -94,15 +94,16 @@ $resultCat = $conn->query($sqlCat) or die($conn->error);
 if($resultCat->num_rows > 0) {
     while($rowCat = $resultCat->fetch_assoc()) {
         $catTitle = $rowCat['category'];
-        $sqlZinCont = "SELECT * FROM contents WHERE display = 'on' AND zin = ? AND category = ? ORDER BY id DESC LIMIT 1";
-        $stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sqlZinCont)) {
-                // echo "sqlZinCont error";
-        } else {
-                mysqli_stmt_bind_param($stmt, "ss", $zinTitle, $catTitle);
-                mysqli_stmt_execute($stmt);
-                $resultCatZinCont = mysqli_stmt_get_result($stmt);
-        }
+        $sqlCatZinCont = "SELECT * FROM contents WHERE display = 'on' AND zin = ? AND category = ? ORDER BY id DESC LIMIT 1";
+        $resultCatZinCont = $conn->query($sqlCatZinCont) or die($conn->error);
+        // $stmt = mysqli_stmt_init($conn);
+        // if (!mysqli_stmt_prepare($stmt, $sqlZinCont)) {
+        //         // echo "sqlZinCont error";
+        // } else {
+        //         mysqli_stmt_bind_param($stmt, "ss", $zinTitle, $catTitle);
+        //         mysqli_stmt_execute($stmt);
+        //         $resultCatZinCont = mysqli_stmt_get_result($stmt);
+        // }
         
         $rowCatZinCont = $resultCatZinCont->fetch_assoc();
         if($resultCatZinCont->num_rows > 0) {
