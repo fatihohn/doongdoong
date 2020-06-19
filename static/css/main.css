@@ -490,6 +490,11 @@
         color: rgba(0, 0, 0);
         text-align: left;
     }
+    #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .zin_cover img {
+        width: 320px;
+        height: auto;
+        border-radius: 5px;
+    }
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .cont_li a .li_created {
         float: right;
