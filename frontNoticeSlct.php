@@ -92,6 +92,7 @@ $sqlCat = "SELECT * FROM thumbs WHERE display = 'on'";
 $resultCat = $conn->query($sqlCat) or die($conn->error);
 
 if($resultCat->num_rows > 0) {
+    echo $zinTitle;
     while($rowCat = $resultCat->fetch_assoc()) {
         $catTitle = $rowCat['category'];
         $sqlCatZinCont = "SELECT * FROM contents WHERE display = 'on' AND zin = '$zinTitle' AND category = '$catTitle' ORDER BY id DESC LIMIT 1";
@@ -108,7 +109,6 @@ if($resultCat->num_rows > 0) {
         $rowCatZinCont = $resultCatZinCont->fetch_assoc();
 
 
-        echo $zinTitle;
         if($resultCatZinCont->num_rows > 0) {
             echo "
                     <div class='category'>
