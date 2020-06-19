@@ -621,7 +621,7 @@
     
 
 
-
+/****zin list****/
     #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content .magazin_title {
         font-size: 3rem;
         font-weight: 600;
@@ -643,6 +643,15 @@
     #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content .cat_wrap .category .category_list>a>.cat_img>.cat_title>h2 {
         position: relative;
         top: -30px;
+    }
+    #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content .cat_wrap .category .category_list>a>.cat_img>.cat_title .cat_author {
+        position: relative;
+        top: -90px;
+        text-align: center;
+    }
+    #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content .cat_wrap .category .category_list>a>.cat_img>.cat_title .cat_author>p {
+        
+        text-align: center;
     }
 
 
