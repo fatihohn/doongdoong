@@ -51,7 +51,13 @@ $sQuote = "'";
 	}else{
         $zin = $title;
         $zin_original = $tIdCheck['title'];
-        
+        if($zin !== $zin_original) {
+
+            $updateZinSql = 
+                "UPDATE contents SET
+                `zin`='$zin'
+                WHERE `zin`='$zin_original'";
+        }
 
 
         if($_FILES['img']['size']!==0) {
@@ -86,14 +92,6 @@ $sQuote = "'";
                 WHERE `id`='$q'";
                 $sql = $sql0;
                 echo "<br>sql0";
-
-                if($zin !== $zin_original) {
-
-            $updateZinSql = 
-                "UPDATE contents SET
-                `zin`='$zin'
-                WHERE `zin`='$zin_original'";
-        }
             } else if ($publish == "now") {
                 $sql1 = 
                 "UPDATE zin SET 
@@ -109,14 +107,6 @@ $sQuote = "'";
                 WHERE `id`='$q'";
                 $sql = $sql1;
                 echo "<br>sql1";
-
-                if($zin !== $zin_original) {
-
-            $updateZinSql = 
-                "UPDATE contents SET
-                `zin`='$zin'
-                WHERE `zin`='$zin_original'";
-        }
 
                 $updateSql= 
                     "UPDATE zin SET
@@ -149,14 +139,6 @@ $sQuote = "'";
             WHERE `id`='$q'";
             $sql = $sql2;
             echo "<br>sql2";
-
-            if($zin !== $zin_original) {
-
-            $updateZinSql = 
-                "UPDATE contents SET
-                `zin`='$zin'
-                WHERE `zin`='$zin_original'";
-        }
         } else if ($publish == "now") {
             $sql3 = 
             "UPDATE zin SET 
@@ -170,14 +152,6 @@ $sQuote = "'";
             WHERE `id`='$q'";
             $sql = $sql3;
             echo "<br>sql3";
-
-            if($zin !== $zin_original) {
-
-            $updateZinSql = 
-                "UPDATE contents SET
-                `zin`='$zin'
-                WHERE `zin`='$zin_original'";
-        }
 
             $updateSql= 
                 "UPDATE zin SET
@@ -213,6 +187,7 @@ if(!isset($updateSql)) {
     else{
         echo '매거진 저장실패. 관리자에게 문의해주세요';
     }
+}
 } else {
     if(!isset($updateZinSql)){
         $resultNow = mysqli_query($conn, $updateSql);
