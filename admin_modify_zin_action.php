@@ -39,11 +39,11 @@ $sQuote = "'";
 		echo "<script>alert('매거진 제목이 중복됩니다.'); history.back();</script>";
     }else if(strpos($title, $dQuote) == true || strpos($title, $sQuote) == true) {
 		echo "<script>alert('사용불가능한 매거진 제목입니다.'); history.back();</script>";
-    }else if(preg_match('/[\x{3130}-\x{318F}\x{AC00}-\x{D7AF}]/u', $zinTitle) && mb_strlen($zinTitle, "UTF-8") >= 8) {
+    }else if(preg_match('/[\x{3130}-\x{318F}\x{AC00}-\x{D7AF}]/u', $zinTitle) && mb_strlen($zinTitle, "UTF-8") >= 21) {
      
         echo "<script>alert('사용불가능한 매거진 제목입니다.'); history.back();</script>";
        
-    }else if(!preg_match('/[\x{3130}-\x{318F}\x{AC00}-\x{D7AF}]/u', $zinTitle) && strlen($zinTitle) >= 18) {
+    }else if(!preg_match('/[\x{3130}-\x{318F}\x{AC00}-\x{D7AF}]/u', $zinTitle) && strlen($zinTitle) >= 25) {
  
         echo "<script>alert('사용불가능한 매거진 제목입니다.'); history.back();</script>";
       
@@ -52,13 +52,14 @@ $sQuote = "'";
         if($_FILES['img']['size']!==0) {
             unlink($tIdCheck['img_dir']);
             $uploadimg = include 'admin_modify_zin_files.php';
+            $image = $uploadimg['img'];
             $sql = 
                     "UPDATE zin SET 
                     `author`='$author', 
                     `username`='$username', 
                     `title`='$title', 
-                    `img`='{$uploadimg['img']}$filename',
-                    `img_dir`='{$uploadimg['img']}$target_file',
+                    `img`='{$image}$filename',
+                    `img_dir`='{$image}$target_file',
                     `zin_detail`='$zin_detail', 
                     `display`='$display', 
                     `publish`='$publish'
@@ -71,8 +72,8 @@ $sQuote = "'";
                 `author`='$author', 
                 `username`='$username', 
                 `title`='$title',
-                `img`='{$uploadimg['img']}$filename',
-                `img_dir`='{$uploadimg['img']}$target_file', 
+                `img`='{$image}$filename',
+                `img_dir`='{$image}$target_file', 
                 `zin_detail`='$zin_detail', 
                 `display`='$display', 
                 `publish`='$publish'
@@ -86,8 +87,8 @@ $sQuote = "'";
                 `author`='$author', 
                 `username`='$username', 
                 `title`='$title', 
-                `img`='{$uploadimg['img']}$filename',
-                `img_dir`='{$uploadimg['img']}$target_file',
+                `img`='{$image}$filename',
+                `img_dir`='{$image}$target_file',
                 `zin_detail`='$zin_detail', 
                 `display`='$display', 
                 `publish`='$publish'
@@ -115,7 +116,7 @@ $sQuote = "'";
             `date`='$date'
             WHERE `id`='$q'";
         if($publish == "ready") {
-            $sql0 = 
+            $sql2 = 
             "UPDATE zin SET 
             `author`='$author', 
             `username`='$username', 
@@ -125,10 +126,10 @@ $sQuote = "'";
             `publish`='$publish'
             `date`='$date'
             WHERE `id`='$q'";
-            $sql = $sql0;
-            echo "<br>sql0";
+            $sql = $sql2;
+            echo "<br>sql2";
         } else if ($publish == "now") {
-            $sql1 = 
+            $sql3 = 
             "UPDATE zin SET 
             `author`='$author', 
             `username`='$username', 
@@ -138,8 +139,8 @@ $sQuote = "'";
             `publish`='$publish'
             `date`='$date'
             WHERE `id`='$q'";
-            $sql = $sql1;
-            echo "<br>sql1";
+            $sql = $sql3;
+            echo "<br>sql3";
 
             $updateSql= 
                 "UPDATE zin SET
