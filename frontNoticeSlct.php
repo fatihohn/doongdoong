@@ -19,6 +19,7 @@ $sql = "SELECT * FROM zin WHERE id = $q ";
 $result = $conn->query($sql) or die($conn->error);
 $rows = mysqli_fetch_assoc($result);
 $zinTitle = $rows['title'];
+$zinDate = $rows['date'];
 
 
 $sqlIdMax = "SELECT id FROM zin WHERE display='on' AND publish='ready' ORDER BY id DESC LIMIT 1";
@@ -89,6 +90,9 @@ if($qVal < $idMax && $qVal > $idMin) {
                             <!-- <?php// echo $rows['content']?> -->
                             <div class='magazin_title'>
                               <?php echo $zinTitle; ?>
+                            </div>
+                            <div class='magazin_date'>
+                              <?php echo $zinDate; ?>
                             </div>
                             <div class='cat_wrap'>
 
