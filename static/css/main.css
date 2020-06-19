@@ -619,18 +619,32 @@
         left: 107px;
     }
     
-
-
-
-
-
-
-
-
-
-
-
+    #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content .cat_wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content .magazin_title {
+        font-size: 3rem;
+        font-weight: 600;
+    }
     
+    #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content .cat_wrap .category {
+        margin-right: 10px;
+    margin-left: 5px;
+    float: left;
+    width: calc((400% - 40px) / 4);
+    grid-column: span 1;
+    }
+
+
+
+
+
+
+
+
+
+
     @media all and (max-width: 801px) {
         #bbdd_sc_area .sc_list_contain {
             display: block;

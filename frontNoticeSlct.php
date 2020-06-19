@@ -87,6 +87,9 @@ if($qVal < $idMax && $qVal > $idMin) {
                     <div class="view_wrap_line">
                         <div class = 'gg-batang view_cont_content'>
                             <!-- <?php// echo $rows['content']?> -->
+                            <div class='magazin_title'>
+                              <?php $zinTitle ?>
+                            </div>
                             <div class='cat_wrap'>
 
                                 <?php
@@ -94,9 +97,6 @@ $sqlCat = "SELECT * FROM thumbs WHERE display = 'on'";
 $resultCat = $conn->query($sqlCat) or die($conn->error);
 
 if($resultCat->num_rows > 0) {
-    echo "<div class='magazin_title'>";
-    echo    $zinTitle;
-    echo "</div>";
     while($rowCat = $resultCat->fetch_assoc()) {
         $catTitle = $rowCat['category'];
         $sqlCatZinCont = "SELECT * FROM contents WHERE display = 'on' AND zin = '$zinTitle' AND category = '$catTitle' ORDER BY id DESC LIMIT 1";
