@@ -35,10 +35,12 @@
                 $author = $rows['author'];
                 $username = $rows['username'];
                 $title = $rows['title'];
+                $img = $rows['img'];
+                $img_dir = $rows['img_dir'];
                 $zin_detail = $rows['zin_detail'];
                 $display = $rows['display'];
                 $publish = $rows['publish'];
-                $publish = $rows['date'];
+                $date = $rows['date'];
 
                 $adminCast = "admin";
                 $editorCast = "editor";
@@ -97,7 +99,7 @@
             <p>
                 <div class="createInput">
                 <label class="createGrid1">매거진 표지</label>
-                <input class="createGrid2" type="file" name="img"  required />
+                <input class="createGrid2" type="file" name="img" /><?=$img?>
                 
             </div>
             </p>
