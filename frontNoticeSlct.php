@@ -113,7 +113,7 @@ if($resultCat->num_rows > 0) {
             echo "
                     <div class='category'>
                         <div class='category_list'>
-                            <a id='{$rowCat["id"]}' class='cat frontCat' onclick='frontCatShow(this.id)' >";
+                            <a id='{$rowCat["id"]}' class='cat frontCat' onclick='frontAllCatShow(this.id)' >";
             echo "              <div class='cat_img' style=background-image:url(";
             echo '"';
             echo $rowCat['img_dir'];
