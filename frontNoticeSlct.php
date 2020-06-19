@@ -88,7 +88,7 @@ if($qVal < $idMax && $qVal > $idMin) {
                         <div class = 'gg-batang view_cont_content'>
                             <!-- <?php// echo $rows['content']?> -->
                             <div class='magazin_title'>
-                              <?php $zinTitle ?>
+                              <?php echo $zinTitle; ?>
                             </div>
                             <div class='cat_wrap'>
 
