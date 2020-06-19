@@ -129,9 +129,9 @@ if($resultCat->num_rows > 0) {
                     echo                    $rowCat['category'];
                     echo '              </h2>
                                         <div class="cat_author">
-                                            <p>';
+                                            <h4>';
                     echo                       $rowCat['author'];
-                    echo '                  </p>
+                    echo '                  </h4>
                                         </div>
                                     </div>
                                 </div>                              
