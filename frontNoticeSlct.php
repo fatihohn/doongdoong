@@ -116,27 +116,27 @@ if($resultCat->num_rows > 0) {
                 if($resultCatZinCont->num_rows > 0) {
                     echo "
                     <div class='category'>
-                    <div class='category_list'>
-                    <a id='{$rowCat["id"]}' class='cat frontCat' onclick='frontAllCatShow(this.id)' >";
-                    echo "              <div class='cat_img' style=background-image:url(";
+                        <div class='category_list'>
+                            <a id='{$rowCat["id"]}' class='cat frontCat' onclick='frontAllCatShow(this.id)' >";
+                    echo "      <div class='cat_img' style=background-image:url(";
                     echo '"';
                     echo $rowCat['img_dir'];
                     echo '");';
                     echo "'>";
                     echo '
-                    <div class="cat_title">
-                    <h2 class="gg-bold">';
-                    echo                            $rowCat['category'];
-                    echo '                      </h2>
-                    <div class="cat_author">
-                    <p>';
-                    echo                                $rowCat['author'];
-                    echo '                          </p>
-                    </div>
-                    </div>
-                    </div>                              
-                    </a>
-                    </div>
+                                    <div class="cat_title">
+                                        <h2 class="gg-bold">';
+                    echo                    $rowCat['category'];
+                    echo '              </h2>
+                                        <div class="cat_author">
+                                            <p>';
+                    echo                       $rowCat['author'];
+                    echo '                  </p>
+                                        </div>
+                                    </div>
+                                </div>                              
+                            </a>
+                        </div>
                     </div>
                     ';
                     
