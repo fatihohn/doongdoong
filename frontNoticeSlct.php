@@ -94,7 +94,7 @@ $resultCat = $conn->query($sqlCat) or die($conn->error);
 if($resultCat->num_rows > 0) {
     while($rowCat = $resultCat->fetch_assoc()) {
         $catTitle = $rowCat['category'];
-        $sqlCatZinCont = "SELECT * FROM contents WHERE display = 'on' AND zin = $zinTitle AND category = $catTitle ORDER BY id DESC LIMIT 1";
+        $sqlCatZinCont = "SELECT * FROM contents WHERE display = 'on' AND zin = '$zinTitle' AND category = '$catTitle' ORDER BY id DESC LIMIT 1";
         $resultCatZinCont = $conn->query($sqlCatZinCont) or die($conn->error);
         // $stmt = mysqli_stmt_init($conn);
         // if (!mysqli_stmt_prepare($stmt, $sqlZinCont)) {
