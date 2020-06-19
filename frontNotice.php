@@ -54,13 +54,21 @@ include 'bbdd_db_conn.php';
                     // echo $rows['created'];
                     echo                    $published_date;
                     echo '              </span>
-                                    </div>';
-                    echo "          <div class='zin_cover' style='background-image:url(";
-                    echo            '"';
-                    echo            $rows['img_dir'];
-                    echo            '");';
-                    echo            "'>";
-                    echo '      </a>
+                                    </div>
+                                    <div class="zin_cover">';
+                    // echo "          <div class='zin_cover' style='background-image:url(";
+                    // echo            '"';
+                    // echo            $rows['img_dir'];
+                    // echo            '");';
+                    // echo            "'>";
+                    echo "              <img src=";
+                    echo                '"';
+                    echo                $rows['img_dir'];
+                    echo                '" alt="';
+                    echo                $rows['title'];
+                    echo                '">  "';
+                    echo '          </div>  
+                                </a>
                             </li>';
                 }
             }
