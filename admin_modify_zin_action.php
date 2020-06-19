@@ -16,6 +16,7 @@ $zin_detail = mysqli_real_escape_string($conn, $zin_detail);
 // $zin_detail = mysql_real_escape_string($zin_detail);
 $display = $_POST['display'];
 $publish = $_POST['publish'];
+$date = $_POST['date'];
 
 
 
@@ -61,6 +62,7 @@ $sQuote = "'";
                     `zin_detail`='$zin_detail', 
                     `display`='$display', 
                     `publish`='$publish'
+                    `date`='$date'
                     WHERE `id`='$q'";
             if($publish == "ready") {
         
@@ -74,6 +76,7 @@ $sQuote = "'";
                 `zin_detail`='$zin_detail', 
                 `display`='$display', 
                 `publish`='$publish'
+                `date`='$date'
                 WHERE `id`='$q'";
                 $sql = $sql0;
                 echo "<br>sql0";
@@ -88,6 +91,7 @@ $sQuote = "'";
                 `zin_detail`='$zin_detail', 
                 `display`='$display', 
                 `publish`='$publish'
+                `date`='$date'
                 WHERE `id`='$q'";
                 $sql = $sql1;
                 echo "<br>sql1";
@@ -108,6 +112,7 @@ $sQuote = "'";
             `zin_detail`='$zin_detail', 
             `display`='$display', 
             `publish`='$publish'
+            `date`='$date'
             WHERE `id`='$q'";
         if($publish == "ready") {
             $sql0 = 
@@ -118,6 +123,7 @@ $sQuote = "'";
             `zin_detail`='$zin_detail', 
             `display`='$display', 
             `publish`='$publish'
+            `date`='$date'
             WHERE `id`='$q'";
             $sql = $sql0;
             echo "<br>sql0";
@@ -130,6 +136,7 @@ $sQuote = "'";
             `zin_detail`='$zin_detail', 
             `display`='$display', 
             `publish`='$publish'
+            `date`='$date'
             WHERE `id`='$q'";
             $sql = $sql1;
             echo "<br>sql1";

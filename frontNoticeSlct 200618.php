@@ -21,11 +21,13 @@ $rows = mysqli_fetch_assoc($result);
 
 
 $sqlIdMax = "SELECT id FROM notice WHERE display='on' AND category='notice' ORDER BY id DESC LIMIT 1";
+// $sqlIdMax = "SELECT MAX(id) FROM notice WHERE display='on' AND category='notice'";
 $resultIdMax = $conn->query($sqlIdMax) or die($conn->error);
 $rowsIdMax = mysqli_fetch_assoc($resultIdMax);
 $idMax = $rowsIdMax['id'];
 
 $sqlIdMin = "SELECT id FROM notice WHERE display='on' AND category='notice' ORDER BY id ASC LIMIT 1";
+// $sqlIdMin = "SELECT MIN(id) FROM notice WHERE display='on' AND category='notice'";
 $resultIdMin = $conn->query($sqlIdMin) or die($conn->error);
 $rowsIdMin = mysqli_fetch_assoc($resultIdMin);
 $idMin = $rowsIdMin['id'];
@@ -37,10 +39,14 @@ if($q < $idMax && $q > $idMin) {
     $sqlNext = "SELECT * FROM notice WHERE id > $q AND display='on' AND category='notice' ORDER BY id ASC LIMIT 1";
     $sqlPrev = "SELECT * FROM notice WHERE id < $q AND display='on' AND category='notice' ORDER BY id DESC LIMIT 1";
 } else if($q == $idMax && $q > $idMin) {
+    // $sqlNext = "";
     $sqlNext = "SELECT * FROM notice WHERE id = $q AND display='on' AND category='notice'";
 } else if($q == $idMin && $q < $idMax) {
+    // $sqlPrev = "";
     $sqlPrev = "SELECT * FROM notice WHERE id = $q AND display='on' AND category='notice'";
 } else if($q ==$idMin && $q == $idMax) {
+    // $sqlNext = "";
+    // $sqlPrev = "";
     $sqlNext = "SELECT * FROM notice WHERE id = $q AND display='on' AND category='notice' ";
     $sqlPrev = "SELECT * FROM notice WHERE id = $q AND display='on' AND category='notice' ";
 }
@@ -75,6 +81,22 @@ if($qVal < $idMax && $qVal > $idMin) {
 ?>
     <div id="bbdd_body">
         <header id="bbdd_hd">
+        <!-- <div id="bbdd_hd_wrap">
+                <div id="bbdd_hd_area" style="transform: translate3d(0px, 0px, 0px); position: fixed; top: 0px;">
+                    <div class="hd_contain">
+                        <div class="hd_logo">
+                            <a href="/bbdd/">
+                                <img src="static/img/logo.png" alt="변방둥둥">
+                            </a>
+                        </div>
+                        <div class="hd_menu">
+                            <a>
+                                <img src="static/img/menu-bar.png" alt="메뉴바">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
             <?php include "front_header.php"; ?>
         </header>
 
@@ -141,6 +163,15 @@ if($qVal < $idMax && $qVal > $idMin) {
 
 
         <footer id="bbdd_ft">
+            <!-- <div id="bbdd_ft_wrap">
+                <div id="bbdd_ft_area">
+                    <div class="ft_con">
+                        <p class="gg-title">
+                            COPYRIGHT 2020 변방의북소리.
+                        </p>
+                    </div>
+                </div>
+            </div> -->
             <?php include "footer.php";?>
         </footer>
         

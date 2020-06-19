@@ -7,6 +7,22 @@
 <body>
     <div id="bbdd_body">
         <header id="bbdd_hd">
+        <!-- <div id="bbdd_hd_wrap">
+                <div id="bbdd_hd_area" style="transform: translate3d(0px, 0px, 0px); position: fixed; top: 0px;">
+                    <div class="hd_contain">
+                        <div class="hd_logo">
+                            <a href="/bbdd/">
+                                <img src="static/img/logo.png" alt="변방둥둥">
+                            </a>
+                        </div>
+                        <div class="hd_menu">
+                            <a>
+                                <img src="static/img/menu-bar.png" alt="메뉴바">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
             <?php include "front_header.php"; ?>
         </header>
 
@@ -37,31 +53,29 @@ include 'bbdd_db_conn.php';
             
             if($result->num_rows >0){
                 while($rows = $result->fetch_assoc()) {
-                    $published_date = $rows['date'];
+                    $created_dateTime = $rows['created'];
+                    $created_date = explode(" ", $created_dateTime)[0];
                     echo "
-                            <li class='cont_li'>
-                                <a class = 'frontCont' id = '";
-                    echo        $rows['id'];
-                    echo        "'";
-                    echo "      onclick = 'frontNoticeSlctShow(this.id)'>
-                                    <div class='cont_li_title'>
-                                        <p>";
-                    echo                    $rows['title'];
-                    echo '              </p>
-                                    </div>
-                                    <div class="li_created">
-                                        <span>';
+                    <li class='cont_li'>
+                    <a class = 'frontCont' id = '";
+                    echo $rows['id'];
+                    echo "'";
+                    echo " onclick = 'frontNoticeSlctShow(this.id)'>
+                    <div class='cont_li_title'>
+                    <p>";
+                 
+                    echo $rows['title'];
+                    echo '</p>
+                    </div>
+                    <div class="li_created">
+                    <span>';
                     // echo $rows['created'];
-                    echo                    $published_date;
-                    echo '              </span>
-                                    </div>';
-                    echo "          <div class='zin_cover' style='background-image:url(";
-                    echo            '"';
-                    echo            $rows['img_dir'];
-                    echo            '");';
-                    echo            "'>";
-                    echo '      </a>
-                            </li>';
+                    echo $created_date;
+                    echo '</span>
+                    </div>
+                    
+                    </a>
+                    </li>';
                 }
             }
             

@@ -38,6 +38,7 @@
                 $zin_detail = $rows['zin_detail'];
                 $display = $rows['display'];
                 $publish = $rows['publish'];
+                $publish = $rows['date'];
 
                 $adminCast = "admin";
                 $editorCast = "editor";
@@ -106,6 +107,12 @@
                 <div class="createInput">
                 <label class="createGrid1">매거진 설명</label>
                 <textarea class="createGrid2" name="zin_detail" value="<?=$zin_detail?>" rows="10" cols="20" ><?=$zin_detail?></textarea>
+                </div>
+            </p>
+            <p>
+                <div class="createInput">
+                <label class="createGrid1">매거진 발행일</label>
+                <input class="createGrid2" name="date" type="date" value="<?=$date?>"/>
                 </div>
             </p>
             <p>
