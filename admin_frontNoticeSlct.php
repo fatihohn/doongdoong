@@ -13,60 +13,38 @@ $qVal = $_GET['q'];
 // $rVal = $_GET['r'];
 
 session_start();
-// $sql = "SELECT * FROM contents WHERE id = $q AND display='on' AND publish='now'";
-// 개발중
 
 
-
-// $sqlCatCategory = "SELECT * FROM thumbs WHERE id = $r AND display = 'on' AND publish = 'now'";
-// $resultCatCategory = $conn->query($sqlCatCategory) or die($conn->error);
-// $rowCatCategory = mysqli_fetch_assoc($resultCatCategory);
-// $catCategory = $rowCatCategory['category'];
-// $catCategoryId = $rowCatCategory['id'];
-
-$sql = "SELECT * FROM notice WHERE id = $q ";
-// $sql = "SELECT * FROM notice WHERE id = $q AND display='on' AND category='$catCategory'";
+$sql = "SELECT * FROM zin WHERE id = $q ";
 $result = $conn->query($sql) or die($conn->error);
 $rows = mysqli_fetch_assoc($result);
-// $contCategory = $rows['category'];
+$zinTitle = $rows['title'];
+$zinDate = $rows['date'];
 
-// $sqlCatCategory = "SELECT * FROM thumbs WHERE category = '$contCategory' AND display = 'on'";
-// // $sqlCatCategory = "SELECT * FROM thumbs WHERE category = '$contCategory' AND display = 'on' AND publish = 'now'";
-// $resultCatCategory = $conn->query($sqlCatCategory) or die($conn->error);
-// $rowCatCategory = mysqli_fetch_assoc($resultCatCategory);
-// $catCategory = $rowCatCategory['category'];
-// // $catCategoryZin = $rowCatCategory['zin'];
-// $catCategoryId = $rowCatCategory['id'];
 
-$sqlIdMax = "SELECT id FROM notice WHERE display='on' AND category='notice' OR (display='ok' AND category='notice') ORDER BY id DESC LIMIT 1";
-// $sqlIdMax = "SELECT MAX(id) FROM notice WHERE display='on' AND category='notice' OR (display='ok' AND category='notice')";
+$sqlIdMax = "SELECT id FROM zin WHERE display='on' AND publish='ready' ORDER BY id DESC LIMIT 1";
 $resultIdMax = $conn->query($sqlIdMax) or die($conn->error);
 $rowsIdMax = mysqli_fetch_assoc($resultIdMax);
 $idMax = $rowsIdMax['id'];
 
-$sqlIdMin = "SELECT id FROM notice WHERE display='on' AND category='notice' OR (display='ok' AND category='notice') ORDER BY id ASC LIMIT 1";
-// $sqlIdMin = "SELECT MIN(id) FROM notice WHERE display='on' AND category='notice' OR (display='ok' AND category='notice')";
+$sqlIdMin = "SELECT id FROM zin WHERE display='on' AND publish='ready' ORDER BY id ASC LIMIT 1";
 $resultIdMin = $conn->query($sqlIdMin) or die($conn->error);
 $rowsIdMin = mysqli_fetch_assoc($resultIdMin);
 $idMin = $rowsIdMin['id'];
 
-$sqlNext = "SELECT * FROM notice WHERE id > $q AND display='on' AND category='notice' OR (display='ok' AND category='notice') ORDER BY id ASC LIMIT 1";
-$sqlPrev = "SELECT * FROM notice WHERE id < $q AND display='on' AND category='notice' OR (display='ok' AND category='notice') ORDER BY id DESC LIMIT 1";
+$sqlNext = "SELECT * FROM zin WHERE id > $q AND display='on' AND publish='ready' ORDER BY id ASC LIMIT 1";
+$sqlPrev = "SELECT * FROM zin WHERE id < $q AND display='on' AND publish='ready' ORDER BY id DESC LIMIT 1";
 
 if($q < $idMax && $q > $idMin) {
-    $sqlNext = "SELECT * FROM notice WHERE id > $q AND display='on' AND category='notice' OR (display='ok' AND category='notice') ORDER BY id ASC LIMIT 1";
-    $sqlPrev = "SELECT * FROM notice WHERE id < $q AND display='on' AND category='notice' OR (display='ok' AND category='notice') ORDER BY id DESC LIMIT 1";
+    $sqlNext = "SELECT * FROM zin WHERE id > $q AND display='on' AND publish='ready' ORDER BY id ASC LIMIT 1";
+    $sqlPrev = "SELECT * FROM zin WHERE id < $q AND display='on' AND publish='ready' ORDER BY id DESC LIMIT 1";
 } else if($q == $idMax && $q > $idMin) {
-    // $sqlNext = "";
-    $sqlNext = "SELECT * FROM notice WHERE id = $q AND display='on' AND category='notice' OR (display='ok' AND category='notice')";
+    $sqlNext = "SELECT * FROM zin WHERE id = $q AND display='on' AND publish='ready'";
 } else if($q == $idMin && $q < $idMax) {
-    // $sqlPrev = "";
-    $sqlPrev = "SELECT * FROM notice WHERE id = $q AND display='on' AND category='notice' OR (display='ok' AND category='notice')";
+    $sqlPrev = "SELECT * FROM zin WHERE id = $q AND display='on' AND publish='ready'";
 } else if($q ==$idMin && $q == $idMax) {
-    // $sqlNext = "";
-    // $sqlPrev = "";
-    $sqlNext = "SELECT * FROM notice WHERE id = $q AND display='on' AND category='notice' OR (display='ok' AND category='notice') ";
-    $sqlPrev = "SELECT * FROM notice WHERE id = $q AND display='on' AND category='notice' OR (display='ok' AND category='notice') ";
+    $sqlNext = "SELECT * FROM zin WHERE id = $q AND display='on' AND publish='ready' ";
+    $sqlPrev = "SELECT * FROM zin WHERE id = $q AND display='on' AND publish='ready' ";
 }
 
 
@@ -97,89 +75,107 @@ if($qVal < $idMax && $qVal > $idMin) {
 
 
 ?>
-    <div id="bbdd_body">
-        <header id="bbdd_hd">
+<div id="bbdd_body">
+    <header id="bbdd_hd">
         <?php include "admin_header.php"; ?>
-        </header>
+    </header>
 
         
-<section id="bbdd_sc">
-    <div id="bbdd_sc_wrap">
-        <div id="bbdd_sc_area">
+    <section id="bbdd_sc">
+        <div id="bbdd_sc_wrap">
+            <div id="bbdd_sc_area">
+                <div class="view_wrap">
+                    <div class="view_wrap_line">
+                        <div class = 'gg-batang view_cont_content'>
+                            <!-- <?php// echo $rows['content']?> -->
+                            <div class='magazin_title'>
+                              <?php echo $zinTitle; ?>
+                            </div>
+                            <div class='magazin_date'>
+                              <?php echo $zinDate; ?>
+                            </div>
+                            <div class='cat_wrap'>
 
+                                <?php
+$sqlCat = "SELECT * FROM thumbs WHERE display = 'on'";
+$resultCat = $conn->query($sqlCat) or die($conn->error);
 
-<div class="view_wrap">
-    <div class="view_wrap_line">
-
-        
-        
-        
-        <div class = 'view_cont_sess'>
-            <?php echo $rows['title']?>
-
-
-
-
-
-
-        </div>
-       
-        <div class = 'gg-batang view_cont_content'>
-            <?php echo $rows['content']?>
-
-
-            <div class='view_author'>
-                에디터_<?php echo $rows['author']?>
-                <div class = 'cs_box_front'>
-                <!-- <button class="view_btn1" onclick="location.href='./admin_modify_cont.php'">수정</button> -->
-                <button class="front_btn" name="<?=$rows['id']?>" onclick="notiModi(this.name)">수정</button>
-                <button class="front_btn" name="<?=$rows['id']?>" onclick="notiDel(this.name)">삭제</button>
-                <!-- <div class="front_btn" name="<?=$rows['id']?>" onclick="contModi(this.name)">수정</div>
-                <div class="front_btn" name="<?=$rows['id']?>" onclick="contDel(this.name)">삭제</div> -->
-                </div>
-            </div>
-            <div class = 'view_btn'>
+if($resultCat->num_rows > 0) {
+    while($rowCat = $resultCat->fetch_assoc()) {
+        $catTitle = $rowCat['category'];
+        $sqlCatZinCont = "SELECT * FROM contents WHERE display = 'on' AND zin = '$zinTitle' AND category = '$catTitle' ORDER BY id DESC LIMIT 1";
+        $resultCatZinCont = $conn->query($sqlCatZinCont) or die($conn->error);
+        // $stmt = mysqli_stmt_init($conn);
+        // if (!mysqli_stmt_prepare($stmt, $sqlZinCont)) {
+            //         // echo "sqlZinCont error";
+            // } else {
+                //         mysqli_stmt_bind_param($stmt, "ss", $zinTitle, $catTitle);
+                //         mysqli_stmt_execute($stmt);
+                //         $resultCatZinCont = mysqli_stmt_get_result($stmt);
+                // }
                 
-                <?php 
+                $rowCatZinCont = $resultCatZinCont->fetch_assoc();
                 
-                echo "
-                    <div class='view_btn_past $idPrev' id='$idPrev'  onclick='adminNoticeSlctShow(this.id)'>
-                    ←
+                
+                if($resultCatZinCont->num_rows > 0) {
+                    echo "
+                    <div class='category'>
+                        <div class='category_list'>
+                            <a id='{$rowCat["id"]}' class='cat frontCat' onclick='frontAllCatShow(this.id)' >";
+                    echo "      <div class='cat_img' style=background-image:url(";
+                    echo '"';
+                    echo $rowCat['img_dir'];
+                    echo '");';
+                    echo "'>";
+                    echo '
+                                    <div class="cat_title">
+                                        <h2 class="gg-bold">';
+                    echo                    $rowCat['category'];
+                    echo '              </h2>
+                                        <div class="cat_author">
+                                            <h4>';
+                    echo                       $rowCat['author'];
+                    echo '                  </h4>
+                                        </div>
+                                    </div>
+                                </div>                              
+                            </a>
+                        </div>
                     </div>
-                    <div class='view_btn_list'   onclick='adminNoticeShow()'>
-                    ≡
-                    </div>
-                    <div class='view_btn_next $idNext' id='$idNext'  onclick='adminNoticeSlctShow(this.id)'>
-                    →
-                    </div>
-                
-                
-                
-                    ";
+                    ';
                     
-                    ?>
-                    
-            </div>
-        </div>
-    </div>
+                }
+            }
+        }
+        ?>
 </div>
 
 
+
+<div class = 'view_btn'>
+    <?php 
+                echo "
+                <div class='view_btn_past $idPrev' id='$idPrev'  onclick='frontNoticeSlctShow(this.id)'>
+                ←
+                </div>
+                <div class='view_btn_list'   onclick='frontNoticeShow()'>
+                                ≡
+                                </div>
+                                <div class='view_btn_next $idNext' id='$idNext'  onclick='frontNoticeSlctShow(this.id)'>
+                                →
+                                </div>
+                    ";
+                    ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
         <footer id="bbdd_ft">
-            <!-- <div id="bbdd_ft_wrap">
-                <div id="bbdd_ft_area">
-                    <div class="ft_con">
-                        <p class="gg-title">
-                            COPYRIGHT 2020 변방의북소리.
-                        </p>
-                    </div>
-                </div>
-            </div> -->
             <?php include "footer.php";?>
         </footer>
         

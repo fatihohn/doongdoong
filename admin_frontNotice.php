@@ -43,7 +43,7 @@ include 'bbdd_db_conn.php';
                                 <a class = 'frontCont' id = '";
                     echo        $rows['id'];
                     echo        "'";
-                    echo "      onclick = 'frontNoticeSlctShow(this.id)'>
+                    echo "      onclick = 'adminNoticeSlctShow(this.id)'>
                                     <div class='cont_li_title'>
                                         <p>";
                     echo                    $rows['title'];
@@ -92,7 +92,7 @@ include 'bbdd_db_conn.php';
         
     </div>
     <nav id="bbdd_nav">
-        <?php include "nav.php"; ?>
+        <?php include "admin_nav.php"; ?>
     </nav>
     <div id="body_bg"></div>
     <?php include "jsGroup.php"; ?>
