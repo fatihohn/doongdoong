@@ -106,6 +106,9 @@ if($resultCat->num_rows > 0) {
         // }
         
         $rowCatZinCont = $resultCatZinCont->fetch_assoc();
+
+
+        echo $zinTitle;
         if($resultCatZinCont->num_rows > 0) {
             echo "
                     <div class='category'>
