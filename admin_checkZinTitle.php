@@ -32,7 +32,7 @@ if(strpos($zinTitle, $dQuote) == true || preg_match("/'/u", $zinTitle)) {
 } else {
 	//한글인 경우
 	if(preg_match('/[\x{3130}-\x{318F}\x{AC00}-\x{D7AF}]/u', $zinTitle)) {
-		if(mb_strlen($zinTitle, "UTF-8") >= 8) {
+		if(mb_strlen($zinTitle, "UTF-8") >= 21) {
 			?>
 			<div style='font-family:"malgun gothic"; color:red;'><?php echo $zinTitle; ?>는 사용불가능한 매거진입니다.<div>
 			<?php
@@ -44,7 +44,7 @@ if(strpos($zinTitle, $dQuote) == true || preg_match("/'/u", $zinTitle)) {
 		}
 		//한글이 아닌 경우
 	} else {
-		if(strlen($zinTitle) >= 18) {
+		if(strlen($zinTitle) >= 24) {
 			?>
 			<div style='font-family:"malgun gothic"; color:red;'><?php echo $zinTitle; ?>는 사용불가능한 매거진입니다.<div>
 			<?php
