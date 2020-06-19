@@ -49,6 +49,17 @@ $sQuote = "'";
       
 
 	}else{
+        $zin = $title;
+        $zin_original = $tIdCheck['title'];
+        if($zin !== $zin_original) {
+
+            $updateZinSql = 
+                "UPDATE contents SET
+                `zin`='$zin'
+                WHERE `zin`='$zin_original'";
+        }
+
+
         if($_FILES['img']['size']!==0) {
             unlink($tIdCheck['img_dir']);
             $uploadimg = include 'admin_modify_zin_files.php';
@@ -158,34 +169,45 @@ $result = mysqli_query($conn, $sql);
 // $result = $conn->query($sql);
 
 if(!isset($updateSql)) {
-   
-    if($result){
+   if(!isset($updateZinSql)){
+
+       if($result){
+           echo("<script>alert('매거진이 수정되었습니다.');location.href='admin_zinList.php';</script>");
+        }
+        else{
+            echo '매거진 저장실패. 관리자에게 문의해주세요';
+            error_log(mysqli_error($conn));
+        }
+    } else {
+        $resultNewTitle = mysqli_query($conn, $updateZinSql);
+
+    if($result && $resultNewTitle){
         echo("<script>alert('매거진이 수정되었습니다.');location.href='admin_zinList.php';</script>");
     }
     else{
         echo '매거진 저장실패. 관리자에게 문의해주세요';
-        error_log(mysqli_error($conn));
     }
 } else {
+    if(!isset($updateZinSql)){
+        $resultNow = mysqli_query($conn, $updateSql);
 
-    $resultNow = mysqli_query($conn, $updateSql);
-
-    if($result && $resultNow){
-        echo("<script>alert('현재 발행중 매거진으로 수정되었습니다.');location.href='admin_zinList.php';</script>");
-    }
-    else{
-        echo '현재 발행중 매거진 저장실패. 관리자에게 문의해주세요';
-        // echo '<br>'.$q;
-        // echo '<br>'.$author;
-        // echo '<br>'.$title;
-        // echo '<br>'.$zin_detail;
-        // echo '<br>'.$display;
-        // echo '<br>'.$publish;
-        // echo '<br>'.$sql.'<br>';
-        // echo '<br>'.var_dump($result);
-        // echo '<br>'.var_dump($resultNow);
-
-        error_log(mysqli_error($conn));
+        if($result && $resultNow){
+            echo("<script>alert('현재 발행중 매거진으로 수정되었습니다.');location.href='admin_zinList.php';</script>");
+        }
+        else{
+            echo '현재 발행중 매거진 저장실패. 관리자에게 문의해주세요';
+            // error_log(mysqli_error($conn));
+        }
+    } else {
+        $resultNow = mysqli_query($conn, $updateSql);
+        $resultNewTitle = mysqli_query($conn, $updateZinSql);
+        if($result && $resultNow && $resultNewTitle){
+            echo("<script>alert('현재 발행중 매거진으로 수정되었습니다.');location.href='admin_zinList.php';</script>");
+        }
+        else{
+            echo '현재 발행중 매거진 저장실패. 관리자에게 문의해주세요';
+            // error_log(mysqli_error($conn));
+        }
     }
 
 }
