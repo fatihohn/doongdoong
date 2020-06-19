@@ -121,7 +121,7 @@ if($resultCat->num_rows > 0) {
                     echo "
                     <div class='category'>
                         <div class='category_list'>
-                            <a id='{$rowCat["id"]}' class='cat frontCat' onclick='frontAllCatShow(this.id)' >";
+                            <a id='{$rowCat["id"]}' class='cat frontCat' onclick='adminAllCatShow(this.id)' >";
                     echo "      <div class='cat_img' style=background-image:url(";
                     echo '"';
                     echo $rowCat['img_dir'];
@@ -155,13 +155,13 @@ if($resultCat->num_rows > 0) {
 <div class = 'view_btn'>
     <?php 
                 echo "
-                <div class='view_btn_past $idPrev' id='$idPrev'  onclick='frontNoticeSlctShow(this.id)'>
+                <div class='view_btn_past $idPrev' id='$idPrev'  onclick='adminNoticeSlctShow(this.id)'>
                 ←
                 </div>
-                <div class='view_btn_list'   onclick='frontNoticeShow()'>
+                <div class='view_btn_list'   onclick='adminNoticeShow()'>
                                 ≡
                                 </div>
-                                <div class='view_btn_next $idNext' id='$idNext'  onclick='frontNoticeSlctShow(this.id)'>
+                                <div class='view_btn_next $idNext' id='$idNext'  onclick='adminNoticeSlctShow(this.id)'>
                                 →
                                 </div>
                     ";
