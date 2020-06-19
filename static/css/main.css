@@ -55,7 +55,7 @@
     #bbdd_sc_area .sc_list_contain>.category>.category_list,
     #bbdd_sc_area .view_wrap .category>.category_list {
         margin-bottom: 20px;
-        overflow: hidden;
+        /* overflow: hidden; */
     }
     
     #bbdd_sc_area .sc_list_contain>.category>.category_list:last-of-type,
@@ -636,7 +636,7 @@
         margin-left: 5px;
         float: left;
         width: calc((400% - 40px) / 4);
-        grid-column: span 1;
+        grid-column: span 2;
         height: 330px;
     }
     #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content .cat_wrap .category .category_list>a>.cat_img>.cat_title,
