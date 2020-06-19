@@ -103,6 +103,12 @@
             </p>
             <p>
                 <div class="createInput">
+                <label class="createGrid1">매거진 발행일</label>
+                <textarea class="createGrid2" name="date" type="date" required></textarea>
+                </div>
+            </p>
+            <p>
+                <div class="createInput">
                 <label class="createGrid1">공개 상태</label>
                 <!-- <textarea class="createGrid2" name="display" placeholder="작가소개" rows="10" cols="20"required></textarea> -->
                 <div class="createGrid2">
