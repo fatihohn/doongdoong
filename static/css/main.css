@@ -504,9 +504,10 @@
     }
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .zin_cover img {
-        width: 320px;
+        width: 310px;
         height: auto;
         border-radius: 5px;
+        margin-top: 10px;
     }
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .cont_li a .li_created {
