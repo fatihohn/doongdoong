@@ -32,7 +32,7 @@ include 'bbdd_db_conn.php';
         <ul class = 'view_contList'>
             <?php 
             // $sql = "SELECT * FROM notice WHERE category = 'notice' AND display='on' ORDER BY id DESC";
-            $sql = "SELECT * FROM zin WHERE publish = 'ready' AND display='on' ORDER BY id DESC";
+            $sql = "SELECT * FROM zin WHERE publish = 'ready' AND display='on' ORDER BY `date` DESC";
             $result = $conn->query($sql) or die($conn->error);
             
             if($result->num_rows >0){
