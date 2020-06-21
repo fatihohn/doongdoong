@@ -292,7 +292,6 @@
         white-space: pre-line;
         /* display: none; */
     }
-   
     
     #bbdd_sc_area .mega_list {
         width: 100%;
@@ -402,7 +401,7 @@
     }
     
     #bbdd_sc_area .view_wrap .view_wrap_line {
-        border: 2px dashed rgba(6, 102, 152, 0.6);
+        /* border: 2px dashed rgba(6, 102, 152, 0.6); */
         border-radius: 15px;
         text-align: center;
         padding: 40px 30px;
@@ -503,6 +502,7 @@
         color: rgba(0, 0, 0);
         text-align: left;
     }
+    
     #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .zin_cover img {
         width: 320px;
         height: auto;
@@ -618,14 +618,13 @@
         top: 3px;
         left: 107px;
     }
+    /****zin list****/
     
-
-
-/****zin list****/
     #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content .magazin_title {
         font-size: 3rem;
         font-weight: 600;
     }
+    
     #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content .cat_wrap {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -639,30 +638,23 @@
         grid-column: span 2;
         height: 330px;
     }
+    
     #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content .cat_wrap .category .category_list>a>.cat_img>.cat_title,
     #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content .cat_wrap .category .category_list>a>.cat_img>.cat_title>h2 {
         position: relative;
         top: -30px;
     }
+    
     #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content .cat_wrap .category .category_list>a>.cat_img>.cat_title .cat_author {
         position: relative;
         top: -90px;
         text-align: center;
     }
+    
     #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content .cat_wrap .category .category_list>a>.cat_img>.cat_title .cat_author>h4 {
-        
         text-align: center;
     }
-
-
-
-
-
-
-
-
-
-
+    
     @media all and (max-width: 801px) {
         #bbdd_sc_area .sc_list_contain {
             display: block;
