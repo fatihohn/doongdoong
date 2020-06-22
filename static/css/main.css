@@ -504,7 +504,8 @@
     }
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .zin_cover img {
-        width: 310px;
+        width: 100%;
+        max-width: 420px;
         height: auto;
         border-radius: 5px;
         margin-top: 10px;
@@ -770,5 +771,8 @@
         #bbdd_sc_area .view_wrap .view_wrap_line .view_btn {
             padding-top: 0;
             max-height: 30px;
+        }
+        #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .zin_cover img {
+            max-width: 260px;
         }
     }
