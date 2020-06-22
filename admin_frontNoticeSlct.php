@@ -20,7 +20,7 @@ $result = $conn->query($sql) or die($conn->error);
 $rows = mysqli_fetch_assoc($result);
 $zinTitle = $rows['title'];
 $zinDate = $rows['date'];
-$zinDetail = $rows['detail'];
+$zinDetail = $rows['zin_detail'];
 
 
 $sqlIdMax = "SELECT id FROM zin WHERE display='on' AND publish='ready' ORDER BY id DESC LIMIT 1";
