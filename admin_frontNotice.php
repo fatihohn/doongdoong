@@ -66,7 +66,7 @@ include 'bbdd_db_conn.php';
                     echo                $rows['img_dir'];
                     echo                '" alt="';
                     echo                $rows['title'];
-                    echo                '">  "';
+                    echo                '">  ';
                     echo '          </div>  
                                 </a>
                             </li>';
