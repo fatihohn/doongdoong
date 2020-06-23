@@ -20,7 +20,7 @@
     <div class="view_wrap_line">
         <div class="contEditor">
             <center>
-                <h3>공지 작성</h3>
+                <h3>소개 작성</h3>
             </center>
         
         <?php    
@@ -163,9 +163,9 @@
                 <!-- <textarea class="createGrid2" name="display" placeholder="작가소개" rows="10" cols="20"required></textarea> -->
                 <div class="createGrid2">
 
-                        <input class='category_btn' type='radio' id='notice_btn' name='category' value='notice' checked>
-                        <label for='notice_btn'>공지</label><br>
-                        <input class='category_btn' type='radio' id='intro_btn' name='category' value='intro'>
+                        <!-- <input class='category_btn' type='radio' id='notice_btn' name='category' value='notice' >
+                        <label for='notice_btn'>공지</label><br> -->
+                        <input class='category_btn' type='radio' id='intro_btn' name='category' value='intro' checked>
                         <label for='intro_btn'>웹진 소개</label><br>
                       
                     
