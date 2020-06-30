@@ -584,7 +584,7 @@
     
     #bbdd_sc_area .view_wrap .view_wrap_line .func_btn img {
         width: 100%;
-        max-width: 60px;
+        max-width: 60px !important;
         cursor: pointer;
     }
 
