@@ -131,7 +131,7 @@ $zinTitle = $rowZinNow['title'];
                     </div>
                     <div class="func_btn">
                         <div class="share_btn" title="공유하기">
-                            <img src="static/img/share.png" alt="공유하기">
+                            <img src="static/img/share.png" alt="공유하기" style="width:40px;">
                         </div>
                     </div>
     </div>
