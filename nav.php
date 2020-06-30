@@ -13,7 +13,7 @@ $rowZinNow = $resultZinNow->fetch_assoc();
 $zinTitle = $rowZinNow['title'];
 
 //연재중 연재물(category) 목록
-$sqlCatNow = "SELECT * FROM thumbs WHERE display = 'on' ORDER BY author DESC";
+$sqlCatNow = "SELECT * FROM thumbs WHERE display = 'on' ORDER BY id DESC";
 $resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
 ?>
 
@@ -43,7 +43,7 @@ $resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
 
 //****지난호****//
 // //지난호 연재물(category) 목록
-$sqlCatPast = "SELECT * FROM thumbs WHERE display = 'on' ORDER BY author DESC";
+$sqlCatPast = "SELECT * FROM thumbs WHERE display = 'on' ORDER BY id DESC";
 $resultCatPast = $conn->query($sqlCatPast) or die($conn->error);
 
 
