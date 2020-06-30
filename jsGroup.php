@@ -4,3 +4,4 @@
 <script src="static/js/nav.js"></script>
     <script src="static/js/frontShow.js"></script>
     <script src="static/js/contView.js"></script>
+    <script src="static/js/share.js"></script>

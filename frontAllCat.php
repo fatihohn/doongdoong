@@ -131,6 +131,14 @@ $zinTitle = $rowZinNow['title'];
                         <div class = 'view_auth_detail'><?php echo $rowsAuth['auth_detail']?></div>
                         <div class = 'view_cat_detail'><?php echo $rows['cat_detail']?></div>
                     </div>
+
+
+                    <div class="func_btn">
+                        <div class="share_btn" title="공유하기">
+                            <img src="static/img/share.png" alt="공유하기">
+                        </div>
+                    </div>
+
     </div>
 </div>
 

@@ -298,7 +298,11 @@ if($q < intval($idMax) && $q > intval($idMin)) {
             <div class='view_author'>
                 글_<?php echo $rows['author']?>
             </div>
-
+            <div class="func_btn">
+                <div class="share_btn" title="공유하기">
+                    <img src="static/img/share.png" alt="공유하기">
+                </div>
+            </div>
             <div class = 'view_btn'>
                 
                 <?php 
