@@ -578,7 +578,14 @@
     #bbdd_sc_area .view_wrap .view_wrap_line .func_btn {
         width: 100%;
         max-width: 596px;
+        height: 60px;
         margin: 20px auto;
+        text-align: center;
+    }
+    #bbdd_sc_area .view_wrap .view_wrap_line .func_btn .share_btn {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
         text-align: center;
     }
     
@@ -591,7 +598,8 @@
     #bbdd_sc_area .view_wrap .view_wrap_line .view_btn {
         max-width: 596px;
         height: min-content;
-        margin: 50px auto 0 auto;
+        /* margin: 50px auto 0 auto; */
+        margin: 0 auto;
         font-size: 3rem;
         font-weight: 600;
         color: rgba(6, 102, 152, 0.75);

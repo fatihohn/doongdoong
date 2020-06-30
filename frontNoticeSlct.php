@@ -156,27 +156,26 @@ if($resultCat->num_rows > 0) {
         ?>
 </div>
 
+<div class="func_btn">
+    <div class="share_btn" title="공유하기">
+        <img src="static/img/share.png" alt="공유하기">
+    </div>
+</div>
 
-
-                            <div class = 'view_btn'>
-                                <?php 
-                                            echo "
-                                <div class='view_btn_past $idPrev' id='$idPrev'  onclick='frontNoticeSlctShow(this.id)'>
-                                    ←
-                                </div>
-                                <div class='view_btn_list'   onclick='frontNoticeShow()'>
-                                    ≡
+<div class = 'view_btn'>
+    <?php 
+                echo "
+                <div class='view_btn_past $idPrev' id='$idPrev'  onclick='frontNoticeSlctShow(this.id)'>
+                ←
+                </div>
+                <div class='view_btn_list'   onclick='frontNoticeShow()'>
+                                ≡
                                 </div>
                                 <div class='view_btn_next $idNext' id='$idNext'  onclick='frontNoticeSlctShow(this.id)'>
-                                    →
+                                →
                                 </div>
                     ";
                     ?>
-                            </div>
-                            <div class="func_btn">
-                                <div class="share_btn" title="공유하기">
-                                    <img src="static/img/share.png" alt="공유하기">
-                                </div>
                             </div>
                         </div>
                     </div>
