@@ -37,6 +37,7 @@
 .ft_contain .logo_wrap .org_logo img {
     max-width: 120px;
     /* max-width: 100px; */
+    padding-bottom: 10px;
 }
 
 
