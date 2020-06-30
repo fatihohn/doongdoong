@@ -77,6 +77,11 @@ footer {
     margin-bottom: 20px;
 }
 
+#bbdd_sc_area .domestic_title {
+    font-size: 2rem;
+}
+
+
 article {
     display: grid;
     grid-row: 60px 500px;

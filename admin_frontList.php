@@ -250,7 +250,7 @@ if ($resultCatOk->num_rows > 0) {
         echo "
         <div class = 'sc_mega_area'>
             <div class = 'sc_mega_contain'>
-                <div class = 'mega_title'>
+                <div class = 'mega_title domestic_title'>
                     <h2 class = 'gg-batang'>내부공개 연재물</h2>
                 </div>
                 <ul class = 'mega_list'>
