@@ -240,7 +240,7 @@ if ($resultCatNow->num_rows > 0) {
 //내부공개 SQL
         
 //내부공개 연재물(category) 목록
-$sqlCatOk = "SELECT * FROM thumbs WHERE  display = 'ok' OR display = 'on' ORDER BY author DESC";
+$sqlCatOk = "SELECT * FROM thumbs WHERE  display = 'ok' OR display = 'on' ORDER BY id DESC";
 $resultCatOk = $conn->query($sqlCatOk) or die($conn->error);
 
 
