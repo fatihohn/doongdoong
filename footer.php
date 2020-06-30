@@ -25,7 +25,7 @@
                     </div>
                     <div class="org_logo">
                         <a href="https://github.com/fatihohn">
-                            <img src="/static/img/corner_coder_horizontal.png" alt="코너코더">
+                            <img src="/static/img/cornercoder_horizontal.png" alt="코너코더">
                         </a>
                     </div>
                     <div class="org_logo">
