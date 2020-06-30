@@ -23,7 +23,7 @@ $zinDetail = $rowZinNow['zin_detail'];
 //과월호 SQL
         
 //과월호 연재물(category) 목록
-$sqlCatPast = "SELECT * FROM thumbs WHERE  display = 'on' ORDER BY author DESC";
+$sqlCatPast = "SELECT * FROM thumbs WHERE  display = 'on' ORDER BY id DESC";
 $resultCatPast = $conn->query($sqlCatPast) or die($conn->error);
 
 
@@ -116,7 +116,7 @@ echo "<div class='sc_list_area'>
         <ul class='sc_list_contain'>";
 
 //이번호 연재물(category) 목록
-$sqlCatNow = "SELECT * FROM thumbs WHERE  display = 'on' ORDER BY author DESC";
+$sqlCatNow = "SELECT * FROM thumbs WHERE  display = 'on' ORDER BY id DESC";
 $resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
 
 
