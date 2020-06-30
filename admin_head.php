@@ -7,7 +7,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="변방의북소리-둥둥">
     <meta property="og:description" content="변방의북소리-둥둥">
-    <title>변방의북소리-둥둥 에디터</title>
+    <title>둥둥 에디터|변방의북소리 웹진 Doong-Doong</title>
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
