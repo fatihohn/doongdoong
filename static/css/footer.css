@@ -25,6 +25,7 @@
 .ft_contain .logo_wrap {
     /* width: 80%; */
     width: 600px;
+    display: -ms-grid;
     display: grid;
     /* grid-template-columns: 20% 20% 20% 20%; */
     /* grid-template-columns: 150px 150px 150px 150px; */
@@ -35,10 +36,11 @@
     text-align: center;
 }
 
-.ft_contain .logo_wrap .org_logo {
+
+/* .ft_contain .logo_wrap .org_logo {
     -ms-grid-column: 1;
     -ms-grid-row: 1;
-}
+} */
 
 .ft_contain .logo_wrap .org_logo img {
     max-width: 120px;
