@@ -45,6 +45,7 @@
         margin-left: 5px;
         float: left;
         width: calc((400% - 40px) / 4);
+        -ms-grid-row: span 2;
         grid-column: span 2;
     }
     
