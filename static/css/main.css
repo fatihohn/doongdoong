@@ -35,6 +35,7 @@
         position: relative;
         overflow: hidden;
         display: grid;
+        -ms-grid-columns: 25% 25% 25% 25%;
         grid-template-columns: 25% 25% 25% 25%;
     }
     
@@ -654,6 +655,7 @@
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content .cat_wrap {
         display: grid;
+        -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     }
     

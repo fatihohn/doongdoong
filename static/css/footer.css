@@ -28,6 +28,7 @@
     display: grid;
     /* grid-template-columns: 20% 20% 20% 20%; */
     /* grid-template-columns: 150px 150px 150px 150px; */
+    -ms-grid-columns: 200px 200px 200px;
     grid-template-columns: 200px 200px 200px;
     /* grid-gap: 50px; */
     margin: 30px auto;
@@ -49,6 +50,7 @@
     .ft_contain .logo_wrap {
         width: 450px;
         /* grid-template-columns: 100px 100px 100px 100px; */
+        -ms-grid-columns: 150px 150px 150px;
         grid-template-columns: 150px 150px 150px;
     }
     .ft_contain .logo_wrap .org_logo img {
@@ -63,6 +65,7 @@
     .ft_contain .logo_wrap {
         width: 255px;
         /* grid-template-columns: 30% 30% 30%; */
+        -ms-grid-columns: 75px 75px 75px;
         grid-template-columns: 75px 75px 75px;
         grid-gap: 15px;
         margin: 20px auto;
