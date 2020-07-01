@@ -56,8 +56,8 @@
         display: -ms-grid;
         display: grid;
 
-        /* grid-template-columns: 25% 25% 25% 25%; */
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 25% 25% 25% 25%;
+        /* grid-template-columns: 1fr 1fr; */
     }
     
     #bbdd_sc_area .sc_list_contain>.category,
@@ -65,10 +65,10 @@
         margin-right: 10px;
         margin-left: 5px;
         float: left;
-        /* width: calc((400% - 40px) / 4); */
-        width: calc(100% - 15px);
-        /* grid-column: span 2; */
-        grid-column: span 1;
+        width: calc((400% - 40px) / 4);
+        /* width: calc(100% - 15px); */
+        grid-column: span 2;
+        /* grid-column: span 1; */
     }
 
     
