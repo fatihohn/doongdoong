@@ -59,7 +59,7 @@
             overflow: hidden;
             /* display: -ms-grid; */
             display: grid;
-            -ms-grid-columns: 25% 25% 25% 25%;
+            /* -ms-grid-columns: 25% 25% 25% 25%; */
             grid-template-columns: 25% 25% 25% 25%;
         }
         
