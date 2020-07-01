@@ -8,7 +8,7 @@
     
     #bbdd_sc_area {
         height: auto;
-        background-color: rgba(6, 102, 152);
+        background-color: rgb(6, 102, 152);
         margin-top: 80px;
         padding-top: 2px;
         overflow-x: hidden;
@@ -64,8 +64,8 @@
     }
     
     #bbdd_sc_area .sc_list_contain>.category .title {
-        border-top: 1px solid rgba(6, 102, 152);
-        border-bottom: 1px solid rgba(6, 102, 152);
+        border-top: 1px solid rgb(6, 102, 152);
+        border-bottom: 1px solid rgb(6, 102, 152);
         padding: 4px 0;
         text-align: center;
         margin-bottom: 10px;
@@ -75,7 +75,7 @@
         font-size: 1.4rem;
         line-height: 1.7rem;
         font-weight: 300;
-        color: rgba(6, 102, 152);
+        color: rgb(6, 102, 152);
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat,
@@ -118,7 +118,7 @@
     
     #bbdd_sc_area .sc_list_contain>.category .cat:hover .cat_title>h2,
     #bbdd_sc_area .view_wrap .category .cat:hover .cat_title>h2 {
-        color: rgba(6, 102, 152);
+        color: rgb(6, 102, 152);
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat .cat_title>h2,
@@ -130,7 +130,7 @@
         word-break: keep-all;
         padding-top: calc(960px/64);
         margin-bottom: 8px;
-        color: rgba(0, 0, 0);
+        color: rgb(0, 0, 0);
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat .cat_author,
@@ -144,7 +144,7 @@
         font-size: 1rem;
         font-weight: 600;
         line-height: 1.1rem;
-        color: rgba(6, 102, 152);
+        color: rgb(6, 102, 152);
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat:hover .cat_author>p,
@@ -177,7 +177,7 @@
         float: right;
         margin-top: 9px;
         margin-right: 7px;
-        background-color: rgba(6, 102, 152);
+        background-color: rgb(6, 102, 152);
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat_list .cat_li:last-of-type,
@@ -194,7 +194,7 @@
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat_list .cat_li a:hover .li_number {
-        color: rgba(255, 255, 255);
+        color: rgb(255, 255, 255);
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat_list .cat_li .li_number::after,
@@ -211,7 +211,7 @@
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat_list .cat_li a:hover .li_number::after {
-        background-color: rgba(255, 255, 255);
+        background-color: rgb(255, 255, 255);
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat_list .cat_li .li_number>p {
@@ -231,7 +231,7 @@
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat_list .cat_li a:hover .li_title {
-        color: rgba(255, 255, 255);
+        color: rgb(255, 255, 255);
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat_list .cat_li .li_title>p {
@@ -432,7 +432,7 @@
     #bbdd_sc_area .view_wrap .view_wrap_line .view_detail .view_auth_detail {
         border-bottom: 1px solid rgba(50, 50, 50, 0.2);
         padding-bottom: 10px;
-        color: rgba(6, 102, 152);
+        color: rgb(6, 102, 152);
         white-space: pre-line;
         word-break: keep-all;
     }
@@ -445,7 +445,7 @@
     }
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_category {
-        color: rgba(0, 0, 0);
+        color: rgb(0, 0, 0);
         font-weight: 900;
         font-size: 2.6rem;
         padding-top: 40px;
@@ -453,7 +453,7 @@
     }
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_author {
-        color: rgba(6, 102, 152);
+        color: rgb(6, 102, 152);
         font-weight: 600;
         font-size: 1.2rem;
         padding-bottom: 50px;
@@ -485,7 +485,7 @@
         float: left;
         padding-right: 10px;
         margin-right: 10px;
-        color: rgba(0, 0, 0);
+        color: rgb(0, 0, 0);
     }
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .cont_li_title {
@@ -499,7 +499,7 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
-        color: rgba(0, 0, 0);
+        color: rgb(0, 0, 0);
         text-align: left;
     }
     
@@ -522,7 +522,7 @@
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .cont_li a:hover .li_number,
     #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .cont_li a:hover .cont_li_title>p {
-        color: rgba(6, 102, 152);
+        color: rgb(6, 102, 152);
     }
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_sess {
@@ -573,8 +573,6 @@
         font-size: 1rem;
     }
     
-
-
     #bbdd_sc_area .view_wrap .view_wrap_line .func_btn {
         width: 100%;
         max-width: 596px;
@@ -583,6 +581,7 @@
         text-align: center;
         display: grid;
     }
+    
     #bbdd_sc_area .view_wrap .view_wrap_line .func_btn .share_btn {
         width: 60px;
         height: 60px;
@@ -597,7 +596,7 @@
         /* position: relative;
         top: -30px; */
     }
-
+    
     #bbdd_sc_area .view_wrap .view_wrap_line .view_btn {
         max-width: 596px;
         height: min-content;
@@ -748,7 +747,7 @@
         }
         #bbdd_sc_area .sc_list_contain>.category .cat .cat_img .cat_title {
             border-radius: 8px 0;
-            border: 1px solid rgba(6, 102, 152);
+            border: 1px solid rgb(6, 102, 152);
         }
         #bbdd_sc_area .sc_list_contain>.category .cat_title.new>h2:after {
             content: '';
@@ -759,7 +758,7 @@
             margin-bottom: 2px;
             margin-left: 7px;
             vertical-align: middle;
-            color: rgba(6, 102, 152);
+            color: rgb(6, 102, 152);
         }
         #bbdd_sc_area .sc_list_contain>.category .cat_list {
             display: none;
@@ -780,7 +779,7 @@
         }
         #bbdd_sc_area .mega_list>.mega_box .mega_box_sub .mega_list_wrap {
             border-radius: 8px 0;
-            border: 1px solid rgba(6, 102, 152);
+            border: 1px solid rgb(6, 102, 152);
         }
         #bbdd_sc_area .view_wrap .view_wrap_line {
             padding: 40px 30px;
