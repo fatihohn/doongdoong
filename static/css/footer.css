@@ -25,11 +25,12 @@
 .ft_contain .logo_wrap {
     /* width: 80%; */
     width: 600px;
-    /* display: -ms-grid; */
+    display: -ms-grid;
     display: grid;
     /* grid-template-columns: 20% 20% 20% 20%; */
     /* grid-template-columns: 150px 150px 150px 150px; */
     -ms-grid-columns: 200px 200px 200px;
+    -ms-grid-rows: 45px 45px;
     grid-template-columns: 200px 200px 200px;
     /* grid-gap: 50px; */
     margin: 30px auto;
@@ -37,10 +38,30 @@
 }
 
 
-/* .ft_contain .logo_wrap .org_logo {
+.ft_contain .logo_wrap .org_logo:nth-child(1) {
     -ms-grid-column: 1;
     -ms-grid-row: 1;
-} */
+}
+.ft_contain .logo_wrap .org_logo:nth-child(2) {
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+}
+.ft_contain .logo_wrap .org_logo:nth-child(3) {
+    -ms-grid-column: 3;
+    -ms-grid-row: 1;
+}
+.ft_contain .logo_wrap .org_logo:nth-child(4) {
+    -ms-grid-column: 1;
+    -ms-grid-row: 2;
+}
+.ft_contain .logo_wrap .org_logo:nth-child(5) {
+    -ms-grid-column: 2;
+    -ms-grid-row: 2;
+}
+.ft_contain .logo_wrap .org_logo:nth-child(6) {
+    -ms-grid-column: 3;
+    -ms-grid-row: 2;
+}
 
 .ft_contain .logo_wrap .org_logo img {
     max-width: 120px;
