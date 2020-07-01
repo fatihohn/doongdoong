@@ -53,10 +53,11 @@
         height: auto;
         position: relative;
         overflow: hidden;
-        /* display: -ms-grid; */
+        display: -ms-grid;
         display: grid;
 
         /* grid-template-columns: 25% 25% 25% 25%; */
+        -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     }
     
@@ -68,6 +69,7 @@
         /* width: calc((400% - 40px) / 4); */
         width: calc(100% - 10px);
         /* grid-column: span 2; */
+        -ms-grid-column-span: 1;
         grid-column: span 1;
     }
 
