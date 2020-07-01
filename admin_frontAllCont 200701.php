@@ -233,8 +233,7 @@ if(!isset($_SESSION['username'])) {
                 
                
                 // $sqlIdMax = "SELECT id FROM contents WHERE category='$catCategory' AND display='on' OR (category='$catCategory' AND display='ok') OR (category='$catCategory' AND username='$uname') ORDER BY sess*1 DESC LIMIT 1";
-                // $sqlIdMax = "SELECT id FROM contents WHERE category=? AND display='?category=? AND display='?(category=? AND username=?) ORDER BY sess*1 DESC LIMIT 1";
-                $sqlIdMax = "SELECT id FROM contents WHERE category=? AND display='on' OR (category=? AND display='ok') OR (category=? AND username=?) ORDER BY sess*1 DESC LIMIT 1";
+                $sqlIdMax = "SELECT id FROM contents WHERE category=? AND display='?category=? AND display='?(category=? AND username=?) ORDER BY sess*1 DESC LIMIT 1";
                 
                 $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $sqlIdMax)) {
@@ -251,8 +250,7 @@ if(!isset($_SESSION['username'])) {
                 $idMax = $rowsIdMax['id'];
 
                 // $sqlIdMin = "SELECT id FROM contents WHERE category='$catCategory' AND display='on' OR (category='$catCategory' AND display='ok') OR (category='$catCategory' AND username='$uname') ORDER BY sess*1 ASC LIMIT 1";
-                // $sqlIdMin = "SELECT id FROM contents WHERE category=? AND display='?OR (category=? AND display='?OR (category=? AND username=?) ORDER BY sess*1 ASC LIMIT 1";
-                $sqlIdMin = "SELECT id FROM contents WHERE category=? AND display='on' OR (category=? AND display='ok') OR (category=? AND username=?) ORDER BY sess*1 ASC LIMIT 1";
+                $sqlIdMin = "SELECT id FROM contents WHERE category=? AND display='?OR (category=? AND display='?OR (category=? AND username=?) ORDER BY sess*1 ASC LIMIT 1";
                 
                 $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $sqlIdMin)) {
