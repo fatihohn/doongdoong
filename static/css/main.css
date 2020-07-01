@@ -275,7 +275,6 @@
         position: relative;
         margin-bottom: 8px;
         max-width: 100%;
-        -ms-filter: grayscale(100%);
         filter: grayscale(100%);
         border-radius: 5px;
         background-size: cover;
@@ -498,7 +497,6 @@
         margin-bottom: 20px;
         float: left;
         padding: 10px 0;
-        -ms-filter: grayscale(100%);
         filter: grayscale(100%);
         height: calc(960px/4);
     }
@@ -840,6 +838,7 @@
     }
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content .cat_wrap {
+        display: -ms-grid;
         display: grid;
         -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
@@ -849,7 +848,9 @@
         margin-right: 10px;
         margin-left: 5px;
         float: left;
-        width: calc((400% - 40px) / 4);
+        /* width: calc((400% - 40px) / 4); */
+        width: calc(100% - 10px);
+        -ms-grid-column-span: 2;
         grid-column: span 2;
         height: 330px;
     }
