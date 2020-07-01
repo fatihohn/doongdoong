@@ -80,148 +80,153 @@
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(2),
     #bbdd_sc_area .view_wrap .category:nth-of-type(2) {
-        -ms-grid-column: 2;
-        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        -ms-grid-row: 2;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(3),
     #bbdd_sc_area .view_wrap .category:nth-of-type(3) {
-        -ms-grid-column: 1;
+        -ms-grid-column: 2;
         -ms-grid-row: 2;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(4),
     #bbdd_sc_area .view_wrap .category:nth-of-type(4) {
-        -ms-grid-column: 2;
-        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        -ms-grid-row: 3;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(5),
     #bbdd_sc_area .view_wrap .category:nth-of-type(5) {
-        -ms-grid-column: 1;
+        -ms-grid-column: 2;
         -ms-grid-row: 3;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(6),
     #bbdd_sc_area .view_wrap .category:nth-of-type(6) {
-        -ms-grid-column: 2;
-        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+        -ms-grid-row: 4;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(7),
     #bbdd_sc_area .view_wrap .category:nth-of-type(7) {
-        -ms-grid-column: 1;
+        -ms-grid-column: 2;
         -ms-grid-row: 4;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(8),
     #bbdd_sc_area .view_wrap .category:nth-of-type(8) {
-        -ms-grid-column: 2;
-        -ms-grid-row: 4;
+        -ms-grid-column: 1;
+        -ms-grid-row: 5;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(9),
     #bbdd_sc_area .view_wrap .category:nth-of-type(9) {
-        -ms-grid-column: 1;
+        -ms-grid-column: 2;
         -ms-grid-row: 5;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(10),
     #bbdd_sc_area .view_wrap .category:nth-of-type(10) {
-        -ms-grid-column: 2;
-        -ms-grid-row: 5;
+        -ms-grid-column: 1;
+        -ms-grid-row: 6;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(11),
     #bbdd_sc_area .view_wrap .category:nth-of-type(11) {
-        -ms-grid-column: 1;
+        -ms-grid-column: 2;
         -ms-grid-row: 6;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(12),
     #bbdd_sc_area .view_wrap .category:nth-of-type(12) {
-        -ms-grid-column: 2;
-        -ms-grid-row: 6;
+        -ms-grid-column: 1;
+        -ms-grid-row: 7;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(13),
     #bbdd_sc_area .view_wrap .category:nth-of-type(13) {
-        -ms-grid-column: 1;
+        -ms-grid-column: 2;
         -ms-grid-row: 7;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(14),
     #bbdd_sc_area .view_wrap .category:nth-of-type(14) {
-        -ms-grid-column: 2;
-        -ms-grid-row: 7;
+        -ms-grid-column: 1;
+        -ms-grid-row: 8;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(15),
     #bbdd_sc_area .view_wrap .category:nth-of-type(15) {
-        -ms-grid-column: 1;
+        -ms-grid-column: 2;
         -ms-grid-row: 8;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(16),
     #bbdd_sc_area .view_wrap .category:nth-of-type(16) {
-        -ms-grid-column: 2;
-        -ms-grid-row: 8;
+        -ms-grid-column: 1;
+        -ms-grid-row: 9;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(17),
     #bbdd_sc_area .view_wrap .category:nth-of-type(17) {
-        -ms-grid-column: 1;
+        -ms-grid-column: 2;
         -ms-grid-row: 9;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(18),
     #bbdd_sc_area .view_wrap .category:nth-of-type(18) {
-        -ms-grid-column: 2;
-        -ms-grid-row: 9;
+        -ms-grid-column: 1;
+        -ms-grid-row: 10;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(19),
     #bbdd_sc_area .view_wrap .category:nth-of-type(19) {
-        -ms-grid-column: 1;
+        -ms-grid-column: 2;
         -ms-grid-row: 10;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(20),
     #bbdd_sc_area .view_wrap .category:nth-of-type(20) {
-        -ms-grid-column: 2;
-        -ms-grid-row: 10;
+        -ms-grid-column: 1;
+        -ms-grid-row: 11;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(21),
     #bbdd_sc_area .view_wrap .category:nth-of-type(21) {
-        -ms-grid-column: 1;
+        -ms-grid-column: 2;
         -ms-grid-row: 11;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(22),
     #bbdd_sc_area .view_wrap .category:nth-of-type(22) {
-        -ms-grid-column: 2;
-        -ms-grid-row: 11;
+        -ms-grid-column: 1;
+        -ms-grid-row: 12;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(23),
     #bbdd_sc_area .view_wrap .category:nth-of-type(23) {
-        -ms-grid-column: 1;
+        -ms-grid-column: 2;
         -ms-grid-row: 12;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(24),
     #bbdd_sc_area .view_wrap .category:nth-of-type(24) {
-        -ms-grid-column: 2;
-        -ms-grid-row: 12;
+        -ms-grid-column: 1;
+        -ms-grid-row: 13;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(25),
     #bbdd_sc_area .view_wrap .category:nth-of-type(25) {
-        -ms-grid-column: 1;
+        -ms-grid-column: 2;
         -ms-grid-row: 13;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(26),
     #bbdd_sc_area .view_wrap .category:nth-of-type(26) {
-        -ms-grid-column: 2;
-        -ms-grid-row: 13;
+        -ms-grid-column: 1;
+        -ms-grid-row: 14;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(27),
     #bbdd_sc_area .view_wrap .category:nth-of-type(27) {
-        -ms-grid-column: 1;
+        -ms-grid-column: 2;
         -ms-grid-row: 14;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(28),
     #bbdd_sc_area .view_wrap .category:nth-of-type(28) {
-        -ms-grid-column: 2;
-        -ms-grid-row: 14;
+        -ms-grid-column: 1;
+        -ms-grid-row: 15;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(29),
     #bbdd_sc_area .view_wrap .category:nth-of-type(29) {
-        -ms-grid-column: 1;
+        -ms-grid-column: 2;
         -ms-grid-row: 15;
     }
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(30),
     #bbdd_sc_area .view_wrap .category:nth-of-type(30) {
+        -ms-grid-column: 1;
+        -ms-grid-row: 16;
+    }
+    #bbdd_sc_area .sc_list_contain>.category:nth-of-type(31),
+    #bbdd_sc_area .view_wrap .category:nth-of-type(31) {
         -ms-grid-column: 2;
-        -ms-grid-row: 15;
+        -ms-grid-row: 16;
     }
 
     
