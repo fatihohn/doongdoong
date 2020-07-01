@@ -275,6 +275,7 @@
         position: relative;
         margin-bottom: 8px;
         max-width: 100%;
+        -ms-filter: grayscale(100%);
         filter: grayscale(100%);
         border-radius: 5px;
         background-size: cover;
@@ -497,6 +498,7 @@
         margin-bottom: 20px;
         float: left;
         padding: 10px 0;
+        -ms-filter: grayscale(100%);
         filter: grayscale(100%);
         height: calc(960px/4);
     }
