@@ -53,7 +53,7 @@
         height: auto;
         position: relative;
         overflow: hidden;
-        display: -ms-grid;
+        /* display: -ms-grid; */
         display: grid;
 
         /* grid-template-columns: 25% 25% 25% 25%; */
