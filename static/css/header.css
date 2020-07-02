@@ -269,7 +269,7 @@
 
 ::-webkit-scrollbar {
     /* width: 5px; */
-    width: 5px;
+    width: 7px;
 }
 
 
@@ -278,14 +278,16 @@
  ::-webkit-scrollbar-track {
     /* background: #ffffff;  */
     background: rgba(0, 0, 0, 0);
+    /* background: rgba(255, 255, 255, 0.1); */
 }
 
 
 /* Handle */
 
  ::-webkit-scrollbar-thumb {
-    /* background: rgba(6, 102, 152, 0.0);  */
-    background: rgba(0, 0, 0, 0);
+    /* background: rgba(6, 102, 152, 0.2); */
+    background: rgba(255, 255, 255, 0.1);
+    /* background: rgba(0, 0, 0, 0); */
 }
 
 
@@ -293,7 +295,8 @@
 
 ::-webkit-scrollbar-thumb:hover {
     /* background: rgba(6, 102, 152, 0.2);  */
-    background: rgba(0, 0, 0, 0);
+    /* background: rgba(0, 0, 0, 0); */
+    background: rgba(255, 255, 255, 0.5);
 }
 
 #bbdd_nav_area .nav_contain .nav_main>li {
