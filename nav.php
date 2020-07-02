@@ -13,7 +13,8 @@ $rowZinNow = $resultZinNow->fetch_assoc();
 $zinTitle = $rowZinNow['title'];
 
 //연재중 연재물(category) 목록
-$sqlCatNow = "SELECT * FROM thumbs WHERE display = 'on' ORDER BY id DESC";
+// $sqlCatNow = "SELECT * FROM thumbs WHERE display = 'on' ORDER BY id DESC";
+$sqlCatNow = "SELECT * FROM thumbs WHERE display = 'on' ORDER BY created DESC";
 $resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
 ?>
 
@@ -43,7 +44,8 @@ $resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
 
 //****지난호****//
 // //지난호 연재물(category) 목록
-$sqlCatPast = "SELECT * FROM thumbs WHERE display = 'on' ORDER BY id DESC";
+// $sqlCatPast = "SELECT * FROM thumbs WHERE display = 'on' ORDER BY id DESC";
+$sqlCatPast = "SELECT * FROM thumbs WHERE display = 'on' ORDER BY created DESC";
 $resultCatPast = $conn->query($sqlCatPast) or die($conn->error);
 
 
@@ -126,7 +128,8 @@ if ($resultCatNow->num_rows > 0) {
         }
         $rowCatNowCont = ${"rowCatNow".$catTitle};
 
-        $sqlCatOfNowCont = "SELECT * FROM thumbs WHERE display='on' AND zin=? AND category = ? ORDER BY id DESC LIMIT 1";
+        // $sqlCatOfNowCont = "SELECT * FROM thumbs WHERE display='on' AND zin=? AND category = ? ORDER BY id DESC LIMIT 1";
+        $sqlCatOfNowCont = "SELECT * FROM thumbs WHERE display='on' AND zin=? AND category = ? ORDER BY created DESC LIMIT 1";
 
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sqlCatOfNowCont)) {
