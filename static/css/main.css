@@ -1099,9 +1099,9 @@
         color: rgba(0, 0, 0, 0.75);
     }
     
-    #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content>p {
+    /* #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content>p {
         text-indent: 1rem;
-    }
+    } */
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content img {
         border-radius: 5px;
