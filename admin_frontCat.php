@@ -169,8 +169,8 @@ $zinTitle = $rowZinNow['title'];
             ?>
         </ul>
                     <div class = 'view_detail'>
-                        <div class = 'view_auth_detail'><?php echo $rowsAuth['auth_detail']?></div>
-                        <div class = 'view_cat_detail'><?php echo $rows['cat_detail']?></div>
+                        <div class = 'view_auth_detail'>글쓴이 | <?php echo $rowsAuth['auth_detail']?></div>
+                        <div class = 'view_cat_detail'>코너 소개 | <?php echo $rows['cat_detail']?></div>
                     </div>
     </div>
 </div>
