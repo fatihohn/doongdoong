@@ -59,8 +59,7 @@ $dQuote = '"';
                 `img`='{$uploadimg['img']}$filename',
                 `img_dir`='{$uploadimg['img']}$target_file',
                 `display`='$display', 
-                `publish`='$publish',
-                `created`=NOW()
+                `publish`='$publish'
                 WHERE `id`='$q'";
 
 
@@ -79,8 +78,7 @@ if($_FILES['img']['size']!==0) {
                 `img`='{$uploadimg['img']}$filename',
                 `img_dir`='{$uploadimg['img']}$target_file',
                 `display`='$display', 
-                `publish`='$publish',
-                `created`=NOW()
+                `publish`='$publish'
                 WHERE `id`='$q'";
                 $sql = $sql0;
                 echo "<br>sql0";
@@ -103,8 +101,7 @@ if($_FILES['img']['size']!==0) {
                 `cat_detail`='$cat_detail', 
                 
                 `display`='$display', 
-                `publish`='$publish',
-                `created`=NOW()
+                `publish`='$publish'
                 WHERE `id`='$q'";
                 $sql = $sql1;
                 echo "<br>sql1";
