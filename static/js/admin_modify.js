@@ -30,3 +30,7 @@ function notiModi(str) {
     location.href = './admin_modify_noti.php?id=' + str;
 
 }
+
+function thumbsToTop(str) {
+    location.href = './admin_modify_thumbs_toTop.php?id=' + str;
+}

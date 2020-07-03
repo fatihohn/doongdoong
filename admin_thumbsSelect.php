@@ -26,11 +26,13 @@ if(!isset($_SESSION['username'])) {
             //cast: admin인 경우
             else if($_SESSION['cast']==$adminCast || $_SESSION['cast']==$editorCast) {
 
-                $sql = "SELECT * FROM thumbs ORDER BY id DESC";
+                // $sql = "SELECT * FROM thumbs ORDER BY id DESC";
+                $sql = "SELECT * FROM thumbs ORDER BY created DESC";
                 
             } else if ($_SESSION['cast']!==$adminCast && $_SESSION['cast']!==$editorCast && $_SESSION['cast']==$authorCast) {
                 
-                $sql = "SELECT * FROM thumbs WHERE display = 'on' OR display='ok' ORDER BY id DESC";
+                // $sql = "SELECT * FROM thumbs WHERE display = 'on' OR display='ok' ORDER BY id DESC";
+                $sql = "SELECT * FROM thumbs WHERE display = 'on' OR display='ok' ORDER BY created DESC";
 
             
             } else if ($_SESSION['cast']!==$adminCast && $_SESSION['cast']!==$editorCast && $_SESSION['cast']!==$authorCast) {
@@ -82,7 +84,7 @@ if ($result->num_rows > 0) {
         // <td class='{$row["id"]}'><img src='{$row['img_dir']}' width='90px' heigit='60px'></td>
 echo
         "<tr >
-        <td class='{$row["id"]}'>{$row['id']}</td>    
+        <td class='{$row["id"]}' onclick='thumbsToTop(this.className)' title='맨 위로'>{$row['id']}</td>    
         <td class='{$row["id"]}'>{$row['author']}</td>
         <td class='{$row["id"]}' id='{$row["id"]}' onclick='adminAllCatShow(this.id)'>{$row['category']}</td>
         <td class='{$row["id"]} {$row['display']}'>{$row['display']}</td>
