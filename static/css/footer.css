@@ -30,6 +30,10 @@
     margin: 30px auto;
 }
 
+.ft_contain .logo_wrap .org_logo a {
+    max-width: 120px;
+    margin: 0 auto;
+}
 .ft_contain .logo_wrap .org_logo img {
     max-width: 120px;
     padding-bottom: 10px;
