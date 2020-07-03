@@ -3,7 +3,8 @@
 include 'bbdd_db_conn.php';
 
 
-$q = intval($_POST['id']); 
+// $q = intval($_POST['id']); 
+$q = intval($_GET['id']); 
 // $catOriginalSql = "SELECT * FROM thumbs WHERE id= $q";
 // $resultCatOriginal = $conn->query($catOriginalSql);
 //                 $rowsCatOriginal = mysqli_fetch_assoc($resultCatOriginal);
