@@ -230,7 +230,7 @@ if ($resultCatOk->num_rows > 0) {
                     </ul>
                     <div class="nav_bottom">
                         <div class="portal_btn_wrap">
-                            <div class="partal_btn">
+                            <div class="portal_btn">
                                 <a href="index.php">
                                     <img src="static/img/logo.png" alt="둥둥">
                                 </a>
