@@ -534,4 +534,14 @@
         margin: 0 25%;
         width: 50%;
     }
+    #bbdd_nav_area .nav_contain .nav_bottom .portal_btn_wrap .portal_btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+    }
+    #bbdd_nav_area .nav_contain .nav_bottom .portal_btn_wrap .portal_btn img {
+        width: 60px;
+        padding: 5px;
+        padding-top: 10px;
+    }
 }
