@@ -63,15 +63,20 @@
                         $_SESSION['cast']=$cast;
                         $_SESSION['author']=$author;
                         if(isset($_SESSION['username'])){
-?>      
-<script>
-                                alert("<?=$username;" ";$cast;?>님 로그인 되었습니다.");
-</script>
-<?php
                                 if($cast == "normal") {
                                         location.replace("./index.php");
+                                ?>      
+                                <script>
+                                                                alert("<?=$username;" ";$cast;?>님 로그인 되었습니다.");
+                                </script>
+<?php
                                 } else {
                                         location.replace("./admin_index.php");
+                                ?>      
+                                <script>
+                                                                alert("<?=$username;" ";$cast;?>님 로그인 되었습니다.");
+                                </script>
+<?php
                                 }
                         }
                         else{
