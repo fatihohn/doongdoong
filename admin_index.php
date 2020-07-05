@@ -40,16 +40,20 @@ if(!isset($_SESSION['username'])) {
         </section>";
             }
             else {
-
-echo "<div id='bbdd_body'>
-        <header id='bbdd_hd'>";
-           include 'admin_header.php'; 
-echo    "</header>";
-
-            include "admin_editor_index.php";
-
-// <!-- </div> -->
-
+                if($_SESSION['cast'] == "normal") {
+                    ?>
+                    <script>
+                        location.replace("./index.php");
+                    </script>
+                    <?php
+                } else {
+                    echo "<div id='bbdd_body'>
+                            <header id='bbdd_hd'>";
+                               include 'admin_header.php'; 
+                    echo    "</header>";
+                    
+                                include "admin_editor_index.php";
+                }
 
 }
 
