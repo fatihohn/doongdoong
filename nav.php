@@ -1,6 +1,6 @@
 <?php 
-session_start();
 include "bbdd_db_conn.php";
+session_start();
 
 
 if ($conn->connect_error) {
