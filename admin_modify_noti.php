@@ -209,12 +209,20 @@
     <?php include "admin_jsGroup.php";?>
 
     <script type="text/javascript">
+var aAdditionalFontSet = [["경기천년바탕", "경기천년바탕"], ["경기천년제목", "경기천년제목"]];
+
+
     let oEditors = [];
     nhn.husky.EZCreator.createInIFrame({
      oAppRef: oEditors,
      elPlaceHolder: "ir1",
     //  sSkinURI: "se2/SmartEditor2Skin.html",
      sSkinURI: "SmartEditor2Skin_noti.html",
+     htParams: {
+        SE2M_FontName: {
+			htMainFont: {'id': '경기천년바탕','name': '경기천년바탕','size': '1.05rem','url': '','cssUrl': ''} // 기본 글꼴 설정
+		},
+     },
      fCreator: "createSEditor2"
     });
 
