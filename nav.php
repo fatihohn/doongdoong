@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include "bbdd_db_conn.php";
 
 if ($conn->connect_error) {
@@ -179,8 +180,7 @@ if ($resultCatNow->num_rows > 0) {
                         <!-- <a href="admin_index.php"> -->
 
                         <?php
-                        include 'bbdd_db_conn.php';
-                        session_start();
+                        
                         if($_SESSION['cast'] !== "normal") {
                             $indexURL = "admin_index.php";
                             echo "<a href='".$indexURL."'>";
