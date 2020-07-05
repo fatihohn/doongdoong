@@ -179,10 +179,10 @@ if ($resultCatNow->num_rows > 0) {
                         <!-- <a href="admin_index.php"> -->
 
                         <?php
-                        if($_SESSION['cast'] == "normal") {
-                            $indexURL = "admin_logout.php";
-                        } else {
+                        if($_SESSION['cast'] !== "normal") {
                             $indexURL = "admin_index.php";
+                        } else {
+                            $indexURL = "admin_logout.php";
                         }
                         ?>
                         <a href="<?php echo $indexURL; ?>">
