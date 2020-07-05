@@ -1,10 +1,16 @@
 <?php 
-session_start();
 include "bbdd_db_conn.php";
+
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+session_start();
+
+// if (isset($_SESSION['username'])) {
+
+// }
 
 
 $sqlZinNow = "SELECT * FROM zin WHERE publish='now' AND display = 'on' ORDER BY id DESC LIMIT 1";
@@ -185,10 +191,12 @@ if ($resultCatNow->num_rows > 0) {
                             $indexURL = "admin_index.php";
                             echo "<a href='".$indexURL."'>";
                             echo var_dump($_SESSION['cast']);
+                            echo var_dump($_SESSION['username']);
                         } else {
                             $indexURL = "admin_logout.php";
                             echo "<a href='".$indexURL."'>";
                             echo var_dump($_SESSION['cast']);
+                            echo var_dump($_SESSION['username']);
                         }
                         ?>
                         <!-- <a href="<?php //echo $indexURL; ?>"> -->
