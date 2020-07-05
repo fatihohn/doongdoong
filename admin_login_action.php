@@ -66,7 +66,12 @@
 ?>      
 <script>
                         alert("<?=$username;" ";$cast;?>님 로그인 되었습니다.");
-                        location.replace("./admin_index.php");
+
+                        if($_SESSION['cast'] == "normal") {
+                                location.replace("./index.php");
+                        } else {
+                                location.replace("./admin_index.php");
+                        }
 </script>
 <?php
                         }
