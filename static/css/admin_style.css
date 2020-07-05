@@ -81,7 +81,6 @@ footer {
     font-size: 2rem;
 }
 
-
 article {
     display: grid;
     grid-row: 60px 500px;
@@ -197,6 +196,7 @@ article {
 .thumbs_table,
 .noti_table {
     border-collapse: collapse;
+    font-size: 0.8rem;
 }
 
 .cont_table tr,
@@ -239,23 +239,28 @@ article {
 .zin_table td:nth-child(1) {
     width: 30px;
 }
+
 .zin_table th:nth-child(2),
 .zin_table td:nth-child(2) {
     width: 95px;
 }
+
 .zin_table th:nth-child(3),
 .zin_table td:nth-child(3) {
     font-weight: 900;
     width: 100px;
 }
+
 .zin_table th:nth-child(5),
 .zin_table td:nth-child(5) {
     width: 64px;
 }
+
 .zin_table th:nth-child(6),
 .zin_table td:nth-child(6) {
     width: 64px;
 }
+
 .zin_table th:nth-child(7),
 .zin_table td:nth-child(7) {
     width: 75px;
