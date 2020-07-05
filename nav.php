@@ -176,7 +176,16 @@ if ($resultCatNow->num_rows > 0) {
             <div class="nav_bottom">
                 <div class="portal_btn_wrap">
                     <div class="portal_btn">
-                        <a href="admin_index.php">
+                        <!-- <a href="admin_index.php"> -->
+
+                        <?php
+                        if($_SESSION['cast'] == "normal") {
+                            $indexURL = "admin_logout.php";
+                        } else {
+                            $indexURL = "admin_index.php";
+                        }
+                        ?>
+                        <a href="<?php echo $indexURL; ?>">
                             <img src="static/img/editor_logo.png" alt="둥둥 에디터">
                         </a>
                     </div>
