@@ -181,11 +181,14 @@ if ($resultCatNow->num_rows > 0) {
                         <?php
                         if($_SESSION['cast'] !== "normal") {
                             $indexURL = "admin_index.php";
+                            echo "<a href='".$indexURL."'>";
                         } else {
                             $indexURL = "admin_logout.php";
+                            echo "<a href='".$indexURL."'>";
                         }
                         ?>
-                        <a href="<?php echo $indexURL; ?>">
+                        <!-- <a href="<?php //echo $indexURL; ?>"> -->
+                        <!-- <a onclick="location.href='./admin_logout.php'"> -->
                             <img src="static/img/editor_logo.png" alt="둥둥 에디터">
                         </a>
                     </div>
