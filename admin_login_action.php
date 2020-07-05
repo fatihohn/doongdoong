@@ -64,19 +64,19 @@
                         $_SESSION['author']=$author;
                         if(isset($_SESSION['username'])){
                                 if($cast == "normal") {
-                                        location.replace("./index.php");
-                                ?>      
-                                <script>
-                                                                alert("<?=$username;" ";$cast;?>님 로그인 되었습니다.");
-                                </script>
-<?php
+                                        ?>      
+                                        <script>
+                                                alert("<?=$username;" ";$cast;?>님 로그인 되었습니다.");
+                                                location.replace("./index.php");
+                                        </script>
+                                        <?php
                                 } else {
-                                        location.replace("./admin_index.php");
-                                ?>      
-                                <script>
-                                                                alert("<?=$username;" ";$cast;?>님 로그인 되었습니다.");
-                                </script>
-<?php
+                                        ?>      
+                                        <script>
+                                                alert("<?=$username;" ";$cast;?>님 로그인 되었습니다.");
+                                                location.replace("./admin_index.php");
+                                        </script>
+                                        <?php
                                 }
                         }
                         else{
