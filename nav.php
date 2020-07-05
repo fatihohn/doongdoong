@@ -190,13 +190,13 @@ if ($resultCatNow->num_rows > 0) {
                         if($_SESSION['cast'] !== "normal") {
                             $indexURL = "admin_index.php";
                             echo "<a href='".$indexURL."'>";
-                            echo var_dump($_SESSION['cast']);
-                            echo var_dump($_SESSION['username']);
+                            // echo var_dump($_SESSION['cast']);
+                            // echo var_dump($_SESSION['username']);
                         } else {
                             $indexURL = "admin_logout.php";
                             echo "<a href='".$indexURL."'>";
-                            echo var_dump($_SESSION['cast']);
-                            echo var_dump($_SESSION['username']);
+                            // echo var_dump($_SESSION['cast']);
+                            // echo var_dump($_SESSION['username']);
                         }
                         ?>
                         <!-- <a href="<?php //echo $indexURL; ?>"> -->
