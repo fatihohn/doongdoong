@@ -66,14 +66,13 @@
 ?>      
 <script>
                                 alert("<?=$username;" ";$cast;?>님 로그인 되었습니다.");
-
+</script>
+<?php
                                 if($cast == "normal") {
                                         location.replace("./index.php");
                                 } else {
                                         location.replace("./admin_index.php");
                                 }
-</script>
-<?php
                         }
                         else{
                                 echo "session fail";
