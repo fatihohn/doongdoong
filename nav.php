@@ -182,9 +182,11 @@ if ($resultCatNow->num_rows > 0) {
                         if($_SESSION['cast'] !== "normal") {
                             $indexURL = "admin_index.php";
                             echo "<a href='".$indexURL."'>";
+                            echo $_SESSION['cast'];
                         } else {
                             $indexURL = "admin_logout.php";
                             echo "<a href='".$indexURL."'>";
+                            echo $_SESSION['cast'];
                         }
                         ?>
                         <!-- <a href="<?php //echo $indexURL; ?>"> -->
