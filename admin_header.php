@@ -17,9 +17,9 @@
                                 <!-- [로그인] -->
                                 <?php
         include 'bbdd_db_conn.php';
-        $query = "select * from user_data order by id desc";
-        $result = $conn->query($query);
-        $total = mysqli_num_rows($result);
+        // $query = "select * from user_data order by id desc";
+        // $result = $conn->query($query);
+        // $total = mysqli_num_rows($result);
         
         session_start();
         
