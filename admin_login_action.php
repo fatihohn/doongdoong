@@ -65,13 +65,13 @@
                         if(isset($_SESSION['username'])){
 ?>      
 <script>
-                        alert("<?=$username;" ";$cast;?>님 로그인 되었습니다.");
+                                alert("<?=$username;" ";$cast;?>님 로그인 되었습니다.");
 
-                        if($_SESSION['cast'] == "normal") {
-                                location.replace("./index.php");
-                        } else {
-                                location.replace("./admin_index.php");
-                        }
+                                if($cast == "normal") {
+                                        location.replace("./index.php");
+                                } else {
+                                        location.replace("./admin_index.php");
+                                }
 </script>
 <?php
                         }
