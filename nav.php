@@ -180,6 +180,7 @@ if ($resultCatNow->num_rows > 0) {
 
                         <?php
                         session_start();
+                        include 'bbdd_db_conn.php';
                         if($_SESSION['cast'] !== "normal") {
                             $indexURL = "admin_index.php";
                             echo "<a href='".$indexURL."'>";
