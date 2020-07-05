@@ -244,7 +244,11 @@ if ($resultCatNow->num_rows > 0) {
         
 //내부공개 연재물(category) 목록
 // $sqlCatOk = "SELECT * FROM thumbs WHERE  display = 'ok' OR display = 'on' ORDER BY id DESC";
-$sqlCatOk = "SELECT * FROM thumbs WHERE  display = 'ok' OR display = 'on' ORDER BY created DESC";
+if($_SESSION['cast'] == "normal") {
+    $sqlCatOk = "SELECT * FROM thumbs WHERE display = 'on' ORDER BY created DESC";
+} else {
+    $sqlCatOk = "SELECT * FROM thumbs WHERE  display = 'ok' OR display = 'on' ORDER BY created DESC";
+}
 $resultCatOk = $conn->query($sqlCatOk) or die($conn->error);
 
 
