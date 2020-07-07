@@ -1432,7 +1432,8 @@
             padding: 40px 30px;
         }
         #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content {
-            letter-spacing: 1px;
+            /* letter-spacing: 1px; */
+            letter-spacing: 0px;
         }
         #bbdd_sc_area .view_wrap .view_wrap_line .view_btn_past,
         #bbdd_sc_area .view_wrap .view_wrap_line .view_btn_next,
