@@ -144,7 +144,7 @@
             </p>
             <p>
                 <div class="createInput">
-                <label class="createGrid1">매거진 포맷</label>
+                <label class="createGrid1">상시 발행시 매거진 포맷</label>
                 <!-- <textarea class="createGrid2" name="display" placeholder="작가소개" rows="10" cols="20"required></textarea> -->
                 <div class="createGrid2">
 
@@ -154,6 +154,8 @@
                     <label for="three_btn">3줄</label><br>
                     <input class="zin_column_btn" type="radio" id="four_btn"name="zin_column" value="4" checked>
                     <label for="four_btn">4줄</label><br>
+                    <input class="zin_column_btn" type="radio" id="five_btn"name="zin_column" value="5.3">
+                    <label for="five_btn">5줄</label><br>
                 
                     
                 </div>

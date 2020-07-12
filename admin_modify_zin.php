@@ -165,6 +165,8 @@
                     <label for="three_btn">3줄</label><br>
                     <input class="zin_column_btn" type="radio" id="four_btn"name="zin_column" value="4">
                     <label for="four_btn">4줄</label><br>
+                    <input class="zin_column_btn" type="radio" id="five_btn"name="zin_column" value="5.3">
+                    <label for="five_btn">5줄</label><br>
                 
                     
                 </div>
