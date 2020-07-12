@@ -379,7 +379,9 @@ function frontListForm(NumberOfColumn) {
             let standingCatAll = document.querySelectorAll(".standing_cat");
             let stc;
             for(stc=0; stc < standingCatAll.length; stc++) {
-                standingCatAll[stc].style.width = "calc((100% - 40px) / " + NumberOfColumn + ")";
+                if(window.innerWidth > 801) {
+                    standingCatAll[stc].style.width = "calc((100% - 40px) / " + NumberOfColumn + ")";
+                }
             }
         }
 
