@@ -332,6 +332,10 @@ function frontListForm(NumberOfColumn) {
             for(stc=0; stc < standingCatAll.length; stc++) {
                 if(window.innerWidth > 801) {
                     standingCatAll[stc].style.width = "calc((100% - 40px) / " + NumberOfColumn + ")";
+                } else if(window.innerWidth <= 801 && window.innerWidth > 481) {
+                    standingCatAll[stc].style.width = "calc(100% - 60px)";
+                } else {
+                    standingCatAll[stc].style.width = "calc(100% - 30px)";
                 }
             }
         }
