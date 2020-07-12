@@ -367,5 +367,16 @@ if (document.querySelector(".standing_cat")) {
 } else {
     document.getElementById("standing_wrap").style.display = "none";
 }
+
+
+function frontListForm(NumberOfColumn) {
+            let standingCatAll = document.querySelectorAll(".standing_cat");
+            let stc;
+            for(stc=0; stc < standingCatAll.length; stc++) {
+                standingCatAll[stc].style.width = "calc((100% - 40px) / " + NumberOfColumn + ")";
+            }
+        }
+
+frontListForm(<?php echo $zin_Column; ?>);
         
 </script>
