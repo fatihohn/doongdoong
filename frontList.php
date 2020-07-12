@@ -22,7 +22,7 @@ $zinDetail = $rowZinNow['zin_detail'];
 $sqlStandingZin = "SELECT * FROM zin WHERE title = '둥둥'";
 $resultStandingZin = $conn->query($sqlStandingZin) or die($conn->error);
 $rowStandingZin = $resultStandingZin->fetch_assoc();
-$zinColumn = $rowStandingZin['column'];
+$zin_Column = $rowStandingZin['zin_column'];
 
 
 
@@ -324,6 +324,6 @@ echo "  </ul>
     document.getElementById("standing_wrap").style.display = "none";
 }
 
-frontListForm(<?php echo $zinColumn; ?>);
+frontListForm(<?php echo $zin_Column; ?>);
 
 </script>
