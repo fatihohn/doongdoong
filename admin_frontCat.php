@@ -168,24 +168,22 @@ $zinTitle = $rowZinNow['title'];
             
             ?>
         </ul>
-                    <div class = 'view_detail'>
-                        <div class = 'view_auth_detail'>
-                            <?php 
-                            if($rowsAuth['auth_detail']) {
-                                echo "글쓴이 | "; 
-                                echo $rowsAuth['auth_detail'];
-                            }
-                            ?>
-                        </div>
-                        <div class = 'view_cat_detail'>
-                            <?php 
-                            if($rows['cat_detail']) {
-                                echo "코너 소개 | ";
-                                echo $rows['cat_detail'];
-                            }
-                            ?>
-                        </div>
-                    </div>
+        <div class = 'view_detail'>
+            <?php 
+            echo    "<div class = 'view_auth_detail'>";
+            if($rowsAuth['auth_detail']) {
+            echo "글쓴이 | ".$rowsAuth['auth_detail'];
+            }
+            echo "</div>";
+            ?>
+            <?php 
+            echo "<div class = 'view_cat_detail'>";
+            if($rows['cat_detail']) {
+                echo "코너 소개 | ".$rows['cat_detail'];
+            }
+            echo "</div>";
+            ?>
+        </div>
     </div>
 </div>
 
