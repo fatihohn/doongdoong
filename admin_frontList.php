@@ -385,7 +385,7 @@ function frontListForm(NumberOfColumn) {
             }
         }
 
-window.addEventListener("deviceorientation", function() {
+window.addEventListener("resize", function() {
     frontListForm(<?php echo $zin_Column; ?>);
 });
         
