@@ -8,7 +8,7 @@
     <script>
         let contImgAll = document.querySelectorAll(".view_cont_content img");
         function showImgWindow(str) {
-            imgSrc = "https://doongdoong.org/" + str;
+            imgSrc = "https://doongdoong.org/se2/upload" + str;
             window.open(imgSrc, "imgWindow", "width=1200, height=800");
         }
         let cia;
