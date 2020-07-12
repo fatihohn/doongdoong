@@ -14,5 +14,6 @@
         let cia;
         for(cia=0; cia < contImgAll.length; cia++) {
             contImgAll[cia].addEventListener("click", function() {showImgWindow(this.title)});
+            contImgAll[cia].style.cursor = "pointer";
         }
     </script>
