@@ -40,7 +40,7 @@
                 $zin_detail = $rows['zin_detail'];
                 $display = $rows['display'];
                 $publish = $rows['publish'];
-                $column = $rows['column'];
+                $zin_column = $rows['zin_column'];
                 $date = $rows['date'];
 
                 $adminCast = "admin";
@@ -157,11 +157,11 @@
                 <!-- <textarea class="createGrid2" name="display" placeholder="작가소개" rows="10" cols="20"required></textarea> -->
                 <div class="createGrid2">
 
-                    <input class="column_btn" type="radio" id="two_btn"name="column" value="2">
+                    <input class="zin_column_btn" type="radio" id="two_btn"name="zin_column" value="2">
                     <label for="two_btn">2줄</label><br>
-                    <input class="column_btn" type="radio" id="three_btn"name="column" value="3">
+                    <input class="zin_column_btn" type="radio" id="three_btn"name="zin_column" value="3">
                     <label for="three_btn">3줄</label><br>
-                    <input class="column_btn" type="radio" id="four_btn"name="column" value="4">
+                    <input class="zin_column_btn" type="radio" id="four_btn"name="zin_column" value="4">
                     <label for="four_btn">4줄</label><br>
                 
                     
@@ -234,17 +234,17 @@
     }
     publishSet();
 
-        function columnSet() {
-        let column = document.querySelectorAll(".column_btn");
-        let columnVal = "<?=$column?>";
+        function zin_columnSet() {
+        let zin_column = document.querySelectorAll(".zin_column_btn");
+        let zin_columnVal = "<?=$zin_column?>";
         let i;
-        for(i=0; i < column.length; i++) {
-            if(column[i].value == columnVal) {
-                column[i].checked = true;
+        for(i=0; i < zin_column.length; i++) {
+            if(zin_column[i].value == zin_columnVal) {
+                zin_column[i].checked = true;
             }
         }
     }
-    columnSet();
+    zin_columnSet();
 
 
 

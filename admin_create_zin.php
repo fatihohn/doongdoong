@@ -146,11 +146,11 @@
                 <!-- <textarea class="createGrid2" name="display" placeholder="작가소개" rows="10" cols="20"required></textarea> -->
                 <div class="createGrid2">
 
-                    <input class="column_btn" type="radio" id="two_btn"name="column" value="2">
+                    <input class="zin_column_btn" type="radio" id="two_btn"name="zin_column" value="2">
                     <label for="two_btn">2줄</label><br>
-                    <input class="column_btn" type="radio" id="three_btn"name="column" value="3">
+                    <input class="zin_column_btn" type="radio" id="three_btn"name="zin_column" value="3">
                     <label for="three_btn">3줄</label><br>
-                    <input class="column_btn" type="radio" id="four_btn"name="column" value="4" checked>
+                    <input class="zin_column_btn" type="radio" id="four_btn"name="zin_column" value="4" checked>
                     <label for="four_btn">4줄</label><br>
                 
                     

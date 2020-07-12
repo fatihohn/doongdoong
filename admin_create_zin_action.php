@@ -23,8 +23,8 @@ $display = mysqli_real_escape_string($conn, $display);
 $publish = $_POST['publish'];
 $publish = mysqli_real_escape_string($conn, $publish);
 
-$column = $_POST['column'];
-$column = mysqli_real_escape_string($conn, $column);
+$zin_column = $_POST['zin_column'];
+$zin_column = mysqli_real_escape_string($conn, $zin_column);
 
 $date = $_POST['date'];
 
@@ -67,7 +67,7 @@ $sQuote = "'";
                         '{$zin_detail}',
                         '{$display}',
                         '{$publish}',
-                        '{$column}',
+                        '{$zin_column}',
                         '{$date}',
                         NOW()
                         )";
@@ -97,7 +97,7 @@ $sQuote = "'";
                     '{$zin_detail}',
                     '{$display}',
                     '{$publish}',
-                    '{$column}',
+                    '{$zin_column}',
                     '{$date}',
                     NOW()
                     )
