@@ -16,4 +16,13 @@
             contImgAll[cia].addEventListener("click", function() {showImgWindow(this.title)});
             contImgAll[cia].style.cursor = "pointer";
         }
+
+        function frontListForm(NumberOfColumn) {
+            let standingCatAll = document.querySelectorAll(".standing_cat");
+            let stc;
+            for(stc=0; stc < standingCatAll.length; stc++) {
+                standingCatAll[stc].style.width = "calc((100% - 40px) / " + NumberOfColumn + ")";
+            }
+        }
+
     </script>

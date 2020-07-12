@@ -1185,7 +1185,7 @@
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content {
         white-space: pre-line;
-        word-break: keep-all;
+        /* word-break: keep-all; */
         max-width: 596px;
         height: min-content;
         margin: 0 auto;

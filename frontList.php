@@ -17,6 +17,7 @@ $rowZinNow = $resultZinNow->fetch_assoc();
 
 $zinTitle = $rowZinNow['title'];
 $zinDetail = $rowZinNow['zin_detail'];
+// $zinColumn = $rowZinNow['zin_column'];
 
 
 
@@ -317,4 +318,7 @@ echo "  </ul>
 } else {
     document.getElementById("standing_wrap").style.display = "none";
 }
+
+frontListForm()
+
 </script>
