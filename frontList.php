@@ -37,7 +37,11 @@ if ($resultCatPast->num_rows >= 1) {
     <div class = 'sc_mega_area'>
         <div class = 'sc_mega_contain'>
             <div id = 'standing_wrap' class = 'mega_title'>
-                <h2 class = 'gg-batang'>둥둥</h2>
+                <h2 class = 'gg-batangs'>
+                    <a href='frontIntro.php'>
+                        둥둥
+                    </a>
+                </h2>
             </div>
     <ul class = 'mega_list'>
     ";
