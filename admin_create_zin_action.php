@@ -23,6 +23,9 @@ $display = mysqli_real_escape_string($conn, $display);
 $publish = $_POST['publish'];
 $publish = mysqli_real_escape_string($conn, $publish);
 
+$column = $_POST['column'];
+$column = mysqli_real_escape_string($conn, $column);
+
 $date = $_POST['date'];
 
 $titleSql = "SELECT * FROM zin WHERE title='$title'";
@@ -54,7 +57,7 @@ $sQuote = "'";
         
                 $sql = "
                     INSERT INTO zin
-                        (author, username, title, img, img_dir, zin_detail, display, publish, date, created)
+                        (author, username, title, img, img_dir, zin_detail, display, publish, column, date, created)
                     VALUES(
                         '{$author}',
                         '{$username}',
@@ -64,6 +67,7 @@ $sQuote = "'";
                         '{$zin_detail}',
                         '{$display}',
                         '{$publish}',
+                        '{$column}',
                         '{$date}',
                         NOW()
                         )";
@@ -83,7 +87,7 @@ $sQuote = "'";
             } else if ($publish == "now") {
                 $sql = "
                 INSERT INTO zin
-                    (author, username, title, img, img_dir, zin_detail, display, publish, date, created)
+                    (author, username, title, img, img_dir, zin_detail, display, publish, column, date, created)
                 VALUES(
                     '{$author}',
                     '{$username}',
@@ -93,6 +97,7 @@ $sQuote = "'";
                     '{$zin_detail}',
                     '{$display}',
                     '{$publish}',
+                    '{$column}',
                     '{$date}',
                     NOW()
                     )
