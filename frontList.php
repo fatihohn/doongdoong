@@ -19,7 +19,7 @@ $zinTitle = $rowZinNow['title'];
 $zinDetail = $rowZinNow['zin_detail'];
 // $zinColumn = $rowZinNow['zin_column'];
 
-$sqlStandingZin = "SELECT * FROM zin WHERE title = '둥둥'";
+$sqlStandingZin = "SELECT * FROM zin WHERE publish = 'standing'";
 $resultStandingZin = $conn->query($sqlStandingZin) or die($conn->error);
 $rowStandingZin = $resultStandingZin->fetch_assoc();
 $zin_Column = $rowStandingZin['zin_column'];

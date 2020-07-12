@@ -72,18 +72,6 @@ $sQuote = "'";
                         NOW()
                         )";
 
-                // $sql = "
-                //     INSERT INTO `zin`
-                //         (`author`, `username`, `title`, `zin_detail`, `display`, `publish`, `created`)
-                //     VALUES(
-                //         ?,
-                //         ?,
-                //         ?,
-                //         ?,
-                //         ?,
-                //         ?,
-                //         NOW()
-                //         )";
             } else if ($publish == "now") {
                 $sql = "
                 INSERT INTO zin
@@ -102,94 +90,60 @@ $sQuote = "'";
                     NOW()
                     )
                     ";
-                // $sql = "
-                // INSERT INTO `zin`
-                //     (`author`, `username`, `title`, `zin_detail`, `display`, `publish`, `created`)
-                // VALUES(
-                //     ?,
-                //     ?,
-                //     ?,
-                //     ?,
-                //     ?,
-                //     ?,
-                //     NOW()
-                //     )
-                //     ";
                  
                 $updateSql= 
                     "UPDATE zin SET
                     `publish`='ready'
-                    WHERE title != '$title'"; 
+                    WHERE `publish` = 'now' AND title != '$title'"; 
 
-                // $updateSql= 
-                //     "UPDATE `zin` SET
-                //     `publish`='ready'
-                //     WHERE title != ?"; 
+            } else if ($publish == "standing") {
+                $sql = "
+                INSERT INTO zin
+                    (author, username, title, img, img_dir, zin_detail, display, publish, column, date, created)
+                VALUES(
+                    '{$author}',
+                    '{$username}',
+                    '{$title}',
+                    '{$image}$filename',
+                    '{$image}$target_file',
+                    '{$zin_detail}',
+                    '{$display}',
+                    '{$publish}',
+                    '{$zin_column}',
+                    '{$date}',
+                    NOW()
+                    )
+                    ";
+                 
+                $updateSql= 
+                    "UPDATE zin SET
+                    `publish`='ready'
+                    WHERE `publish` = 'standing' AND title != '$title'"; 
+
             }
     }
-    // $stmt = mysqli_stmt_init($conn);
-    // if (!mysqli_stmt_prepare($stmt, $sql)) {
-    //         echo "sql error";
-    // } else {
-    //         mysqli_stmt_bind_param($stmt, "ssssss", $author, $username, $title, $zin_detail, $display, $publish);
-            
-    //         if(!mysqli_stmt_execute($stmt)){
-    //             echo '저장실패. 관리자에게 문의해주세요';
-    //             error_log(mysqli_error($conn));
-    //         }
-    //         else{
-    //             // echo("<script>alert('연재물이 생성되었습니다.');location.href='admin_thumbsList.php';</script>");
-    //             if(isset($updateSql)) {
-    //                 $stmt = mysqli_stmt_init($conn);
-    //                     if (!mysqli_stmt_prepare($stmt, $updateSql)) {
-    //                             echo "updateSql error";
-    //                     } else {
-    //                             mysqli_stmt_bind_param($stmt, "s", $title);
-                                
-    //                             if(!mysqli_stmt_execute($stmt)){
-    //                                 echo '저장실패. 관리자에게 문의해주세요';
-    //                                 error_log(mysqli_error($conn));
-    //                             }
-    //                             else{
-    //                                 echo("<script>alert('현재 발행중 매거진이 생성되었습니다.');location.href='admin_zinList.php';</script>");
-    //                             }
-    //                         }
-    //             } else {
-    //                 echo("<script>alert('매거진이 생성되었습니다.');location.href='admin_zinList.php';</script>");
-    //             }
-            
-    //         }
-    //     }
 
 
 $result = mysqli_query($conn, $sql);
 
 if(isset($updateSql)) {
     $resultNow = mysqli_query($conn, $updateSql);
-
     if($result === false){
-        // if($result === false || $resultUpdate === false){
-            echo '저장실패. 관리자에게 문의해주세요';
-            error_log(mysqli_error($conn));
-        }
-        else{
-            echo("<script>alert('현재 발행중 매거진이 생성되었습니다.');location.href='admin_zinList.php';</script>");
-        }
-
-
+        echo '저장실패. 관리자에게 문의해주세요';
+        error_log(mysqli_error($conn));
+    }
+    else{
+        echo("<script>alert('현재 발행중 매거진이 생성되었습니다.');location.href='admin_zinList.php';</script>");
+    }
 } else {
 
-// $resultUpdate = mysqli_query($conn, $updateSql);
-if($result === false){
-// if($result === false || $resultUpdate === false){
-    echo '저장실패. 관리자에게 문의해주세요';
-    error_log(mysqli_error($conn));
+    if($result === false){
+        echo '저장실패. 관리자에게 문의해주세요';
+        error_log(mysqli_error($conn));
+    }
+    else{
+        echo("<script>alert('매거진이 생성되었습니다.');location.href='admin_zinList.php';</script>");
+    }
 }
-else{
-    echo("<script>alert('매거진이 생성되었습니다.');location.href='admin_zinList.php';</script>");
-}
-}
-// echo $sql;
-
 
 ?>

@@ -126,14 +126,16 @@
             </p>
             <p>
                 <div class="createInput">
-                <label class="createGrid1">현재 발행중</label>
+                <label class="createGrid1">발행상태</label>
                 <!-- <textarea class="createGrid2" name="display" placeholder="작가소개" rows="10" cols="20"required></textarea> -->
                 <div class="createGrid2">
 
+                    <input class="publish_btn" type="radio" id="standing_btn"name="publish" value="standing">
+                    <label for="standing_btn">상시발행</label><br>
                     <input class="publish_btn" type="radio" id="now_btn"name="publish" value="now">
-                    <label for="now_btn">예</label><br>
+                    <label for="now_btn">기획발행</label><br>
                     <input class="publish_btn" type="radio" id="ready_btn"name="publish" value="ready" checked>
-                    <label for="ready_btn">아니오</label><br>
+                    <label for="ready_btn">대기</label><br>
                 
                     
                 </div>

@@ -115,7 +115,29 @@ $sQuote = "'";
                 $updateSql= 
                     "UPDATE zin SET
                     `publish`='ready'
-                    WHERE `title` != '$title'"; 
+                    WHERE `publish` = 'now' AND `title` != '$title'"; 
+                echo "<br>updateNow";    
+            } else if ($publish == "standing") {
+                $sql2 = 
+                "UPDATE zin SET 
+                `author`='$author', 
+                `username`='$username', 
+                `title`='$title', 
+                `img`='{$image}$filename',
+                `img_dir`='{$image}$target_file',
+                `zin_detail`='$zin_detail', 
+                `display`='$display', 
+                `publish`='$publish',
+                `zin_column`='$zin_column',
+                `date`='$date'
+                WHERE `id`='$q'";
+                $sql = $sql2;
+                echo "<br>sql2";
+
+                $updateSql= 
+                    "UPDATE zin SET
+                    `publish`='ready'
+                    WHERE `publish` = 'standing' AND `title` != '$title'"; 
                 echo "<br>updateNow";    
             }
 
@@ -132,20 +154,6 @@ $sQuote = "'";
             `date`='$date'
             WHERE `id`='$q'";
         if($publish == "ready") {
-            $sql2 = 
-            "UPDATE zin SET 
-            `author`='$author', 
-            `username`='$username', 
-            `title`='$title', 
-            `zin_detail`='$zin_detail', 
-            `display`='$display', 
-            `publish`='$publish',
-            `zin_column`='$zin_column',
-            `date`='$date'
-            WHERE `id`='$q'";
-            $sql = $sql2;
-            echo "<br>sql2";
-        } else if ($publish == "now") {
             $sql3 = 
             "UPDATE zin SET 
             `author`='$author', 
@@ -159,11 +167,45 @@ $sQuote = "'";
             WHERE `id`='$q'";
             $sql = $sql3;
             echo "<br>sql3";
+        } else if ($publish == "now") {
+            $sql4 = 
+            "UPDATE zin SET 
+            `author`='$author', 
+            `username`='$username', 
+            `title`='$title', 
+            `zin_detail`='$zin_detail', 
+            `display`='$display', 
+            `publish`='$publish',
+            `zin_column`='$zin_column',
+            `date`='$date'
+            WHERE `id`='$q'";
+            $sql = $sql4;
+            echo "<br>sql4";
 
             $updateSql= 
                 "UPDATE zin SET
                 `publish`='ready'
                 WHERE `title` != '$title'"; 
+            echo "<br>updateNow";    
+        } else if ($publish == "standing") {
+            $sql5 = 
+            "UPDATE zin SET 
+            `author`='$author', 
+            `username`='$username', 
+            `title`='$title', 
+            `zin_detail`='$zin_detail', 
+            `display`='$display', 
+            `publish`='$publish',
+            `zin_column`='$zin_column',
+            `date`='$date'
+            WHERE `id`='$q'";
+            $sql = $sql5;
+            echo "<br>sql5";
+
+            $updateSql= 
+                "UPDATE zin SET
+                `publish`='ready'
+                WHERE `publish` = 'standing' AND `title` != '$title'"; 
             echo "<br>updateNow";    
         }
             
