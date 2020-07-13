@@ -752,7 +752,8 @@
     
     #bbdd_sc_area .sc_list_contain>.category .cat:hover .cat_title>h2,
     #bbdd_sc_area .view_wrap .category .cat:hover .cat_title>h2 {
-        color: rgb(6, 102, 152);
+        /* color: rgb(6, 102, 152); */
+        color: rgba(0, 0, 0, 0.6);
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat .cat_title>h2,
@@ -783,7 +784,8 @@
     
     #bbdd_sc_area .sc_list_contain>.category .cat:hover .cat_author>p,
     #bbdd_sc_area .view_wrap .category .cat:hover .cat_author>h4 {
-        color: #314fa0;
+        /* color: #314fa0; */
+        color: rgba(0, 0, 0, 0.6);
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat_list,
@@ -989,7 +991,8 @@
     }
     
     #bbdd_sc_area .mega_list>.mega_box a:hover h2 {
-        color: #314fa0;
+        /* color: #314fa0; */
+        color: rgba(0, 0, 0, 0.6);
     }
     
     #bbdd_sc_area .mega_list>.mega_box .mega_list_title h2 {
@@ -1018,7 +1021,8 @@
     }
     
     #bbdd_sc_area .mega_list>.mega_box a:hover .mega_list_auther>p {
-        color: #314fa0;
+        /* color: #314fa0; */
+        color: rgba(0, 0, 0, 0.6);
     }
     
     #bbdd_sc_area .mega_list.notice_list>.mega_box {
@@ -1160,7 +1164,8 @@
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .cont_li a:hover .li_number,
     #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .cont_li a:hover .cont_li_title>p {
-        color: rgb(6, 102, 152);
+        /* color: rgb(6, 102, 152); */
+        color: rgba(0, 0, 0, 0.6);
     }
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_sess {
