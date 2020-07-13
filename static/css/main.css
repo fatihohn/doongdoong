@@ -1254,7 +1254,8 @@
         color: rgba(6, 102, 152, 0.75);
         position: relative;
         padding-top: 20px;
-        border-top: 1px solid rgba(6, 102, 152, 0.2);
+        /* border-top: 1px solid rgba(6, 102, 152, 0.2); */
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
     }
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_btn_past {
