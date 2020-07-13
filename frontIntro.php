@@ -67,7 +67,7 @@ $rows = mysqli_fetch_assoc($result);
         
         
         
-        <div class = 'view_cont_sess'>
+        <div class = 'view_cont_sess front_point_color'>
             <?php echo $rows['title']?>
 
 
@@ -84,7 +84,7 @@ $rows = mysqli_fetch_assoc($result);
             <?php echo $rows['content']?>
 
 
-            <div class='view_author'>
+            <div class='view_author front_point_color'>
                 에디터_<?php echo $rows['author']?>
                
             </div>

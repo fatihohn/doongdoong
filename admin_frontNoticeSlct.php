@@ -170,7 +170,7 @@ if($resultCat->num_rows > 0) {
 
 
 
-<div class = 'view_btn'>
+<div class = 'view_btn front_point_color'>
     <?php 
                 echo "
                 <div class='view_btn_past $idPrev' id='$idPrev'  onclick='adminNoticeSlctShow(this.id)'>
