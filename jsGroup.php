@@ -53,35 +53,45 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
     document.getElementById("bbdd_nav").style.backgroundColor = navColor;
 
     var navFontColor = document.querySelectorAll(".nav_font_color");
-    var nfc;
-    for(nfc=0; nfc < navFontColor.length; nfc++) {
-        navFontColor[nfc].color = pointColor + "!important";
+    if(navFontColor) {
+        var nfc;
+        for(nfc=0; nfc < navFontColor.length; nfc++) {
+            navFontColor[nfc].color = pointColor + "!important";
+        }
     }
     
     var aTagAll = document.querySelectorAll("a");
-    var ata;
-    for(ata=0; ata < aTagAll.length; ata++) {
-        aTagAll[ata].style.color = titleColor;
-        // aTagAll[ata].style.textDecoration = "none";
+    if(aTagAll) {
+        var ata;
+        for(ata=0; ata < aTagAll.length; ata++) {
+            aTagAll[ata].style.color = titleColor;
+            // aTagAll[ata].style.textDecoration = "none";
+        }
     }
 
     var navCloseBtn = document.querySelectorAll(".close");
-    var ncb;
-    for(ncb=0; ncb < navCloseBtn.length; ncb++) {
-        navCloseBtn[ncb].style.color = pointColor;
+    if(navCloseBtn) {
+        var ncb;
+        for(ncb=0; ncb < navCloseBtn.length; ncb++) {
+            navCloseBtn[ncb].style.color = pointColor;
+        }
     }
 
     var navPortalBtn = document.querySelectorAll(".portal_btn");
-    var npb;
-    for(npb=0; npb < navPortalBtn.length; npb++) {
-        navPortalBtn[npb].style.backgroundColor = pointColor;
+    if(navPortalBtn) {
+        var npb;
+        for(npb=0; npb < navPortalBtn.length; npb++) {
+            navPortalBtn[npb].style.backgroundColor = pointColor;
+        }
     }
 
 
     var navMain = document.querySelectorAll(".nav_main");
-    var nMn;
-    for(nMn=0; nMn < navMain.length; nMn++) {
-        navMain[nMn].style.border = "2px dashed" + pointColor;
+    if(navmain) {
+        var nMn;
+        for(nMn=0; nMn < navMain.length; nMn++) {
+            navMain[nMn].style.border = "2px dashed" + pointColor;
+        }
     }
 
 
