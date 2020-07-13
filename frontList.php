@@ -265,13 +265,13 @@ if ($resultCatNow->num_rows > 0) {
                             <li class='cat_li'>
                                 <a  id = '{$rowCatNowCont['id']}' class = 'cont frontCont' name = '$catId' onclick = 'frontContShow(this.id, this.name)'>
                                      <div class='li_number'>
-                                        <p class='front_title_color'>";
+                                        <p>";
                 echo                        $rowCatNowCont['sess'];
                 echo '                      회
                                         </p>
                                     </div>
                                     <div class="li_title">
-                                        <p class="front_title_color">';
+                                        <p>';
                 echo                        $rowCatNowCont['title'];
                 echo '                  </p>
                                     </div>                 
