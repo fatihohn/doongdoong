@@ -91,7 +91,7 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
     var navPortalBtn = document.querySelectorAll(".portal_btn");
     var npb;
     for(npb=0; npb < navPortalBtn.length; npb++) {
-        navPortalBtn[npb].style.color = pointColor;
+        navPortalBtn[npb].style.backgroundColor = pointColor;
     }
 
     var navMain = document.querySelectorAll(".nav_main");
