@@ -7,6 +7,18 @@
 <body>
         <?php
 include 'bbdd_db_conn.php';
+
+$sqlStandingZin = "SELECT * FROM zin WHERE publish = 'standing'";
+$resultStandingZin = $conn->query($sqlStandingZin) or die($conn->error);
+$rowStandingZin = $resultStandingZin->fetch_assoc();
+$zin_column = $rowStandingZin['zin_column'];
+$zin_color = $rowStandingZin['zin_color'];
+$title_color = $rowStandingZin['title_color'];
+$point_color = $rowStandingZin['point_color'];
+$nav_color = $rowStandingZin['nav_color'];
+
+
+
 $q = intval($_GET['q']);
 $qVal = $_GET['q'];
 
@@ -115,6 +127,7 @@ $rows = mysqli_fetch_assoc($result);
     document.getElementById("bbdd_sc_area").style.backgroundColor = "rgb(255, 255, 255)";
     document.getElementById("bbdd_ft_area").style.backgroundColor = "rgb(255, 255, 255)";
     document.querySelector("body").style.backgroundColor = "rgb(255, 255, 255)";
+    frontListColor("rgb(255,255,255)", "<?php echo $title_color; ?>", "<?php echo $point_color; ?>", "<?php echo $nav_color; ?>");
     
 
 
