@@ -61,7 +61,8 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
     var aTagAll = document.querySelectorAll("a");
     var ata;
     for(ata=0; ata < aTagAll.length; ata++) {
-        aTagAll[ata].style.color = titleColor;
+        // aTagAll[ata].style.color = titleColor;
+        aTagAll[ata].style.textDecoration = "none";
     }
 
     var navCloseBtn = document.querySelectorAll(".close");
