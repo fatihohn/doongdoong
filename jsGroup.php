@@ -24,7 +24,13 @@
         //         standingCatAll[stc].style.width = "calc((100% - 40px) / " + NumberOfColumn + ")";
         //     }
         // }
-        function frontListColor(bgColor, titleColor, pointColor, navColor) {
+
+
+
+
+
+
+function frontListColor(bgColor, titleColor, pointColor, navColor) {
     let bodyBgColor = document.body.style.backgroundColor;
     let hdAreaBgColor = document.getElementById("bbdd_hd_area").style.background;
     let scAreaBgColor = document.getElementById("bbdd_sc_area").style.backgroundColor;
