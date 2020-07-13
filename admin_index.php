@@ -78,11 +78,11 @@ if(!isset($_SESSION['username'])) {
 
     <script>
         function frontListColor(bgColor, titleColor, pointColor, navColor) {
-    let bodyBgColor = document.body.style.backgroundColor;
-    let hdAreaBgColor = document.getElementById("bbdd_hd_area").style.background;
-    let scAreaBgColor = document.getElementById("bbdd_sc_area").style.backgroundColor;
-    let ftAreaBgColor = document.getElementById("bbdd_ft_area").style.backgroundColor;
-    let navBgColor = document.getElementById("bbdd_nav").style.backgroundColor;
+    let bodyBg = document.body;
+    let hdAreaBg = document.getElementById("bbdd_hd_area");
+    let scAreaBg = document.getElementById("bbdd_sc_area");
+    let ftAreaBg = document.getElementById("bbdd_ft_area");
+    let navBg = document.getElementById("bbdd_nav");
 
     // bodyBgColor = bgColor;
     // scAreaBgColor = bgColor;
@@ -91,13 +91,22 @@ if(!isset($_SESSION['username'])) {
     // hdAreaBgColor = pointColor;
 
     // navBgColor = navColor;
-    document.body.style.backgroundColor = bgColor;
-    document.getElementById("bbdd_sc_area").style.backgroundColor = bgColor;
-    document.getElementById("bbdd_ft_area").style.backgroundColor = bgColor;
+    if(bodyBg) {
+        document.body.style.backgroundColor = bgColor;
+    }
+    if(scAreaBg) {
+        document.getElementById("bbdd_sc_area").style.backgroundColor = bgColor;
+    }
+    if(ftAreaBg) {
+        document.getElementById("bbdd_ft_area").style.backgroundColor = bgColor;
+    }
+    if(hdAreaBg) {
+        document.getElementById("bbdd_hd_area").style.background = pointColor;
+    }
+    if(navBg) {
+        document.getElementById("bbdd_nav").style.backgroundColor = navColor;
+    }
 
-    document.getElementById("bbdd_hd_area").style.background = pointColor;
-
-    document.getElementById("bbdd_nav").style.backgroundColor = navColor;
 
     var navFontColor = document.querySelectorAll(".nav_font_color");
     if(navFontColor) {
