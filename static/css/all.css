@@ -64,9 +64,11 @@ ul {
 
 a {
     text-decoration: none;
-    text-decoration-color: none !important;
     /* color: rgba(255, 255, 255, 0.8); */
     cursor: pointer;
+}
+a:link, a:visited {
+    text-decoration: none;
 }
 
 [onclick] {
