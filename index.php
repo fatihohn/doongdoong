@@ -57,7 +57,7 @@ $nav_color = $rowStandingZin['nav_color'];
     
 function frontListColor(bgColor, titleColor, pointColor, navColor) {
     var bodyBgColor = document.body.style.backgroundColor;
-    var hdAreaBgColor = document.getElementById("bbdd_hd_area").style.backgroundColor;
+    var hdAreaBgColor = document.getElementById("bbdd_hd_area").style.background;
     var scAreaBgColor = document.getElementById("bbdd_sc_area").style.backgroundColor;
     var ftAreaBgColor = document.getElementById("bbdd_ft_area").style.backgroundColor;
     var navBgColor = document.getElementById("bbdd_nav").style.backgroundColor;
@@ -75,7 +75,7 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
     for(mta=0; mta < megaTitleAll.length; mta++) {
         megaTitleAll[mta].style.color = titleColor;
         megaTitleAll[mta].style.borderBottom = "2px dashed" + titleColor;
-        document.a.style.color = titleColor;
+        // document.a.style.color = titleColor;
     }
 
     var navCloseBtn = document.querySelectorAll(".close");
