@@ -97,7 +97,7 @@
     if(navFontColor) {
         var nfc;
         for(nfc=0; nfc < navFontColor.length; nfc++) {
-            navFontColor[nfc].color = pointColor + "!important";
+            navFontColor[nfc].style.color = pointColor + "!important";
         }
     }
     
@@ -154,7 +154,7 @@
     if(frontContColor) {
         var fcc;
         for(fcc=0; fcc < frontContColor.length; fcc++) {
-            frontContColor[fcc].color = titleColor;
+            frontContColor[fcc].style.color = titleColor;
         }
     }
 
@@ -162,7 +162,7 @@
     if(frontTitleColor) {
         var fcc;
         for(fcc=0; fcc < frontTitleColor.length; fcc++) {
-            frontTitleColor[fcc].color = titleColor;
+            frontTitleColor[fcc].style.color = titleColor;
         }
     }
 
@@ -170,7 +170,7 @@
     if(frontPointColor) {
         var fpc;
         for(fpc=0; fpc < frontPointColor.length; fpc++) {
-            frontPointColor[fpc].color = pointColor;
+            frontPointColor[fpc].style.color = pointColor;
         }
     }
 }
