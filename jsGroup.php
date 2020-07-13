@@ -56,7 +56,7 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
     if(navFontColor) {
         var nfc;
         for(nfc=0; nfc < navFontColor.length; nfc++) {
-            navFontColor[nfc].color = pointColor + "!important";
+            navFontColor[nfc].style.color = pointColor + "!important";
         }
     }
     
@@ -113,7 +113,7 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
     if(frontContColor) {
         var fcc;
         for(fcc=0; fcc < frontContColor.length; fcc++) {
-            frontContColor[fcc].color = titleColor;
+            frontContColor[fcc].style.color = titleColor;
         }
     }
 
@@ -121,7 +121,7 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
     if(frontTitleColor) {
         var fcc;
         for(fcc=0; fcc < frontTitleColor.length; fcc++) {
-            frontTitleColor[fcc].color = titleColor;
+            frontTitleColor[fcc].style.color = titleColor;
         }
     }
 
@@ -129,7 +129,7 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
     if(frontPointColor) {
         var fpc;
         for(fpc=0; fpc < frontPointColor.length; fpc++) {
-            frontPointColor[fpc].color = pointColor;
+            frontPointColor[fpc].style.color = pointColor;
         }
     }
 }
