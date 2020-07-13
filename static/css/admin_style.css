@@ -59,11 +59,13 @@ footer {
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     z-index: 999;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 #bbdd_hd_area .hd_contain .hd_ad_menu>a {
     /* display: block; */
     display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 #bbdd_hd_area .hd_contain .hd_ad_menu>a>img {
