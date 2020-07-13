@@ -38,6 +38,17 @@
             
 <?php
 include 'bbdd_db_conn.php';   
+
+$sqlStandingZin = "SELECT * FROM zin WHERE publish = 'standing'";
+$resultStandingZin = $conn->query($sqlStandingZin) or die($conn->error);
+$rowStandingZin = $resultStandingZin->fetch_assoc();
+$zin_column = $rowStandingZin['zin_column'];
+$zin_color = $rowStandingZin['zin_color'];
+$title_color = $rowStandingZin['title_color'];
+$point_color = $rowStandingZin['point_color'];
+$nav_color = $rowStandingZin['nav_color'];
+
+
 session_start();
 $URL = "./admin_index.php";
             if(!isset($_SESSION['username'])) {
@@ -135,7 +146,9 @@ $URL = "./admin_index.php";
     
     <?php include "jsGroup.php"; ?>
     <?php include "admin_jsGroup.php"; ?>
-
+    <script>
+    admin_frontListColor("<?php echo $zin_color; ?>", "<?php echo $title_color; ?>", "<?php echo $point_color; ?>", "<?php echo $nav_color; ?>");
+</script>
 </div>
 
 </body>

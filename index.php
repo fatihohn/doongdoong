@@ -56,11 +56,9 @@ $nav_color = $rowStandingZin['nav_color'];
     <div id="body_bg"></div>
     
     <?php include "jsGroup.php"; ?>
+    
     <script>
-        
-    
-    frontListColor("<?php echo $zin_color; ?>", "<?php echo $title_color; ?>", "<?php echo $point_color; ?>", "<?php echo $nav_color; ?>");
-    
+        frontListColor("<?php echo $zin_color; ?>", "<?php echo $title_color; ?>", "<?php echo $point_color; ?>", "<?php echo $nav_color; ?>"); 
     </script>
 
 
