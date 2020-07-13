@@ -105,6 +105,12 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
     for(nfc=0; nfc < navFontColor.length; nfc++) {
         navFontColor[nfc].color = pointColor;
     }
+
+    var frontContColor = document.querySelectorAll(".frontCont");
+    var fcc;
+    for(fcc=0; fcc < frontContColor.length; fcc++) {
+        frontContColor[fcc].color = titleColor;
+    }
 }
 
 frontListColor("<?php echo $zin_color; ?>", "<?php echo $title_color; ?>", "<?php echo $point_color; ?>", "<?php echo $nav_color; ?>");
