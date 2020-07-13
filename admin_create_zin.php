@@ -121,6 +121,18 @@
             </p>
             <p>
                 <div class="createInput">
+                <label class="createGrid1">매거진 포인트 색</label>
+                <input class="createGrid2" name="point_color" type="color" value="#ffffff"/>
+                </div>
+            </p>
+            <p>
+                <div class="createInput">
+                <label class="createGrid1">매거진 메뉴 색</label>
+                <input class="createGrid2" name="nav_color" type="color" value="#ffffff"/>
+                </div>
+            </p>
+            <p>
+                <div class="createInput">
                 <label class="createGrid1">공개 상태</label>
                 <!-- <textarea class="createGrid2" name="display" placeholder="작가소개" rows="10" cols="20"required></textarea> -->
                 <div class="createGrid2">

@@ -23,9 +23,9 @@ $sqlStandingZin = "SELECT * FROM zin WHERE publish = 'standing'";
 $resultStandingZin = $conn->query($sqlStandingZin) or die($conn->error);
 $rowStandingZin = $resultStandingZin->fetch_assoc();
 $zin_Column = $rowStandingZin['zin_column'];
-$zin_Color = $rowStandingZin['zin_color'];
+$zin_color = $rowStandingZin['zin_color'];
 $title_color = $rowStandingZin['title_color'];
-$header_color = $rowStandingZin['header_color'];
+$point_color = $rowStandingZin['point_color'];
 $nav_color = $rowStandingZin['nav_color'];
 
 

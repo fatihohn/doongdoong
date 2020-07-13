@@ -43,6 +43,8 @@
                 $zin_column = $rows['zin_column'];
                 $zin_color = $rows['zin_color'];
                 $title_color = $rows['title_color'];
+                $point_color = $rows['point_color'];
+                $nav_color = $rows['nav_color'];
                 $date = $rows['date'];
 
                 $adminCast = "admin";
@@ -130,6 +132,18 @@
                 <div class="createInput">
                 <label class="createGrid1">매거진 타이틀 폰트 색</label>
                 <input class="createGrid2" name="title_color" type="color" value="<?=$title_color?>"/>
+                </div>
+            </p>
+            <p>
+                <div class="createInput">
+                <label class="createGrid1">매거진 포인트 색</label>
+                <input class="createGrid2" name="point_color" type="color" value="<?=$point_color?>"/>
+                </div>
+            </p>
+            <p>
+                <div class="createInput">
+                <label class="createGrid1">매거진 메뉴 색</label>
+                <input class="createGrid2" name="nav_color" type="color" value="<?=$nav_color?>"/>
                 </div>
             </p>
             <p>
