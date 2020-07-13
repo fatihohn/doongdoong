@@ -48,11 +48,13 @@ if ($resultCatPast->num_rows >= 1) {
     <div class = 'sc_mega_area'>
         <div class = 'sc_mega_contain'>
             <div id = 'standing_wrap' class = 'mega_title'>
-                <a href='./frontIntro.php'>
-                    <h2 class = 'gg-batang front_title_color'>";
+                <h2 class = 'gg-batang front_title_color'>
+                    <a href='./frontIntro.php'>
+                    ";
     echo               $standingZinTitle;
-    echo           "</h2>
-                </a>
+    echo           "
+                    </a>
+                </h2>
             </div>
     <ul class = 'mega_list'>
     ";
