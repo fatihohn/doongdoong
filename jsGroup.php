@@ -13,8 +13,10 @@
         }
         let cia;
         for(cia=0; cia < contImgAll.length; cia++) {
-            contImgAll[cia].addEventListener("click", function() {showImgWindow(this.title)});
-            contImgAll[cia].style.cursor = "pointer";
+            if(contImgAll[cia].title) {
+                contImgAll[cia].addEventListener("click", function() {showImgWindow(this.title)});
+                contImgAll[cia].style.cursor = "pointer";
+            }
         }
 
         // function frontListForm(NumberOfColumn) {
