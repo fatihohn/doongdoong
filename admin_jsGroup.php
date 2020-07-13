@@ -27,11 +27,11 @@
 
 <script>
     function admin_frontListColor(bgColor, titleColor, pointColor, navColor) {
-    let bodyBgColor = document.body;
-    let hdAreaBgColor = document.getElementById("bbdd_hd_area");
-    let scAreaBgColor = document.getElementById("bbdd_sc_area");
-    let ftAreaBgColor = document.getElementById("bbdd_ft_area");
-    let navBgColor = document.getElementById("bbdd_nav");
+    let bodyBg = document.body;
+    let hdAreaBg = document.getElementById("bbdd_hd_area");
+    let scAreaBg = document.getElementById("bbdd_sc_area");
+    let ftAreaBg = document.getElementById("bbdd_ft_area");
+    let navBg = document.getElementById("bbdd_nav");
 
 
     if(bodyBg) {
