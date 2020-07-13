@@ -143,7 +143,7 @@ if(!isset($_SESSION['username'])) {
 
 
     var navMain = document.querySelectorAll(".nav_main");
-    if(navmain) {
+    if(navMain) {
         var nMn;
         for(nMn=0; nMn < navMain.length; nMn++) {
             navMain[nMn].style.border = "2px dashed" + pointColor;
