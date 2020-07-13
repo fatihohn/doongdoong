@@ -38,12 +38,12 @@ $resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
             </div>
             <ul class="nav_main">
                 <li class="nav_main_list">
-                    <a class="gg-title" class='txt cat' onclick = 'frontIntroShow(this.id)'>
+                    <a class="gg-title nav_font" class='txt cat' onclick = 'frontIntroShow(this.id)'>
                         변방의 북소리 '둥둥' 소개
                     </a>
                 </li>
                 <li class="nav_main_list">
-                    <a class="gg-title" class='txt cat' onclick = 'frontNoticeShow(this.id)'>
+                    <a class="gg-title nav_font" class='txt cat' onclick = 'frontNoticeShow(this.id)'>
                         지난 매거진 보기
                     </a>
                 </li>
@@ -62,7 +62,7 @@ if ($resultCatPast->num_rows >= 1) {
 
     echo "
                 <li id = 'standing_wrap_nav' class = 'nav_main_list'>
-                    <a class = 'gg-title' href = '#'>
+                    <a class = 'gg-title nav_font' href = '#'>
                         둥둥
                     </a>
                     <ul class = 'nav_sub'>
@@ -89,7 +89,7 @@ if ($resultCatPast->num_rows >= 1) {
 
                 echo '
                         <li class = "nav_sub_list standing_cat_nav">
-                            <a id="';
+                            <a class="nav_font" id="';
                 echo        $rowCatPast['id'];
                 echo        '" name="';
                 echo        $catId;
@@ -114,7 +114,7 @@ if ($resultCatPast->num_rows >= 1) {
 if ($resultCatNow->num_rows > 0) {
     // output data of each row
     echo '      <li class="nav_main_list">';
-    echo '          <a href = "./" class="gg-title nav_zin_title" >';
+    echo '          <a href = "./" class="gg-title nav_zin_title nav_font" >';
     echo                $rowZinNow['title'];
     echo '          </a>';
     echo "          <ul class='nav_sub'>";
@@ -153,7 +153,7 @@ if ($resultCatNow->num_rows > 0) {
         if ($resultCatNowCont->num_rows >0) {
         echo '
                         <li class="nav_sub_list">
-                            <a id="';
+                            <a class="nav_font" id="';
         echo                $rowCatNow['id'];
         echo                '"name="';
         echo                $catId;

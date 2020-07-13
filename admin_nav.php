@@ -27,8 +27,9 @@ $resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
         <div class="nav_contain">
             <div class="nav_top">
                 <div class="close">
-                    <a>
-                        <img src="static/img/close.png" alt="닫기">
+                    <a class="gg-title">
+                        ×
+                        <!-- <img src="static/img/close.png" alt="닫기"> -->
                     </a>
                 </div>
             </div>

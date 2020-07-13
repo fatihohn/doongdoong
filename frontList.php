@@ -348,7 +348,7 @@ window.addEventListener("resize", function() {
     frontListForm(<?php echo $zin_Column; ?>);
 });
 
-function frontListColor(bgColor, fontColor, hdColor, navColor) {
+function frontListColor(bgColor, titleColor, pointColor, navColor) {
     var bodyBgColor = document.body.style.backgroundColor;
     var hdAreaBgColor = document.getElementById("bbdd_hd_area").style.backgroundColor;
     var scAreaBgColor = document.getElementById("bbdd_sc_area").style.backgroundColor;
@@ -359,21 +359,43 @@ function frontListColor(bgColor, fontColor, hdColor, navColor) {
     scAreaBgColor = bgColor;
     ftAreaBgColor = bgColor;
 
-    hdAreaBgColor = hdColor;
-    
+    hdAreaBgColor = pointColor;
+
     navBgColor = navColor;
 
     var megaTitleAll = document.querySelectorAll(".mega_title");
     var mta;
     for(mta=0; mta < megaTitleAll.length; mta++) {
-        megaTitleAll[mta].style.color = fontColor;
-        megaTitleAll[mta].style.borderBottom = "2px dashed" + fontColor;
-        document.a.style.color = fontColor;
+        megaTitleAll[mta].style.color = titleColor;
+        megaTitleAll[mta].style.borderBottom = "2px dashed" + titleColor;
+        document.a.style.color = titleColor;
     }
 
-frontListColor(<?php echo $zin_color; ?>, <?php echo $title_color; ?>, <?php echo $header_color; ?>, <?php echo $nav_color; ?>)
+    var navCloseBtn = document.querySelectorAll(".close");
+    var ncb;
+    for(ncb=0; ncb < navCloseBtn.length; ncb++) {
+        navCloseBtn[ncb].style.color = pointColor;
+    }
 
+    var navPortalBtn = document.querySelectorAll(".portal_btn");
+    var npb;
+    for(npb=0; npb < navPortalBtn.length; npb++) {
+        navPortalBtn[npb].style.color = pointColor;
+    }
 
+    var navMain = document.querySelectorAll(".nav_main");
+    var nMn;
+    for(nMn=0; nMn < navMain.length; nMn++) {
+        navMain[nMn].style.border = "2px dashed" + pointColor;
+    }
+
+    var navFontColor = document.querySelectorAll(".nav_font");
+    var nfc;
+    for(nfc=0; nfc < navFontColor.length; nfc++) {
+        navFontColor[nfc].color = pointColor;
+    }
 }
+
+frontListColor(<?php echo $zin_color; ?>, <?php echo $title_color; ?>, <?php echo $point_color; ?>, <?php echo $nav_color; ?>);
 
 </script>
