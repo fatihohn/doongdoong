@@ -20,6 +20,17 @@ session_start();
         <?php
 include 'bbdd_db_conn.php';
 
+$sqlStandingZin = "SELECT * FROM zin WHERE publish = 'standing'";
+$resultStandingZin = $conn->query($sqlStandingZin) or die($conn->error);
+$rowStandingZin = $resultStandingZin->fetch_assoc();
+$zin_column = $rowStandingZin['zin_column'];
+$zin_color = $rowStandingZin['zin_color'];
+$title_color = $rowStandingZin['title_color'];
+$point_color = $rowStandingZin['point_color'];
+$nav_color = $rowStandingZin['nav_color'];
+
+
+
 $q = intval($_GET['q']);
 $r = intval($_GET['r']);
 $rVal = $_GET['r'];
@@ -173,6 +184,8 @@ $zinTitle = $rowZinNow['title'];
     <?php include "jsGroup.php"; ?>
     <script>
         document.querySelector(".view_wrap").style.boxShadow = "0 4px 8px 0 rgba(0, 0, 0, 0.2)";
+        frontListColor("<?php echo $zin_color; ?>", "<?php echo $title_color; ?>", "<?php echo $point_color; ?>", "<?php echo $nav_color; ?>");
+    
     </script>
 
 
