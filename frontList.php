@@ -396,6 +396,6 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
     }
 }
 
-frontListColor(<?php echo $zin_color; ?>, <?php echo $title_color; ?>, <?php echo $point_color; ?>, <?php echo $nav_color; ?>);
+frontListColor("<?php echo $zin_color; ?>", "<?php echo $title_color; ?>", "<?php echo $point_color; ?>", "<?php echo $nav_color; ?>)";
 
 </script>
