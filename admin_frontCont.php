@@ -128,7 +128,7 @@ if($qVal < $idMax && $qVal > $idMin) {
         
         
         
-        <div class = 'view_cont_sess'>
+        <div class = 'view_cont_sess front_point_color'>
             <?php echo $rows['sess']?>회
 
 
@@ -181,7 +181,7 @@ if($qVal < $idMax && $qVal > $idMin) {
             <?php echo $rows['content']?>
 
 
-            <div class='view_author'>
+            <div class='view_author front_point_color'>
                 글_<?php echo $rows['author']?>
                 <div class = 'cs_box_front'>
                 <!-- <button class="view_btn1" onclick="location.href='./admin_modify_cont.php'">수정</button> -->
@@ -191,7 +191,7 @@ if($qVal < $idMax && $qVal > $idMin) {
                 <div class="front_btn" name="<?=$rows['id']?>" onclick="contDel(this.name)">삭제</div> -->
                 </div>
             </div>
-            <div class = 'view_btn'>
+            <div class = 'view_btn front_point_color'>
                 
                 <?php 
                 

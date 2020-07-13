@@ -481,7 +481,7 @@ if($q < intval($idMax) && $q > intval($idMin)) {
         
         
         
-        <div class = 'view_cont_sess'>
+        <div class = 'view_cont_sess front_point_color'>
             <?php echo $rows['sess']?>회
 
 
@@ -497,7 +497,7 @@ if($q < intval($idMax) && $q > intval($idMin)) {
         <div class = 'gg-batang view_cont_content'>
             <?php echo $rows['content']?>
 
-            <div class='view_author'>
+            <div class='view_author front_point_color'>
                 글_<?php echo $rows['author']?>
                 <div class = 'cs_box_front'>
                 
@@ -506,7 +506,7 @@ if($q < intval($idMax) && $q > intval($idMin)) {
                 </div>
             </div>
 
-            <div class = 'view_btn'>
+            <div class = 'view_btn front_point_color'>
                 
                 <?php 
                 

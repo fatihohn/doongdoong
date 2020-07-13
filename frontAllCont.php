@@ -293,7 +293,7 @@ if($q < intval($idMax) && $q > intval($idMin)) {
         
         
         
-        <div class = 'view_cont_sess'>
+        <div class = 'view_cont_sess front_point_color'>
             <?php echo $rows['sess']?>회
 
 
@@ -309,7 +309,7 @@ if($q < intval($idMax) && $q > intval($idMin)) {
         <div class = 'gg-batang view_cont_content'>
             <?php echo $rows['content']?>
 
-            <div class='view_author'>
+            <div class='view_author front_point_color'>
                 글_<?php echo $rows['author']?>
             </div>
             <div class="func_btn">
@@ -317,7 +317,7 @@ if($q < intval($idMax) && $q > intval($idMin)) {
                     <img src="static/img/share.png" alt="공유하기"  style="width:40px;">
                 </div>
             </div>
-            <div class = 'view_btn'>
+            <div class = 'view_btn front_point_color'>
                 
                 <?php 
                 
