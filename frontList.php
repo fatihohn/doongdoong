@@ -43,7 +43,7 @@ if ($resultCatPast->num_rows >= 1) {
     <div class = 'sc_mega_area'>
         <div class = 'sc_mega_contain'>
             <div id = 'standing_wrap' class = 'mega_title'>
-                <h2 class = 'gg-batangs'>
+                <h2 class = 'gg-batang'>
                     <a href='frontIntro.php'>
                         둥둥
                     </a>
@@ -343,5 +343,28 @@ function frontListForm(NumberOfColumn) {
 window.addEventListener("resize", function() {
     frontListForm(<?php echo $zin_Column; ?>);
 });
+
+function frontListColor(bgColor, fontColor) {
+    var bodyBgColor = document.body.style.backgroundColor;
+    var hdAreaBgColor = document.getElementById("bbdd_hd_area").style.backgroundColor;
+    var scAreaBgColor = document.getElementById("bbdd_sc_area").style.backgroundColor;
+    var ftAreaBgColor = document.getElementById("bbdd_ft_area").style.backgroundColor;
+
+    bodyBgColor = bgColor;
+    hdAreaBgColor = bgColor;
+    scAreaBgColor = bgColor;
+    ftAreaBgColor = bgColor;
+
+    var megaTitleAll = document.querySelectorAll(".mega_title");
+    var mta;
+    for(mta=0; mta < megaTitleAll.length; mta++) {
+        megaTitleAll[mta].style.color = fontColor;
+        megaTitleAll[mta].style.borderBottom = "2px dashed" + fontColor;
+        document.a.style.color = fontColor;
+    }
+
+
+
+}
 
 </script>

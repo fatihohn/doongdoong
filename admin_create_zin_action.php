@@ -26,6 +26,12 @@ $publish = mysqli_real_escape_string($conn, $publish);
 $zin_column = $_POST['zin_column'];
 $zin_column = mysqli_real_escape_string($conn, $zin_column);
 
+$zin_color = $_POST['zin_color'];
+$zin_color = mysqli_real_escape_string($conn, $zin_color);
+
+$title_color = $_POST['title_color'];
+$title_color = mysqli_real_escape_string($conn, $title_color);
+
 $date = $_POST['date'];
 
 $titleSql = "SELECT * FROM zin WHERE title='$title'";
@@ -57,7 +63,7 @@ $sQuote = "'";
         
                 $sql = "
                     INSERT INTO zin
-                        (author, username, title, img, img_dir, zin_detail, display, publish, column, date, created)
+                        (author, username, title, img, img_dir, zin_detail, display, publish, column, zin_color, title_color, date, created)
                     VALUES(
                         '{$author}',
                         '{$username}',
@@ -68,6 +74,8 @@ $sQuote = "'";
                         '{$display}',
                         '{$publish}',
                         '{$zin_column}',
+                        '{$zin_color}',
+                        '{$title_color}',
                         '{$date}',
                         NOW()
                         )";
@@ -75,7 +83,7 @@ $sQuote = "'";
             } else if ($publish == "now") {
                 $sql = "
                 INSERT INTO zin
-                    (author, username, title, img, img_dir, zin_detail, display, publish, column, date, created)
+                    (author, username, title, img, img_dir, zin_detail, display, publish, column, zin_color, title_color, date, created)
                 VALUES(
                     '{$author}',
                     '{$username}',
@@ -86,6 +94,8 @@ $sQuote = "'";
                     '{$display}',
                     '{$publish}',
                     '{$zin_column}',
+                    '{$zin_color}',
+                    '{$title_color}',
                     '{$date}',
                     NOW()
                     )
@@ -99,7 +109,7 @@ $sQuote = "'";
             } else if ($publish == "standing") {
                 $sql = "
                 INSERT INTO zin
-                    (author, username, title, img, img_dir, zin_detail, display, publish, column, date, created)
+                    (author, username, title, img, img_dir, zin_detail, display, publish, column, zin_color, title_color, date, created)
                 VALUES(
                     '{$author}',
                     '{$username}',
@@ -110,6 +120,8 @@ $sQuote = "'";
                     '{$display}',
                     '{$publish}',
                     '{$zin_column}',
+                    '{$zin_color}',
+                    '{$title_color}',
                     '{$date}',
                     NOW()
                     )

@@ -41,6 +41,8 @@
                 $display = $rows['display'];
                 $publish = $rows['publish'];
                 $zin_column = $rows['zin_column'];
+                $zin_color = $rows['zin_color'];
+                $title_color = $rows['title_color'];
                 $date = $rows['date'];
 
                 $adminCast = "admin";
@@ -116,6 +118,18 @@
                 <div class="createInput">
                 <label class="createGrid1">매거진 발행일</label>
                 <input class="createGrid2" name="date" type="date" value="<?=$date?>"/>
+                </div>
+            </p>
+            <p>
+                <div class="createInput">
+                <label class="createGrid1">매거진 배경색</label>
+                <input class="createGrid2" name="zin_color" type="color" value="<?=$zin_color?>"/>
+                </div>
+            </p>
+            <p>
+                <div class="createInput">
+                <label class="createGrid1">매거진 타이틀 폰트 색</label>
+                <input class="createGrid2" name="title_color" type="color" value="<?=$title_color?>"/>
                 </div>
             </p>
             <p>

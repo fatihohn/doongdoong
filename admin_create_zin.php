@@ -109,6 +109,18 @@
             </p>
             <p>
                 <div class="createInput">
+                <label class="createGrid1">매거진 배경색</label>
+                <input class="createGrid2" name="zin_color" type="color" value="#ffffff"/>
+                </div>
+            </p>
+            <p>
+                <div class="createInput">
+                <label class="createGrid1">매거진 타이틀 폰트 색</label>
+                <input class="createGrid2" name="title_color" type="color" value="#ffffff"/>
+                </div>
+            </p>
+            <p>
+                <div class="createInput">
                 <label class="createGrid1">공개 상태</label>
                 <!-- <textarea class="createGrid2" name="display" placeholder="작가소개" rows="10" cols="20"required></textarea> -->
                 <div class="createGrid2">
