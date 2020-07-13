@@ -86,7 +86,11 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
     for(mta=0; mta < megaTitleAll.length; mta++) {
         megaTitleAll[mta].style.color = titleColor;
         megaTitleAll[mta].style.borderBottom = "2px dashed" + titleColor;
-        document.a.style.color = titleColor;
+    }
+    var aTagAll = document.querySelectorAll("a");
+    var ata;
+    for(ata=0; ata < aTagAll.length; ata++) {
+        aTagAll[ata].style.color = titleColor;
     }
 
     var navCloseBtn = document.querySelectorAll(".close");
