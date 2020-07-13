@@ -29,11 +29,11 @@
            $sqlStandingZin = "SELECT * FROM zin WHERE publish = 'standing'";
            $resultStandingZin = $conn->query($sqlStandingZin) or die($conn->error);
            $rowStandingZin = $resultStandingZin->fetch_assoc();
-           $zin_column = $rowStandingZin['zin_column'];
-           $zin_color = $rowStandingZin['zin_color'];
-           $title_color = $rowStandingZin['title_color'];
-           $point_color = $rowStandingZin['point_color'];
-           $nav_color = $rowStandingZin['nav_color'];
+           $standing_zin_column = $rowStandingZin['zin_column'];
+           $standing_zin_color = $rowStandingZin['zin_color'];
+           $standing_title_color = $rowStandingZin['title_color'];
+           $standing_point_color = $rowStandingZin['point_color'];
+           $standing_nav_color = $rowStandingZin['nav_color'];
 
 
 
@@ -236,7 +236,7 @@
 
 <?php include "admin_jsGroup.php";?>
 <script>
-    admin_frontListColor("<?php echo $zin_color; ?>", "<?php echo $title_color; ?>", "<?php echo $point_color; ?>", "<?php echo $nav_color; ?>"); 
+    admin_frontListColor("<?php echo $standing_zin_color; ?>", "<?php echo $standing_title_color; ?>", "<?php echo $standing_point_color; ?>", "<?php echo $standing_nav_color; ?>"); 
 </script>
 </body>
 
