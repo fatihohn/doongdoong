@@ -855,7 +855,7 @@
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat_list .cat_li .li_number>p {
-        font-size: .8rem;
+        font-size: 0.8rem;
         line-height: 23px;
         letter-spacing: 0px;
     }
@@ -875,7 +875,7 @@
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat_list .cat_li .li_title>p {
-        font-size: .8rem;
+        font-size: 0.8rem;
         line-height: 23px;
         letter-spacing: 0px;
         word-break: keep-all;
