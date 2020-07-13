@@ -798,7 +798,8 @@
     
     #bbdd_sc_area .sc_list_contain>.category .cat_list .cat_li,
     #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .cat_li {
-        border-top: 1px solid rgba(255, 255, 255, 0.4);
+        /* border-top: 1px solid rgba(255, 255, 255, 0.4); */
+        border-top: 1px solid rgba(120, 120, 120, 0.4);
         padding: 6px 0;
         overflow: hidden;
     }
