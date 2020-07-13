@@ -30,7 +30,7 @@ $resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
         <div class="nav_contain">
             <div class="nav_top">
                 <div class="close">
-                    <a class="gg-title">
+                    <a class="gg-title nav_font">
                         ×
                         <!-- <img src="static/img/close.png" alt="닫기"> -->
                     </a>
