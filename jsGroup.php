@@ -24,5 +24,88 @@
         //         standingCatAll[stc].style.width = "calc((100% - 40px) / " + NumberOfColumn + ")";
         //     }
         // }
+        function frontListColor(bgColor, titleColor, pointColor, navColor) {
+    let bodyBgColor = document.body.style.backgroundColor;
+    let hdAreaBgColor = document.getElementById("bbdd_hd_area").style.background;
+    let scAreaBgColor = document.getElementById("bbdd_sc_area").style.backgroundColor;
+    let ftAreaBgColor = document.getElementById("bbdd_ft_area").style.backgroundColor;
+    let navBgColor = document.getElementById("bbdd_nav").style.backgroundColor;
 
+    // bodyBgColor = bgColor;
+    // scAreaBgColor = bgColor;
+    // ftAreaBgColor = bgColor;
+
+    // hdAreaBgColor = pointColor;
+
+    // navBgColor = navColor;
+    document.body.style.backgroundColor = bgColor;
+    document.getElementById("bbdd_sc_area").style.backgroundColor = bgColor;
+    document.getElementById("bbdd_ft_area").style.backgroundColor = bgColor;
+
+    document.getElementById("bbdd_hd_area").style.background = pointColor;
+
+    document.getElementById("bbdd_nav").style.backgroundColor = navColor;
+
+    
+    var aTagAll = document.querySelectorAll("a");
+    var ata;
+    for(ata=0; ata < aTagAll.length; ata++) {
+        aTagAll[ata].style.color = titleColor;
+        var navFontColor = document.querySelectorAll(".nav_font_color");
+        var nfc;
+        for(nfc=0; nfc < navFontColor.length; nfc++) {
+            navFontColor[nfc].color = pointColor;
+        }
+    }
+
+    var navCloseBtn = document.querySelectorAll(".close");
+    var ncb;
+    for(ncb=0; ncb < navCloseBtn.length; ncb++) {
+        navCloseBtn[ncb].style.color = pointColor;
+    }
+
+    var navPortalBtn = document.querySelectorAll(".portal_btn");
+    var npb;
+    for(npb=0; npb < navPortalBtn.length; npb++) {
+        navPortalBtn[npb].style.backgroundColor = pointColor;
+    }
+
+
+    var navMain = document.querySelectorAll(".nav_main");
+    var nMn;
+    for(nMn=0; nMn < navMain.length; nMn++) {
+        navMain[nMn].style.border = "2px dashed" + pointColor;
+    }
+
+
+
+    var megaTitleAll = document.querySelectorAll(".mega_title");
+    if(megaTitleAll) {
+        var mta;
+        for(mta=0; mta < megaTitleAll.length; mta++) {
+            megaTitleAll[mta].style.color = titleColor;
+            megaTitleAll[mta].style.borderBottom = "2px dashed" + titleColor;
+        }
+    }
+
+
+
+
+
+    var frontContColor = document.querySelectorAll(".frontCont");
+    if(frontContColor) {
+        var fcc;
+        for(fcc=0; fcc < frontContColor.length; fcc++) {
+            frontContColor[fcc].color = titleColor;
+        }
+    }
+
+    var frontTitleColor = document.querySelectorAll(".front_title_color");
+    if(frontTitleColor) {
+        var fcc;
+        for(fcc=0; fcc < frontTitleColor.length; fcc++) {
+            frontTitleColor[fcc].color = titleColor;
+        }
+    }
+}
     </script>
