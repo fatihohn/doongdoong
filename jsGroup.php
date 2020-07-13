@@ -60,7 +60,7 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
         var navFontColor = document.querySelectorAll(".nav_font_color");
         var nfc;
         for(nfc=0; nfc < navFontColor.length; nfc++) {
-            navFontColor[nfc].color = pointColor;
+            navFontColor[nfc].color = pointColor + "!important";
         }
     }
 
