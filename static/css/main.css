@@ -851,7 +851,7 @@
     
     #bbdd_sc_area .sc_list_contain>.category .cat_list .cat_li a:hover .li_number::after {
         /* background-color: rgb(255, 255, 255); */
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(255, 255, 255) !important;
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat_list .cat_li .li_number>p {
@@ -871,7 +871,7 @@
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat_list .cat_li a:hover .li_title {
-        color: rgb(255, 255, 255);
+        color: rgb(255, 255, 255) !important;
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat_list .cat_li .li_title>p {
