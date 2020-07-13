@@ -66,13 +66,20 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
     let ftAreaBgColor = document.getElementById("bbdd_ft_area").style.backgroundColor;
     let navBgColor = document.getElementById("bbdd_nav").style.backgroundColor;
 
-    bodyBgColor = bgColor;
-    scAreaBgColor = bgColor;
-    ftAreaBgColor = bgColor;
+    // bodyBgColor = bgColor;
+    // scAreaBgColor = bgColor;
+    // ftAreaBgColor = bgColor;
 
-    hdAreaBgColor = pointColor;
+    // hdAreaBgColor = pointColor;
 
-    navBgColor = navColor;
+    // navBgColor = navColor;
+    document.body.style.backgroundColor = bgColor;
+    document.getElementById("bbdd_sc_area").style.backgroundColor = bgColor;
+    document.getElementById("bbdd_ft_area").style.backgroundColor = bgColor;
+
+    document.getElementById("bbdd_hd_area").style.background = pointColor;
+
+    document.getElementById("bbdd_nav").style.backgroundColor = navColor;
 
     var megaTitleAll = document.querySelectorAll(".mega_title");
     var mta;
@@ -100,7 +107,7 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
         navMain[nMn].style.border = "2px dashed" + pointColor;
     }
 
-    var navFontColor = document.querySelectorAll(".nav_font");
+    var navFontColor = document.querySelectorAll(".nav_font_color");
     var nfc;
     for(nfc=0; nfc < navFontColor.length; nfc++) {
         navFontColor[nfc].color = pointColor;
@@ -110,6 +117,12 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
     var fcc;
     for(fcc=0; fcc < frontContColor.length; fcc++) {
         frontContColor[fcc].color = titleColor;
+    }
+
+    var frontTitleColor = document.querySelectorAll(".front_title_color");
+    var fcc;
+    for(fcc=0; fcc < frontTitleColor.length; fcc++) {
+        frontTitleColor[fcc].color = titleColor;
     }
 }
 
