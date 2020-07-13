@@ -19,9 +19,10 @@ $zinTitle = $rowZinNow['title'];
 $zinDetail = $rowZinNow['zin_detail'];
 // $zinColumn = $rowZinNow['zin_column'];
 
-$sqlStandingZin = "SELECT * FROM zin WHERE publish = 'standing'";
+$sqlStandingZin = "SELECT * FROM zin WHERE publish = 'standing' ORDER BY id DESC LIMIT 1";
 $resultStandingZin = $conn->query($sqlStandingZin) or die($conn->error);
 $rowStandingZin = $resultStandingZin->fetch_assoc();
+$standingZinTitle = $rowStandingZin['title'];
 $zin_column = $rowStandingZin['zin_column'];
 $zin_color = $rowStandingZin['zin_color'];
 $title_color = $rowStandingZin['title_color'];
@@ -47,11 +48,11 @@ if ($resultCatPast->num_rows >= 1) {
     <div class = 'sc_mega_area'>
         <div class = 'sc_mega_contain'>
             <div id = 'standing_wrap' class = 'mega_title'>
-                <h2 class = 'gg-batang'>
-                    <a class = 'front_title_color' href='frontIntro.php'>
-                        둥둥
-                    </a>
-                </h2>
+                <a href='frontIntro.php'>
+                    <h2 class = 'gg-batang front_title_color'>";
+    echo               $standingZinTitle;
+    echo           "</h2>
+                </a>
             </div>
     <ul class = 'mega_list'>
     ";
