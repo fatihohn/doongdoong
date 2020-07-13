@@ -52,16 +52,16 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
 
     document.getElementById("bbdd_nav").style.backgroundColor = navColor;
 
+    var navFontColor = document.querySelectorAll(".nav_font_color");
+    var nfc;
+    for(nfc=0; nfc < navFontColor.length; nfc++) {
+        navFontColor[nfc].color = pointColor + "!important";
+    }
     
     var aTagAll = document.querySelectorAll("a");
     var ata;
     for(ata=0; ata < aTagAll.length; ata++) {
         aTagAll[ata].style.color = titleColor;
-        var navFontColor = document.querySelectorAll(".nav_font_color");
-        var nfc;
-        for(nfc=0; nfc < navFontColor.length; nfc++) {
-            navFontColor[nfc].color = pointColor + "!important";
-        }
     }
 
     var navCloseBtn = document.querySelectorAll(".close");
