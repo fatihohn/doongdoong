@@ -3,6 +3,10 @@
 <head>
   <?php include "bbdd_head.php"; 
   
+  include "bbdd_db_conn.php";
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
   $sqlStandingZin = "SELECT * FROM zin WHERE publish = 'standing'";
 $resultStandingZin = $conn->query($sqlStandingZin) or die($conn->error);
 $rowStandingZin = $resultStandingZin->fetch_assoc();
