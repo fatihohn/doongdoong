@@ -76,7 +76,7 @@ $zinTitle = $rowZinNow['title'];
         
         
         <div class = 'view_category'><?php echo $rows['category']?></div>
-        <div class = 'view_author'>
+        <div class = 'view_author front_point_color'>
             <?php echo $rows['author']?>
             <div class = 'cs_box_front'>
             <button class="view_btn1" onclick="location.href='./admin_create_cont.php'">게시물 작성</button>
@@ -147,7 +147,7 @@ $zinTitle = $rowZinNow['title'];
         </ul>
         <div class = 'view_detail'>
             <?php 
-            echo    "<div class = 'view_auth_detail'>";
+            echo    "<div class = 'view_auth_detail front_point_color'>";
             if($rowsAuth['auth_detail']) {
             echo "글쓴이 | ".$rowsAuth['auth_detail'];
             }

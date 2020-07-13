@@ -73,7 +73,7 @@ $zinTitle = $rowZinNow['title'];
         
         
         <div class = 'view_category' title='전체 게시물 보기' id='<?=$rows["id"]?>' name='<?=$rows["id"]?>' onclick='frontAllCatShow(this.id, this.name)'><?php echo $rows['category']?></div>
-        <div class = 'view_author'><?php echo $rows['author']?></div>
+        <div class = 'view_author front_point_color'><?php echo $rows['author']?></div>
         
         <ul class = 'view_contList'>
             <?php 
@@ -136,7 +136,7 @@ $zinTitle = $rowZinNow['title'];
         </ul>
                     <div class = 'view_detail'>
                     <?php 
-                    echo    "<div class = 'view_auth_detail'>";
+                    echo    "<div class = 'view_auth_detail front_point_color'>";
                     if($rowsAuth['auth_detail']) {
                     echo "글쓴이 | ".$rowsAuth['auth_detail'];
                     }

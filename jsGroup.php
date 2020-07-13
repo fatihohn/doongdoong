@@ -114,5 +114,13 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
             frontTitleColor[fcc].color = titleColor;
         }
     }
+
+    var frontPointColor = document.querySelectorAll(".front_point_color");
+    if(frontPointColor) {
+        var fpc;
+        for(fpc=0; fpc < frontPointColor.length; fpc++) {
+            frontPointColor[fpc].color = pointColor;
+        }
+    }
 }
     </script>
