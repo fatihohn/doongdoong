@@ -55,84 +55,84 @@ $nav_color = $rowStandingZin['nav_color'];
     </nav>
     <div id="body_bg"></div>
     
+    <script>
+        
+    // function frontListColor(bgColor, titleColor, pointColor, navColor) {
+    //     let bodyBgColor = document.body.style.backgroundColor;
+    //     let hdAreaBgColor = document.getElementById("bbdd_hd_area").style.background;
+    //     let scAreaBgColor = document.getElementById("bbdd_sc_area").style.backgroundColor;
+    //     let ftAreaBgColor = document.getElementById("bbdd_ft_area").style.backgroundColor;
+    //     let navBgColor = document.getElementById("bbdd_nav").style.backgroundColor;
+    
+    //     // bodyBgColor = bgColor;
+    //     // scAreaBgColor = bgColor;
+    //     // ftAreaBgColor = bgColor;
+    
+    //     // hdAreaBgColor = pointColor;
+    
+    //     // navBgColor = navColor;
+    //     document.body.style.backgroundColor = bgColor;
+    //     document.getElementById("bbdd_sc_area").style.backgroundColor = bgColor;
+    //     document.getElementById("bbdd_ft_area").style.backgroundColor = bgColor;
+    
+    //     document.getElementById("bbdd_hd_area").style.background = pointColor;
+    
+    //     document.getElementById("bbdd_nav").style.backgroundColor = navColor;
+    
+    //     var megaTitleAll = document.querySelectorAll(".mega_title");
+    //     var mta;
+    //     for(mta=0; mta < megaTitleAll.length; mta++) {
+    //         megaTitleAll[mta].style.color = titleColor;
+    //         megaTitleAll[mta].style.borderBottom = "2px dashed" + titleColor;
+    //     }
+    //     var aTagAll = document.querySelectorAll("a");
+    //     var ata;
+    //     for(ata=0; ata < aTagAll.length; ata++) {
+    //         aTagAll[ata].style.color = titleColor;
+    //     }
+    
+    //     var navCloseBtn = document.querySelectorAll(".close");
+    //     var ncb;
+    //     for(ncb=0; ncb < navCloseBtn.length; ncb++) {
+    //         navCloseBtn[ncb].style.color = pointColor;
+    //     }
+    
+    //     var navPortalBtn = document.querySelectorAll(".portal_btn");
+    //     var npb;
+    //     for(npb=0; npb < navPortalBtn.length; npb++) {
+    //         navPortalBtn[npb].style.backgroundColor = pointColor;
+    //     }
+    
+    //     var navMain = document.querySelectorAll(".nav_main");
+    //     var nMn;
+    //     for(nMn=0; nMn < navMain.length; nMn++) {
+    //         navMain[nMn].style.border = "2px dashed" + pointColor;
+    //     }
+    
+    //     var navFontColor = document.querySelectorAll(".nav_font_color");
+    //     var nfc;
+    //     for(nfc=0; nfc < navFontColor.length; nfc++) {
+    //         navFontColor[nfc].color = pointColor;
+    //     }
+    
+    //     var frontContColor = document.querySelectorAll(".frontCont");
+    //     var fcc;
+    //     for(fcc=0; fcc < frontContColor.length; fcc++) {
+    //         frontContColor[fcc].color = titleColor;
+    //     }
+    
+    //     var frontTitleColor = document.querySelectorAll(".front_title_color");
+    //     var fcc;
+    //     for(fcc=0; fcc < frontTitleColor.length; fcc++) {
+    //         frontTitleColor[fcc].color = titleColor;
+    //     }
+    // }
+    
+    frontListColor("<?php echo $zin_color; ?>", "<?php echo $title_color; ?>", "<?php echo $point_color; ?>", "<?php echo $nav_color; ?>");
+    
+    </script>
     <?php include "jsGroup.php"; ?>
 
-<script>
-    
-// function frontListColor(bgColor, titleColor, pointColor, navColor) {
-//     let bodyBgColor = document.body.style.backgroundColor;
-//     let hdAreaBgColor = document.getElementById("bbdd_hd_area").style.background;
-//     let scAreaBgColor = document.getElementById("bbdd_sc_area").style.backgroundColor;
-//     let ftAreaBgColor = document.getElementById("bbdd_ft_area").style.backgroundColor;
-//     let navBgColor = document.getElementById("bbdd_nav").style.backgroundColor;
-
-//     // bodyBgColor = bgColor;
-//     // scAreaBgColor = bgColor;
-//     // ftAreaBgColor = bgColor;
-
-//     // hdAreaBgColor = pointColor;
-
-//     // navBgColor = navColor;
-//     document.body.style.backgroundColor = bgColor;
-//     document.getElementById("bbdd_sc_area").style.backgroundColor = bgColor;
-//     document.getElementById("bbdd_ft_area").style.backgroundColor = bgColor;
-
-//     document.getElementById("bbdd_hd_area").style.background = pointColor;
-
-//     document.getElementById("bbdd_nav").style.backgroundColor = navColor;
-
-//     var megaTitleAll = document.querySelectorAll(".mega_title");
-//     var mta;
-//     for(mta=0; mta < megaTitleAll.length; mta++) {
-//         megaTitleAll[mta].style.color = titleColor;
-//         megaTitleAll[mta].style.borderBottom = "2px dashed" + titleColor;
-//     }
-//     var aTagAll = document.querySelectorAll("a");
-//     var ata;
-//     for(ata=0; ata < aTagAll.length; ata++) {
-//         aTagAll[ata].style.color = titleColor;
-//     }
-
-//     var navCloseBtn = document.querySelectorAll(".close");
-//     var ncb;
-//     for(ncb=0; ncb < navCloseBtn.length; ncb++) {
-//         navCloseBtn[ncb].style.color = pointColor;
-//     }
-
-//     var navPortalBtn = document.querySelectorAll(".portal_btn");
-//     var npb;
-//     for(npb=0; npb < navPortalBtn.length; npb++) {
-//         navPortalBtn[npb].style.backgroundColor = pointColor;
-//     }
-
-//     var navMain = document.querySelectorAll(".nav_main");
-//     var nMn;
-//     for(nMn=0; nMn < navMain.length; nMn++) {
-//         navMain[nMn].style.border = "2px dashed" + pointColor;
-//     }
-
-//     var navFontColor = document.querySelectorAll(".nav_font_color");
-//     var nfc;
-//     for(nfc=0; nfc < navFontColor.length; nfc++) {
-//         navFontColor[nfc].color = pointColor;
-//     }
-
-//     var frontContColor = document.querySelectorAll(".frontCont");
-//     var fcc;
-//     for(fcc=0; fcc < frontContColor.length; fcc++) {
-//         frontContColor[fcc].color = titleColor;
-//     }
-
-//     var frontTitleColor = document.querySelectorAll(".front_title_color");
-//     var fcc;
-//     for(fcc=0; fcc < frontTitleColor.length; fcc++) {
-//         frontTitleColor[fcc].color = titleColor;
-//     }
-// }
-
-frontListColor("<?php echo $zin_color; ?>", "<?php echo $title_color; ?>", "<?php echo $point_color; ?>", "<?php echo $nav_color; ?>");
-
-</script>
 
 </body>
 </html>
