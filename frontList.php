@@ -23,6 +23,10 @@ $sqlStandingZin = "SELECT * FROM zin WHERE publish = 'standing'";
 $resultStandingZin = $conn->query($sqlStandingZin) or die($conn->error);
 $rowStandingZin = $resultStandingZin->fetch_assoc();
 $zin_Column = $rowStandingZin['zin_column'];
+$zin_Color = $rowStandingZin['zin_color'];
+$title_color = $rowStandingZin['title_color'];
+$header_color = $rowStandingZin['header_color'];
+$nav_color = $rowStandingZin['nav_color'];
 
 
 
@@ -344,16 +348,20 @@ window.addEventListener("resize", function() {
     frontListForm(<?php echo $zin_Column; ?>);
 });
 
-function frontListColor(bgColor, fontColor) {
+function frontListColor(bgColor, fontColor, hdColor, navColor) {
     var bodyBgColor = document.body.style.backgroundColor;
     var hdAreaBgColor = document.getElementById("bbdd_hd_area").style.backgroundColor;
     var scAreaBgColor = document.getElementById("bbdd_sc_area").style.backgroundColor;
     var ftAreaBgColor = document.getElementById("bbdd_ft_area").style.backgroundColor;
+    var navBgColor = document.getElementById("bbdd_nav").style.backgroundColor;
 
     bodyBgColor = bgColor;
-    hdAreaBgColor = bgColor;
     scAreaBgColor = bgColor;
     ftAreaBgColor = bgColor;
+
+    hdAreaBgColor = hdColor;
+    
+    navBgColor = navColor;
 
     var megaTitleAll = document.querySelectorAll(".mega_title");
     var mta;
@@ -363,6 +371,7 @@ function frontListColor(bgColor, fontColor) {
         document.a.style.color = fontColor;
     }
 
+frontListColor(<?php echo $zin_color; ?>, <?php echo $title_color; ?>, <?php echo $header_color; ?>, <?php echo $nav_color; ?>)
 
 
 }
