@@ -8,7 +8,7 @@
     
     #bbdd_sc_area {
         height: auto;
-        background-color: rgb(6, 102, 152);
+        /* background-color: rgb(6, 102, 152); */
         margin-top: 80px;
         padding-top: 2px;
         overflow-x: hidden;
@@ -779,7 +779,7 @@
         font-size: 1rem;
         font-weight: 600;
         line-height: 1.1rem;
-        color: rgb(6, 102, 152);
+        /* color: rgb(6, 102, 152); */
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat:hover .cat_author>p,
@@ -1021,7 +1021,8 @@
         font-size: 0.9rem;
         font-weight: 600;
         line-height: 0.9rem;
-        color: rgb(6, 102, 152);
+        /* color: rgb(6, 102, 152); */
+        color: rgb(50, 50, 50);
     }
     
     #bbdd_sc_area .mega_list>.mega_box a:hover .mega_list_auther>p {
@@ -1078,7 +1079,8 @@
     #bbdd_sc_area .view_wrap .view_wrap_line .view_detail .view_auth_detail {
         border-bottom: 1px solid rgba(50, 50, 50, 0.2);
         padding-bottom: 10px;
-        color: rgb(6, 102, 152);
+        /* color: rgb(6, 102, 152); */
+        color: rgb(50, 50, 50);
         white-space: pre-line;
         word-break: keep-all;
     }
@@ -1099,7 +1101,8 @@
     }
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_author {
-        color: rgb(6, 102, 152);
+        /* color: rgb(6, 102, 152); */
+        color: rgb(50, 50, 50);
         font-weight: 600;
         font-size: 1.2rem;
         padding-bottom: 50px;
@@ -1180,7 +1183,8 @@
         font-size: 1.4rem;
         font-weight: 600;
         letter-spacing: 0.2px;
-        color: rgba(6, 102, 152, 0.75);
+        /* color: rgba(6, 102, 152, 0.75); */
+        color: rgba(50, 50, 50, 0.75);
         padding-bottom: 20px;
     }
     
@@ -1253,7 +1257,8 @@
         margin: 0 auto;
         font-size: 3rem;
         font-weight: 600;
-        color: rgba(6, 102, 152, 0.75);
+        /* color: rgba(6, 102, 152, 0.75); */
+        color: rgba(50, 50, 50, 0.75);
         position: relative;
         padding-top: 20px;
         /* border-top: 1px solid rgba(6, 102, 152, 0.2); */
@@ -1407,7 +1412,8 @@
         }
         #bbdd_sc_area .sc_list_contain>.category .cat .cat_img .cat_title {
             border-radius: 8px 0;
-            border: 1px solid rgb(6, 102, 152);
+            /* border: 1px solid rgb(6, 102, 152); */
+            border: 1px solid rgb(50, 50, 50);
         }
         #bbdd_sc_area .sc_list_contain>.category .cat_title.new>h2:after {
             content: '';
@@ -1418,7 +1424,8 @@
             margin-bottom: 2px;
             margin-left: 7px;
             vertical-align: middle;
-            color: rgb(6, 102, 152);
+            /* color: rgb(6, 102, 152); */
+            color: rgb(50, 50, 50);
         }
         #bbdd_sc_area .sc_list_contain>.category .cat_list {
             display: none;
@@ -1439,7 +1446,8 @@
         }
         #bbdd_sc_area .mega_list>.mega_box .mega_box_sub .mega_list_wrap {
             border-radius: 8px 0;
-            border: 1px solid rgb(6, 102, 152);
+            /* border: 1px solid rgb(6, 102, 152); */
+            border: 1px solid rgb(50, 50, 50);
         }
         #bbdd_sc_area .view_wrap .view_wrap_line {
             padding: 40px 30px;

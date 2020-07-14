@@ -16,7 +16,7 @@
     left: 0;
     right: 0;
     z-index: 998;
-    background: rgb(6, 102, 152);
+    /* background: rgb(6, 102, 152); */
     /* background: rgb(0, 55, 107); */
     /* background: rgb(140, 190, 230); */
     /* background: #ffffff; */
@@ -251,7 +251,7 @@
     width: 30px;
     height: 30px;
     display: block;
-    padding: 3px;
+    padding: 7.4px;
     font-size: 26px;
     font-weight: 900;
     color: rgb(100, 100, 100) !important;
@@ -263,7 +263,8 @@
 #bbdd_nav_area .nav_contain .nav_top .close>a>img {
     width: auto;
     /* max-width: 100%; */
-    max-width: 15px;
+    max-width: 16px;
+    display: block;
 }
 
 #bbdd_nav_area .nav_contain .nav_main {
@@ -275,7 +276,7 @@
     max-height: 65vh;
     overflow: auto;
     background-color: #ffffff;
-    border: 2px dashed rgba(6, 102, 152, 0.9);
+    /* border: 2px dashed rgba(6, 102, 152, 0.9); */
     /* border: 2px dashed rgba(0, 55, 107, 0.9); */
     padding: 20px;
     border-radius: 10px;
@@ -412,7 +413,8 @@
     /* width: 1px;
     height: 16px; */
     /* background-color: #fff; */
-    background-color: rgb(6, 102, 152);
+    /* background-color: rgb(6, 102, 152); */
+    background-color: rgb(50, 50, 50);
     /* background-color: rgb(0, 55, 107); */
 }
 
@@ -444,7 +446,7 @@
     width: 100px;
     height: 100px;
     border-radius: 50px;
-    background-color: rgba(6, 102, 152, 0.8);
+    /* background-color: rgba(6, 102, 152, 0.8); */
     margin-top: 10px;
     margin: 20px auto;
 }
