@@ -31,8 +31,8 @@ $resultCatNow = $conn->query($sqlCatNow) or die($conn->error);
             <div class="nav_top">
                 <div class="close">
                     <a class="gg-title nav_font_color">
-                        ×
-                        <!-- <img src="static/img/close.png" alt="닫기"> -->
+                        <!-- × -->
+                        <img src="static/img/close.png" alt="닫기">
                     </a>
                 </div>
             </div>
