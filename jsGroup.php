@@ -14,10 +14,10 @@
         let cia;
         for(cia=0; cia < contImgAll.length; cia++) {
             if(contImgAll[cia].title) {
-                if(contImgAll[cia].src == "https://doongdoong.org/se2/upload/" + contImgAll[cia].title) {
                     contImgAll[cia].addEventListener("click", function() {showImgWindow(this.title)});
                     contImgAll[cia].style.cursor = "pointer";
-                }
+                // if(contImgAll[cia].src == "https://doongdoong.org/se2/upload/" + contImgAll[cia].title) {
+                // }
             }
         }
 
