@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(6, 102, 152);
+    /* background-color: rgb(6, 102, 152); */
     /* background-color: rgb(0, 55, 107); */
     width: 100%;
     color: white;
@@ -113,7 +113,8 @@ article {
     min-height: 20px;
     margin: 0 10px;
     padding: 5px 10px;
-    border-bottom: 1px solid rgba(6, 102, 152, 0.2);
+    /* border-bottom: 1px solid rgba(6, 102, 152, 0.2); */
+    border-bottom: 1px solid rgba(50, 50, 50, 0.2);
     /* border-bottom: 1px solid rgba(0, 55, 107, 0.2); */
 }
 
@@ -137,7 +138,8 @@ article {
 }
 
 .view_wrap .view_wrap_line .contEditor {
-    color: rgb(6, 102, 152);
+    /* color: rgb(6, 102, 152); */
+    color: rgb(50, 50, 50);
     /* color: rgb(0, 55, 107); */
     /* max-width: 596px; */
     max-width: 640px;
@@ -175,7 +177,8 @@ article {
 }
 
 .view_wrap .view_wrap_line .admin_table {
-    color: rgb(6, 102, 152);
+    /* color: rgb(6, 102, 152); */
+    color: rgb(50, 50, 50);
     /* color: rgb(0, 55, 107); */
     /* max-width: 596px; */
     max-width: 640px;
@@ -206,7 +209,8 @@ article {
 .zin_table tr,
 .thumbs_table tr,
 .noti_table tr {
-    border-bottom: 1px solid rgba(6, 102, 152, 0.2);
+    /* border-bottom: 1px solid rgba(6, 102, 152, 0.2); */
+    border-bottom: 1px solid rgba(50, 50, 50, 0.2);
     /* border-bottom: 1px solid rgba(0, 55, 107, 0.2); */
     /* padding-bottom: 10px; */
 }
@@ -384,7 +388,8 @@ article {
 }
 
 .createForm a {
-    color: rgb(6, 102, 152);
+    /* color: rgb(6, 102, 152); */
+    color: rgb(50, 50, 50);
     /* color: rgb(0, 55, 107); */
 }
 
