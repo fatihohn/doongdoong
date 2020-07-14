@@ -131,7 +131,7 @@ $sQuote = "'";
                 $updateSql= 
                     "UPDATE zin SET
                     `publish`='ready'
-                    WHERE `publish` = 'now' AND `title` != '$title'"; 
+                    WHERE `publish` = 'now' AND `publish` != 'standing' AND `title` != '$title'"; 
                 echo "<br>updateNow";    
             } else if ($publish == "standing") {
                 $sql2 = 
@@ -157,7 +157,7 @@ $sQuote = "'";
                 $updateSql= 
                     "UPDATE zin SET
                     `publish`='ready'
-                    WHERE `publish` = 'standing' AND `title` != '$title'"; 
+                    WHERE `publish` = 'standing' AND `publish` != 'now' AND `title` != '$title'"; 
                 echo "<br>updateNow";    
             }
 
@@ -217,7 +217,7 @@ $sQuote = "'";
             $updateSql= 
                 "UPDATE zin SET
                 `publish`='ready'
-                WHERE `title` != '$title'"; 
+                WHERE `publish` = 'now' AND `publish` != 'standing' AND `title` != '$title'"; 
             echo "<br>updateNow";    
         } else if ($publish == "standing") {
             $sql5 = 
@@ -241,7 +241,7 @@ $sQuote = "'";
             $updateSql= 
                 "UPDATE zin SET
                 `publish`='ready'
-                WHERE `publish` = 'standing' AND `title` != '$title'"; 
+                WHERE `publish` = 'standing' AND `publish` != 'now' AND `title` != '$title'"; 
             echo "<br>updateNow";    
         }
             
