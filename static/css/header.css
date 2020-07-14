@@ -242,12 +242,21 @@
 }
 
 #bbdd_nav_area .nav_contain .nav_top .close>a {
-    width: auto;
+    /* width: auto;
     height: auto;
     display: block;
     font-size: 2.5rem;
     font-weight: 900;
-    color: rgb(50, 50, 50) !important;
+    color: rgb(50, 50, 50) !important; */
+    width: 30px;
+    height: 30px;
+    display: block;
+    font-size: 2rem;
+    font-weight: 900;
+    color: rgb(100, 100, 100) !important;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    text-align: center;
 }
 
 #bbdd_nav_area .nav_contain .nav_top .close>a>img {
