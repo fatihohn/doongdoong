@@ -32,7 +32,7 @@ $nav_color = $rowStandingZin['nav_color'];
 <div class="view_wrap">
     <div class="view_wrap_line">
 
-       <div class = 'view_category'>'둥둥' 지난호</div>
+       <div class = 'view_category front_point_color'>'둥둥' 지난호</div>
         <div class = 'view_author'>
             
         </div>
