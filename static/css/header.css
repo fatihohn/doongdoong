@@ -237,7 +237,7 @@
 
 #bbdd_nav_area .nav_contain .nav_top .close {
     float: right;
-    padding-top: 5px;
+    /* padding-top: 5px; */
     position: relative;
 }
 
@@ -251,7 +251,8 @@
     width: 30px;
     height: 30px;
     display: block;
-    font-size: 2rem;
+    padding: 2px;
+    font-size: 26px;
     font-weight: 900;
     color: rgb(100, 100, 100) !important;
     background-color: rgba(255, 255, 255, 0.2);
