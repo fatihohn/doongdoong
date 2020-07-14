@@ -698,8 +698,10 @@
     }
     
     #bbdd_sc_area .sc_list_contain>.category .title {
-        border-top: 1px solid rgb(6, 102, 152);
-        border-bottom: 1px solid rgb(6, 102, 152);
+        /* border-top: 1px solid rgb(6, 102, 152);
+        border-bottom: 1px solid rgb(6, 102, 152); */
+        border-top: 1px solid rgb(50, 50, 50);
+        border-bottom: 1px solid rgb(50, 50, 50);
         padding: 4px 0;
         text-align: center;
         margin-bottom: 10px;
@@ -709,7 +711,8 @@
         font-size: 1.4rem;
         line-height: 1.7rem;
         font-weight: 300;
-        color: rgb(6, 102, 152);
+        /* color: rgb(6, 102, 152); */
+        color: rgb(50, 50, 50);
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat,
@@ -780,6 +783,7 @@
         font-weight: 600;
         line-height: 1.1rem;
         /* color: rgb(6, 102, 152); */
+        color: rgb(50, 50, 50);
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat:hover .cat_author>p,
@@ -815,6 +819,7 @@
         margin-top: 9px;
         margin-right: 7px;
         /* background-color: rgb(6, 102, 152); */
+        background-color: rgb(50, 50, 50);
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat_list .cat_li:last-of-type,
