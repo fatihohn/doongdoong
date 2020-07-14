@@ -117,7 +117,7 @@ $rows = mysqli_fetch_assoc($result);
         
         
         
-        <div class = 'view_cont_sess front_point_color'>
+        <div id="intro_title" class = 'view_cont_sess front_point_color'>
             <?php echo $rows['title']?>
 
 
