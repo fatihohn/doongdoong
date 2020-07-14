@@ -13,7 +13,7 @@
         }
         let cia;
         for(cia=0; cia < contImgAll.length; cia++) {
-            if(contImgAll[cia].title && contImgAll[cia].title == "se2/upload/" + contImgAll[cia].src) {
+            if(contImgAll[cia].title && contImgAll[cia].src == "se2/upload/" + contImgAll[cia].title) {
                 contImgAll[cia].addEventListener("click", function() {showImgWindow(this.title)});
                 contImgAll[cia].style.cursor = "pointer";
             }
