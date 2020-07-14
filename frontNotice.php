@@ -105,6 +105,8 @@ $nav_color = $rowStandingZin['nav_color'];
     <?php include "jsGroup.php"; ?>
     <?php //include "admin_jsGroup.php"; ?>
 <script>
+    document.querySelector(".view_wrap").style.boxShadow = "0 4px 8px 0 rgba(0, 0, 0, 0.2)";
+        
     frontListColor("<?php echo $zin_color; ?>", "<?php echo $title_color; ?>", "<?php echo $point_color; ?>", "<?php echo $nav_color; ?>");
     
 </script>
