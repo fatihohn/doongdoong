@@ -130,5 +130,21 @@
             frontPointColor[fpc].style.color = pointColor;
         }
     }
+
+    var adminTableColor = document.querySelectorAll(".admin_table");
+    if(adminTableColor) {
+        var atc;
+        for(atc=0; atc < adminTableColor.length; atc++) {
+            adminTableColor[atc].style.color = pointColor;
+        }
+    }
+
+    var contEditorColor = document.querySelectorAll(".contEditor");
+    if(contEditorColor) {
+        var cec;
+        for(cec=0; cec < contEditorColor.length; cec++) {
+            contEditorColor[cec].style.color = pointColor;
+        }
+    }
 }
 </script>

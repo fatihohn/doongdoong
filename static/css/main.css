@@ -1106,7 +1106,8 @@
     }
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .cont_li {
-        border-top: 1px solid rgba(6, 102, 152, 0.2);
+        /* border-top: 1px solid rgba(6, 102, 152, 0.2); */
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
         padding: 15px 0;
         overflow: hidden;
         font-weight: 600;
@@ -1122,7 +1123,8 @@
     }
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .cont_li:last-of-type {
-        border-bottom: 1px solid rgba(6, 102, 152, 0.2);
+        /* border-bottom: 1px solid rgba(6, 102, 152, 0.2); */
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     }
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .cont_li .li_number {
