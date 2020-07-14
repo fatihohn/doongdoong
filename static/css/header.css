@@ -251,7 +251,7 @@
     width: 30px;
     height: 30px;
     display: block;
-    padding: 2px;
+    padding: 3px;
     font-size: 26px;
     font-weight: 900;
     color: rgb(100, 100, 100) !important;
@@ -262,7 +262,8 @@
 
 #bbdd_nav_area .nav_contain .nav_top .close>a>img {
     width: auto;
-    max-width: 100%;
+    /* max-width: 100%; */
+    max-width: 185x;
 }
 
 #bbdd_nav_area .nav_contain .nav_main {
