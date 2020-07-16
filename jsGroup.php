@@ -6,25 +6,28 @@
     <script src="static/js/contView.js"></script>
     <script src="static/js/share.js"></script>
     <script>
-        let contImgAll = document.querySelectorAll(".view_cont_content img");
-        let introTitle = document.getElementById("intro_title");
-        function showImgWindow(str) {
-            imgSrc = "https://doongdoong.org/se2/upload/" + str;
-            window.open(imgSrc, "imgWindow", "width=1200, height=800");
-        }
-        let cia;
-        for(cia=0; cia < contImgAll.length; cia++) {
-            if(contImgAll[cia].title) {
-                if(introTitle) {
+        function viewImgClick() {
+            let contImgAll = document.querySelectorAll(".view_cont_content img");
+            let introTitle = document.getElementById("intro_title");
+            function showImgWindow(str) {
+                imgSrc = "https://doongdoong.org/se2/upload/" + str;
+                window.open(imgSrc, "imgWindow", "width=1200, height=800");
+            }
+            let cia;
+            for(cia=0; cia < contImgAll.length; cia++) {
+                if(contImgAll[cia].title) {
+                    if(introTitle) {
 
-                } else {
-                    contImgAll[cia].addEventListener("click", function() {showImgWindow(this.title)});
-                    contImgAll[cia].style.cursor = "pointer";
+                    } else {
+                        contImgAll[cia].addEventListener("click", function() {showImgWindow(this.title)});
+                        contImgAll[cia].style.cursor = "pointer";
+                    }
+                    // if(contImgAll[cia].src == "https://doongdoong.org/se2/upload/" + contImgAll[cia].title) {
+                    // }
                 }
-                // if(contImgAll[cia].src == "https://doongdoong.org/se2/upload/" + contImgAll[cia].title) {
-                // }
             }
         }
+        viewImgClick();
 
         // function frontListForm(NumberOfColumn) {
         //     let standingCatAll = document.querySelectorAll(".standing_cat");
