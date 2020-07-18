@@ -24,7 +24,7 @@
                 imgSlide.style.backgroundSize = 'contain';
                 imgSlide.style.backgroundRepeat = 'no-repeat';
                 imgSlide.style.backgroundAttachment = 'fixed';
-                imgSlide.style.backgroundPositoin = 'center';
+                imgSlide.style.backgroundPosition = 'center';
                 imgSlide.style.zIndex = '9999';
                 imgSlide.style.position = 'fixed';
                 imgSlide.style.top = '0';
