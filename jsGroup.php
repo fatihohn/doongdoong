@@ -70,6 +70,7 @@
                                 let imgSlideBtnNext = document.createElement("div");
                                 imgSlideBtnNext.className = "img_slide_btn";
                                 imgSlideBtnNext.id = "img_slide_next";
+            
                                 imgSlideBtnNext.innerHTML = "▶";
                                 imgSlideBtnNext.style.width = "60px";
                                 imgSlideBtnNext.style.height = "60px";
