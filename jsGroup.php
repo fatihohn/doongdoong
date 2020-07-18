@@ -33,6 +33,7 @@
                 imgSlide.style.position = 'fixed';
                 imgSlide.style.top = '0';
                 imgSlide.style.left = '0';
+                imgSlide.style.cursor = 'pointer';
 
                 document.body.appendChild(imgSlide);
 
@@ -48,8 +49,10 @@
                     if(introTitle) {
 
                     } else {
-                        contImgAll[cia].addEventListener("click", function() {showImgWindow(this.title)});
-                        contImgAll[cia].style.cursor = "pointer";
+                        if(window.innerWidth > 801) {
+                            contImgAll[cia].addEventListener("click", function() {showImgWindow(this.title)});
+                            contImgAll[cia].style.cursor = "pointer";
+                        }
                     }
                     // if(contImgAll[cia].src == "https://doongdoong.org/se2/upload/" + contImgAll[cia].title) {
                     // }
