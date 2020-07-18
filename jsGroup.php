@@ -12,7 +12,7 @@
             function showImgWindow(str) {
                 let imgSrc = "https://doongdoong.org/se2/upload/" + str;
                 // window.open(imgSrc, "imgWindow", "width=1200, height=800");
-                let imgSlide = document.body.createElement("div");
+                let imgSlide = document.createElement("div");
                 imgSlide.className = "img_slide";
                 imgSlide.style.width = "100vw";
                 imgSlide.style.height = "100vh";
@@ -23,6 +23,9 @@
                 imgSlide.style.backgroundSize = 'contain';
                 imgSlide.style.backgroundRepeat = 'no-repeat';
                 imgSlide.style.zIndex = '9999';
+
+                document.appendChild(imgSlide);
+
                 imgSlide.onclick = function() {
                     imgSlide.remove();
                 };
