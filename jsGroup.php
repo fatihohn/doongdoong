@@ -9,11 +9,12 @@
         function viewImgClick() {
             let contImgAll = document.querySelectorAll(".view_cont_content img");
             let introTitle = document.getElementById("intro_title");
-            function showImgWindow(str) {
-                let imgSrc = "https://doongdoong.org/se2/upload/" + str;
+            function showImgWindow(imgurl) {
+                let imgSrc = "https://doongdoong.org/se2/upload/" + imgurl;
                 // window.open(imgSrc, "imgWindow", "width=1200, height=800");
                 let imgSlide = document.createElement("div");
                 imgSlide.className = "img_slide";
+                imgSlide.id = "img_slide";
                 // imgSlide.style.width = "100vw";
                 // imgSlide.style.height = "100vh";
                 imgSlide.style.width = "100%";
@@ -29,14 +30,15 @@
                 imgSlide.style.backgroundSize = 'contain';
                 imgSlide.style.backgroundRepeat = 'no-repeat';
                 imgSlide.style.backgroundAttachment = 'fixed';
-                imgSlide.style.zIndex = '9999';
+                imgSlide.style.zIndex = '9990';
                 imgSlide.style.position = 'fixed';
                 imgSlide.style.top = '0';
                 imgSlide.style.left = '0';
-                imgSlide.style.cursor = 'pointer';
+                // imgSlide.style.cursor = 'pointer';
 
                 document.body.appendChild(imgSlide);
 
+                
                 imgSlide.onclick = function() {
                     imgSlide.remove();
                 };
@@ -50,8 +52,46 @@
 
                     } else {
                         if(window.innerWidth > 801) {
-                            contImgAll[cia].addEventListener("click", function() {showImgWindow(this.title)});
+                            contImgAll[cia].addEventListener("click", function() {
+                                showImgWindow(this.title)
+                                if(contImgAll.length < 2) {
+
+                                } else if (contImgAll.length >= 2 && cia == 0) {
+                                    let nextImgSrc = contImgAll[cia+1].title;
+                                    // let prevImgSrc = contImgAll[cia-1].title;
+                                    let prevImgSrc = null;
+                                } else if (contImgAll.length >= 2 && cia < contImgAll.length) {
+                                    let nextImgSrc = contImgAll[cia+1].title;
+                                    let prevImgSrc = contImgAll[cia-1].title;
+                                } else if (contImgAll.length >= 2 && cia == contImgAll.length) {
+                                    let nextImgSrc = null;
+                                    let prevImgSrc = contImgAll[cia-1].title;
+                                }
+                                let imgSlideBtnNext = document.createElement("div");
+                                imgSlideBtnNext.innerHTML = "▶";
+                                imgSlideBtnNext.style.fontSize = "3rem";
+                                imgSlideBtnNext.style.fontWeight = "900";
+                                imgSlideBtnNext.style.color = "white";
+                                imgSlideBtnNext.style.opacity = "0.3";
+                                imgSlideBtnNext.style.position = "fixed";
+                                imgSlideBtnNext.style.top = "50%";
+                                imgSlideBtnNext.style.right = "0";
+                                imgSlideBtnNext.style.padding = "20px";
+                                imgSlideBtnNext.onmouseover.style.opacity = "0.9";
+                                imgSlideBtnNext.onmouseleave.style.opacity = "0.3";
+                                if(nextImgSrc !== null) {
+                                    imgSlideBtnNext.onclick = function() {
+                                        document.getElementById("img_slide").style.backgroundImage = 
+                                        'url(' +
+                                        nextImgSrc +
+                                        ')';
+                                    }
+                                };
+                                document.getElementById("img_slide").appendChild(imgSlideBtnNext);
+                            });
                             contImgAll[cia].style.cursor = "pointer";
+
+
                         }
                     }
                     // if(contImgAll[cia].src == "https://doongdoong.org/se2/upload/" + contImgAll[cia].title) {
