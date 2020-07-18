@@ -16,6 +16,8 @@
                 imgSlide.className = "img_slide";
                 imgSlide.style.width = "100vw";
                 imgSlide.style.height = "100vh";
+                document.body.style.width = "100vw";
+                document.body.style.height = "100vh";
                 imgSlide.style.backgroundImage = 
                 'url(' +
                 imgSrc +
@@ -34,6 +36,8 @@
 
                 imgSlide.onclick = function() {
                     imgSlide.remove();
+                    document.body.style.width = "initial";
+                    document.body.style.height = "initial";
                 };
 
 
