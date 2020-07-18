@@ -23,6 +23,9 @@
                 imgSlide.style.backgroundSize = 'contain';
                 imgSlide.style.backgroundRepeat = 'no-repeat';
                 imgSlide.style.zIndex = '9999';
+                imgSlide.style.position = 'fixed';
+                imgSlide.style.top = '0';
+                imgSlide.style.left = '0';
 
                 document.body.appendChild(imgSlide);
 
