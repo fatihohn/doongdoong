@@ -24,7 +24,7 @@
                 imgSlide.style.backgroundRepeat = 'no-repeat';
                 imgSlide.style.zIndex = '9999';
 
-                document.appendChild(imgSlide);
+                document.body.appendChild(imgSlide);
 
                 imgSlide.onclick = function() {
                     imgSlide.remove();
