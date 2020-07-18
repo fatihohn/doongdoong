@@ -68,7 +68,11 @@
                                     let prevImgSrc = contImgAll[cia-1].title;
                                 }
                                 let imgSlideBtnNext = document.createElement("div");
+                                imgSlide.className = "img_slide_btn";
+                                imgSlide.id = "img_slide_next";
                                 imgSlideBtnNext.innerHTML = "▶";
+                                imgSlideBtnNext.style.width = "60px";
+                                imgSlideBtnNext.style.height = "60px";
                                 imgSlideBtnNext.style.fontSize = "3rem";
                                 imgSlideBtnNext.style.fontWeight = "900";
                                 imgSlideBtnNext.style.color = "white";
