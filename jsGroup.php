@@ -53,7 +53,7 @@
                     } else {
                         if(window.innerWidth > 801) {
                             contImgAll[cia].addEventListener("click", function() {
-                                showImgWindow(this.title)
+                                showImgWindow(this.title);
                                 if(contImgAll.length < 2) {
 
                                 } else if (contImgAll.length >= 2 && cia == 0) {
@@ -77,6 +77,7 @@
                                 imgSlideBtnNext.style.top = "50%";
                                 imgSlideBtnNext.style.right = "0";
                                 imgSlideBtnNext.style.padding = "20px";
+                                imgSlideBtnNext.style.zIndex = "9999";
                                 imgSlideBtnNext.onmouseover.style.opacity = "0.9";
                                 imgSlideBtnNext.onmouseleave.style.opacity = "0.3";
                                 if(nextImgSrc !== null) {
@@ -87,7 +88,7 @@
                                         ')';
                                     }
                                 };
-                                document.getElementById("img_slide").appendChild(imgSlideBtnNext);
+                                document.body.appendChild(imgSlideBtnNext);
                             });
                             contImgAll[cia].style.cursor = "pointer";
 
