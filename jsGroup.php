@@ -14,10 +14,12 @@
                 // window.open(imgSrc, "imgWindow", "width=1200, height=800");
                 let imgSlide = document.createElement("div");
                 imgSlide.className = "img_slide";
-                imgSlide.style.width = "100vw";
-                imgSlide.style.height = "100vh";
-                document.body.style.width = "100vw";
-                document.body.style.height = "100vh";
+                // imgSlide.style.width = "100vw";
+                // imgSlide.style.height = "100vh";
+                imgSlide.style.width = "100%";
+                imgSlide.style.height = "100%";
+                // document.body.style.width = "100vw";
+                // document.body.style.height = "100vh";
                 imgSlide.style.backgroundImage = 
                 'url(' +
                 imgSrc +
@@ -36,8 +38,6 @@
 
                 imgSlide.onclick = function() {
                     imgSlide.remove();
-                    document.body.style.width = "initial";
-                    document.body.style.height = "initial";
                 };
 
 
