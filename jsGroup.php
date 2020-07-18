@@ -38,9 +38,29 @@
 
                 document.body.appendChild(imgSlide);
 
+                let imgSlideBtnNext = document.createElement("div");
+                imgSlideBtnNext.className = "img_slide_btn";
+                imgSlideBtnNext.id = "img_slide_next";
+
+                imgSlideBtnNext.innerHTML = "▶";
+                imgSlideBtnNext.style.width = "60px";
+                imgSlideBtnNext.style.height = "60px";
+                imgSlideBtnNext.style.fontSize = "3rem";
+                imgSlideBtnNext.style.fontWeight = "900";
+                imgSlideBtnNext.style.color = "white";
+                imgSlideBtnNext.style.opacity = "0.3";
+                imgSlideBtnNext.style.position = "fixed";
+                imgSlideBtnNext.style.top = "50%";
+                imgSlideBtnNext.style.right = "0";
+                imgSlideBtnNext.style.padding = "20px";
+                imgSlideBtnNext.style.zIndex = "9999";
+
+                // document.body.appendChild(imgSlideBtnNext);
+                imgSlide.appendChild(imgSlideBtnNext);
                 
                 imgSlide.onclick = function() {
                     imgSlide.remove();
+                    imgSlideBtnNext.remove();
                 };
 
 
@@ -67,24 +87,22 @@
                                     let nextImgSrc = null;
                                     let prevImgSrc = contImgAll[cia-1].title;
                                 }
-                                let imgSlideBtnNext = document.createElement("div");
-                                imgSlideBtnNext.className = "img_slide_btn";
-                                imgSlideBtnNext.id = "img_slide_next";
+                                // let imgSlideBtnNext = document.createElement("div");
+                                // imgSlideBtnNext.className = "img_slide_btn";
+                                // imgSlideBtnNext.id = "img_slide_next";
             
-                                imgSlideBtnNext.innerHTML = "▶";
-                                imgSlideBtnNext.style.width = "60px";
-                                imgSlideBtnNext.style.height = "60px";
-                                imgSlideBtnNext.style.fontSize = "3rem";
-                                imgSlideBtnNext.style.fontWeight = "900";
-                                imgSlideBtnNext.style.color = "white";
-                                imgSlideBtnNext.style.opacity = "0.3";
-                                imgSlideBtnNext.style.position = "fixed";
-                                imgSlideBtnNext.style.top = "50%";
-                                imgSlideBtnNext.style.right = "0";
-                                imgSlideBtnNext.style.padding = "20px";
-                                imgSlideBtnNext.style.zIndex = "9999";
-                                imgSlideBtnNext.onmouseover.style.opacity = "0.9";
-                                imgSlideBtnNext.onmouseleave.style.opacity = "0.3";
+                                // imgSlideBtnNext.innerHTML = "▶";
+                                // imgSlideBtnNext.style.width = "60px";
+                                // imgSlideBtnNext.style.height = "60px";
+                                // imgSlideBtnNext.style.fontSize = "3rem";
+                                // imgSlideBtnNext.style.fontWeight = "900";
+                                // imgSlideBtnNext.style.color = "white";
+                                // imgSlideBtnNext.style.opacity = "0.3";
+                                // imgSlideBtnNext.style.position = "fixed";
+                                // imgSlideBtnNext.style.top = "50%";
+                                // imgSlideBtnNext.style.right = "0";
+                                // imgSlideBtnNext.style.padding = "20px";
+                                // imgSlideBtnNext.style.zIndex = "9999";
                                 if(nextImgSrc !== null) {
                                     imgSlideBtnNext.onclick = function() {
                                         document.getElementById("img_slide").style.backgroundImage = 
@@ -93,7 +111,9 @@
                                         ')';
                                     }
                                 };
-                                document.body.appendChild(imgSlideBtnNext);
+                                // document.body.appendChild(imgSlideBtnNext);
+                                imgSlideBtnNext.onmouseover.style.opacity = "0.9";
+                                imgSlideBtnNext.onmouseleave.style.opacity = "0.3";
                             });
                             contImgAll[cia].style.cursor = "pointer";
 
