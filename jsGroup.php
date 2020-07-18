@@ -10,8 +10,24 @@
             let contImgAll = document.querySelectorAll(".view_cont_content img");
             let introTitle = document.getElementById("intro_title");
             function showImgWindow(str) {
-                imgSrc = "https://doongdoong.org/se2/upload/" + str;
-                window.open(imgSrc, "imgWindow", "width=1200, height=800");
+                let imgSrc = "https://doongdoong.org/se2/upload/" + str;
+                // window.open(imgSrc, "imgWindow", "width=1200, height=800");
+                let imgSlide = document.createElement("div");
+                imgSlide.className = "img_slide";
+                imgSlide.style.width = "100vw";
+                imgSlide.style.height = "100vh";
+                imgSlide.style.backgroundImage = 
+                'url(' +
+                imgSrc +
+                ')';
+                imgSlide.style.backgroundSize = 'contain';
+                imgSlide.style.backgroundRepeat = 'no-repeat';
+                imgSlide.style.zIndex = '9999';
+                imgSlide.onclick = function() {
+                    imgSlide.remove();
+                };
+
+
             }
             let cia;
             for(cia=0; cia < contImgAll.length; cia++) {
