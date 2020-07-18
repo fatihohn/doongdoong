@@ -68,8 +68,8 @@
                                     let prevImgSrc = contImgAll[cia-1].title;
                                 }
                                 let imgSlideBtnNext = document.createElement("div");
-                                imgSlide.className = "img_slide_btn";
-                                imgSlide.id = "img_slide_next";
+                                imgSlideBtnNext.className = "img_slide_btn";
+                                imgSlideBtnNext.id = "img_slide_next";
                                 imgSlideBtnNext.innerHTML = "▶";
                                 imgSlideBtnNext.style.width = "60px";
                                 imgSlideBtnNext.style.height = "60px";
