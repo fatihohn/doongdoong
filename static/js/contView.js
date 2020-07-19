@@ -12,7 +12,7 @@
         // imgIndent();
 
 
-        var contImgs = document.querySelectorAll(".view_cont_content img");
+        let contImgs = document.querySelectorAll(".view_cont_content img");
         let a;
         for (a = 0; a < contImgs.length; a++) {
             contImgs[a].parentElement.style.textIndent = "0";

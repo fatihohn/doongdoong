@@ -43,18 +43,18 @@
                 document.body.appendChild(imgSlide);
                 
 
-                if(contImgs.length < 2) {
+                // if(contImgs.length < 2) {
 
-                } else if (contImgs.length >= 2 && imgClassName == 0) {
-                    var nextImgSrc = contImgs[nextImgNumber].src;
-                    var prevImgSrc = 'noCont';
-                } else if (contImgs.length >= 2 && imgClassName < contImgs.length) {
-                    var nextImgSrc = contImgs[nextImgNumber].src;
-                    var prevImgSrc = contImgs[prevImgNumber].src;
-                } else if (contImgs.length >= 2 && imgClassName == contImgs.length) {
-                    var nextImgSrc = 'noCont';
-                    var prevImgSrc = contImgs[prevImgNumber].src;
-                }
+                // } else if (contImgs.length >= 2 && imgClassName == 0) {
+                //     var nextImgSrc = contImgs[nextImgNumber].src;
+                //     var prevImgSrc = 'noCont';
+                // } else if (contImgs.length >= 2 && imgClassName < contImgs.length) {
+                //     var nextImgSrc = contImgs[nextImgNumber].src;
+                //     var prevImgSrc = contImgs[prevImgNumber].src;
+                // } else if (contImgs.length >= 2 && imgClassName == contImgs.length) {
+                //     var nextImgSrc = 'noCont';
+                //     var prevImgSrc = contImgs[prevImgNumber].src;
+                // }
 
 
 
@@ -62,7 +62,8 @@
 
 
                 var imgSlideBtnNext = document.createElement("div");
-                imgSlideBtnNext.className = "img_slide_btn";
+                // imgSlideBtnNext.className = "img_slide_btn";
+                imgSlideBtnNext.className = imgClassName;
                 imgSlideBtnNext.id = "img_slide_next";
                 
                 imgSlideBtnNext.innerHTML = "▶";
@@ -98,7 +99,8 @@
                 }
 
                 var imgSlideBtnPrev = document.createElement("div");
-                imgSlideBtnPrev.className = "img_slide_btn";
+                // imgSlideBtnPrev.className = "img_slide_btn";
+                imgSlideBtnPrev.className = imgClassName;
                 imgSlideBtnPrev.id = "img_slide_prev";
 
                 imgSlideBtnPrev.innerHTML = "◀";
