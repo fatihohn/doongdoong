@@ -7,21 +7,6 @@
     <script src="static/js/share.js"></script>
     <script>
 
-        // if(document.getElementById("img_slide")) {
-        //     var imgNumber = document.getElementById("img_slide").className;
-        //     if(contImgs.length < 2) {
-
-        //     } else if (contImgs.length >= 2 && imgNumber == 0) {
-        //         var nextImgSrc = contImgs[imgNumber + 1].title;
-        //         var prevImgSrc = 'noCont';
-        //     } else if (contImgs.length >= 2 && imgNumber < contImgs.length) {
-        //         var nextImgSrc = contImgs[imgNumber + 1].title;
-        //         var prevImgSrc = contImgs[imgNumber - 1].title;
-        //     } else if (contImgs.length >= 2 && imgNumber == contImgs.length) {
-        //         var nextImgSrc = 'noCont';
-        //         var prevImgSrc = contImgs[imgNumber - 1].title;
-        //     }
-        // }
 
         function viewImgClick() {
             let contImgAll = document.querySelectorAll(".view_cont_content img");
@@ -95,9 +80,6 @@
                 imgSlideBtnNext.style.cursor = "pointer";
                 
                 
-                
-                
-                
 
 
                 imgSlideBtnNext.onmouseover = function() {
@@ -153,26 +135,14 @@
                 
                 imgSlide.onclick = function() {
                     imgSlide.remove();
-                    imgSlideBtnNext.remove();
+                    // imgSlideBtnNext.remove();
+                    // imgSlideBtnPrev.remove();
                 };
 
 
             }
             let cia;
             for(cia=0; cia < contImgAll.length; cia++) {
-                // if(contImgAll.length < 2) {
-
-                // } else if (contImgAll.length >= 2 && cia == 0) {
-                //     let nextImgSrc = contImgAll[cia+1].title;
-                //     // let prevImgSrc = contImgAll[cia-1].title;
-                //     let prevImgSrc = null;
-                // } else if (contImgAll.length >= 2 && cia < contImgAll.length) {
-                //     let nextImgSrc = contImgAll[cia+1].title;
-                //     let prevImgSrc = contImgAll[cia-1].title;
-                // } else if (contImgAll.length >= 2 && cia == contImgAll.length) {
-                //     let nextImgSrc = null;
-                //     let prevImgSrc = contImgAll[cia-1].title;
-                // }
 
                 if(contImgAll[cia].title) {
                     if(introTitle) {
@@ -183,60 +153,10 @@
                                 // showImgWindow(this.title, this.className);
                                 showImgWindow(this.src, this.className, this.className + 1, this.className -1);
 
-                                // if(contImgs.length < 2) {
-
-                                // } else if (contImgs.length >= 2 && this.className == 0) {
-                                //     var nextImgSrc = contImgs[this.className + 1].title;
-                                //     var prevImgSrc = 'noCont';
-                                // } else if (contImgs.length >= 2 && this.className < contImgs.length) {
-                                //     var nextImgSrc = contImgs[this.className + 1].title;
-                                //     var prevImgSrc = contImgs[this.className - 1].title;
-                                // } else if (contImgs.length >= 2 && this.className == contImgs.length) {
-                                //     var nextImgSrc = 'noCont';
-                                //     var prevImgSrc = contImgs[this.className - 1].title;
-                                // }
-
-
-
-                                // if(nextImgSrc !== null) {
-                                //     imgSlideBtnNext.onclick = function() {
-                                //         document.getElementById("img_slide").style.backgroundImage = 
-                                //         'url(' +
-                                //         nextImgSrc +
-                                //         ')';
-                                //     }
-                                // };
-
-                                // if(contImgAll.length < 2) {
-
-                                // } else if (contImgAll.length >= 2 && this.className == 0) {
-                                //     let aNext = this.className + 1;
-                                //     var nextImgSrc = contImgAll[aNext].title;
-                                //     // var prevImgSrc = contImgAll[a-1].title;
-                                //     var prevImgSrc = null;
-                                // } else if (contImgAll.length >= 2 && this.className < contImgAll.length) {
-                                //     let aNext = this.className + 1;
-                                //     let aPrev = this.className - 1;
-                                //     var nextImgSrc = contImgAll[aNext].title;
-                                //     var prevImgSrc = contImgAll[aPrev].title;
-                                // } else if (contImgAll.length >= 2 && this.className == contImgAll.length) {
-                                //     // let aNext = this.className + 1;
-                                //     let aPrev = this.className - 1;
-                                //     var nextImgSrc = null;
-                                //     var prevImgSrc = contImgAll[aPrev].title;
-                                // }
                             });
                             contImgAll[cia].style.cursor = "pointer";
                             contImgAll[cia].className = cia;
 
-                            // if(nextImgSrc !== null) {
-                            // imgSlideBtnNext.onclick = function() {
-                            //         document.getElementById("img_slide").style.backgroundImage = 
-                            //         'url(' +
-                            //         nextImgSrc +
-                            //         ')';
-                            //     }
-                            // };
 
                             
 
@@ -248,13 +168,6 @@
         }
         viewImgClick();
 
-        // function frontListForm(NumberOfColumn) {
-        //     let standingCatAll = document.querySelectorAll(".standing_cat");
-        //     let stc;
-        //     for(stc=0; stc < standingCatAll.length; stc++) {
-        //         standingCatAll[stc].style.width = "calc((100% - 40px) / " + NumberOfColumn + ")";
-        //     }
-        // }
 
 
 
