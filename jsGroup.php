@@ -16,12 +16,8 @@
                 // imgSlide.className = "img_slide";
                 imgSlide.className = imgClassName;
                 imgSlide.id = "img_slide";
-                // imgSlide.style.width = "100vw";
-                // imgSlide.style.height = "100vh";
                 imgSlide.style.width = "100%";
                 imgSlide.style.height = "100%";
-                // document.body.style.width = "100vw";
-                // document.body.style.height = "100vh";
                 imgSlide.style.backgroundImage = 
                 'url(' +
                 imgSrc +
@@ -62,36 +58,6 @@
                 imgSlideBtnNext.onmouseleave = function() {
                     imgSlideBtnNext.style.opacity = "0.3";
                 }
-
-                // if(contImgAll.length < 2) {
-
-                // } else if (contImgAll.length >= 2 && imgClassName == 0) {
-                //     let aNext = this.className + 1;
-                //     var nextImgSrc = contImgAll[aNext].title;
-                //     // var prevImgSrc = contImgAll[a-1].title;
-                //     var prevImgSrc = null;
-                // } else if (contImgAll.length >= 2 && imgClassName < contImgAll.length) {
-                //     let aNext = this.className + 1;
-                //     let aPrev = this.className - 1;
-                //     var nextImgSrc = contImgAll[aNext].title;
-                //     var prevImgSrc = contImgAll[aPrev].title;
-                // } else if (contImgAll.length >= 2 && imgClassName == contImgAll.length) {
-                //     // let aNext = this.className + 1;
-                //     let aPrev = this.className - 1;
-                //     var nextImgSrc = null;
-                //     var prevImgSrc = contImgAll[aPrev].title;
-                // }
-
-
-
-                // if(nextImgSrc !== null) {
-                //     imgSlideBtnNext.onclick = function() {
-                //         document.getElementById("img_slide").style.backgroundImage = 
-                //         'url(' +
-                //         nextImgSrc +
-                //         ')';
-                //     }
-                // };
 
                 // document.body.appendChild(imgSlideBtnNext);
                 imgSlide.appendChild(imgSlideBtnNext);
@@ -135,36 +101,36 @@
                                 //     }
                                 // };
 
-                                if(contImgAll.length < 2) {
+                                // if(contImgAll.length < 2) {
 
-                                } else if (contImgAll.length >= 2 && this.className == 0) {
-                                    let aNext = this.className + 1;
-                                    var nextImgSrc = contImgAll[aNext].title;
-                                    // var prevImgSrc = contImgAll[a-1].title;
-                                    var prevImgSrc = null;
-                                } else if (contImgAll.length >= 2 && this.className < contImgAll.length) {
-                                    let aNext = this.className + 1;
-                                    let aPrev = this.className - 1;
-                                    var nextImgSrc = contImgAll[aNext].title;
-                                    var prevImgSrc = contImgAll[aPrev].title;
-                                } else if (contImgAll.length >= 2 && this.className == contImgAll.length) {
-                                    // let aNext = this.className + 1;
-                                    let aPrev = this.className - 1;
-                                    var nextImgSrc = null;
-                                    var prevImgSrc = contImgAll[aPrev].title;
-                                }
+                                // } else if (contImgAll.length >= 2 && this.className == 0) {
+                                //     let aNext = this.className + 1;
+                                //     var nextImgSrc = contImgAll[aNext].title;
+                                //     // var prevImgSrc = contImgAll[a-1].title;
+                                //     var prevImgSrc = null;
+                                // } else if (contImgAll.length >= 2 && this.className < contImgAll.length) {
+                                //     let aNext = this.className + 1;
+                                //     let aPrev = this.className - 1;
+                                //     var nextImgSrc = contImgAll[aNext].title;
+                                //     var prevImgSrc = contImgAll[aPrev].title;
+                                // } else if (contImgAll.length >= 2 && this.className == contImgAll.length) {
+                                //     // let aNext = this.className + 1;
+                                //     let aPrev = this.className - 1;
+                                //     var nextImgSrc = null;
+                                //     var prevImgSrc = contImgAll[aPrev].title;
+                                // }
                             });
                             contImgAll[cia].style.cursor = "pointer";
                             contImgAll[cia].className = cia;
 
-                            if(nextImgSrc !== null) {
-                            imgSlideBtnNext.onclick = function() {
-                                document.getElementById("img_slide").style.backgroundImage = 
-                                'url(' +
-                                nextImgSrc +
-                                ')';
-                            }
-                        };
+                            // if(nextImgSrc !== null) {
+                            // imgSlideBtnNext.onclick = function() {
+                            //         document.getElementById("img_slide").style.backgroundImage = 
+                            //         'url(' +
+                            //         nextImgSrc +
+                            //         ')';
+                            //     }
+                            // };
 
                             
 
