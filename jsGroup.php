@@ -7,7 +7,25 @@
     <script src="static/js/share.js"></script>
     <script>
 
-
+        function showNextImg(nextImgClass) {
+            // let nextImgSrc = contImgs[nextImgClass + 1].src;
+            let nextImgSrc = contImgs[nextImgClass + 1].src;
+            if(nextImgSrc !== 'noCont') {
+                imgSlide.style.backgroundImage = 
+                'url(' +
+                nextImgSrc +
+                ')';
+            }
+        }
+        function showPrevImg(prevImgClass) {
+            let prevImgSrc = contImgs[prevImgClass - 1].src;
+            if(prevImgSrc !== 'noCont') {
+                imgSlide.style.backgroundImage = 
+                'url(' +
+                prevImgSrc +
+                ')';
+            }
+        }
         function viewImgClick() {
             let contImgAll = document.querySelectorAll(".view_cont_content img");
             let introTitle = document.getElementById("intro_title");
@@ -91,16 +109,7 @@
                     imgSlideBtnNext.style.opacity = "0.3";
                 }
                 imgSlideBtnNext.onclick = function() {
-                    function showNextImg(nextImgClass) {
-                        // let nextImgSrc = contImgs[nextImgClass + 1].src;
-                        let nextImgSrc = contImgs[0 + 1].src;
-                        if(nextImgSrc !== 'noCont') {
-                            imgSlide.style.backgroundImage = 
-                            'url(' +
-                            nextImgSrc +
-                            ')';
-                        }
-                    }
+                    
                     showNextImg(this.class);
                 }
 
@@ -146,15 +155,7 @@
                 //     }
                 // }
                 imgSlideBtnPrev.onclick = function() {
-                    function showPrevImg(prevImgClass) {
-                        let prevImgSrc = contImgs[prevImgClass - 1].src;
-                        if(prevImgSrc !== 'noCont') {
-                            imgSlide.style.backgroundImage = 
-                            'url(' +
-                            prevImgSrc +
-                            ')';
-                        }
-                    }
+                    
                     showPrevImg(this.class);
                 }
 
