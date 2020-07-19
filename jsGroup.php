@@ -10,7 +10,8 @@
             let contImgAll = document.querySelectorAll(".view_cont_content img");
             let introTitle = document.getElementById("intro_title");
             function showImgWindow(imgurl, imgClassName) {
-                let imgSrc = "https://doongdoong.org/se2/upload/" + imgurl;
+                // let imgSrc = "https://doongdoong.org/se2/upload/" + imgurl;
+                let imgSrc = imgurl;
                 // window.open(imgSrc, "imgWindow", "width=1200, height=800");
                 let imgSlide = document.createElement("div");
                 // imgSlide.className = "img_slide";
@@ -151,7 +152,8 @@
                     } else {
                         if(window.innerWidth > 801) {
                             contImgAll[cia].addEventListener("click", function() {
-                                showImgWindow(this.title, this.className);
+                                // showImgWindow(this.title, this.className);
+                                showImgWindow(this.src, this.className);
                                 // if(nextImgSrc !== null) {
                                 //     imgSlideBtnNext.onclick = function() {
                                 //         document.getElementById("img_slide").style.backgroundImage = 
