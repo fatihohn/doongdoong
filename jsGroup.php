@@ -60,15 +60,15 @@
 
                  if(contImgs.length < 2) {
 
-                } else if (contImgs.length >= 2 && this.className == 0) {
-                    var nextImgSrc = contImgs[this.className+1].title;
+                } else if (contImgs.length >= 2 && imgSlide.className == 0) {
+                    var nextImgSrc = contImgs[imgSlide.className + 1].title;
                     var prevImgSrc = 'noCont';
-                } else if (contImgs.length >= 2 && this.className < contImgs.length) {
-                    var nextImgSrc = contImgs[this.className+1].title;
-                    var prevImgSrc = contImgs[this.className-1].title;
-                } else if (contImgs.length >= 2 && this.className == contImgs.length) {
+                } else if (contImgs.length >= 2 && imgSlide.className < contImgs.length) {
+                    var nextImgSrc = contImgs[imgSlide.className + 1].title;
+                    var prevImgSrc = contImgs[imgSlide.className - 1].title;
+                } else if (contImgs.length >= 2 && imgSlide.className == contImgs.length) {
                     var nextImgSrc = 'noCont';
-                    var prevImgSrc = contImgs[this.className-1].title;
+                    var prevImgSrc = contImgs[imgSlide.className - 1].title;
                 }
 
 
