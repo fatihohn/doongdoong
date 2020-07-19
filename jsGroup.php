@@ -12,7 +12,6 @@
             function showImgWindow(imgurl, imgClassName) {
                 // let imgSrc = "https://doongdoong.org/se2/upload/" + imgurl;
                 let imgSrc = imgurl;
-                let imgNumber = imgClassName;
                 // window.open(imgSrc, "imgWindow", "width=1200, height=800");
                 let imgSlide = document.createElement("div");
                 // imgSlide.className = "img_slide";
@@ -35,13 +34,13 @@
                 imgSlide.style.top = '0';
                 imgSlide.style.left = '0';
                 // imgSlide.style.cursor = 'pointer';
-
+                
                 document.body.appendChild(imgSlide);
-
+                
                 var imgSlideBtnNext = document.createElement("div");
                 imgSlideBtnNext.className = "img_slide_btn";
                 imgSlideBtnNext.id = "img_slide_next";
-
+                
                 imgSlideBtnNext.innerHTML = "▶";
                 imgSlideBtnNext.style.width = "60px";
                 imgSlideBtnNext.style.height = "60px";
@@ -55,11 +54,13 @@
                 imgSlideBtnNext.style.margin = "10px";
                 imgSlideBtnNext.style.zIndex = "9999";
                 imgSlideBtnNext.style.cursor = "pointer";
-
-
-
-
-                 if(contImgs.length < 2) {
+                
+                if(document.getElementById("img_slide")) {
+                    let imgNumber = document.getElementById("img_slide").className;
+                }
+                
+                
+                if(contImgs.length < 2) {
 
                 } else if (contImgs.length >= 2 && imgNumber == 0) {
                     var nextImgSrc = contImgs[imgNumber + 1].title;
