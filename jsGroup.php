@@ -61,12 +61,12 @@
 
                 } else if (contImgs.length >= 2 && this.className == 0) {
                     var nextImgSrc = contImgs[this.className+1].title;
-                    var prevImgSrc = null;
+                    var prevImgSrc = 'noCont';
                 } else if (contImgs.length >= 2 && this.className < contImgs.length) {
                     var nextImgSrc = contImgs[this.className+1].title;
                     var prevImgSrc = contImgs[this.className-1].title;
                 } else if (contImgs.length >= 2 && this.className == contImgs.length) {
-                    var nextImgSrc = null;
+                    var nextImgSrc = 'noCont';
                     var prevImgSrc = contImgs[this.className-1].title;
                 }
 
@@ -78,7 +78,7 @@
                     imgSlideBtnNext.style.opacity = "0.3";
                 }
                 imgSlideBtnNext.onclick = function() {
-                    if(nextImgSrc !== null) {
+                    if(nextImgSrc !== 'noCont') {
                         imgSlide.style.backgroundImage = 
                         'url(' +
                         nextImgSrc +
