@@ -19,6 +19,13 @@ for(a = 0; a < contImgs.length; a++) {
     contImgs[a].style.maxWidth = "100%";
     contImgs[a].style.height = "auto";
 
+
+
+
+
+
+
+    
 }
 
 let contP = document.querySelectorAll(".view_cont_content p");

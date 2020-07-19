@@ -38,7 +38,7 @@
 
                 document.body.appendChild(imgSlide);
 
-                let imgSlideBtnNext = document.createElement("div");
+                var imgSlideBtnNext = document.createElement("div");
                 imgSlideBtnNext.className = "img_slide_btn";
                 imgSlideBtnNext.id = "img_slide_next";
 
@@ -52,8 +52,11 @@
                 imgSlideBtnNext.style.position = "fixed";
                 imgSlideBtnNext.style.top = "50%";
                 imgSlideBtnNext.style.right = "0";
-                imgSlideBtnNext.style.padding = "20px";
+                imgSlideBtnNext.style.margin = "10px";
                 imgSlideBtnNext.style.zIndex = "9999";
+                imgSlideBtnNext.style.cursor = "pointer";
+                imgSlideBtnNext.onmouseover.style.opacity = "0.9";
+                imgSlideBtnNext.onmouseleave.style.opacity = "0.3";
 
                 // document.body.appendChild(imgSlideBtnNext);
                 imgSlide.appendChild(imgSlideBtnNext);
@@ -112,8 +115,8 @@
                                     }
                                 };
                                 // document.body.appendChild(imgSlideBtnNext);
-                                imgSlideBtnNext.onmouseover.style.opacity = "0.9";
-                                imgSlideBtnNext.onmouseleave.style.opacity = "0.3";
+                                // imgSlideBtnNext.onmouseover.style.opacity = "0.9";
+                                // imgSlideBtnNext.onmouseleave.style.opacity = "0.3";
                             });
                             contImgAll[cia].style.cursor = "pointer";
 
