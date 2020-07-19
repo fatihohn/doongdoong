@@ -55,9 +55,7 @@
                 imgSlideBtnNext.style.zIndex = "9999";
                 imgSlideBtnNext.style.cursor = "pointer";
                 
-                if(document.getElementById("img_slide")) {
-                    let imgNumber = document.getElementById("img_slide").className;
-                }
+                
                 
                 
                 if(contImgs.length < 2) {
