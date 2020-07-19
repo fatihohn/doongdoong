@@ -9,11 +9,12 @@
         function viewImgClick() {
             let contImgAll = document.querySelectorAll(".view_cont_content img");
             let introTitle = document.getElementById("intro_title");
-            function showImgWindow(imgurl) {
+            function showImgWindow(imgurl, imgClassName) {
                 let imgSrc = "https://doongdoong.org/se2/upload/" + imgurl;
                 // window.open(imgSrc, "imgWindow", "width=1200, height=800");
                 let imgSlide = document.createElement("div");
-                imgSlide.className = "img_slide";
+                // imgSlide.className = "img_slide";
+                imgSlide.className = imgClassName;
                 imgSlide.id = "img_slide";
                 // imgSlide.style.width = "100vw";
                 // imgSlide.style.height = "100vh";
@@ -61,6 +62,28 @@
                 imgSlideBtnNext.onmouseleave = function() {
                     imgSlideBtnNext.style.opacity = "0.3";
                 }
+
+                if(contImgAll.length < 2) {
+
+                } else if (contImgAll.length >= 2 && imgClassName == 0) {
+                    let aNext = this.className + 1;
+                    var nextImgSrc = contImgAll[aNext].title;
+                    // var prevImgSrc = contImgAll[a-1].title;
+                    var prevImgSrc = null;
+                } else if (contImgAll.length >= 2 && imgClassName < contImgAll.length) {
+                    let aNext = this.className + 1;
+                    let aPrev = this.className - 1;
+                    var nextImgSrc = contImgAll[aNext].title;
+                    var prevImgSrc = contImgAll[aPrev].title;
+                } else if (contImgAll.length >= 2 && imgClassName == contImgAll.length) {
+                    // let aNext = this.className + 1;
+                    let aPrev = this.className - 1;
+                    var nextImgSrc = null;
+                    var prevImgSrc = contImgAll[aPrev].title;
+                }
+
+
+
                 if(nextImgSrc !== null) {
                     imgSlideBtnNext.onclick = function() {
                         document.getElementById("img_slide").style.backgroundImage = 
@@ -102,7 +125,7 @@
                     } else {
                         if(window.innerWidth > 801) {
                             contImgAll[cia].addEventListener("click", function() {
-                                showImgWindow(this.title);
+                                showImgWindow(this.title, this.className);
                                 // if(nextImgSrc !== null) {
                                 //     imgSlideBtnNext.onclick = function() {
                                 //         document.getElementById("img_slide").style.backgroundImage = 
