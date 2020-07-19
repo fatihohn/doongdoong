@@ -79,6 +79,14 @@
                 imgSlideBtnNext.style.margin = "10px";
                 imgSlideBtnNext.style.zIndex = "9999";
                 imgSlideBtnNext.style.cursor = "pointer";
+
+
+                let nextImgNumber = imgSlideBtnNext.className + 1;
+                if(nextImgNumber <= contImgs.length) {
+                    let nextImgSrc = contImgs[nextImgNumber].src;
+                }
+                
+                
                 
                 
 
@@ -116,6 +124,15 @@
                 imgSlideBtnPrev.style.margin = "10px";
                 imgSlideBtnPrev.style.zIndex = "9999";
                 imgSlideBtnPrev.style.cursor = "pointer";
+
+
+                let prevImgNumber = imgSlideBtnPrev.className - 1;
+                if(prevImgNumber >= 0) {
+                    let prevImgSrc = contImgs[prevImgNumber].src;
+                }
+
+
+
                 imgSlideBtnPrev.onmouseover = function() {
                     imgSlideBtnPrev.style.opacity = "0.9";
                 }
