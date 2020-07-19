@@ -19,7 +19,19 @@ for(a = 0; a < contImgs.length; a++) {
     contImgs[a].style.maxWidth = "100%";
     contImgs[a].style.height = "auto";
 
+    if(contImgs.length < 2) {
 
+    } else if (contImgs.length >= 2 && a == 0) {
+        var nextImgSrc = contImgs[a+1].title;
+        // var prevImgSrc = contImgs[a-1].title;
+        var prevImgSrc = null;
+    } else if (contImgs.length >= 2 && a < contImgs.length) {
+        var nextImgSrc = contImgs[a+1].title;
+        var prevImgSrc = contImgs[a-1].title;
+    } else if (contImgs.length >= 2 && a == contImgs.length) {
+        var nextImgSrc = null;
+        var prevImgSrc = contImgs[a-1].title;
+    }
 
 
 
