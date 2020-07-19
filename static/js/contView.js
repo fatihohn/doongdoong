@@ -22,15 +22,20 @@ for(a = 0; a < contImgs.length; a++) {
     if(contImgs.length < 2) {
 
     } else if (contImgs.length >= 2 && a == 0) {
-        var nextImgSrc = contImgs[a+1].title;
+        let aNext = a + 1;
+        var nextImgSrc = contImgs[aNext].title;
         // var prevImgSrc = contImgs[a-1].title;
         var prevImgSrc = null;
     } else if (contImgs.length >= 2 && a < contImgs.length) {
-        var nextImgSrc = contImgs[a+1].title;
-        var prevImgSrc = contImgs[a-1].title;
+        let aNext = a + 1;
+        let aPrev = a - 1;
+        var nextImgSrc = contImgs[aNext].title;
+        var prevImgSrc = contImgs[aPrev].title;
     } else if (contImgs.length >= 2 && a == contImgs.length) {
+        // let aNext = a + 1;
+        let aPrev = a - 1;
         var nextImgSrc = null;
-        var prevImgSrc = contImgs[a-1].title;
+        var prevImgSrc = contImgs[aPrev].title;
     }
 
 
