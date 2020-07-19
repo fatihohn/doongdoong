@@ -113,6 +113,7 @@
                                 // };
                             });
                             contImgAll[cia].style.cursor = "pointer";
+                            contImgAll[cia].className = cia;
 
 
                         }
