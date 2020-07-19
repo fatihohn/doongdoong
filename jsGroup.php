@@ -10,7 +10,7 @@
         function showNextImg(nextImgClass) {
             // let nextImgSrc = contImgs[nextImgClass + 1].src;
             let nextImgSrc = contImgs[nextImgClass + 1].src;
-            if(nextImgSrc !== 'noCont') {
+            if(nextImgSrc !== null) {
                 imgSlide.style.backgroundImage = 
                 'url(' +
                 nextImgSrc +
@@ -19,7 +19,7 @@
         }
         function showPrevImg(prevImgClass) {
             let prevImgSrc = contImgs[prevImgClass - 1].src;
-            if(prevImgSrc !== 'noCont') {
+            if(prevImgSrc !== null) {
                 imgSlide.style.backgroundImage = 
                 'url(' +
                 prevImgSrc +
