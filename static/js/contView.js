@@ -18,22 +18,23 @@ for(a = 0; a < contImgs.length; a++) {
     contImgs[a].parentElement.style.textIndent = "0";
     contImgs[a].style.maxWidth = "100%";
     contImgs[a].style.height = "auto";
+    contImgs[a].className = a;
 
     if(contImgs.length < 2) {
 
     } else if (contImgs.length >= 2 && a == 0) {
-        let aNext = a + 1;
+        let aNext = this.className + 1;
         var nextImgSrc = contImgs[aNext].title;
         // var prevImgSrc = contImgs[a-1].title;
         var prevImgSrc = null;
     } else if (contImgs.length >= 2 && a < contImgs.length) {
-        let aNext = a + 1;
-        let aPrev = a - 1;
+        let aNext = this.className + 1;
+        let aPrev = this.className - 1;
         var nextImgSrc = contImgs[aNext].title;
         var prevImgSrc = contImgs[aPrev].title;
     } else if (contImgs.length >= 2 && a == contImgs.length) {
-        // let aNext = a + 1;
-        let aPrev = a - 1;
+        // let aNext = this.className + 1;
+        let aPrev = this.className - 1;
         var nextImgSrc = null;
         var prevImgSrc = contImgs[aPrev].title;
     }
