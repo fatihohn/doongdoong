@@ -63,23 +63,23 @@
                     imgSlideBtnNext.style.opacity = "0.3";
                 }
 
-                if(contImgAll.length < 2) {
+                if(contImgs.length < 2) {
 
-                } else if (contImgAll.length >= 2 && imgClassName == 0) {
+                } else if (contImgs.length >= 2 && imgClassName == 0) {
                     let aNext = this.className + 1;
-                    var nextImgSrc = contImgAll[aNext].title;
-                    // var prevImgSrc = contImgAll[a-1].title;
+                    var nextImgSrc = contImgs[aNext].title;
+                    // var prevImgSrc = contImgs[a-1].title;
                     var prevImgSrc = null;
-                } else if (contImgAll.length >= 2 && imgClassName < contImgAll.length) {
+                } else if (contImgs.length >= 2 && imgClassName < contImgs.length) {
                     let aNext = this.className + 1;
                     let aPrev = this.className - 1;
-                    var nextImgSrc = contImgAll[aNext].title;
-                    var prevImgSrc = contImgAll[aPrev].title;
-                } else if (contImgAll.length >= 2 && imgClassName == contImgAll.length) {
+                    var nextImgSrc = contImgs[aNext].title;
+                    var prevImgSrc = contImgs[aPrev].title;
+                } else if (contImgs.length >= 2 && imgClassName == contImgs.length) {
                     // let aNext = this.className + 1;
                     let aPrev = this.className - 1;
                     var nextImgSrc = null;
-                    var prevImgSrc = contImgAll[aPrev].title;
+                    var prevImgSrc = contImgs[aPrev].title;
                 }
 
 
