@@ -26,10 +26,12 @@
         function viewImgClick() {
             let contImgAll = document.querySelectorAll(".view_cont_content img");
             let introTitle = document.getElementById("intro_title");
-            function showImgWindow(imgurl, imgClassName, nextImgNumber, prevImgNumber) {
+            function showImgWindow(imgurl, imgClassName, next, prev) {
                 // let imgSrc = "https://doongdoong.org/se2/upload/" + imgurl;
                 let imgSrc = imgurl;
                 // window.open(imgSrc, "imgWindow", "width=1200, height=800");
+                let nextImgNumber = next; 
+                let prevImgNumber = prev; 
                 let imgSlide = document.createElement("div");
                 // imgSlide.className = "img_slide";
                 
@@ -59,14 +61,14 @@
                 if(contImgs.length < 2) {
 
                 } else if (contImgs.length >= 2 && imgClassName == 0) {
-                    var nextImgSrc = contImgs[nextImgNumber].title;
+                    var nextImgSrc = contImgs[nextImgNumber].src;
                     var prevImgSrc = 'noCont';
                 } else if (contImgs.length >= 2 && imgClassName < contImgs.length) {
-                    var nextImgSrc = contImgs[nextImgNumber].title;
-                    var prevImgSrc = contImgs[prevImgNumber].title;
+                    var nextImgSrc = contImgs[nextImgNumber].src;
+                    var prevImgSrc = contImgs[prevImgNumber].src;
                 } else if (contImgs.length >= 2 && imgClassName == contImgs.length) {
                     var nextImgSrc = 'noCont';
-                    var prevImgSrc = contImgs[prevImgNumber].title;
+                    var prevImgSrc = contImgs[prevImgNumber].src;
                 }
 
 
