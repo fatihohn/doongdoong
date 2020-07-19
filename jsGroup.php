@@ -30,8 +30,8 @@
                 // let imgSrc = "https://doongdoong.org/se2/upload/" + imgurl;
                 let imgSrc = imgurl;
                 // window.open(imgSrc, "imgWindow", "width=1200, height=800");
-                let nextImgNumber = next; 
-                let prevImgNumber = prev; 
+                var nextImgNumber = next; 
+                var prevImgNumber = prev; 
                 let imgSlide = document.createElement("div");
                 // imgSlide.className = "img_slide";
                 
