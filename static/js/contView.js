@@ -18,7 +18,7 @@ for(a = 0; a < contImgs.length; a++) {
     contImgs[a].parentElement.style.textIndent = "0";
     contImgs[a].style.maxWidth = "100%";
     contImgs[a].style.height = "auto";
-    contImgs[a].className = a;
+    contImgs[a].id = a;
 
     if(contImgs.length < 2) {
 
