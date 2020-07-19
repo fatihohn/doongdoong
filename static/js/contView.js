@@ -18,6 +18,33 @@
             contImgs[a].parentElement.style.textIndent = "0";
             contImgs[a].style.maxWidth = "100%";
             contImgs[a].style.height = "auto";
+
+
+            function showNextImg(nextImgClass) {
+                // let nextImgSrc = contImgs[nextImgClass + 1].src;
+                let nextImgSrc = contImgs[nextImgClass + 1].src;
+                if (nextImgSrc !== null) {
+                    imgSlide.style.backgroundImage =
+                        'url(' +
+                        nextImgSrc +
+                        ')';
+                }
+            }
+
+            function showPrevImg(prevImgClass) {
+                let prevImgSrc = contImgs[prevImgClass - 1].src;
+                if (prevImgSrc !== null) {
+                    imgSlide.style.backgroundImage =
+                        'url(' +
+                        prevImgSrc +
+                        ')';
+                }
+            }
+
+
+
+
+
             // contImgs[a].classname = a;
 
             // if(contImgs.length < 2) {

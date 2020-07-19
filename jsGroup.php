@@ -7,25 +7,25 @@
     <script src="static/js/share.js"></script>
     <script>
 
-        function showNextImg(nextImgClass) {
-            // let nextImgSrc = contImgs[nextImgClass + 1].src;
-            let nextImgSrc = contImgs[nextImgClass + 1].src;
-            if(nextImgSrc !== null) {
-                imgSlide.style.backgroundImage = 
-                'url(' +
-                nextImgSrc +
-                ')';
-            }
-        }
-        function showPrevImg(prevImgClass) {
-            let prevImgSrc = contImgs[prevImgClass - 1].src;
-            if(prevImgSrc !== null) {
-                imgSlide.style.backgroundImage = 
-                'url(' +
-                prevImgSrc +
-                ')';
-            }
-        }
+        // function showNextImg(nextImgClass) {
+        //     // let nextImgSrc = contImgs[nextImgClass + 1].src;
+        //     let nextImgSrc = contImgs[nextImgClass + 1].src;
+        //     if(nextImgSrc !== null) {
+        //         imgSlide.style.backgroundImage = 
+        //         'url(' +
+        //         nextImgSrc +
+        //         ')';
+        //     }
+        // }
+        // function showPrevImg(prevImgClass) {
+        //     let prevImgSrc = contImgs[prevImgClass - 1].src;
+        //     if(prevImgSrc !== null) {
+        //         imgSlide.style.backgroundImage = 
+        //         'url(' +
+        //         prevImgSrc +
+        //         ')';
+        //     }
+        // }
         function viewImgClick() {
             let contImgAll = document.querySelectorAll(".view_cont_content img");
             let introTitle = document.getElementById("intro_title");
@@ -156,7 +156,7 @@
                 //         ')';
                 //     }
                 // }
-                
+
                 // imgSlideBtnPrev.onclick = function() {
                     
                 //     showPrevImg(this.class);
