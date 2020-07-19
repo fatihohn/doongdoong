@@ -84,14 +84,14 @@
 
 
 
-                if(nextImgSrc !== null) {
-                    imgSlideBtnNext.onclick = function() {
-                        document.getElementById("img_slide").style.backgroundImage = 
-                        'url(' +
-                        nextImgSrc +
-                        ')';
-                    }
-                };
+                // if(nextImgSrc !== null) {
+                //     imgSlideBtnNext.onclick = function() {
+                //         document.getElementById("img_slide").style.backgroundImage = 
+                //         'url(' +
+                //         nextImgSrc +
+                //         ')';
+                //     }
+                // };
 
                 // document.body.appendChild(imgSlideBtnNext);
                 imgSlide.appendChild(imgSlideBtnNext);
@@ -156,6 +156,15 @@
                             });
                             contImgAll[cia].style.cursor = "pointer";
                             contImgAll[cia].className = cia;
+
+                            if(nextImgSrc !== null) {
+                            imgSlideBtnNext.onclick = function() {
+                                document.getElementById("img_slide").style.backgroundImage = 
+                                'url(' +
+                                nextImgSrc +
+                                ')';
+                            }
+                        };
 
                             
 
