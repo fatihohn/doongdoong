@@ -57,18 +57,18 @@
 
 
 
-                 if(contImgs.length < 2) {
+                //  if(contImgs.length < 2) {
 
-                } else if (contImgs.length >= 2 && this.className == 0) {
-                    let nextImgSrc = contImgs[this.className+1].title;
-                    let prevImgSrc = null;
-                } else if (contImgs.length >= 2 && this.className < contImgs.length) {
-                    let nextImgSrc = contImgs[this.className+1].title;
-                    let prevImgSrc = contImgs[this.className-1].title;
-                } else if (contImgs.length >= 2 && this.className == contImgs.length) {
-                    let nextImgSrc = null;
-                    let prevImgSrc = contImgs[this.className-1].title;
-                }
+                // } else if (contImgs.length >= 2 && this.className == 0) {
+                //     let nextImgSrc = contImgs[this.className+1].title;
+                //     let prevImgSrc = null;
+                // } else if (contImgs.length >= 2 && this.className < contImgs.length) {
+                //     let nextImgSrc = contImgs[this.className+1].title;
+                //     let prevImgSrc = contImgs[this.className-1].title;
+                // } else if (contImgs.length >= 2 && this.className == contImgs.length) {
+                //     let nextImgSrc = null;
+                //     let prevImgSrc = contImgs[this.className-1].title;
+                // }
 
 
                 imgSlideBtnNext.onmouseover = function() {
