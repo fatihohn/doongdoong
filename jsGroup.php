@@ -52,11 +52,37 @@
                 imgSlideBtnNext.style.margin = "10px";
                 imgSlideBtnNext.style.zIndex = "9999";
                 imgSlideBtnNext.style.cursor = "pointer";
+
+
+
+
+                 if(contImgs.length < 2) {
+
+                } else if (contImgs.length >= 2 && imgClassName == 0) {
+                    let nextImgSrc = contImgs[imgClassName+1].title;
+                    let prevImgSrc = null;
+                } else if (contImgs.length >= 2 && imgClassName < contImgs.length) {
+                    let nextImgSrc = contImgs[imgClassName+1].title;
+                    let prevImgSrc = contImgs[imgClassName-1].title;
+                } else if (contImgs.length >= 2 && imgClassName == contImgs.length) {
+                    let nextImgSrc = null;
+                    let prevImgSrc = contImgs[imgClassName-1].title;
+                }
+
+
                 imgSlideBtnNext.onmouseover = function() {
                     imgSlideBtnNext.style.opacity = "0.9";
                 }
                 imgSlideBtnNext.onmouseleave = function() {
                     imgSlideBtnNext.style.opacity = "0.3";
+                }
+                imgSlideBtnNext.onclick = function() {
+                    if(nextImgSrc !== null) {
+                        imgSlide.style.backgroundImage = 
+                        'url(' +
+                        nextImgSrc +
+                        ')';
+                    }
                 }
 
                 var imgSlideBtnPrev = document.createElement("div");
@@ -81,6 +107,14 @@
                 }
                 imgSlideBtnPrev.onmouseleave = function() {
                     imgSlideBtnPrev.style.opacity = "0.3";
+                }
+                imgSlideBtnPrev.onclick = function() {
+                    if(prevImgSrc !== null) {
+                        imgSlide.style.backgroundImage = 
+                        'url(' +
+                        prevImgSrc +
+                        ')';
+                    }
                 }
 
                 // document.body.appendChild(imgSlideBtnNext);
