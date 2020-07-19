@@ -11,16 +11,10 @@
         function viewImgClick() {
             let contImgAll = document.querySelectorAll(".view_cont_content img");
             let introTitle = document.getElementById("intro_title");
-            function showImgWindow(imgurl, imgClassName, next, prev) {
+            function showImgWindow(imgurl, imgClassName) {
                 // let imgSrc = "https://doongdoong.org/se2/upload/" + imgurl;
                 let imgSrc = imgurl;
-                // window.open(imgSrc, "imgWindow", "width=1200, height=800");
-                // var nextImgNumber = next; 
-                // var prevImgNumber = prev; 
                 let imgSlide = document.createElement("div");
-                // imgSlide.className = "img_slide";
-                
-                // let imgNumber = document.getElementById("img_slide").className;
                 imgSlide.className = imgClassName;
                 imgSlide.id = "img_slide";
                 imgSlide.style.width = "100%";
@@ -38,7 +32,6 @@
                 imgSlide.style.position = 'fixed';
                 imgSlide.style.top = '0';
                 imgSlide.style.left = '0';
-                // imgSlide.style.cursor = 'pointer';
                 
                 document.body.appendChild(imgSlide);
                 
@@ -99,7 +92,8 @@
                 }
                 imgSlideBtnNext.onclick = function() {
                     function showNextImg(nextImgClass) {
-                        let nextImgSrc = contImgs[nextImgClass + 1].src;
+                        // let nextImgSrc = contImgs[nextImgClass + 1].src;
+                        let nextImgSrc = contImgs["0" + 1].src;
                         if(nextImgSrc !== 'noCont') {
                             imgSlide.style.backgroundImage = 
                             'url(' +
