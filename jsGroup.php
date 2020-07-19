@@ -9,6 +9,18 @@
 
         if(document.getElementById("img_slide")) {
             var imgNumber = document.getElementById("img_slide").className;
+            if(contImgs.length < 2) {
+
+            } else if (contImgs.length >= 2 && imgNumber == 0) {
+                var nextImgSrc = contImgs[imgNumber + 1].title;
+                var prevImgSrc = 'noCont';
+            } else if (contImgs.length >= 2 && imgNumber < contImgs.length) {
+                var nextImgSrc = contImgs[imgNumber + 1].title;
+                var prevImgSrc = contImgs[imgNumber - 1].title;
+            } else if (contImgs.length >= 2 && imgNumber == contImgs.length) {
+                var nextImgSrc = 'noCont';
+                var prevImgSrc = contImgs[imgNumber - 1].title;
+            }
         }
 
         function viewImgClick() {
@@ -21,7 +33,7 @@
                 let imgSlide = document.createElement("div");
                 // imgSlide.className = "img_slide";
                 
-                let imgNumber = document.getElementById("img_slide").className;
+                // let imgNumber = document.getElementById("img_slide").className;
                 imgSlide.className = imgClassName;
                 imgSlide.id = "img_slide";
                 imgSlide.style.width = "100%";
@@ -64,18 +76,18 @@
                 
                 
                 
-                if(contImgs.length < 2) {
+                // if(contImgs.length < 2) {
 
-                } else if (contImgs.length >= 2 && imgNumber == 0) {
-                    var nextImgSrc = contImgs[imgNumber + 1].title;
-                    var prevImgSrc = 'noCont';
-                } else if (contImgs.length >= 2 && imgNumber < contImgs.length) {
-                    var nextImgSrc = contImgs[imgNumber + 1].title;
-                    var prevImgSrc = contImgs[imgNumber - 1].title;
-                } else if (contImgs.length >= 2 && imgNumber == contImgs.length) {
-                    var nextImgSrc = 'noCont';
-                    var prevImgSrc = contImgs[imgNumber - 1].title;
-                }
+                // } else if (contImgs.length >= 2 && imgNumber == 0) {
+                //     var nextImgSrc = contImgs[imgNumber + 1].title;
+                //     var prevImgSrc = 'noCont';
+                // } else if (contImgs.length >= 2 && imgNumber < contImgs.length) {
+                //     var nextImgSrc = contImgs[imgNumber + 1].title;
+                //     var prevImgSrc = contImgs[imgNumber - 1].title;
+                // } else if (contImgs.length >= 2 && imgNumber == contImgs.length) {
+                //     var nextImgSrc = 'noCont';
+                //     var prevImgSrc = contImgs[imgNumber - 1].title;
+                // }
 
 
                 imgSlideBtnNext.onmouseover = function() {
