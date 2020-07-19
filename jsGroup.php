@@ -6,6 +6,11 @@
     <script src="static/js/contView.js"></script>
     <script src="static/js/share.js"></script>
     <script>
+
+        if(document.getElementById("img_slide")) {
+            var imgNumber = document.getElementById("img_slide").className;
+        }
+
         function viewImgClick() {
             let contImgAll = document.querySelectorAll(".view_cont_content img");
             let introTitle = document.getElementById("intro_title");
@@ -16,6 +21,7 @@
                 let imgSlide = document.createElement("div");
                 // imgSlide.className = "img_slide";
                 
+                imgNumber = imgClassName;
                 imgSlide.className = imgClassName;
                 imgSlide.id = "img_slide";
                 imgSlide.style.width = "100%";

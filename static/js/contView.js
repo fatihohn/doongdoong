@@ -44,9 +44,8 @@ for(a = 0; a < contImgs.length; a++) {
     
 }
 
-if(document.getElementById("img_slide")) {
-    var imgNumber = document.getElementById("img_slide").className;
-}
+
+
 
 let contP = document.querySelectorAll(".view_cont_content p");
 let b;
