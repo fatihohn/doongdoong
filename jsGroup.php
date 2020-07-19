@@ -93,7 +93,7 @@
                 imgSlideBtnNext.onclick = function() {
                     function showNextImg(nextImgClass) {
                         // let nextImgSrc = contImgs[nextImgClass + 1].src;
-                        let nextImgSrc = contImgs["0" + 1].src;
+                        let nextImgSrc = contImgs[0 + 1].src;
                         if(nextImgSrc !== 'noCont') {
                             imgSlide.style.backgroundImage = 
                             'url(' +
