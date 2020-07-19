@@ -60,15 +60,15 @@
 
                  if(contImgs.length < 2) {
 
-                } else if (contImgs.length >= 2 && imgSlide.className == 0) {
-                    var nextImgSrc = contImgs[imgSlide.className + 1].title;
+                } else if (contImgs.length >= 2 && imgClassName == 0) {
+                    var nextImgSrc = contImgs[imgClassName + 1].title;
                     var prevImgSrc = 'noCont';
-                } else if (contImgs.length >= 2 && imgSlide.className < contImgs.length) {
-                    var nextImgSrc = contImgs[imgSlide.className + 1].title;
-                    var prevImgSrc = contImgs[imgSlide.className - 1].title;
-                } else if (contImgs.length >= 2 && imgSlide.className == contImgs.length) {
+                } else if (contImgs.length >= 2 && imgClassName < contImgs.length) {
+                    var nextImgSrc = contImgs[imgClassName + 1].title;
+                    var prevImgSrc = contImgs[imgClassName - 1].title;
+                } else if (contImgs.length >= 2 && imgClassName == contImgs.length) {
                     var nextImgSrc = 'noCont';
-                    var prevImgSrc = contImgs[imgSlide.className - 1].title;
+                    var prevImgSrc = contImgs[imgClassName - 1].title;
                 }
 
 
