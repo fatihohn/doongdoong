@@ -29,9 +29,9 @@
         function viewImgClick() {
             let contImgAll = document.querySelectorAll(".view_cont_content img");
             let introTitle = document.getElementById("intro_title");
-            function showImgWindow(imgurl, imgClassName) {
+            function showImgWindow(imgUrl, imgClassName) {
                 // let imgSrc = "https://doongdoong.org/se2/upload/" + imgurl;
-                let imgSrc = imgurl;
+                let imgSrc = imgUrl;
                 let imgSlide = document.createElement("div");
                 imgSlide.className = imgClassName;
                 imgSlide.id = "img_slide";
