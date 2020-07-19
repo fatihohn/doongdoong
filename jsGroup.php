@@ -185,7 +185,7 @@
                     } else {
                         if(window.innerWidth > 801) {
                             contImgAll[cia].addEventListener("click", function() {
-                                showImgWindow(this.title, this.className);
+                                showImgWindow(this.src, this.className);
                                 // showImgWindow(this.src, this.className, this.className + 1, this.className -1);
 
                             });
