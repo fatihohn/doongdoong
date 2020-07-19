@@ -59,8 +59,33 @@
                     imgSlideBtnNext.style.opacity = "0.3";
                 }
 
+                var imgSlideBtnPrev = document.createElement("div");
+                imgSlideBtnPrev.className = "img_slide_btn";
+                imgSlideBtnPrev.id = "img_slide_prev";
+
+                imgSlideBtnPrev.innerHTML = "◀";
+                imgSlideBtnPrev.style.width = "60px";
+                imgSlideBtnPrev.style.height = "60px";
+                imgSlideBtnPrev.style.fontSize = "3rem";
+                imgSlideBtnPrev.style.fontWeight = "900";
+                imgSlideBtnPrev.style.color = "white";
+                imgSlideBtnPrev.style.opacity = "0.3";
+                imgSlideBtnPrev.style.position = "fixed";
+                imgSlideBtnPrev.style.top = "50%";
+                imgSlideBtnPrev.style.left = "0";
+                imgSlideBtnPrev.style.margin = "10px";
+                imgSlideBtnPrev.style.zIndex = "9999";
+                imgSlideBtnPrev.style.cursor = "pointer";
+                imgSlideBtnPrev.onmouseover = function() {
+                    imgSlideBtnPrev.style.opacity = "0.9";
+                }
+                imgSlideBtnPrev.onmouseleave = function() {
+                    imgSlideBtnPrev.style.opacity = "0.3";
+                }
+
                 // document.body.appendChild(imgSlideBtnNext);
                 imgSlide.appendChild(imgSlideBtnNext);
+                imgSlide.appendChild(imgSlideBtnPrev);
                 
                 imgSlide.onclick = function() {
                     imgSlide.remove();
