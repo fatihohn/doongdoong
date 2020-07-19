@@ -14,7 +14,7 @@
                 // window.open(imgSrc, "imgWindow", "width=1200, height=800");
                 let imgSlide = document.createElement("div");
                 // imgSlide.className = "img_slide";
-                let imgClassName = imgClassName;
+                
                 imgSlide.className = imgClassName;
                 imgSlide.id = "img_slide";
                 imgSlide.style.width = "100%";
