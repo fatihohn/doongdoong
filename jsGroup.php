@@ -55,8 +55,12 @@
                 imgSlideBtnNext.style.margin = "10px";
                 imgSlideBtnNext.style.zIndex = "9999";
                 imgSlideBtnNext.style.cursor = "pointer";
-                imgSlideBtnNext.onmouseover.style.opacity = "0.9";
-                imgSlideBtnNext.onmouseleave.style.opacity = "0.3";
+                imgSlideBtnNext.onmouseover = function() {
+                    imgSlideBtnNext.style.opacity = "0.9";
+                }
+                imgSlideBtnNext.onmouseleave = function() {
+                    imgSlideBtnNext.style.opacity = "0.3";
+                }
 
                 // document.body.appendChild(imgSlideBtnNext);
                 imgSlide.appendChild(imgSlideBtnNext);
