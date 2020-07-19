@@ -21,7 +21,7 @@
                 let imgSlide = document.createElement("div");
                 // imgSlide.className = "img_slide";
                 
-                imgNumber = imgClassName;
+                let imgNumber = imgClassName;
                 imgSlide.className = imgClassName;
                 imgSlide.id = "img_slide";
                 imgSlide.style.width = "100%";
