@@ -26,7 +26,7 @@
         function viewImgClick() {
             let contImgAll = document.querySelectorAll(".view_cont_content img");
             let introTitle = document.getElementById("intro_title");
-            function showImgWindow(imgurl, imgClassName) {
+            function showImgWindow(imgurl, imgClassName, nextImgNumber, prevImgNumber) {
                 // let imgSrc = "https://doongdoong.org/se2/upload/" + imgurl;
                 let imgSrc = imgurl;
                 // window.open(imgSrc, "imgWindow", "width=1200, height=800");
@@ -55,6 +55,25 @@
                 
                 document.body.appendChild(imgSlide);
                 
+
+                if(contImgs.length < 2) {
+
+                } else if (contImgs.length >= 2 && imgClassName == 0) {
+                    var nextImgSrc = contImgs[nextImgNumber].title;
+                    var prevImgSrc = 'noCont';
+                } else if (contImgs.length >= 2 && imgClassName < contImgs.length) {
+                    var nextImgSrc = contImgs[nextImgNumber].title;
+                    var prevImgSrc = contImgs[prevImgNumber].title;
+                } else if (contImgs.length >= 2 && imgClassName == contImgs.length) {
+                    var nextImgSrc = 'noCont';
+                    var prevImgSrc = contImgs[prevImgNumber].title;
+                }
+
+
+
+
+
+
                 var imgSlideBtnNext = document.createElement("div");
                 imgSlideBtnNext.className = "img_slide_btn";
                 imgSlideBtnNext.id = "img_slide_next";
@@ -76,18 +95,7 @@
                 
                 
                 
-                // if(contImgs.length < 2) {
-
-                // } else if (contImgs.length >= 2 && imgNumber == 0) {
-                //     var nextImgSrc = contImgs[imgNumber + 1].title;
-                //     var prevImgSrc = 'noCont';
-                // } else if (contImgs.length >= 2 && imgNumber < contImgs.length) {
-                //     var nextImgSrc = contImgs[imgNumber + 1].title;
-                //     var prevImgSrc = contImgs[imgNumber - 1].title;
-                // } else if (contImgs.length >= 2 && imgNumber == contImgs.length) {
-                //     var nextImgSrc = 'noCont';
-                //     var prevImgSrc = contImgs[imgNumber - 1].title;
-                // }
+                
 
 
                 imgSlideBtnNext.onmouseover = function() {
@@ -171,20 +179,20 @@
                         if(window.innerWidth > 801) {
                             contImgAll[cia].addEventListener("click", function() {
                                 // showImgWindow(this.title, this.className);
-                                showImgWindow(this.src, this.className);
+                                showImgWindow(this.src, this.className, this.className + 1, this.className -1);
 
-                                if(contImgs.length < 2) {
+                                // if(contImgs.length < 2) {
 
-                                } else if (contImgs.length >= 2 && this.className == 0) {
-                                    var nextImgSrc = contImgs[this.className + 1].title;
-                                    var prevImgSrc = 'noCont';
-                                } else if (contImgs.length >= 2 && this.className < contImgs.length) {
-                                    var nextImgSrc = contImgs[this.className + 1].title;
-                                    var prevImgSrc = contImgs[this.className - 1].title;
-                                } else if (contImgs.length >= 2 && this.className == contImgs.length) {
-                                    var nextImgSrc = 'noCont';
-                                    var prevImgSrc = contImgs[this.className - 1].title;
-                                }
+                                // } else if (contImgs.length >= 2 && this.className == 0) {
+                                //     var nextImgSrc = contImgs[this.className + 1].title;
+                                //     var prevImgSrc = 'noCont';
+                                // } else if (contImgs.length >= 2 && this.className < contImgs.length) {
+                                //     var nextImgSrc = contImgs[this.className + 1].title;
+                                //     var prevImgSrc = contImgs[this.className - 1].title;
+                                // } else if (contImgs.length >= 2 && this.className == contImgs.length) {
+                                //     var nextImgSrc = 'noCont';
+                                //     var prevImgSrc = contImgs[this.className - 1].title;
+                                // }
 
 
 
