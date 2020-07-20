@@ -82,7 +82,7 @@
                     if(window.innerWidth > 801) {
                         imgSlide.style.backgroundPosition = 'center center';
                     } else {
-                        imgSlide.style.backgroundPosition = 'center top';
+                        imgSlide.style.backgroundPosition = 'center top 50vh';
                     }
                     imgSlide.style.backgroundColor = 'black';
                     imgSlide.style.backgroundSize = 'contain';
