@@ -1245,13 +1245,17 @@
         height: 60px;
         margin: 0 auto;
         text-align: center;
+        display: flex;
     }
     
     #bbdd_sc_area .view_wrap .view_wrap_line .func_btn .share_btn_img {
         width: 100%;
         max-width: 40px !important;
-        cursor: pointer;
         background-image: url('../img/share.png');
+        cursor: pointer;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: auto;
         /* position: relative;
         top: -30px; */
     }
