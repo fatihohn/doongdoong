@@ -74,7 +74,7 @@
                     imgSlide.id = "img_slide";
                     imgSlide.style.width = "100%";
                     imgSlide.style.height = "100%";
-                    imgSlide.style.maxHeight = "90vh";
+                    imgSlide.style.maxHeight = "100vh";
                     imgSlide.style.backgroundImage = 
                     'url(' +
                     imgSrc +
@@ -290,7 +290,7 @@
                                 });
                                 contImgs[cia].style.cursor = "pointer";
                                 contImgs[cia].className = cia;
-
+                                document.getElementById("img_slide").style.backgroundPosition = "center top";
 
                             }
                         }
