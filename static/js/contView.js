@@ -78,7 +78,7 @@
                     'url(' +
                     imgSrc +
                     ')';
-                    imgSlide.style.backgroundPosition = 'center center';
+                    imgSlide.style.backgroundPosition = 'center top 50%';
                     imgSlide.style.backgroundColor = 'black';
                     imgSlide.style.backgroundSize = 'contain';
                     imgSlide.style.backgroundRepeat = 'no-repeat';
