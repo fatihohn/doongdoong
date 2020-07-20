@@ -89,6 +89,7 @@
                     imgSlideBtnNext.style.margin = "10px";
                     imgSlideBtnNext.style.zIndex = "9999";
                     imgSlideBtnNext.style.cursor = "pointer";
+                    imgSlideBtnNext.style.textAlign = "center";
     
     
                     // let nextImgNumber = imgSlideBtnNext.className + 1;
@@ -131,6 +132,7 @@
                     imgSlideBtnPrev.style.margin = "10px";
                     imgSlideBtnPrev.style.zIndex = "9999";
                     imgSlideBtnPrev.style.cursor = "pointer";
+                    imgSlideBtnPrev.style.textAlign = "center";
                     
                     
                     // let prevImgNumber = imgSlideBtnPrev.className - 1;
