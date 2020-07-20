@@ -237,20 +237,20 @@
                     //     }
                     // }
                     // }
-                    if(document.getElementById("img_slide_next") && document.getElementById("img_slide_prev")) {
-                        // document.getElementById("img_slide_next").addEventListener("click", showNextImg(this.className));
-                        // document.getElementById("img_slide_prev").addEventListener("click", showPrevImg(this.className));
-                        imgSlideBtnNext.onclick = function() {
-                            showNextImg(this.className);
-                        }
-                        imgSlideBtnPrev.onclick = function() {
-                            showPrevImg(this.className);
-                        }
-                    }
+                    
             }
             viewImgClick();
             
-
+            if(document.getElementById("img_slide_next") && document.getElementById("img_slide_prev")) {
+                document.getElementById("img_slide_next").addEventListener("click", showNextImg(this.className));
+                document.getElementById("img_slide_prev").addEventListener("click", showPrevImg(this.className));
+                // imgSlideBtnNext.onclick = function() {
+                //     showNextImg(this.className);
+                // }
+                // imgSlideBtnPrev.onclick = function() {
+                //     showPrevImg(this.className);
+                // }
+            }
 
 
 
