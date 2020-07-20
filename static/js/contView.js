@@ -34,6 +34,7 @@
                         'url(' +
                         nextImgSrc +
                         ')';
+                        document.getElementById("img_slide").className = imgClass + 1;
                         document.getElementById("img_slide_next").className = imgClass + 1;
                         document.getElementById("img_slide_prev").className = imgClass + 1;
                 }
@@ -50,6 +51,9 @@
                         'url(' +
                         prevImgSrc +
                         ')';
+                    document.getElementById("img_slide").className = imgClass - 1;
+                    document.getElementById("img_slide_next").className = imgClass - 1;
+                    document.getElementById("img_slide_prev").className = imgClass - 1;
                 }
             }
 
