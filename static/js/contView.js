@@ -193,6 +193,15 @@
                                     //         showPrevImg(this.className);
                                     //     }
                                     
+
+                        var imgSlideBtnEsc = document.createElement("div");
+                        
+                        imgSlideBtnEsc.id = "img_slide_esc";
+                        imgSlideBtnPrev.style.width = "calc(100% - 200px)";
+                        imgSlideBtnPrev.style.height = "80%";
+                        imgSlideBtnPrev.style.margin = "auto";
+
+
                                     
                         imgSlide.appendChild(imgSlideBtnNext);
                         imgSlide.appendChild(imgSlideBtnPrev);
