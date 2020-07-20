@@ -79,7 +79,11 @@
                     'url(' +
                     imgSrc +
                     ')';
-                    imgSlide.style.backgroundPosition = 'center center';
+                    if(window.innerWidth > 801) {
+                        imgSlide.style.backgroundPosition = 'center center';
+                    } else {
+                        imgSlide.style.backgroundPosition = 'center top';
+                    }
                     imgSlide.style.backgroundColor = 'black';
                     imgSlide.style.backgroundSize = 'contain';
                     imgSlide.style.backgroundRepeat = 'no-repeat';
@@ -285,7 +289,7 @@
                                 contImgs[cia].style.cursor = "pointer";
                                 contImgs[cia].className = cia;
                                 
-                            }
+                            } 
                         }
                     }
 
@@ -305,10 +309,12 @@
             }
             viewImgClick();
             
-            if(window.innerWidth < 801) {
-                document.getElementById("img_slide").style.backgroundPosition = "center top";
+            // if(window.innerWidth < 801) {
+            //     document.getElementById("img_slide").style.backgroundPosition = "center top";
 
-            }
+            // }
+
+
             // if(document.getElementById("img_slide_next") && document.getElementById("img_slide_prev")) {
             //     document.getElementById("img_slide_next").addEventListener("click", function() {
             //         showNextImg(this.className)
