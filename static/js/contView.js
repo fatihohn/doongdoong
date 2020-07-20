@@ -215,11 +215,46 @@
                         imgSlide.appendChild(imgSlideBtnNext);
                         imgSlide.appendChild(imgSlideBtnPrev);
                                     
+
+                        let imgSlideNext = document.getElementById("img_slide_next");
+                        let imgSlidePrev = document.getElementById("img_slide_prev");
                         document.getElementById("img_slide_next").onclick = function() {
                             showNextImg(this.className);
                         }
                         document.getElementById("img_slide_prev").onclick = function() {
                             showPrevImg(this.className);
+                        }
+                        document.onkeydown = function(keyDown) {
+                            switch (keyDown.keyCode) {
+                                case 37:
+                                    // str = 'Left Key pressed!'; 
+                                    if(imgSlideNext && imgSlidePrev) {
+                                    // projects_contentsList(mPrev);
+                                    showPrevImg(imgSlidePrev.className);
+                                    
+                                    } 
+                                    // console.log("Left Key Pressed!")
+                                    break;
+                                case 39:
+                                    // str = 'Right Key pressed!'; 
+                                    if(imgSlideNext && imgSlidePrev) {
+                                    // projects_contentsList(mNext);
+                                    showNextImg(imgSlideNext.className);
+                                    
+                                    } 
+                                    // console.log("Right Key Pressed!")
+                                    break;
+                                case 27:
+                                    // str = 'Esc Key pressed!'; 
+                                    if(imgSlideNext && imgSlidePrev) {
+                                        imgSlide.remove();
+                                       
+                                    } 
+                                    
+                                    
+                                        // console.log("Esc Key Pressed!")
+                                    break;
+                            }
                         }
                     // imgSlideBtnNext.addEventListener("click", showNextImg(this.class));
                     // imgSlideBtnPrev.addEventListener("click", showPrevImg(this.class));
