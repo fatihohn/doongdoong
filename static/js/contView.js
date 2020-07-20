@@ -22,38 +22,38 @@
             contImgs[cia].style.maxWidth = "100%";
             contImgs[cia].style.height = "auto";
 
-            function showNextImg(imgClass) {
+            function showNextImg(imgClassNext) {
                 let nextImgSrc;
-                if(imgClass == contImgs.length) {
+                if(imgClassNext == contImgs.length) {
                     nextImgSrc = null;
                 } else {
-                    nextImgSrc = contImgs[imgClass += 1].src;
+                    nextImgSrc = contImgs[imgClassNext + 1].src;
                 }
                 if (nextImgSrc !== null) {
                     document.getElementById("img_slide").style.backgroundImage =
                         'url(' +
                         nextImgSrc +
                         ')';
-                    document.getElementById("img_slide").className = imgClass + 1;
-                    document.getElementById("img_slide_next").className = imgClass + 1;
-                    document.getElementById("img_slide_prev").className = imgClass + 1;
+                    document.getElementById("img_slide").className = imgClassNext + 1;
+                    document.getElementById("img_slide_next").className = imgClassNext + 1;
+                    document.getElementById("img_slide_prev").className = imgClassNext + 1;
                 }
             }
-            function showPrevImg(imgClass) {
+            function showPrevImg(imgClassPrev) {
                 let prevImgSrc;
-                if(imgClass == 0) {
+                if(imgClassPrev == 0) {
                     prevImgSrc = null;
                 } else {
-                    prevImgSrc = contImgs[imgClass - 1].src;
+                    prevImgSrc = contImgs[imgClassPrev - 1].src;
                 }
                 if (prevImgSrc !== null) {
                     document.getElementById("img_slide").style.backgroundImage =
                         'url(' +
                         prevImgSrc +
                         ')';
-                    document.getElementById("img_slide").className = imgClass - 1;
-                    document.getElementById("img_slide_next").className = imgClass - 1;
-                    document.getElementById("img_slide_prev").className = imgClass - 1;
+                    document.getElementById("img_slide").className = imgClassPrev - 1;
+                    document.getElementById("img_slide_next").className = imgClassPrev - 1;
+                    document.getElementById("img_slide_prev").className = imgClassPrev - 1;
                 }
             }
 
@@ -201,6 +201,8 @@
                         imgSlideBtnEsc.style.height = "80%";
                         imgSlideBtnEsc.style.margin = "auto";
                         imgSlideBtnEsc.style.position = "relative";
+                        imgSlideBtnEsc.style.cursor = "pointer";
+                        imgSlideBtnEsc.title = "닫기";
 
 
                                     
@@ -212,8 +214,8 @@
                             showNextImg(this.className);
                         }
                         document.getElementById("img_slide_prev").onclick = function() {
-                                showPrevImg(this.className);
-                            }
+                            showPrevImg(this.className);
+                        }
                     // imgSlideBtnNext.addEventListener("click", showNextImg(this.class));
                     // imgSlideBtnPrev.addEventListener("click", showPrevImg(this.class));
                     
