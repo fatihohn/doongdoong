@@ -1251,6 +1251,7 @@
     #bbdd_sc_area .view_wrap .view_wrap_line .func_btn .share_btn_img {
         width: 100%;
         max-width: 40px !important;
+        height: 40px;
         background-image: url('../img/share.png');
         cursor: pointer;
         background-size: cover;
