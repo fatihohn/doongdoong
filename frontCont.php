@@ -320,7 +320,8 @@ if($q < intval($idMax) && $q > intval($idMin)) {
             </div>
             <div class="func_btn">
                 <div class="share_btn" title="공유하기">
-                    <img src="static/img/share.png" alt="공유하기" style="width:40px;">
+                    <!-- <img src="static/img/share.png" alt="공유하기" style="width:40px;"> -->
+                    <div class = "share_btn_img" style="width:40px;"></div>
                 </div>
             </div>
             <div class = 'view_btn front_point_color'>

@@ -1247,10 +1247,11 @@
         text-align: center;
     }
     
-    #bbdd_sc_area .view_wrap .view_wrap_line .func_btn img {
+    #bbdd_sc_area .view_wrap .view_wrap_line .func_btn .share_btn_img {
         width: 100%;
         max-width: 40px !important;
         cursor: pointer;
+        background-image: url('static/img/share.png');
         /* position: relative;
         top: -30px; */
     }
