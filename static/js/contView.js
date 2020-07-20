@@ -83,7 +83,6 @@
                         imgSlide.style.backgroundPosition = 'center center';
                     } else {
                         imgSlide.style.backgroundPosition = 'center center';
-                        document.body.style.overflow = 'hidden';
                     }
                     imgSlide.style.backgroundColor = 'black';
                     imgSlide.style.backgroundSize = 'contain';
@@ -91,9 +90,11 @@
                     imgSlide.style.backgroundAttachment = 'fixed';
                     imgSlide.style.zIndex = '9990';
                     imgSlide.style.position = 'fixed';
-                    imgSlide.style.display = 'flex';
+                    // imgSlide.style.display = 'flex';
                     imgSlide.style.top = '0';
+                    imgSlide.style.bottom = '0';
                     imgSlide.style.left = '0';
+                    imgSlide.style.right = '0';
                     imgSlide.style.transition = '0.5s';
                     imgSlide.style.animation = 'expand 0.5s ease-in-out';
                     
@@ -259,7 +260,6 @@
                                     // str = 'Esc Key pressed!'; 
                                     if(imgSlideNext && imgSlidePrev) {
                                         imgSlide.remove();
-                                        document.body.style.overflow = 'initial';
                                        
                                     } 
                                     
@@ -273,7 +273,6 @@
                     
                     imgSlideBtnEsc.onclick = function() {
                         imgSlide.remove();
-                        document.body.style.overflow = 'initial';
                     };
     
     
