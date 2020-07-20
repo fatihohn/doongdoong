@@ -141,10 +141,10 @@
                     imgSlideBtnNext.onmouseleave = function() {
                         imgSlideBtnNext.style.opacity = "0.3";
                     }
-                    // imgSlideBtnNext.onclick = function() {
+                    imgSlideBtnNext.onclick = function() {
                         
-                    //     showNextImg(this.class);
-                    // }
+                        showNextImg(this.className);
+                    }
     
                     
                     var imgSlideBtnPrev = document.createElement("div");
@@ -190,10 +190,10 @@
                                 //     }
                                 // }
                                 
-                                // imgSlideBtnPrev.onclick = function() {
-                                    
-                                    //     showPrevImg(this.class);
-                                    // }
+                        imgSlideBtnPrev.onclick = function() {
+                            
+                                showPrevImg(this.className);
+                            }
                                     
                                     
                     imgSlide.appendChild(imgSlideBtnNext);
@@ -247,20 +247,20 @@
             }
             viewImgClick();
             
-            if(document.getElementById("img_slide_next") && document.getElementById("img_slide_prev")) {
-                document.getElementById("img_slide_next").addEventListener("click", function() {
-                    showNextImg(this.className)
-                });
-                document.getElementById("img_slide_prev").addEventListener("click", function() {
-                    showPrevImg(this.className)
-                });
-                // imgSlideBtnNext.onclick = function() {
-                //     showNextImg(this.className);
-                // }
-                // imgSlideBtnPrev.onclick = function() {
-                //     showPrevImg(this.className);
-                // }
-            }
+            // if(document.getElementById("img_slide_next") && document.getElementById("img_slide_prev")) {
+            //     document.getElementById("img_slide_next").addEventListener("click", function() {
+            //         showNextImg(this.className)
+            //     });
+            //     document.getElementById("img_slide_prev").addEventListener("click", function() {
+            //         showPrevImg(this.className)
+            //     });
+            //     // imgSlideBtnNext.onclick = function() {
+            //     //     showNextImg(this.className);
+            //     // }
+            //     // imgSlideBtnPrev.onclick = function() {
+            //     //     showPrevImg(this.className);
+            //     // }
+            // }
 
 
 
