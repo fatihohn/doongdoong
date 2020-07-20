@@ -87,7 +87,7 @@
                     imgSlide.style.backgroundColor = 'black';
                     imgSlide.style.backgroundSize = 'contain';
                     imgSlide.style.backgroundRepeat = 'no-repeat';
-                    imgSlide.style.backgroundAttachment = 'fixed';
+                    // imgSlide.style.backgroundAttachment = 'fixed';
                     imgSlide.style.zIndex = '9990';
                     imgSlide.style.position = 'fixed';
                     // imgSlide.style.display = 'flex';
