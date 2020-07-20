@@ -1251,7 +1251,7 @@
         width: 100%;
         max-width: 40px !important;
         cursor: pointer;
-        background-image: url('static/img/share.png');
+        background-image: url('../img/share.png');
         /* position: relative;
         top: -30px; */
     }
