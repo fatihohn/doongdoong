@@ -27,7 +27,7 @@
                 if(imgClass == contImgs.length) {
                     nextImgSrc = null;
                 } else {
-                    nextImgSrc = contImgs[imgClass + 1].src;
+                    nextImgSrc = contImgs[imgClass += 1].src;
                 }
                 if (nextImgSrc !== null) {
                     document.getElementById("img_slide").style.backgroundImage =
@@ -206,9 +206,9 @@
                     // imgSlideBtnNext.addEventListener("click", showNextImg(this.class));
                     // imgSlideBtnPrev.addEventListener("click", showPrevImg(this.class));
                     
-                    // imgSlide.onclick = function() {
-                    //     imgSlide.remove();
-                    // };
+                    imgSlide.onclick = function() {
+                        imgSlide.remove();
+                    };
     
     
                 }
