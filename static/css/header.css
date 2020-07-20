@@ -90,6 +90,9 @@
     border-radius: 12.5px;
     background-color: rgba(255, 255, 255, 0.2);
 }
+#bbdd_hd_area .hd_contain .hd_menu>a>img:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
 
 .blur {
     -ms-filter: blur(4px);
@@ -258,6 +261,9 @@
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     text-align: center;
+}
+#bbdd_nav_area .nav_contain .nav_top .close>a:hover {
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 #bbdd_nav_area .nav_contain .nav_top .close>a>img {
