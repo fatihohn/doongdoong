@@ -24,7 +24,7 @@
 
             function showNextImg(imgClass) {
                 let nextImgSrc;
-                if(imgClass + 1 == contImgs.length) {
+                if(imgClass == contImgs.length) {
                     nextImgSrc = null;
                 } else {
                     nextImgSrc = contImgs[imgClass + 1].src;
