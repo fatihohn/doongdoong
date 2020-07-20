@@ -197,12 +197,14 @@
                         var imgSlideBtnEsc = document.createElement("div");
                         
                         imgSlideBtnEsc.id = "img_slide_esc";
-                        imgSlideBtnPrev.style.width = "calc(100% - 200px)";
-                        imgSlideBtnPrev.style.height = "80%";
-                        imgSlideBtnPrev.style.margin = "auto";
+                        imgSlideBtnEsc.style.width = "calc(100% - 200px)";
+                        imgSlideBtnEsc.style.height = "80%";
+                        imgSlideBtnEsc.style.margin = "auto";
+                        imgSlideBtnEsc.style.position = "relative";
 
 
                                     
+                        imgSlide.appendChild(imgSlideBtnEsc);
                         imgSlide.appendChild(imgSlideBtnNext);
                         imgSlide.appendChild(imgSlideBtnPrev);
                                     
@@ -215,7 +217,7 @@
                     // imgSlideBtnNext.addEventListener("click", showNextImg(this.class));
                     // imgSlideBtnPrev.addEventListener("click", showPrevImg(this.class));
                     
-                    imgSlide.onclick = function() {
+                    imgSlideBtnEsc.onclick = function() {
                         imgSlide.remove();
                     };
     
