@@ -24,7 +24,7 @@
 
             function showNextImg(imgClass) {
                 let nextImgSrc;
-                if(imgClass + 1 > contImgs.length) {
+                if(imgClass == contImgs.length) {
                     nextImgSrc = null;
                 } else {
                     nextImgSrc = contImgs[imgClass + 1].src;
@@ -34,14 +34,14 @@
                         'url(' +
                         nextImgSrc +
                         ')';
-                        document.getElementById("img_slide").className = imgClass + 1;
-                        document.getElementById("img_slide_next").className = imgClass + 1;
-                        document.getElementById("img_slide_prev").className = imgClass + 1;
+                    document.getElementById("img_slide").className = imgClass + 1;
+                    document.getElementById("img_slide_next").className = imgClass + 1;
+                    document.getElementById("img_slide_prev").className = imgClass + 1;
                 }
             }
             function showPrevImg(imgClass) {
                 let prevImgSrc;
-                if(imgClass - 1 < 0) {
+                if(imgClass == 0) {
                     prevImgSrc = null;
                 } else {
                     prevImgSrc = contImgs[imgClass - 1].src;
