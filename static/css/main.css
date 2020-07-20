@@ -1247,6 +1247,12 @@
         text-align: center;
         display: flex;
     }
+    #bbdd_sc_area .view_wrap .view_wrap_line .func_btn .share_btn img {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        margin: auto;
+    }
     
     #bbdd_sc_area .view_wrap .view_wrap_line .func_btn .share_btn_img {
         width: 100%;
