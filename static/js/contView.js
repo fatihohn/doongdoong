@@ -87,6 +87,7 @@
                     imgSlide.style.position = 'fixed';
                     imgSlide.style.top = '0';
                     imgSlide.style.left = '0';
+                    imgSlide.style.transition = '0.5s';
                     
                     document.body.appendChild(imgSlide);
                     
