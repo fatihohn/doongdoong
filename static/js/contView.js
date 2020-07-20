@@ -11,7 +11,7 @@
         // }
         // imgIndent();
 
-
+        
         let contImgs = document.querySelectorAll(".view_cont_content img");
 
         
@@ -22,7 +22,34 @@
             contImgs[cia].style.maxWidth = "100%";
             contImgs[cia].style.height = "auto";
 
-
+            function showNextImg(imgClass) {
+                let nextImgSrc;
+                if(imgClass + 1 > contImgs.length) {
+                    nextImgSrc = null;
+                } else {
+                    nextImgSrc = contImgs[imgClass + 1].src;
+                }
+                if (nextImgSrc !== null) {
+                    document.getElementById("img_slide").style.backgroundImage =
+                        'url(' +
+                        nextImgSrc +
+                        ')';
+                }
+            }
+            function showPrevImg(imgClass) {
+                let prevImgSrc;
+                if(imgClass - 1 < 0) {
+                    prevImgSrc = null;
+                } else {
+                    prevImgSrc = contImgs[imgClass - 1].src;
+                }
+                if (prevImgSrc !== null) {
+                    document.getElementById("img_slide").style.backgroundImage =
+                        'url(' +
+                        prevImgSrc +
+                        ')';
+                }
+            }
 
 
             function viewImgClick() {
@@ -169,9 +196,9 @@
                     // imgSlideBtnNext.addEventListener("click", showNextImg(this.class));
                     // imgSlideBtnPrev.addEventListener("click", showPrevImg(this.class));
                     
-                    // imgSlide.onclick = function() {
-                    //     imgSlide.remove();
-                    // };
+                    imgSlide.onclick = function() {
+                        imgSlide.remove();
+                    };
     
     
                 }
@@ -198,34 +225,7 @@
                         }
                     }
 
-                    function showNextImg(imgClass) {
-                        let nextImgSrc;
-                        if(imgClass + 1 > contImgs.length) {
-                            nextImgSrc = null;
-                        } else {
-                            nextImgSrc = contImgs[imgClass + 1].src;
-                        }
-                        if (nextImgSrc !== null) {
-                            imgSlide.style.backgroundImage =
-                                'url(' +
-                                nextImgSrc +
-                                ')';
-                        }
-                    }
-                    function showPrevImg(imgClass) {
-                        let prevImgSrc;
-                        if(imgClass - 1 < 0) {
-                            prevImgSrc = null;
-                        } else {
-                            prevImgSrc = contImgs[imgClass - 1].src;
-                        }
-                        if (prevImgSrc !== null) {
-                            imgSlide.style.backgroundImage =
-                                'url(' +
-                                prevImgSrc +
-                                ')';
-                        }
-                    }
+                    
             
                     // function showPrevImg(imgClass) {
                     //     let prevImgSrc = contImgs[imgClass - 1].src;
