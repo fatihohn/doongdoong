@@ -20,9 +20,14 @@
             contImgs[cia].style.height = "auto";
 
 
-            function showNextImg(nextImgClass) {
+            function showNextImg(imgClass) {
                 // let nextImgSrc = contImgs[nextImgClass + 1].src;
-                let nextImgSrc = contImgs[nextImgClass + 1].src;
+                let nextImgSrc;
+                if(imgClass + 1 > contImgs.length) {
+                    nextImgSrc = null;
+                } else {
+                    nextImgSrc = contImgs[imgClass + 1].src;
+                }
                 if (nextImgSrc !== null) {
                     imgSlide.style.backgroundImage =
                         'url(' +
@@ -31,8 +36,8 @@
                 }
             }
 
-            function showPrevImg(prevImgClass) {
-                let prevImgSrc = contImgs[prevImgClass - 1].src;
+            function showPrevImg(imgClass) {
+                let prevImgSrc = contImgs[imgClass - 1].src;
                 if (prevImgSrc !== null) {
                     imgSlide.style.backgroundImage =
                         'url(' +
@@ -180,9 +185,11 @@
                                     
                     imgSlide.appendChild(imgSlideBtnNext);
                     imgSlide.appendChild(imgSlideBtnPrev);
-                    
-                    imgSlideBtnNext.addEventListener("click", showNextImg(this.class));
-                    imgSlideBtnPrev.addEventListener("click", showPrevImg(this.class));
+
+                    // imgSlideBtnNext.addEventListener("click", showNextImg(this.class));
+                    // imgSlideBtnPrev.addEventListener("click", showPrevImg(this.class));
+                    document.getElementById("img_slide_next").addEventListener("click", showNextImg(this.className));
+                    document.getElementById("img_slide_prev").addEventListener("click", showPrevImg(this.className));
                     
                     imgSlide.onclick = function() {
                         imgSlide.remove();
