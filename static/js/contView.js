@@ -196,9 +196,9 @@
                     // imgSlideBtnNext.addEventListener("click", showNextImg(this.class));
                     // imgSlideBtnPrev.addEventListener("click", showPrevImg(this.class));
                     
-                    imgSlide.onclick = function() {
-                        imgSlide.remove();
-                    };
+                    // imgSlide.onclick = function() {
+                    //     imgSlide.remove();
+                    // };
     
     
                 }
