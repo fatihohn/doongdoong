@@ -82,7 +82,7 @@
                     if(window.innerWidth > 801) {
                         imgSlide.style.backgroundPosition = 'center center';
                     } else {
-                        imgSlide.style.backgroundPosition = 'center top';
+                        imgSlide.style.backgroundPosition = 'center center';
                     }
                     imgSlide.style.backgroundColor = 'black';
                     imgSlide.style.backgroundSize = 'contain';
@@ -90,6 +90,7 @@
                     imgSlide.style.backgroundAttachment = 'fixed';
                     imgSlide.style.zIndex = '9990';
                     imgSlide.style.position = 'fixed';
+                    imgSlide.style.display = 'flex';
                     imgSlide.style.top = '0';
                     imgSlide.style.left = '0';
                     imgSlide.style.transition = '0.5s';
