@@ -83,6 +83,7 @@
                         imgSlide.style.backgroundPosition = 'center center';
                     } else {
                         imgSlide.style.backgroundPosition = 'center center';
+                        document.body.style.overflow = 'hidden';
                     }
                     imgSlide.style.backgroundColor = 'black';
                     imgSlide.style.backgroundSize = 'contain';
@@ -258,6 +259,7 @@
                                     // str = 'Esc Key pressed!'; 
                                     if(imgSlideNext && imgSlidePrev) {
                                         imgSlide.remove();
+                                        document.body.style.overflow = 'initial';
                                        
                                     } 
                                     
@@ -271,6 +273,7 @@
                     
                     imgSlideBtnEsc.onclick = function() {
                         imgSlide.remove();
+                        document.body.style.overflow = 'initial';
                     };
     
     
