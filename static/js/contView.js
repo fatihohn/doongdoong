@@ -27,7 +27,8 @@
                 if(imgClassNext == contImgs.length) {
                     nextImgSrc = null;
                 } else {
-                    nextImgSrc = contImgs[imgClassNext + 1].src;
+                    // nextImgSrc = contImgs[imgClassNext + 1].src;
+                    nextImgSrc = contImgs[imgClassNext].src;
                 }
                 if (nextImgSrc !== null) {
                     document.getElementById("img_slide").style.backgroundImage =
