@@ -34,6 +34,8 @@
                         'url(' +
                         nextImgSrc +
                         ')';
+                        document.getElementById("img_slide_next").className = imgClass + 1;
+                        document.getElementById("img_slide_prev").className = imgClass + 1;
                 }
             }
             function showPrevImg(imgClass) {
