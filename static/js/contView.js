@@ -141,8 +141,10 @@
                     imgSlideBtnNext.onmouseleave = function() {
                         imgSlideBtnNext.style.opacity = "0.3";
                     }
-                    imgSlideBtnNext.onclick = function() {
-                        
+                    // imgSlideBtnNext.onclick = function() {
+                    //     showNextImg(this.className);
+                    // }
+                    document.getElementById("img_slide_next").onclick = function() {
                         showNextImg(this.className);
                     }
     
@@ -190,8 +192,10 @@
                                 //     }
                                 // }
                                 
-                        imgSlideBtnPrev.onclick = function() {
-                            
+                        // imgSlideBtnPrev.onclick = function() {
+                        //         showPrevImg(this.className);
+                        //     }
+                        document.getElementById("img_slide_prev").onclick = function() {
                                 showPrevImg(this.className);
                             }
                                     
