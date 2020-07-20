@@ -284,14 +284,6 @@
                                 contImgs[cia].style.cursor = "pointer";
                                 contImgs[cia].className = cia;
                                 
-                            } else {
-                                contImgs[cia].addEventListener("click", function() {
-                                    showImgWindow(this.src, this.className);
-                                });
-                                contImgs[cia].style.cursor = "pointer";
-                                contImgs[cia].className = cia;
-                                document.getElementById("img_slide").style.backgroundPosition = "center top";
-
                             }
                         }
                     }
@@ -312,6 +304,10 @@
             }
             viewImgClick();
             
+            if(window.innerWidth < 801) {
+                document.getElementById("img_slide").style.backgroundPosition = "center top";
+
+            }
             // if(document.getElementById("img_slide_next") && document.getElementById("img_slide_prev")) {
             //     document.getElementById("img_slide_next").addEventListener("click", function() {
             //         showNextImg(this.className)
