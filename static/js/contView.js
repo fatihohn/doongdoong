@@ -74,11 +74,12 @@
                     imgSlide.id = "img_slide";
                     imgSlide.style.width = "100%";
                     imgSlide.style.height = "100%";
+                    imgSlide.style.maxHeight = "100vh";
                     imgSlide.style.backgroundImage = 
                     'url(' +
                     imgSrc +
                     ')';
-                    imgSlide.style.backgroundPosition = 'center top 50%';
+                    imgSlide.style.backgroundPosition = 'center center';
                     imgSlide.style.backgroundColor = 'black';
                     imgSlide.style.backgroundSize = 'contain';
                     imgSlide.style.backgroundRepeat = 'no-repeat';
@@ -276,19 +277,21 @@
                         if(introTitle) {
     
                         } else {
-                            // if(window.innerWidth > 801) {
-                            if(window.innerWidth > 1) {
+                            if(window.innerWidth > 801) {
                                 contImgs[cia].addEventListener("click", function() {
-                                    showImgWindow(this.src, this.className);
-                                    
+                                    showImgWindow(this.src, this.className);     
                                 });
                                 contImgs[cia].style.cursor = "pointer";
                                 contImgs[cia].className = cia;
-    
-    
                                 
-    
-    
+                            } else {
+                                contImgs[cia].addEventListener("click", function() {
+                                    showImgWindow(this.src, this.className);
+                                });
+                                contImgs[cia].style.cursor = "pointer";
+                                contImgs[cia].className = cia;
+
+
                             }
                         }
                     }
