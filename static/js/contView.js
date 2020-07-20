@@ -28,16 +28,19 @@
                     nextImgSrc = null;
                 } else {
                     // nextImgSrc = contImgs[imgClassNext + 1].src;
-                    nextImgSrc = contImgs[imgClassNext].src;
+                    nextImgSrc = contImgs[imgClassNext++].src;
                 }
                 if (nextImgSrc !== null) {
                     document.getElementById("img_slide").style.backgroundImage =
                         'url(' +
                         nextImgSrc +
                         ')';
-                    document.getElementById("img_slide").className = imgClassNext + 1;
-                    document.getElementById("img_slide_next").className = imgClassNext + 1;
-                    document.getElementById("img_slide_prev").className = imgClassNext + 1;
+                    // document.getElementById("img_slide").className = imgClassNext + 1;
+                    document.getElementById("img_slide").className = imgClassNext++;
+                    // document.getElementById("img_slide_next").className = imgClassNext + 1;
+                    document.getElementById("img_slide_next").className = imgClassNext++;
+                    // document.getElementById("img_slide_prev").className = imgClassNext + 1;
+                    document.getElementById("img_slide_prev").className = imgClassNext++;
                 }
             }
             function showPrevImg(imgClassPrev) {
