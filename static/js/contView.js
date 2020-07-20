@@ -248,8 +248,12 @@
             viewImgClick();
             
             if(document.getElementById("img_slide_next") && document.getElementById("img_slide_prev")) {
-                document.getElementById("img_slide_next").addEventListener("click", showNextImg(this.className));
-                document.getElementById("img_slide_prev").addEventListener("click", showPrevImg(this.className));
+                document.getElementById("img_slide_next").addEventListener("click", function() {
+                    showNextImg(this.className)
+                });
+                document.getElementById("img_slide_prev").addEventListener("click", function() {
+                    showPrevImg(this.className)
+                });
                 // imgSlideBtnNext.onclick = function() {
                 //     showNextImg(this.className);
                 // }
