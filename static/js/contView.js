@@ -134,7 +134,7 @@
                     imgSlideBtnNext.style.color = "white";
                     imgSlideBtnNext.style.opacity = "0.3";
                     imgSlideBtnNext.style.position = "fixed";
-                    imgSlideBtnNext.style.top = "50%";
+                    imgSlideBtnNext.style.top = "calc(50% - 60px)";
                     imgSlideBtnNext.style.right = "0";
                     imgSlideBtnNext.style.margin = "10px";
                     imgSlideBtnNext.style.zIndex = "9999";
@@ -176,7 +176,7 @@
                     imgSlideBtnPrev.style.color = "white";
                     imgSlideBtnPrev.style.opacity = "0.3";
                     imgSlideBtnPrev.style.position = "fixed";
-                    imgSlideBtnPrev.style.top = "50%";
+                    imgSlideBtnPrev.style.top = "calc(50% - 60px)";
                     imgSlideBtnPrev.style.left = "0";
                     imgSlideBtnPrev.style.margin = "10px";
                     imgSlideBtnPrev.style.zIndex = "9999";
