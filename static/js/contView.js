@@ -88,8 +88,11 @@
                     imgSlide.style.top = '0';
                     imgSlide.style.left = '0';
                     imgSlide.style.transition = '0.5s';
+                    imgSlide.style.animation = 'expand 0.5s ease-in-out';
                     
-                    document.body.appendChild(imgSlide);
+                    setTimeout(
+                        document.body.appendChild(imgSlide), 500
+                    );
                     
     
                     // if(contImgs.length < 2) {
