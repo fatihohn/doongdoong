@@ -400,7 +400,7 @@ var aAdditionalFontSet = [["경기천년바탕", "경기천년바탕"], ["경기
     //기본글씨체 시작
      htParams: {
         SE2M_FontName: {
-			htMainFont: {'id': '경기천년바탕','name': '경기천년바탕','size': '105%','url': '','cssUrl': ''} // 기본 글꼴 설정
+			htMainFont: {'id': '경기천년바탕','name': '경기천년바탕','size': '17','url': '','cssUrl': ''} // 기본 글꼴 설정
 		},
      },
      //기본글씨체 끝
