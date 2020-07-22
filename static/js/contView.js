@@ -274,7 +274,11 @@
                         // imgSlideBtnPrev.addEventListener("click", showPrevImg(this.class));
 
                     imgSlideBtnEsc.onclick = function() {
-                        imgSlide.remove();
+                        if (typeof imgSlide.remove === 'function') {
+                            imgSlide.remove();
+                        } else {
+                            imgSlide.parentNode.removeChild(imgSlide);
+                        }
                     };
 
 
