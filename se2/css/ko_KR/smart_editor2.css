@@ -53,8 +53,8 @@ body,
 
 #smart_editor2 span,
 #smart_editor2 em {
-    /* font-size: 12px */
-    font-size: 1.05rem;
+    font-size: 12px
+    /* font-size: 1.05rem; */
     /* font-size: 13px; */
 }
 
