@@ -265,6 +265,14 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
         }
     }
 
+    var liAfterAll = document.querySelectorAll(".li_number::after");
+    if(liAfterAll) {
+        var laa;
+        for(laa=0; laa < liAfterAll.length; laa++) {
+            liAfterAll[laa].style.color = titleColor;
+        }
+    }
+
 
 
 
