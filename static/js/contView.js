@@ -100,7 +100,7 @@
                     imgSlide.style.transition = '0.5s';
                     imgSlide.style.animation = 'expand 0.5s ease-in-out';
 
-                    document.body.style.overflow = 'hidden';
+                    document.body.style.overflowY = 'hidden';
                     setTimeout(
                         document.body.appendChild(imgSlide), 500
                     );
@@ -268,7 +268,7 @@
                                         } else {
                                             imgSlide.parentNode.removeChild(imgSlide);
                                         }
-                                        document.body.style.overflow = 'initial';
+                                        document.body.style.overflowY = 'auto';
 
                                     }
 
@@ -286,7 +286,7 @@
                         } else {
                             imgSlide.parentNode.removeChild(imgSlide);
                         }
-                        document.body.style.overflow = 'initial';
+                        document.body.style.overflowY = 'auto';
                     };
 
 
