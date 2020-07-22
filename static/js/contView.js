@@ -261,7 +261,12 @@
                                 case 27:
                                     // str = 'Esc Key pressed!'; 
                                     if (imgSlideNext && imgSlidePrev) {
-                                        imgSlide.remove();
+                                        // imgSlide.remove();
+                                        if (typeof imgSlide.remove === 'function') {
+                                            imgSlide.remove();
+                                        } else {
+                                            imgSlide.parentNode.removeChild(imgSlide);
+                                        }
 
                                     }
 
