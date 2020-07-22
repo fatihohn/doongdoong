@@ -4,7 +4,8 @@ function displayOnRep() {
     for (i = 0; i < displayOn.length; i++) {
         let dpOn = displayOn[i].innerHTML.replace("on", "외부공개");
         displayOn[i].innerHTML = dpOn;
-        displayOn[i].style.backgroundColor = "rgba(0, 55, 107, 0.2)";
+        displayOn[i].style.backgroundColor = "rgba(0, 55, 107, 0.4)";
+        displayOn[i].style.color = "rgba(0, 55, 107, 1)";
     }
 }
 displayOnRep();
