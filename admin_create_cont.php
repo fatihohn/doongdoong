@@ -423,6 +423,16 @@ var aAdditionalFontSet = [["경기천년바탕", "경기천년바탕"], ["경기
 </script>
 <script>  
     admin_frontListColor("<?php echo $zin_color; ?>", "<?php echo $title_color; ?>", "<?php echo $point_color; ?>", "<?php echo $nav_color; ?>");
+
+    function editorFontSize() {
+        let editorText = document.querySelectorAll(".se2_inputarea p");
+        let et;
+        for(et = 0; et < editorText.length; et++) {
+            editorText[et].style.fontSize = "1.05rem";
+        }
+    }
+    editorFontSize();
+
 </script>
 </body>
 
