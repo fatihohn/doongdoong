@@ -400,7 +400,7 @@ var aAdditionalFontSet = [["경기천년바탕", "경기천년바탕"], ["경기
     //기본글씨체 시작
      htParams: {
         SE2M_FontName: {
-			htMainFont: {'id': '경기천년바탕','name': '경기천년바탕','size': '1.05rem','url': '','cssUrl': ''} // 기본 글꼴 설정
+			htMainFont: {'id': '경기천년바탕','name': '경기천년바탕','size': '105%','url': '','cssUrl': ''} // 기본 글꼴 설정
 		},
      },
      //기본글씨체 끝
@@ -424,14 +424,14 @@ var aAdditionalFontSet = [["경기천년바탕", "경기천년바탕"], ["경기
 <script>  
     admin_frontListColor("<?php echo $zin_color; ?>", "<?php echo $title_color; ?>", "<?php echo $point_color; ?>", "<?php echo $nav_color; ?>");
 
-    function editorFontSize() {
-        let editorText = document.querySelectorAll(".se2_inputarea p");
-        let et;
-        for(et = 0; et < editorText.length; et++) {
-            editorText[et].style.fontSize = "1.05rem";
-        }
-    }
-    editorFontSize();
+    // function editorFontSize() {
+    //     let editorText = document.querySelectorAll(".se2_inputarea p");
+    //     let et;
+    //     for(et = 0; et < editorText.length; et++) {
+    //         editorText[et].style.fontSize = "1.05rem";
+    //     }
+    // }
+    // editorFontSize();
 
 </script>
 </body>
