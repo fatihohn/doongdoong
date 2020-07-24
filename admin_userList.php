@@ -71,7 +71,7 @@ $URL = "./admin_index.php";
 
             <div id="adCsList">
                 <div class="cs_box">
-                    <button class="view_btn1" onclick="location.href='./admin_create_user.php'">회원추가</button>
+                    <button class="view_btn1" onclick="location.href='./admin_create_user.php'">필진추가</button>
                     <select name="searchSlct" id="searchSlct">
                         <option value="0">번호</option>
                         <option value="1">아이디</option>

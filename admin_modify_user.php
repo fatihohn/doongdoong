@@ -22,7 +22,11 @@
             
                 <div class="view_wrap">
     <div class="view_wrap_line">
+
         <div class="contEditor">
+            <center>
+                <h3>필진 수정</h3>
+            </center>
 <?php    
            include 'bbdd_db_conn.php';   
 

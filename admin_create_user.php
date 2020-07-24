@@ -33,9 +33,9 @@
                 <div class="view_wrap">
     <div class="view_wrap_line">
         <div class="contEditor">
-        <center>
-            <h3>회원가입</h3>
-        </center>
+            <center>
+                <h3>필진 등록</h3>
+            </center>
 
         <form class="createForm" action="admin_create_user_action.php" method="POST" enctype="multipart/form-data">
             <p >
