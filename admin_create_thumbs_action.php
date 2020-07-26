@@ -46,6 +46,7 @@ if($titleCheck >= 1){
 
     if($image["size"] > 10000000) {
         echo "<script>alert('연재물 대표 이미지가 너무 큽니다.'); history.back();</script>";
+        $sql = null;
     } else {
         $sql = "
                         INSERT INTO thumbs
