@@ -44,9 +44,9 @@ if($titleCheck >= 1){
     $imageDir = strval($imageDir);
         
 
-    if($image["size"] > 10000000) {
+    if($_FILES["img"]["size"] > 10000000) {
         echo "<script>alert('연재물 대표 이미지가 너무 큽니다.'); history.back();</script>";
-        $sql = null;
+       
     } else {
         $sql = "
                         INSERT INTO thumbs
