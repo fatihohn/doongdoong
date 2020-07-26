@@ -113,7 +113,7 @@
             </p>
             <p>
                 <div class="createInput">
-                <label class="createGrid1">연재물 대표 이미지</label>
+                <label class="createGrid1">연재물 대표 이미지(최대 10MB)</label>
                 <input class="createGrid2" type="file" name="img"  required />
                 
             </div>
