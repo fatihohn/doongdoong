@@ -35,6 +35,8 @@ $stmt = mysqli_stmt_init($conn);
                 $titleCheck = mysqli_stmt_get_result($stmt);
         }
 // $titleCheck = mysqli_query($conn, $titleSql);
+$uploadimg = include 'admin_modify_thumbs_files.php';
+
 $titleCheck = $titleCheck->fetch_array();
 
 $tIdSql = "SELECT * FROM thumbs WHERE id=$q";
@@ -45,9 +47,10 @@ $dQuote = '"';
     if($titleCheck >= 1 && mysqli_real_escape_string($conn, $tIdCheck['category']) !== $category){
         echo "<script>alert('연재물 제목이 중복됩니다.'); history.back();</script>";
     }else if(strpos($category, $dQuote) == true){
-    
         echo "<script>alert('사용불가능한 연재물 제목입니다.'); history.back();</script>";
-	}else{
+	}else if($_FILES["img"]["size"] > 10000000) {
+        echo "<script>alert('연재물 대표 이미지가 너무 큽니다.'); history.back();</script>";
+    } else {
         
         
         $sql = 
@@ -67,8 +70,7 @@ $dQuote = '"';
 
 if($_FILES['img']['size']!==0) {
     unlink($tIdCheck['img_dir']);
-    $uploadimg = include 'admin_modify_thumbs_files.php';
-        
+    // $uploadimg = include 'admin_modify_thumbs_files.php';
                 $sql0 = 
                 "UPDATE thumbs SET 
                 `author`='$author', 
