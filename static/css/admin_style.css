@@ -123,7 +123,7 @@ article {
     padding-bottom: 20px;
 }
 
-.adminMenuLi li:hover {
+.adminMenuLi li p:hover {
     opacity: 0.3;
 }
 
