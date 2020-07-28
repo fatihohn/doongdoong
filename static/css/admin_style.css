@@ -123,6 +123,10 @@ article {
     padding-bottom: 20px;
 }
 
+.adminMenuLi li:hover {
+    opacity: 0.3;
+}
+
 .adminMenuLi li a>p {
     color: black;
 }
