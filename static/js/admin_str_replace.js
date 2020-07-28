@@ -48,7 +48,7 @@ function publishNowCatRep() {
     let publishNowCat = document.querySelectorAll(".now_cat");
     let pnc;
     for (pnc = 0; pnc < publishNowCat.length; pnc++) {
-        let pbNowCat = publishNowCat[pnc].innerHTML.replace("now", "연재중");
+        let pbNowCat = publishNowCat[pnc].innerHTML.replace("now", "발행중");
         publishNowCat[pnc].innerHTML = pbNowCat;
     }
 }
@@ -83,6 +83,16 @@ function publishReadyRep() {
     }
 }
 publishReadyRep();
+
+function publishReadyCatRep() {
+    let publishReadyCat = document.querySelectorAll(".ready_cat");
+    let prc;
+    for (prc = 0; prc < publishReadyCat.length; prc++) {
+        let pbReadyCat = publishReadyCat[prc].innerHTML.replace("ready", "대기");
+        publishReadyCat[prc].innerHTML = pbReadyCat;
+    }
+}
+publishReadyCatRep();
 
 function catNoticeRep() {
     let catNotice = document.querySelectorAll(".notice");
