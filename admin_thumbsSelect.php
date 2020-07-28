@@ -88,7 +88,7 @@ echo
         <td class='{$row["id"]}'>{$row['author']}</td>
         <td class='{$row["id"]}' id='{$row["id"]}' onclick='adminAllCatShow(this.id)'>{$row['category']}</td>
         <td class='{$row["id"]} {$row['display']}'>{$row['display']}</td>
-        <td class='{$row["id"]} {$row['publish']}'>{$row['publish']}</td>
+        <td class='{$row["id"]} {$row['publish']}_cat'>{$row['publish']}</td>
         <td class='{$row["id"]}'><button class='view_btn1' name='{$row["id"]}' onclick='catModi(this.name)'>수정</button>";
 echo " | ";
 echo             "<button class='view_btn1' name='{$row["id"]}' onclick='catDel(this.name)'>삭제</button></td>

@@ -44,6 +44,16 @@ function publishNowRep() {
 }
 publishNowRep();
 
+function publishNowCatRep() {
+    let publishNow = document.querySelectorAll(".now_cat");
+    let l;
+    for (l = 0; l < publishNow.length; l++) {
+        let pbNow = publishNow[l].innerHTML.replace("now", "연재중");
+        publishNow[l].innerHTML = pbNow;
+    }
+}
+publishNowCatRep();
+
 function publishStandingRep() {
     let publishStanding = document.querySelectorAll(".standing");
     let st;
