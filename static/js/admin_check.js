@@ -223,11 +223,11 @@ if (document.getElementById("pwOne") && document.getElementById("pwTwo")) {
 
             let mbrPwd = pwOne; // pw 입력
 
-            let check1 = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,20}$/.test(mbrPwd); //영문,숫자
+            let check1 = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,16}$/.test(mbrPwd); //영문,숫자
 
-            let check2 = /^(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,20}$/.test(mbrPwd); //영문,특수문자
+            let check2 = /^(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,16}$/.test(mbrPwd); //영문,특수문자
 
-            let check3 = /^(?=.*[^a-zA-Z0-9])(?=.*[0-9]).{8,20}$/.test(mbrPwd); //특수문자, 숫자
+            let check3 = /^(?=.*[^a-zA-Z0-9])(?=.*[0-9]).{8,16}$/.test(mbrPwd); //특수문자, 숫자
 
             // let check1 = /^(?=.*[a-zA-Z])(?=.*[0-9]).{10,12}$/.test(mbrPwd);   //영문,숫자
 
