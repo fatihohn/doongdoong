@@ -45,11 +45,11 @@ function publishNowRep() {
 publishNowRep();
 
 function publishNowCatRep() {
-    let publishNow = document.querySelectorAll(".now_cat");
-    let l;
-    for (l = 0; l < publishNow.length; l++) {
-        let pbNow = publishNow[l].innerHTML.replace("now", "연재중");
-        publishNow[l].innerHTML = pbNow;
+    let publishNowCat = document.querySelectorAll(".now_cat");
+    let pnc;
+    for (pnc = 0; pnc < publishNowCat.length; pnc++) {
+        let pbNowCat = publishNowCat[pnc].innerHTML.replace("now", "연재중");
+        publishNowCat[pnc].innerHTML = pbNowCat;
     }
 }
 publishNowCatRep();
