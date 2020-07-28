@@ -78,7 +78,7 @@ function publishReadyRep() {
     let publishReady = document.querySelectorAll(".ready");
     let n;
     for (n = 0; n < publishReady.length; n++) {
-        let pbReady = publishReady[n].innerHTML.replace("ready", "대기");
+        let pbReady = publishReady[n].innerHTML.replace("ready", "발행대기");
         publishReady[n].innerHTML = pbReady;
     }
 }

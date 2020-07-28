@@ -185,7 +185,7 @@
                     <input class="publish_btn" type="radio" id="now_btn"name="publish" value="now">
                     <label for="now_btn">기획발행</label><br>
                     <input class="publish_btn" type="radio" id="ready_btn"name="publish" value="ready">
-                    <label for="ready_btn">아니오</label><br>
+                    <label for="ready_btn">발행대기</label><br>
                 
                     
                 </div>
