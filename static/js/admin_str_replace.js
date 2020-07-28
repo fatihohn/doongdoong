@@ -88,7 +88,7 @@ function publishReadyCatRep() {
     let publishReadyCat = document.querySelectorAll(".ready_cat");
     let prc;
     for (prc = 0; prc < publishReadyCat.length; prc++) {
-        let pbReadyCat = publishReadyCat[prc].innerHTML.replace("ready", "대기");
+        let pbReadyCat = publishReadyCat[prc].innerHTML.replace("ready", "완결");
         publishReadyCat[prc].innerHTML = pbReadyCat;
     }
 }
