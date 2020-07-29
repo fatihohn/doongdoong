@@ -35,6 +35,7 @@ $sql = "SELECT * FROM contents WHERE id = $q ";
 $result = $conn->query($sql) or die($conn->error);
 $rows = mysqli_fetch_assoc($result);
 $contCategory = $rows['category'];
+$sessThis = $rows['sess'];
 
 // $sqlCatCategory = "SELECT * FROM thumbs WHERE category = '$contCategory'";
 $sqlCatCategory = "SELECT * FROM thumbs WHERE category = ?";
@@ -116,13 +117,13 @@ if(!isset($_SESSION['username'])) {
                 $idMin = $rowsIdMin['id'];
 
                 // $sqlNext = "SELECT * FROM contents WHERE id > $q AND category='$catCategory' ORDER BY sess*1 ASC LIMIT 1";
-                $sqlNext = "SELECT * FROM contents WHERE id > ? AND category=? ORDER BY sess*1 ASC LIMIT 1";
+                $sqlNext = "SELECT * FROM contents WHERE sess > ? AND category=? ORDER BY sess*1 ASC LIMIT 1";
                 
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sqlNext)) {
                     // echo "sqlNext error";
                 } else {
-                    mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
+                    mysqli_stmt_bind_param($stmt, "is", $sessThis, $catCategory);
                     mysqli_stmt_execute($stmt);
                     $resultNext = mysqli_stmt_get_result($stmt);
                 }
@@ -130,13 +131,13 @@ if(!isset($_SESSION['username'])) {
                 // $resultNext = $conn->query($sqlNext) or die($conn->error);
                 
                 // $sqlPrev = "SELECT * FROM contents WHERE id < $q AND category='$catCategory' ORDER BY sess*1 DESC LIMIT 1";
-                $sqlPrev = "SELECT * FROM contents WHERE id < ? AND category=? ORDER BY sess*1 DESC LIMIT 1";
+                $sqlPrev = "SELECT * FROM contents WHERE sess < ? AND category=? ORDER BY sess*1 DESC LIMIT 1";
 
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sqlPrev)) {
                     // echo "sqlPrev error";
                 } else {
-                    mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
+                    mysqli_stmt_bind_param($stmt, "is", $sessThis, $catCategory);
                     mysqli_stmt_execute($stmt);
                     $resultPrev = mysqli_stmt_get_result($stmt);
                 }
@@ -148,13 +149,13 @@ if(!isset($_SESSION['username'])) {
                 if($qVal < $idMax && $qVal > $idMin) {
             
                     // $sqlNext = "SELECT * FROM contents WHERE id > $q AND category='$catCategory' ORDER BY sess*1 ASC LIMIT 1";
-                    $sqlNext = "SELECT * FROM contents WHERE id > ? AND category=? ORDER BY sess*1 ASC LIMIT 1";
+                    $sqlNext = "SELECT * FROM contents WHERE sess > ? AND category=? ORDER BY sess*1 ASC LIMIT 1";
                     
                     $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $sqlNext)) {
                         // echo "sqlNext error";
                     } else {
-                        mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
+                        mysqli_stmt_bind_param($stmt, "is", $sessThis, $catCategory);
                         mysqli_stmt_execute($stmt);
                         $resultNext = mysqli_stmt_get_result($stmt);
                     }
@@ -164,13 +165,13 @@ if(!isset($_SESSION['username'])) {
                     
                     
                     // $sqlPrev = "SELECT * FROM contents WHERE id < $q AND category='$catCategory' ORDER BY sess*1 DESC LIMIT 1";
-                    $sqlPrev = "SELECT * FROM contents WHERE id < ? AND category=? ORDER BY sess*1 DESC LIMIT 1";
+                    $sqlPrev = "SELECT * FROM contents WHERE sess < ? AND category=? ORDER BY sess*1 DESC LIMIT 1";
                     
                     $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sqlPrev)) {
                     // echo "sqlPrev error";
                 } else {
-                    mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
+                    mysqli_stmt_bind_param($stmt, "is", $sessThis, $catCategory);
                     mysqli_stmt_execute($stmt);
                     $resultPrev = mysqli_stmt_get_result($stmt);
                 }
@@ -182,13 +183,13 @@ if(!isset($_SESSION['username'])) {
               
                     
                     // $sqlNext = "SELECT * FROM contents WHERE id = $q AND category='$catCategory'";
-                    $sqlNext = "SELECT * FROM contents WHERE id = ? AND category=?";
+                    $sqlNext = "SELECT * FROM contents WHERE sess = ? AND category=?";
 
                     $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $sqlNext)) {
                         // echo "sqlNext error";
                     } else {
-                        mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
+                        mysqli_stmt_bind_param($stmt, "is", $sessThis, $catCategory);
                         mysqli_stmt_execute($stmt);
                         $resultNext = mysqli_stmt_get_result($stmt);
                     }
@@ -199,13 +200,13 @@ if(!isset($_SESSION['username'])) {
               
                     
                     // $sqlPrev = "SELECT * FROM contents WHERE id = $q AND category='$catCategory'";
-                    $sqlPrev = "SELECT * FROM contents WHERE id = ? AND category=?";
+                    $sqlPrev = "SELECT * FROM contents WHERE sess = ? AND category=?";
 
                     $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $sqlPrev)) {
                         // echo "sqlPrev error";
                     } else {
-                        mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
+                        mysqli_stmt_bind_param($stmt, "is", $sessThis, $catCategory);
                         mysqli_stmt_execute($stmt);
                         $resultPrev = mysqli_stmt_get_result($stmt);
                     }
@@ -215,13 +216,13 @@ if(!isset($_SESSION['username'])) {
               
                     
                     // $sqlNext = "SELECT * FROM contents WHERE id = $q AND category='$catCategory' ";
-                    $sqlNext = "SELECT * FROM contents WHERE id = ? AND category=? ";
+                    $sqlNext = "SELECT * FROM contents WHERE sess = ? AND category=? ";
 
                     $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $sqlNext)) {
                         // echo "sqlNext error";
                     } else {
-                        mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
+                        mysqli_stmt_bind_param($stmt, "is", $sessThis, $catCategory);
                         mysqli_stmt_execute($stmt);
                         $resultNext = mysqli_stmt_get_result($stmt);
                     }
@@ -229,13 +230,13 @@ if(!isset($_SESSION['username'])) {
                     // $resultNext = $conn->query($sqlNext) or die($conn->error);
 
                     // $sqlPrev = "SELECT * FROM contents WHERE id = $q AND category='$catCategory' ";
-                    $sqlPrev = "SELECT * FROM contents WHERE id = ? AND category=? ";
+                    $sqlPrev = "SELECT * FROM contents WHERE sess = ? AND category=? ";
 
                     $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $sqlPrev)) {
                         // echo "sqlPrev error";
                     } else {
-                        mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
+                        mysqli_stmt_bind_param($stmt, "is", $sessThis, $catCategory);
                         mysqli_stmt_execute($stmt);
                         $resultPrev = mysqli_stmt_get_result($stmt);
                     }
@@ -282,13 +283,13 @@ if(!isset($_SESSION['username'])) {
                 $idMin = $rowsIdMin['id'];
 
                 // $sqlNext = "SELECT * FROM contents WHERE id > $q AND category='$catCategory' AND display='on' OR (id > $q AND category='$catCategory' AND display='ok') OR (id > $q AND category='$catCategory' AND username='$uname') ORDER BY sess*1 ASC LIMIT 1";
-                $sqlNext = "SELECT * FROM contents WHERE id > ? AND category=? AND display='on' OR (id > ? AND category=? AND display='ok') OR (id > ? AND category=? AND username=?) ORDER BY sess*1 ASC LIMIT 1";
+                $sqlNext = "SELECT * FROM contents WHERE sess > ? AND category=? AND display='on' OR (sess > ? AND category=? AND display='ok') OR (sess > ? AND category=? AND username=?) ORDER BY sess*1 ASC LIMIT 1";
                 
                 $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $sqlNext)) {
                         // echo "sqlNext error";
                     } else {
-                        mysqli_stmt_bind_param($stmt, "isisiss", $q, $catCategory, $q, $catCategory, $q, $catCategory, $uname);
+                        mysqli_stmt_bind_param($stmt, "isisiss", $sessThis, $catCategory, $sessThis, $catCategory, $sessThis, $catCategory, $uname);
                         mysqli_stmt_execute($stmt);
                         $resultNext = mysqli_stmt_get_result($stmt);
                     }
@@ -296,13 +297,13 @@ if(!isset($_SESSION['username'])) {
                 // $resultNext = $conn->query($sqlNext) or die($conn->error);
 
                 // $sqlPrev = "SELECT * FROM contents WHERE id < $q AND category='$catCategory' AND display='on' OR (id < $q AND category='$catCategory' AND display='ok') OR (id < $q AND category='$catCategory' AND username='$uname') ORDER BY sess*1 DESC LIMIT 1";
-                $sqlPrev = "SELECT * FROM contents WHERE id < ? AND category=? AND display='on' OR (id < ? AND category=? AND display='ok') OR (id < ? AND category=? AND username=?) ORDER BY sess*1 DESC LIMIT 1";
+                $sqlPrev = "SELECT * FROM contents WHERE sess < ? AND category=? AND display='on' OR (sess < ? AND category=? AND display='ok') OR (sess < ? AND category=? AND username=?) ORDER BY sess*1 DESC LIMIT 1";
                 
                 $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $sqlPrev)) {
                         // echo "sqlPrev error";
                     } else {
-                        mysqli_stmt_bind_param($stmt, "isisiss", $q, $catCategory, $q, $catCategory, $q, $catCategory, $uname);
+                        mysqli_stmt_bind_param($stmt, "isisiss", $sessThis, $catCategory, $sessThis, $catCategory, $sessThis, $catCategory, $uname);
                         mysqli_stmt_execute($stmt);
                         $resultPrev = mysqli_stmt_get_result($stmt);
                     }
@@ -313,13 +314,13 @@ if(!isset($_SESSION['username'])) {
                
                     
                     // $sqlNext = "SELECT * FROM contents WHERE id > $q AND category='$catCategory' AND display='on' OR (id > $q AND category='$catCategory' AND display='ok') OR (id > $q AND category='$catCategory' AND username='$uname') ORDER BY sess*1 ASC LIMIT 1";
-                    $sqlNext = "SELECT * FROM contents WHERE id > ? AND category=? AND display='on' OR (id > ? AND category=? AND display='ok') OR (id > ? AND category=? AND username=?) ORDER BY sess*1 ASC LIMIT 1";
+                    $sqlNext = "SELECT * FROM contents WHERE sess > ? AND category=? AND display='on' OR (sess > ? AND category=? AND display='ok') OR (sess > ? AND category=? AND username=?) ORDER BY sess*1 ASC LIMIT 1";
                     
                     $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $sqlNext)) {
                         // echo "sqlNext error";
                     } else {
-                        mysqli_stmt_bind_param($stmt, "isisiss", $q, $catCategory, $q, $catCategory, $q, $catCategory, $uname);
+                        mysqli_stmt_bind_param($stmt, "isisiss", $sessThis, $catCategory, $sessThis, $catCategory, $sessThis, $catCategory, $uname);
                         mysqli_stmt_execute($stmt);
                         $resultNext = mysqli_stmt_get_result($stmt);
                     }
@@ -327,13 +328,13 @@ if(!isset($_SESSION['username'])) {
                     // $resultNext = $conn->query($sqlNext) or die($conn->error);
                     
                     // $sqlPrev = "SELECT * FROM contents WHERE id < $q AND category='$catCategory' AND display='on' OR (id < $q AND category='$catCategory' AND display='ok') OR (id < $q AND category='$catCategory' AND username='$uname') ORDER BY sess*1 DESC LIMIT 1";
-                    $sqlPrev = "SELECT * FROM contents WHERE id < ? AND category=? AND display='on' OR (id < ? AND category=? AND display='ok') OR (id < ? AND category=? AND username=?) ORDER BY sess*1 DESC LIMIT 1";
+                    $sqlPrev = "SELECT * FROM contents WHERE sess < ? AND category=? AND display='on' OR (sess < ? AND category=? AND display='ok') OR (sess < ? AND category=? AND username=?) ORDER BY sess*1 DESC LIMIT 1";
                     
                     $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $sqlPrev)) {
                         // echo "sqlPrev error";
                     } else {
-                        mysqli_stmt_bind_param($stmt, "isisiss", $q, $catCategory, $q, $catCategory, $q, $catCategory, $uname);
+                        mysqli_stmt_bind_param($stmt, "isisiss", $sessThis, $catCategory, $sessThis, $catCategory, $sessThis, $catCategory, $uname);
                         mysqli_stmt_execute($stmt);
                         $resultPrev = mysqli_stmt_get_result($stmt);
                     }
@@ -344,13 +345,13 @@ if(!isset($_SESSION['username'])) {
         
                     
                     // $sqlNext = "SELECT * FROM contents WHERE id = $q AND category='$catCategory' AND display='on' OR (id > $q AND category='$catCategory' AND display='ok') OR (id > $q AND category='$catCategory' AND username='$uname')";
-                    $sqlNext = "SELECT * FROM contents WHERE id = ? AND category=? AND display='on' OR (id > ? AND category=? AND display='ok') OR (id > ? AND category=? AND username=?)";
+                    $sqlNext = "SELECT * FROM contents WHERE sess = ? AND category=? AND display='on' OR (sess > ? AND category=? AND display='ok') OR (sess > ? AND category=? AND username=?)";
                     
                     $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $sqlNext)) {
                         // echo "sqlNext error";
                     } else {
-                        mysqli_stmt_bind_param($stmt, "isisiss", $q, $catCategory, $q, $catCategory, $q, $catCategory, $uname);
+                        mysqli_stmt_bind_param($stmt, "isisiss", $sessThis, $catCategory, $sessThis, $catCategory, $sessThis, $catCategory, $uname);
                         mysqli_stmt_execute($stmt);
                         $resultNext = mysqli_stmt_get_result($stmt);
                     }
@@ -361,13 +362,13 @@ if(!isset($_SESSION['username'])) {
              
                     
                     // $sqlPrev = "SELECT * FROM contents WHERE id = $q AND category='$catCategory' AND display='on' OR (id < $q AND category='$catCategory' AND display='ok') OR (id < $q AND category='$catCategory' AND username='$uname')";
-                    $sqlPrev = "SELECT * FROM contents WHERE id = ? AND category=? AND display='on' OR (id < ? AND category=? AND display='ok') OR (id < ? AND category=? AND username=?)";
+                    $sqlPrev = "SELECT * FROM contents WHERE sess = ? AND category=? AND display='on' OR (sess < ? AND category=? AND display='ok') OR (sess < ? AND category=? AND username=?)";
          
                     $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $sqlPrev)) {
                         // echo "sqlPrev error";
                     } else {
-                        mysqli_stmt_bind_param($stmt, "isisiss", $q, $catCategory, $q, $catCategory, $q, $catCategory, $uname);
+                        mysqli_stmt_bind_param($stmt, "isisiss", $sessThis, $catCategory, $sessThis, $catCategory, $sessThis, $catCategory, $uname);
                         mysqli_stmt_execute($stmt);
                         $resultPrev = mysqli_stmt_get_result($stmt);
                     }
@@ -378,13 +379,13 @@ if(!isset($_SESSION['username'])) {
             
                     
                     // $sqlNext = "SELECT * FROM contents WHERE id = $q AND category='$catCategory' AND display='on' OR (id > $q AND category='$catCategory' AND display='ok') OR (id > $q AND category='$catCategory' AND username='$uname')";
-                    $sqlNext = "SELECT * FROM contents WHERE id = ? AND category=? AND display='on' OR (id > ? AND category=? AND display='ok') OR (id > ? AND category=? AND username=?)";
+                    $sqlNext = "SELECT * FROM contents WHERE sess = ? AND category=? AND display='on' OR (sess > ? AND category=? AND display='ok') OR (sess > ? AND category=? AND username=?)";
                     
                     $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $sqlNext)) {
                         // echo "sqlNext error";
                     } else {
-                        mysqli_stmt_bind_param($stmt, "isisiss", $q, $catCategory, $q, $catCategory, $q, $catCategory, $uname);
+                        mysqli_stmt_bind_param($stmt, "isisiss", $sessThis, $catCategory, $sessThis, $catCategory, $sessThis, $catCategory, $uname);
                         mysqli_stmt_execute($stmt);
                         $resultNext = mysqli_stmt_get_result($stmt);
                     }
@@ -392,13 +393,13 @@ if(!isset($_SESSION['username'])) {
                     // $resultNext = $conn->query($sqlNext) or die($conn->error);
 
                     // $sqlPrev = "SELECT * FROM contents WHERE id = $q AND category='$catCategory' AND display='on' OR (id < $q AND category='$catCategory' AND display='ok') OR (id < $q AND category='$catCategory' AND username='$uname')";
-                    $sqlPrev = "SELECT * FROM contents WHERE id = ? AND category=? AND display='on' OR (id < ? AND category=? AND display='ok') OR (id < ? AND category=? AND username=?)";
+                    $sqlPrev = "SELECT * FROM contents WHERE sess = ? AND category=? AND display='on' OR (sess < ? AND category=? AND display='ok') OR (sess < ? AND category=? AND username=?)";
                     
                     $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $sqlPrev)) {
                         // echo "sqlPrev error";
                     } else {
-                        mysqli_stmt_bind_param($stmt, "isisiss", $q, $catCategory, $q, $catCategory, $q, $catCategory, $uname);
+                        mysqli_stmt_bind_param($stmt, "isisiss", $sessThis, $catCategory, $sessThis, $catCategory, $sessThis, $catCategory, $uname);
                         mysqli_stmt_execute($stmt);
                         $resultPrev = mysqli_stmt_get_result($stmt);
                     }
