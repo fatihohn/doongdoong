@@ -286,10 +286,18 @@ $zinSql = "SELECT * FROM zin WHERE `display` = 'on' OR `display`='ok'";
                     <?php
                         if ($resultZin->num_rows > 0) {
                             while($rowZin = $resultZin->fetch_assoc()){
+                                $zinPublishState = $rowZin['publish'];
+                                if($zinPublishState == 'now') {
+                                    $zinPublishState = "기획발행";
+                                } else if($zinPublishState == 'standing') {
+                                    $zinPublishState = "상시발행";
+                                }
+
                                 echo "<option class='zin_slct' value='";
                                 echo $rowZin['title'];
                                 echo "'>[";
-                                echo $rowZin['publish'];
+                                // echo $rowZin['publish'];
+                                echo $zinPublishState;
                                 echo "] ";
                                 echo $rowZin['title'];
                                 echo "</option>";
