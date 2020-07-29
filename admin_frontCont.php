@@ -43,6 +43,7 @@ $sql = "SELECT * FROM contents WHERE id = $q AND display='on' OR (id = $q AND di
 $result = $conn->query($sql) or die($conn->error);
 $rows = mysqli_fetch_assoc($result);
 $contCategory = $rows['category'];
+$sessThis = $rows['sess'];
 
 $sqlCatCategory = "SELECT * FROM thumbs WHERE category = '$contCategory' AND display = 'on' OR (category = '$contCategory' AND display = 'ok')";
 // $sqlCatCategory = "SELECT * FROM thumbs WHERE category = '$contCategory' AND display = 'on' AND publish = 'now'";
@@ -64,23 +65,23 @@ $resultIdMin = $conn->query($sqlIdMin) or die($conn->error);
 $rowsIdMin = mysqli_fetch_assoc($resultIdMin);
 $idMin = $rowsIdMin['id'];
 
-$sqlNext = "SELECT * FROM contents WHERE id > $q AND display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory') ORDER BY sess*1 ASC LIMIT 1";
-$sqlPrev = "SELECT * FROM contents WHERE id < $q AND display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory') ORDER BY sess*1 DESC LIMIT 1";
+$sqlNext = "SELECT * FROM contents WHERE sess > $sessThis AND display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory') ORDER BY sess*1 ASC LIMIT 1";
+$sqlPrev = "SELECT * FROM contents WHERE sess < $sessThis AND display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory') ORDER BY sess*1 DESC LIMIT 1";
 
 if($q < $idMax && $q > $idMin) {
-    $sqlNext = "SELECT * FROM contents WHERE id > $q AND display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory') ORDER BY sess*1 ASC LIMIT 1";
-    $sqlPrev = "SELECT * FROM contents WHERE id < $q AND display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory') ORDER BY sess*1 DESC LIMIT 1";
+    $sqlNext = "SELECT * FROM contents WHERE sess > $sessThis AND display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory') ORDER BY sess*1 ASC LIMIT 1";
+    $sqlPrev = "SELECT * FROM contents WHERE sess < $sessThis AND display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory') ORDER BY sess*1 DESC LIMIT 1";
 } else if($q == $idMax && $q > $idMin) {
     // $sqlNext = "";
-    $sqlNext = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory')";
+    $sqlNext = "SELECT * FROM contents WHERE sess = $sessThis AND display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory')";
 } else if($q == $idMin && $q < $idMax) {
     // $sqlPrev = "";
-    $sqlPrev = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory')";
+    $sqlPrev = "SELECT * FROM contents WHERE sess = $sessThis AND display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory')";
 } else if($q ==$idMin && $q == $idMax) {
     // $sqlNext = "";
     // $sqlPrev = "";
-    $sqlNext = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory') ";
-    $sqlPrev = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory') ";
+    $sqlNext = "SELECT * FROM contents WHERE sess = $sessThis AND display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory') ";
+    $sqlPrev = "SELECT * FROM contents WHERE sess = $sessThis AND display='on' AND category='$catCategory' OR (display='ok' AND category='$catCategory') ";
 }
 
 
