@@ -41,7 +41,6 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
 // $result = $conn->query($sql) or die($conn->error);
 $rows = mysqli_fetch_assoc($result);
 $contCategory = $rows['category'];
-$sessThis = $rows['sess'];
 
 // $sqlCatCategory = "SELECT * FROM thumbs WHERE category = '$contCategory' AND display = 'on'";
 $sqlCatCategory = "SELECT * FROM thumbs WHERE category = ? AND display = 'on'";
@@ -94,15 +93,13 @@ $idMin = $rowsIdMin['id'];
 
 
 // $sqlNext = "SELECT * FROM contents WHERE id > $q AND display='on' AND category='$catCategory' ORDER BY sess*1 ASC LIMIT 1";
-// $sqlNext = "SELECT * FROM contents WHERE id > ? AND display='on' AND category=? ORDER BY sess*1 ASC LIMIT 1";
-$sqlNext = "SELECT * FROM contents WHERE sess > ? AND display='on' AND category=? ORDER BY sess*1 ASC LIMIT 1";
+$sqlNext = "SELECT * FROM contents WHERE id > ? AND display='on' AND category=? ORDER BY sess*1 ASC LIMIT 1";
 
 $stmt = mysqli_stmt_init($conn);
 if (!mysqli_stmt_prepare($stmt, $sqlNext)) {
     // echo "sqlNext error";
 } else {
-    // mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
-    mysqli_stmt_bind_param($stmt, "is", $sessThis, $catCategory);
+    mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
     mysqli_stmt_execute($stmt);
     $resultNext = mysqli_stmt_get_result($stmt);
 }
@@ -111,15 +108,13 @@ if (!mysqli_stmt_prepare($stmt, $sqlNext)) {
 
 
 // $sqlPrev = "SELECT * FROM contents WHERE id < $q AND display='on' AND category='$catCategory' ORDER BY sess*1 DESC LIMIT 1";
-// $sqlPrev = "SELECT * FROM contents WHERE id < ? AND display='on' AND category=? ORDER BY sess*1 DESC LIMIT 1";
-$sqlPrev = "SELECT * FROM contents WHERE sess < ? AND display='on' AND category=? ORDER BY sess*1 DESC LIMIT 1";
+$sqlPrev = "SELECT * FROM contents WHERE id < ? AND display='on' AND category=? ORDER BY sess*1 DESC LIMIT 1";
 
 $stmt = mysqli_stmt_init($conn);
 if (!mysqli_stmt_prepare($stmt, $sqlPrev)) {
     // echo "sqlPrev error";
 } else {
-    // mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
-    mysqli_stmt_bind_param($stmt, "is", $sessThis, $catCategory);
+    mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
     mysqli_stmt_execute($stmt);
     $resultPrev = mysqli_stmt_get_result($stmt);
 }
@@ -128,15 +123,13 @@ if (!mysqli_stmt_prepare($stmt, $sqlPrev)) {
 
 if($q < $idMax && $q > $idMin) {
     // $sqlNext = "SELECT * FROM contents WHERE id > $q AND display='on' AND category='$catCategory' ORDER BY sess*1 ASC LIMIT 1";
-    // $sqlNext = "SELECT * FROM contents WHERE id > ? AND display='on' AND category=? ORDER BY sess*1 ASC LIMIT 1";
-    $sqlNext = "SELECT * FROM contents WHERE sess > ? AND display='on' AND category=? ORDER BY sess*1 ASC LIMIT 1";
+    $sqlNext = "SELECT * FROM contents WHERE id > ? AND display='on' AND category=? ORDER BY sess*1 ASC LIMIT 1";
     
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sqlNext)) {
         // echo "sqlNext error";
     } else {
-    // mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
-    mysqli_stmt_bind_param($stmt, "is", $sessThis, $catCategory);
+    mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
     mysqli_stmt_execute($stmt);
     $resultNext = mysqli_stmt_get_result($stmt);
     }
@@ -145,15 +138,13 @@ if($q < $idMax && $q > $idMin) {
     
     
     // $sqlPrev = "SELECT * FROM contents WHERE id < $q AND display='on' AND category='$catCategory' ORDER BY sess*1 DESC LIMIT 1";
-    // $sqlPrev = "SELECT * FROM contents WHERE id < ? AND display='on' AND category=? ORDER BY sess*1 DESC LIMIT 1";
-    $sqlPrev = "SELECT * FROM contents WHERE sess < ? AND display='on' AND category=? ORDER BY sess*1 DESC LIMIT 1";
+    $sqlPrev = "SELECT * FROM contents WHERE id < ? AND display='on' AND category=? ORDER BY sess*1 DESC LIMIT 1";
     
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sqlPrev)) {
         // echo "sqlPrev error";
     } else {
-    // mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
-    mysqli_stmt_bind_param($stmt, "is", $sessThis, $catCategory);
+    mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
     mysqli_stmt_execute($stmt);
     $resultPrev = mysqli_stmt_get_result($stmt);
     }
@@ -163,15 +154,13 @@ if($q < $idMax && $q > $idMin) {
 } else if($q == $idMax && $q > $idMin) {
     
     // $sqlNext = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory'";
-    // $sqlNext = "SELECT * FROM contents WHERE id = ? AND display='on' AND category=?";
-    $sqlNext = "SELECT * FROM contents WHERE sess = ? AND display='on' AND category=?";
+    $sqlNext = "SELECT * FROM contents WHERE id = ? AND display='on' AND category=?";
 
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sqlNext)) {
         // echo "sqlNext error";
     } else {
-    // mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
-    mysqli_stmt_bind_param($stmt, "is", $sessThis, $catCategory);
+    mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
     mysqli_stmt_execute($stmt);
     $resultNext = mysqli_stmt_get_result($stmt);
     }
@@ -181,15 +170,13 @@ if($q < $idMax && $q > $idMin) {
 } else if($q == $idMin && $q < $idMax) {
     
     // $sqlPrev = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory'";
-    // $sqlPrev = "SELECT * FROM contents WHERE id = ? AND display='on' AND category=?";
-    $sqlPrev = "SELECT * FROM contents WHERE sess = ? AND display='on' AND category=?";
+    $sqlPrev = "SELECT * FROM contents WHERE id = ? AND display='on' AND category=?";
     
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sqlPrev)) {
         // echo "sqlPrev error";
     } else {
-    // mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
-    mysqli_stmt_bind_param($stmt, "is", $sessThis, $catCategory);
+    mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
     mysqli_stmt_execute($stmt);
     $resultPrev = mysqli_stmt_get_result($stmt);
     }
@@ -199,15 +186,13 @@ if($q < $idMax && $q > $idMin) {
 } else if($q ==$idMin && $q == $idMax) {
     
     // $sqlNext = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory' ";
-    // $sqlNext = "SELECT * FROM contents WHERE id = ? AND display='on' AND category=? ";
-    $sqlNext = "SELECT * FROM contents WHERE sess = ? AND display='on' AND category=? ";
+    $sqlNext = "SELECT * FROM contents WHERE id = ? AND display='on' AND category=? ";
 
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sqlNext)) {
         // echo "sqlNext error";
     } else {
-    // mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
-    mysqli_stmt_bind_param($stmt, "is", $sessThis, $catCategory);
+    mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
     mysqli_stmt_execute($stmt);
     $resultNext = mysqli_stmt_get_result($stmt);
     }
@@ -216,15 +201,13 @@ if($q < $idMax && $q > $idMin) {
 
 
     // $sqlPrev = "SELECT * FROM contents WHERE id = $q AND display='on' AND category='$catCategory' ";
-    // $sqlPrev = "SELECT * FROM contents WHERE id = ? AND display='on' AND category=? ";
-    $sqlPrev = "SELECT * FROM contents WHERE sess = ? AND display='on' AND category=? ";
+    $sqlPrev = "SELECT * FROM contents WHERE id = ? AND display='on' AND category=? ";
 
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sqlPrev)) {
         // echo "sqlPrev error";
     } else {
-    // mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
-    mysqli_stmt_bind_param($stmt, "is", $sessThis, $catCategory);
+    mysqli_stmt_bind_param($stmt, "is", $q, $catCategory);
     mysqli_stmt_execute($stmt);
     $resultPrev = mysqli_stmt_get_result($stmt);
     }
