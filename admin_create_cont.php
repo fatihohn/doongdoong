@@ -352,7 +352,7 @@
             <p>
                 <div class="createInput">
                 <label class="createGrid1">메모</label><br>
-                <textarea class="createGrid2" name="memo" placeholder="메모" rows="10" cols="20" ></textarea>
+                <textarea class="createGrid2" name="memo" placeholder="메모" rows="10" cols="20" style="width: 100%;" ></textarea>
                 </div>
             </p>
             

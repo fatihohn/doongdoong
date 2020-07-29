@@ -360,7 +360,7 @@ $zinSql = "SELECT * FROM zin WHERE `display` = 'on' OR `display`='ok'";
             <p>
                 <div class="createInput">
                 <label class="createGrid1">메모</label><br>
-                <textarea class="createGrid2" name="memo" value="<?=$memo?>" rows="10" cols="20" ><?=$memo?></textarea>
+                <textarea class="createGrid2" name="memo" value="<?=$memo?>" rows="10" cols="20" style="width: 100%;"><?=$memo?></textarea>
                 </div>
             </p>
 
