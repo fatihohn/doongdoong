@@ -397,6 +397,10 @@ article {
     /* color: rgb(0, 55, 107); */
 }
 
+.cancel_btn {
+    color: #333;
+}
+
 [onclick] {
     cursor: pointer;
 }

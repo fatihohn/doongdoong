@@ -577,7 +577,7 @@
             <p>
             <input type="hidden" name="id" value="<?=$q?>">    
             <input type="submit">
-                <button name="cancel"><a href = "javascript:history.back()">취소</a></button>
+                <button name="cancel"><a href = "javascript:history.back()" class="cancel_btn">취소</a></button>
 
             </p>
         </form>

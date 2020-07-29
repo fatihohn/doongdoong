@@ -363,7 +363,7 @@
 
             <p>
                 <input type="submit" onclick="submitContents(this);">
-                <button name="cancel"><a href = "javascript:history.back()">취소</a></button>
+                <button name="cancel"><a href = "javascript:history.back()"  class="cancel_btn">취소</a></button>
             </p>
         </form>
                 <?php
