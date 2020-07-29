@@ -398,7 +398,7 @@ article {
 }
 
 .cancel_btn {
-    color: #333;
+    color: #333 !important;
 }
 
 [onclick] {
