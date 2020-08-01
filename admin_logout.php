@@ -7,7 +7,8 @@
 ?>
         <script>
                 alert("로그아웃 되었습니다.");
-                history.back();
+                // history.back();
+                location.href='admin_index.php';
         </script>
 <?php   }
 ?>
