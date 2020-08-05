@@ -1001,8 +1001,7 @@
         border-radius: 5px 5px 0 0;
     }
     
-    #bbdd_sc_area .mega_list>.mega_box:hover .mega_box_sub,
-    #bbdd_sc_area .mega_list>.mega_box:hover .mega_box_sub .mega_list_wrap {
+    #bbdd_sc_area .mega_list>.mega_box:hover .mega_box_sub {
         /* background-size: 125% 125%; */
         transform: scale(1.02);
         transition: 0.5s;
