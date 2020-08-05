@@ -262,6 +262,7 @@
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     text-align: center;
+    transition: 0.3s;
 }
 #bbdd_nav_area .nav_contain .nav_top .close>a:hover {
     background-color: rgba(255, 255, 255, 0.5);
