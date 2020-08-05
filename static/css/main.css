@@ -922,6 +922,10 @@
         /* color: rgba(255, 255, 255, 0.8); */
     }
     
+    #bbdd_sc_area .mega_title h2 a:hover {
+        font-size: 4.2rem;
+    }
+    
     #bbdd_sc_area .mega_title .zin_title {
         font-size: 2rem;
         line-height: 3rem;
