@@ -742,7 +742,8 @@
     #bbdd_sc_area .sc_list_contain>.category .cat:hover .cat_img,
     #bbdd_sc_area .view_wrap .category .cat:hover .cat_img {
         filter: grayscale(0%);
-        background-size: 110%;
+        background-size: 125%;
+        transition: 0.5s;
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat .cat_title,
@@ -990,7 +991,8 @@
     }
     
     #bbdd_sc_area .mega_list>.mega_box:hover .mega_box_sub {
-        background-size: 110%;
+        background-size: 125%;
+        transition: 0.5s;
     }
     
     #bbdd_sc_area .mega_list>.mega_box .mega_box_sub .mega_list_wrap {
