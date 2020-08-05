@@ -68,6 +68,7 @@
         /* grid-column: span 2; */
         -ms-grid-column-span: 1;
         grid-column: span 1;
+        transition: 0.5s;
     }
     
     #bbdd_sc_area .sc_list_contain>.category:nth-of-type(1),
@@ -1249,6 +1250,7 @@
         text-align: center;
         display: flex;
     }
+    
     #bbdd_sc_area .view_wrap .view_wrap_line .func_btn .share_btn img {
         width: 40px;
         height: 40px;
@@ -1319,14 +1321,14 @@
         top: 3px;
         left: 107px;
     }
-
+    
     @keyframes expand {
         from {
-          transform: scale(0);
-          opacity: 0;
-          background: black;
+            transform: scale(0);
+            opacity: 0;
+            background: black;
         }
-      }
+    }
     /****zin list****/
     
     #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content .magazin_title {
