@@ -919,8 +919,11 @@
         font-size: 4rem;
         line-height: 5rem;
         font-weight: 900;
-        transition: 0.3s;
         /* color: rgba(255, 255, 255, 0.8); */
+    }
+    
+    #bbdd_sc_area .mega_title h2 a {
+        transition: 0.3s;
     }
     
     #bbdd_sc_area .mega_title h2 a:hover {
