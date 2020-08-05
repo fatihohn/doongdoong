@@ -742,6 +742,7 @@
     #bbdd_sc_area .sc_list_contain>.category .cat:hover .cat_img,
     #bbdd_sc_area .view_wrap .category .cat:hover .cat_img {
         filter: grayscale(0%);
+        background-size: 110%;
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat .cat_title,
@@ -985,6 +986,11 @@
         background-repeat: no-repeat;
         background-position: center;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.5s;
+    }
+    
+    #bbdd_sc_area .mega_list>.mega_box:hover .mega_box_sub {
+        background-size: 110%;
     }
     
     #bbdd_sc_area .mega_list>.mega_box .mega_box_sub .mega_list_wrap {
