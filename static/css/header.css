@@ -89,6 +89,7 @@
     padding: 4px;
     border-radius: 12.5px;
     background-color: rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
 }
 #bbdd_hd_area .hd_contain .hd_menu>a>img:hover {
     background-color: rgba(255, 255, 255, 0.5);
