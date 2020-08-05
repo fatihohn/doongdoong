@@ -277,7 +277,8 @@ var aAdditionalFontSet = [["경기천년바탕", "경기천년바탕"], ["경기
      sSkinURI: "SmartEditor2Skin_noti.html",
      htParams: {
         SE2M_FontName: {
-			htMainFont: {'id': '경기천년바탕','name': '경기천년바탕','size': '1.05rem','url': '','cssUrl': ''} // 기본 글꼴 설정
+            // htMainFont: {'id': '경기천년바탕','name': '경기천년바탕','size': '1.05rem','url': '','cssUrl': ''} // 기본 글꼴 설정
+			htMainFont: {'id': '경기천년바탕','name': '경기천년바탕','size': '12','url': '','cssUrl': ''} // 기본 글꼴 설정
 		},
      },
      fCreator: "createSEditor2"
