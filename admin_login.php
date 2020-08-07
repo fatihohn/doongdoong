@@ -42,11 +42,12 @@
                 <p>ID: <input class="ad_loginInput" name="username" type="text" required></p>
                 <p>PW: <input class="ad_loginInput" name="password" type="password" required></p>
                 <!-- <input class="ad_loginBtn" type="submit" value="로그인"> -->
-                <button class="ad_loginBtn">
-                    <input type="submit" value="로그인">
+                <button class="ad_loginBtn" type="submit" value="로그인">
+                    <!-- <input type="submit" value="로그인"> -->
+                    로그인
                 </button>
                 <button id="join" class="ad_loginBtn" onclick="location.href='./admin_create_user.php'">회원가입</button>
-                
+
         </form>
         <br />
  
