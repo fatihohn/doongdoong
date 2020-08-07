@@ -43,6 +43,7 @@ footer {
     background: rgba(0, 0, 0, 0);
     border: 0px;
     border-bottom: 1px solid grey;
+    border-radius: 0px;
 }
 
 .ad_loginBtn {
