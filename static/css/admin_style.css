@@ -48,13 +48,13 @@ footer {
 .ad_loginBtn {
     background: rgba(255, 255, 255, 0.7);
     border-radius: 5px;
-    padding: 5px;
+    padding: 7px;
     border: 0px;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     width: 80px;
     height: 30px;
-    margin: 10px 0 0 10px;
+    margin: 10px 0 10px 0;
     transition: 0.3s;
     font-weight: 900;
     font-size: 0.9rem;
