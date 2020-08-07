@@ -44,9 +44,15 @@
                 <!-- <input class="ad_loginBtn" type="submit" value="로그인"> -->
                 <button class="ad_loginBtn" type="submit" value="로그인">
                     <!-- <input type="submit" value="로그인"> -->
-                    로그인
+                    <p class="gg-batang">
+                        로그인
+                    </p>
                 </button>
-                <button id="join" class="ad_loginBtn" onclick="location.href='./admin_create_user.php'">회원가입</button>
+                <button id="join" class="ad_loginBtn" onclick="location.href='./admin_create_user.php'">
+                    <p class="gg-batang">
+                        회원가입
+                    </p>
+                </button>
 
         </form>
         <br />
