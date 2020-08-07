@@ -54,6 +54,11 @@ footer {
     width: 80px;
     height: 30px;
     margin: 10px 0 0 10px;
+    transition: 0.3s;
+}
+
+.ad_loginBtn:hover {
+    transform: scale(1.02);
 }
 
 .ad_logIn img,
