@@ -455,6 +455,11 @@ article {
 }
 
 @media all and (max-width: 481px) {
+    .adLogInProcess {
+        text-align: center;
+        position: relative;
+        top: -100px;
+    }
     #bbdd_hd_area .hd_contain .hd_ad_logIn {
         left: 85px;
     }
