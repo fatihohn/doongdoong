@@ -35,16 +35,16 @@
             <br>
             
             <div align='center'>
-        <span>로그인</span>
+        <!-- <span>로그인</span> -->
  
-        <form method='post' action='admin_login_action.php'>
+        <form class='ad_loginForm' method='post' action='admin_login_action.php'>
         <!-- <form method='get' action='login_action.php'> -->
-                <p>ID: <input name="username" type="text" required></p>
-                <p>PW: <input name="password" type="password" required></p>
-                <input type="submit" value="로그인">
+                <p>ID: <input class="ad_loginInput" name="username" type="text" required></p>
+                <p>PW: <input class="ad_loginInput" name="password" type="password" required></p>
+                <input class="ad_loginBtn" type="submit" value="로그인">
+                <button id="join" class="ad_loginBtn" onclick="location.href='./admin_create_user.php'">회원가입</button>
         </form>
         <br />
-        <button id="join" onclick="location.href='./admin_create_user.php'">회원가입</button>
  
         </div>
         </div>
