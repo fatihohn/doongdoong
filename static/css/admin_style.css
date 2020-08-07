@@ -36,6 +36,7 @@ footer {
     padding: 20px;
     line-height: 2rem;
     border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .ad_loginInput {
@@ -57,6 +58,7 @@ footer {
     transition: 0.3s;
     font-weight: 900;
     font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.7);
 }
 
 .ad_loginBtn:hover {
