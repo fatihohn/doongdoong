@@ -46,6 +46,7 @@
                     <input type="submit" value="로그인">
                 </button>
                 <button id="join" class="ad_loginBtn" onclick="location.href='./admin_create_user.php'">회원가입</button>
+                
         </form>
         <br />
  
