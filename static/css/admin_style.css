@@ -50,6 +50,7 @@ footer {
     padding: 5px;
     border: 0px;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .ad_logIn img,
