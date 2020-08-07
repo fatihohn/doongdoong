@@ -29,6 +29,33 @@ footer {
     text-align: center;
 }
 
+.ad_loginForm {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: grey;
+    width: 300px;
+    padding: 20px;
+    line-height: 2rem;
+    border-radius: 10px;
+}
+
+.ad_loginInput {
+    background: rgba(0, 0, 0, 0);
+    border: 0px;
+    border-bottom: 1px solid grey;
+}
+
+.ad_loginBtn {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    padding: 5px;
+    border: 0px;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    width: 80px;
+    height: 30px;
+    margin: 10px 0 0 10px;
+}
+
 .ad_logIn img,
 .ad_logInLogo img {
     width: 300px;

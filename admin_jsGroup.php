@@ -148,3 +148,22 @@
     }
 }
 </script>
+
+<!-- <script>
+    let editorImg = document.querySelectorAll(".se2_inputarea img");
+
+    
+
+    let eimg;
+    for(eimg = 0; eimg < editorImg.length; eimg++) {
+        function imgSizeChange(clickedImg) {
+            let imgSizer = document.createElement("div");
+
+            editorImg[eimg].appendChild()
+        }
+        editorImg[eimg].addEventListener("click", function() {
+            imgSizeChange(this);
+        });
+    }
+
+</script> -->
