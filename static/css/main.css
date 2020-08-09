@@ -1503,6 +1503,9 @@
             /* letter-spacing: 1px; */
             letter-spacing: 0px;
         }
+        #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content img {
+            width: 100% !important;
+        }
         #bbdd_sc_area .view_wrap .view_wrap_line .view_btn_past,
         #bbdd_sc_area .view_wrap .view_wrap_line .view_btn_next,
         #bbdd_sc_area .view_wrap .view_wrap_line .view_btn_list {
