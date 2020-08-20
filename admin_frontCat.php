@@ -122,7 +122,18 @@ $zinTitle = $rowZinNow['title'];
                     $created_dateTime = $rowCont['created'];
                     $created_date = explode(" ", $created_dateTime)[0];
                     echo "
-                    <li class='cont_li'>
+                    <li class='cont_li";
+                    //new indicator//
+                    // $latestCatNowCont = $rowCatNowCont['created'];
+                    $twoWeeksAgo = date("Y-m-d h:i:s", strtotime('-2 week'));
+                    // echo $latestCatNowCont." ";
+                    // echo $twoWeeksAgo." ";
+
+                    if($created_dateTime > $twoWeeksAgo) {
+                        echo "new";
+                    }
+                    //new indicator end//
+                    echo "'>
                     <a class = 'frontCont' id = '";
                     echo $rowCont['id'];
                     echo "' name = '";
