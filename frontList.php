@@ -258,7 +258,7 @@ if ($resultCatNow->num_rows > 0) {
                                 <div class="cat_title ';
         //new indicator//
         $rowCatNowCont = $resultCatNowCont->fetch_assoc()
-        $latestCatNowCont = $rowCatNowCont[0]['created'];
+        $latestCatNowCont = $rowCatNowCont['created'];
         $twoWeeksAgo = date("Y-m-d h:i:s", strtotime('-2 week'));
         echo $latestCatNowCont." ";
         echo $twoWeeksAgo." ";
