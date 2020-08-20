@@ -78,7 +78,7 @@ if ($resultCatPast->num_rows >= 1) {
 
         // $rowCatPastCont = ${"rowCatPast".$rowCatPast['category']};
         $rowCatPastCont = $resultCatPastCont->fetch_assoc();
-        $latestCatPastCont = $rowCapPastCont['created'];
+        $latestCatPastCont = $rowCatPastCont['created'];
         
         $catTitlePast = $rowCatPast['category'];
         $sqlContPast = "SELECT * FROM contents WHERE zin!=? AND category=? AND display='on'";
