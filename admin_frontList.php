@@ -305,7 +305,8 @@ if ($resultCatOk->num_rows > 0) {
         $resultCatOkCont = ${"resultContOk".$rowCatOk['category']};
         $rowCatOkCat = $rowCatOk['category'];
 
-        $sqlRowCatOkCont = "SELECT * FROM contents WHERE display = 'on' OR display = 'ok' AND category = ? ORDER BY sess*1 DESC LIMIT 3";
+        // $sqlRowCatOkCont = "SELECT * FROM contents WHERE display = 'on' OR display = 'ok' AND category = ? ORDER BY sess*1 DESC LIMIT 3";
+        $sqlRowCatOkCont = "SELECT * FROM contents WHERE display = 'on' OR display = 'ok' AND category = ? ORDER BY sess*1 DESC LIMIT 1";
         
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sqlRowCatOkCont)) {
@@ -315,7 +316,9 @@ if ($resultCatOk->num_rows > 0) {
                 $resultCatOkCont = mysqli_stmt_get_result($stmt);
         }
 
-        $rowCatOkCont = ${"rowCatOk".$rowCatOk['category']};
+        // $rowCatOkCont = ${"rowCatOk".$rowCatOk['category']};
+        $rowCatOkCont = $resultCatOkCont->fetch_assoc();
+        // $latestCatOkCont = $rowCatOkCont['created'];
         
         $catTitleOk = $rowCatOk['category'];
         
@@ -344,7 +347,18 @@ if ($resultCatOk->num_rows > 0) {
         
         echo '   
                                 <div class="mega_list_wrap">
-                                    <div class="mega_list_title">
+                                    <div class="mega_list_title ';
+                                    //new indicator//
+                                    $latestCatOkCont = $rowCatOkCont['created'];
+                                    $twoWeeksAgo = date("Y-m-d h:i:s", strtotime('-2 week'));
+                                    // echo $latestCatOkCont." ";
+                                    // echo $twoWeeksAgo." ";
+
+                                    if($latestCatOkCont > $twoWeeksAgo) {
+                                        echo "new";
+                                    }
+                                    //new indicator end//
+        echo '">
                                         <h2 class="gg-bold">';
         echo                                $rowCatOk['category'];
         echo '                          </h2>
