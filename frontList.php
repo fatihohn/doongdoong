@@ -116,10 +116,10 @@ if ($resultCatPast->num_rows >= 1) {
         echo $latestCatPastCont." ";
         echo $twoWeeksAgo." ";
         
-        $catPastContCreated =  $latestCatPastCont." ";
-        $catPastContInterval = date_diff($catPastContCreated, $twoWeeksAgo);
-        echo $catPastContInterval->format('%R%a days');
-        echo " ";
+        // $catPastContCreated =  $latestCatPastCont." ";
+        // $catPastContInterval = date_diff($catPastContCreated, $twoWeeksAgo);
+        // echo $catPastContInterval->format('%R%a days');
+        // echo " ";
 
         if($latestCatPastCont > $twoWeeksAgo) {
             echo "new";
