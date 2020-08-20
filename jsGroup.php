@@ -254,7 +254,13 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
         }
     }
 
-
+    var newIndicator = document.querySelectorAll(".new");
+    if(newIndicator) {
+        var nic;
+        for(nic=0; nic < newIndicator.length; nic++) {
+            newIndicator[nic].style.backgroundColor = pointColor;
+        }
+    }
 
     var megaTitleAll = document.querySelectorAll(".mega_title");
     if(megaTitleAll) {
