@@ -836,21 +836,19 @@
     }
     #bbdd_sc_area .sc_list_contain>.category .cat_list .cat_li.new:after,
     #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .cont_li.new:after {
-        /* content: ''; */
-        content: 'new';
-        /* width: 5px;
+        content: '';
+        /* content: 'new'; */
+        width: 5px;
         height: 5px;
-        border-radius: 5rem; */
-        font-size: 0.8rem;
-        border-radius: 4px;
-        padding: 2px;
-
+        border-radius: 5rem;
+        /* font-size: 0.8rem; */
+        /* border-radius: 4px; */
+        /* padding: 2px; */
         display: inline-block;
         float: right;
-        margin-top: 3px;
+        /* margin-top: 3px; */
+        margin-top: 9px;
         margin-right: 7px;
-        position: absolute;
-        right: 0;
         /* background-color: rgb(6, 102, 152); */
         /* background-color: rgb(50, 50, 50); */
         background-color: rgb(250, 70, 0);
