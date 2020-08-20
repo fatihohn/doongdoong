@@ -59,11 +59,13 @@ if ($resultCatPast->num_rows >= 1) {
     <ul class = 'mega_list'>
     ";
     while($rowCatPast = $resultCatPast->fetch_assoc()) {
+        // echo "{$rowCatPast['category']}";
         $sqlRowCatPastCont = ${"sqlContPast".$rowCatPast['category']};
         $resultCatPastCont = ${"resultContPast".$rowCatPast['category']};
         $rowCatPastCat = $rowCatPast['category'];
-        // $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = ? ORDER BY sess*1 DESC LIMIT 3";
-        $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = ? ORDER BY sess*1 DESC LIMIT 1";
+        // $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = '{$rowCatPast['category']}' ORDER BY sess*1 DESC LIMIT 3";
+        // $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = '$rowCatPastCat' ORDER BY sess*1 DESC LIMIT 3";
+        $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = ? ORDER BY sess*1 DESC LIMIT 3";
 
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sqlRowCatPastCont)) {
@@ -76,9 +78,7 @@ if ($resultCatPast->num_rows >= 1) {
 
 
 
-        // $rowCatPastCont = ${"rowCatPast".$rowCatPast['category']};
-        $rowCatPastCont = $resultCatPastCont->fetch_assoc();
-        $latestCatPastCont = $rowCapPastCont['created'];
+        $rowCatPastCont = ${"rowCatPast".$rowCatPast['category']};
         
         $catTitlePast = $rowCatPast['category'];
         $sqlContPast = "SELECT * FROM contents WHERE zin!=? AND category=? AND display='on'";
@@ -95,7 +95,7 @@ if ($resultCatPast->num_rows >= 1) {
         
        
         if ($resultContPast->num_rows > 0) {
-            $rowContPast = $resultContPast->fetch_assoc();
+
 
         echo "
         <li class='mega_box standing_cat'>
@@ -109,15 +109,7 @@ if ($resultCatPast->num_rows >= 1) {
         echo '   
         <div class="mega_list_wrap">
         
-        <div class="mega_list_title';
-
-        //new indicator//
-        if(strtotime($latestCatPastCont) > date("Y-m-d h:i:sa", strtotime('-2 week'))) {
-            echo "new";
-        }
-        //new indicator end//
-
-        echo '">
+        <div class="mega_list_title">
                         <h2 class="gg-bold">';
         echo $rowCatPast['category'];
         echo '</h2>

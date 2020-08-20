@@ -817,10 +817,15 @@
     #bbdd_sc_area .sc_list_contain>.category .cat_title.new:before,
     /* #bbdd_sc_area .sc_list_contain>.category .cat_list .cat_li.new:after, */
     #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .cat_li.new:after {
-        content: '';
-        width: 5px;
+        /* content: ''; */
+        content: 'new';
+        /* width: 5px;
         height: 5px;
-        border-radius: 5rem;
+        border-radius: 5rem; */
+        font-size: 0.8rem;
+        border-radius: 4px;
+        padding: 2px;
+        
         display: inline-block;
         float: right;
         margin-top: 9px;
