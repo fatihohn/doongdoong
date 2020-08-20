@@ -113,8 +113,8 @@ if ($resultCatPast->num_rows >= 1) {
 
         //new indicator//
         $twoWeeksAgo = date("Y-m-d h:i:s", strtotime('-2 week'));
-        echo $latestCatPastCont." ";
-        echo $twoWeeksAgo." ";
+        // echo $latestCatPastCont." ";
+        // echo $twoWeeksAgo." ";
 
         if($latestCatPastCont > $twoWeeksAgo) {
             echo "new";
@@ -292,8 +292,8 @@ if ($resultCatNow->num_rows > 0) {
                 //new indicator//
                 $latestCatNowCont = $rowCatNowCont['created'];
                 $twoWeeksAgo = date("Y-m-d h:i:s", strtotime('-2 week'));
-                echo $latestCatNowCont." ";
-                echo $twoWeeksAgo." ";
+                // echo $latestCatNowCont." ";
+                // echo $twoWeeksAgo." ";
 
                 if($latestCatNowCont > $twoWeeksAgo) {
                     echo "new";

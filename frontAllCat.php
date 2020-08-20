@@ -106,8 +106,8 @@ $zinTitle = $rowZinNow['title'];
                     <li class='cont_li ";
                     //new indicator//
                     $twoWeeksAgo = date("Y-m-d h:i:s", strtotime('-2 week'));
-                    echo $created_dateTime." ";
-                    echo $twoWeeksAgo." ";
+                    // echo $created_dateTime." ";
+                    // echo $twoWeeksAgo." ";
 
                     if($created_dateTime > $twoWeeksAgo) {
                         echo "new";

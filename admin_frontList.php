@@ -54,7 +54,8 @@ if ($resultCatPast->num_rows >= 1) {
         $resultCatPastCont = ${"resultContPast".$rowCatPast['category']};
         $rowCatPastCat = $rowCatPast['category'];
 
-        $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = ? ORDER BY sess*1 DESC LIMIT 3";
+        // $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = ? ORDER BY sess*1 DESC LIMIT 3";
+        $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = ? ORDER BY sess*1 DESC LIMIT 1";
         
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sqlRowCatPastCont)) {
@@ -65,7 +66,9 @@ if ($resultCatPast->num_rows >= 1) {
         }
 
 
-         $rowCatPastCont = ${"rowCatPast".$rowCatPast['category']};
+        //  $rowCatPastCont = ${"rowCatPast".$rowCatPast['category']};
+        $rowCatPastCont = $resultCatPastCont->fetch_assoc();
+        $latestCatPastCont = $rowCatPastCont['created'];
         
         $catTitlePast = $rowCatPast['category'];
         $sqlContPast = "SELECT * FROM contents WHERE zin!=? AND category=? AND display='on'";
@@ -95,7 +98,17 @@ if ($resultCatPast->num_rows >= 1) {
         
         echo '   
                                     <div class="mega_list_wrap">
-                                        <div class="mega_list_title">
+                                        <div class="mega_list_title ';
+                                        //new indicator//
+                                        $twoWeeksAgo = date("Y-m-d h:i:s", strtotime('-2 week'));
+                                        // echo $latestCatPastCont." ";
+                                        // echo $twoWeeksAgo." ";
+
+                                        if($latestCatPastCont > $twoWeeksAgo) {
+                                            echo "new";
+                                        }
+                                        //new indicator end//
+        echo                        '">
                                             <h2 class="gg-bold">';
         echo                                    $rowCatPast['category'];
         echo '                              </h2>
@@ -210,7 +223,18 @@ if ($resultCatNow->num_rows > 0) {
 
             while($rowCatNowCont = $resultCatNowCont->fetch_assoc()) {
                 echo "
-                            <li class='cat_li'>
+                            <li class='cat_li";
+                            //new indicator//
+                            $latestCatNowCont = $rowCatNowCont['created'];
+                            $twoWeeksAgo = date("Y-m-d h:i:s", strtotime('-2 week'));
+                            // echo $latestCatNowCont." ";
+                            // echo $twoWeeksAgo." ";
+
+                            if($latestCatNowCont > $twoWeeksAgo) {
+                                echo "new";
+                            }
+                            //new indicator end//
+                echo "'>
                                 <a  id = '{$rowCatNowCont['id']}' class = 'cont frontCont' name = '$catId' onclick = 'adminAllContShow(this.id, this.name)'>
                                     <div class='li_number'>
                                         <p>";
