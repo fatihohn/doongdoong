@@ -306,7 +306,8 @@ if ($resultCatOk->num_rows > 0) {
         $rowCatOkCat = $rowCatOk['category'];
 
         // $sqlRowCatOkCont = "SELECT * FROM contents WHERE display = 'on' OR display = 'ok' AND category = ? ORDER BY sess*1 DESC LIMIT 3";
-        $sqlRowCatOkCont = "SELECT * FROM contents WHERE display = 'on' OR display = 'ok' AND category = ? ORDER BY sess*1 DESC LIMIT 1";
+        // $sqlRowCatOkCont = "SELECT * FROM contents WHERE display = 'on' OR display = 'ok' AND category = ? ORDER BY sess*1 DESC LIMIT 1";
+        $sqlRowCatOkCont = "SELECT * FROM contents WHERE display != 'off' AND category = ? ORDER BY sess*1 DESC LIMIT 1";
         
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sqlRowCatOkCont)) {
