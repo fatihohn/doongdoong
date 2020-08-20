@@ -113,9 +113,9 @@ if ($resultCatPast->num_rows >= 1) {
 
         //new indicator//
         $twoWeeksAgo = date("Y-m-d h:i:sa", strtotime('-2 week'));
+        echo $latestCatPastCont."<br>";
+        echo $twoWeeksAgo."<br>";
         if(strtotime($latestCatPastCont) > $twoWeeksAgo) {
-            echo $latestCatPastCont."<br>";
-            echo $twoWeeksAgo."<br>";
             echo "new";
         }
         //new indicator end//
