@@ -31,16 +31,16 @@ $nav_color = $rowStandingZin['nav_color'];
 
 
 
-//****과월호****//
-//과월호 SQL
+//****상설매거진****//
+//상설매거진 SQL
         
-//과월호 연재물(category) 목록
+//상설매거진 연재물(category) 목록
 // $sqlCatPast = "SELECT * FROM thumbs WHERE  display = 'on' ORDER BY id DESC";
 $sqlCatPast = "SELECT * FROM thumbs WHERE  display = 'on' ORDER BY created DESC";
 $resultCatPast = $conn->query($sqlCatPast) or die($conn->error);
 
 
-//과월호 연재물별 게시물 리스트
+//상설매거진 연재물별 게시물 리스트
 if ($resultCatPast->num_rows >= 1) {
     
 
