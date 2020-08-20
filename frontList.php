@@ -257,15 +257,15 @@ if ($resultCatNow->num_rows > 0) {
         echo '
                                 <div class="cat_title ';
         //new indicator//
-        $rowCatNowCont = $resultCatNowCont->fetch_assoc()
-        $latestCatNowCont = $rowCatNowCont['created'];
-        $twoWeeksAgo = date("Y-m-d h:i:s", strtotime('-2 week'));
-        echo $latestCatNowCont." ";
-        echo $twoWeeksAgo." ";
+        // $rowCatNowCont = $resultCatNowCont->fetch_assoc()
+        // $latestCatNowCont = $rowCatNowCont['created'];
+        // $twoWeeksAgo = date("Y-m-d h:i:s", strtotime('-2 week'));
+        // echo $latestCatNowCont." ";
+        // echo $twoWeeksAgo." ";
 
-        if($latestCatNowCont > $twoWeeksAgo) {
-            echo "new";
-        }
+        // if($latestCatNowCont > $twoWeeksAgo) {
+        //     echo "new";
+        // }
         //new indicator end//
 
 
