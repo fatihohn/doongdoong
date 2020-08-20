@@ -223,7 +223,7 @@ if ($resultCatNow->num_rows > 0) {
 
             while($rowCatNowCont = $resultCatNowCont->fetch_assoc()) {
                 echo "
-                            <li class='cat_li";
+                            <li class='cat_li ";
                             //new indicator//
                             $latestCatNowCont = $rowCatNowCont['created'];
                             $twoWeeksAgo = date("Y-m-d h:i:s", strtotime('-2 week'));
