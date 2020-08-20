@@ -254,11 +254,18 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
         }
     }
 
-    var newIndicator = document.querySelectorAll(".new");
-    if(newIndicator) {
-        var nic;
-        for(nic=0; nic < newIndicator.length; nic++) {
-            newIndicator[nic].style.backgroundColor = pointColor;
+    var newIndicatorBefore = document.querySelectorAll(".new:before");
+    if(newIndicatorBefore) {
+        var nib;
+        for(nib=0; nib < newIndicatorBefore.length; nib++) {
+            newIndicatorBefore[nib].style.backgroundColor = pointColor;
+        }
+    }
+    var newIndicatorAfter = document.querySelectorAll(".new:after");
+    if(newIndicatorAfter) {
+        var nia;
+        for(nia=0; nia < newIndicatorAfter.length; nia++) {
+            newIndicatorAfter[nia].style.backgroundColor = pointColor;
         }
     }
 
