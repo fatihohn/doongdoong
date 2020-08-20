@@ -829,6 +829,7 @@
         right: 0;
         /* background-color: rgb(6, 102, 152); */
         /* background-color: rgb(50, 50, 50); */
+        background-color: rgb(250, 70, 0);
     }
     
     #bbdd_sc_area .sc_list_contain>.category .cat_list .cat_li:last-of-type,
