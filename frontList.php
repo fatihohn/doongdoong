@@ -109,12 +109,12 @@ if ($resultCatPast->num_rows >= 1) {
         echo '   
         <div class="mega_list_wrap">
         
-        <div class="mega_list_title';
+        <div class="mega_list_title ';
 
         //new indicator//
         $twoWeeksAgo = date("Y-m-d h:i:sa", strtotime('-2 week'));
-        echo $latestCatPastCont."<br>";
-        echo $twoWeeksAgo."<br>";
+        echo $latestCatPastCont." ";
+        echo $twoWeeksAgo." ";
         if(strtotime($latestCatPastCont) > $twoWeeksAgo) {
             echo "new";
         }
