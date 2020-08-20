@@ -115,6 +115,12 @@ if ($resultCatPast->num_rows >= 1) {
         $twoWeeksAgo = date("Y-m-d h:i:s", strtotime('-2 week'));
         echo $latestCatPastCont." ";
         echo $twoWeeksAgo." ";
+        
+        $catPastContCreated =  $latestCatPastCont." ";
+        $catPastContInterval = date_diff($catPastContCreated, $twoWeeksAgo);
+        echo $catPastContInterval->format('%R%a days');
+        echo " ";
+
         if($latestCatPastCont > $twoWeeksAgo) {
             echo "new";
         }
