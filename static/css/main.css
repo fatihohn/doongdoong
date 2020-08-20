@@ -835,7 +835,7 @@
         background-color: rgb(250, 70, 0);
     }
     #bbdd_sc_area .sc_list_contain>.category .cat_list .cat_li.new:after,
-    #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .cat_li.new:after {
+    #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .cont_li.new:after {
         /* content: ''; */
         content: 'new';
         /* width: 5px;
