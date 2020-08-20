@@ -254,7 +254,7 @@ function frontListColor(bgColor, titleColor, pointColor, navColor) {
         }
     }
 
-    var newIndicatorBefore = document.querySelectorAll(".new:before");
+    var newIndicatorBefore = document.querySelectorAll(".new::before");
     if(newIndicatorBefore) {
         var nib;
         for(nib=0; nib < newIndicatorBefore.length; nib++) {
