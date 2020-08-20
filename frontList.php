@@ -255,7 +255,21 @@ if ($resultCatNow->num_rows > 0) {
         echo '");';
         echo "'>";
         echo '
-                                <div class="cat_title">
+                                <div class="cat_title ';
+        //new indicator//
+        $rowCatNowCont = $resultCatNowCont->fetch_assoc()
+        $latestCatNowCont = $rowCatNowCont[0]['created'];
+        $twoWeeksAgo = date("Y-m-d h:i:s", strtotime('-2 week'));
+        echo $latestCatNowCont." ";
+        echo $twoWeeksAgo." ";
+
+        if($latestCatNowCont > $twoWeeksAgo) {
+            echo "new";
+        }
+        //new indicator end//
+
+
+        echo                    '">
                                     <h2 class="gg-bold">';
         echo                            $rowCatNow['category'];
         echo '                      </h2>
