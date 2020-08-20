@@ -115,11 +115,6 @@ if ($resultCatPast->num_rows >= 1) {
         $twoWeeksAgo = date("Y-m-d h:i:s", strtotime('-2 week'));
         echo $latestCatPastCont." ";
         echo $twoWeeksAgo." ";
-        
-        // $catPastContCreated =  $latestCatPastCont." ";
-        // $catPastContInterval = date_diff($catPastContCreated, $twoWeeksAgo);
-        // echo $catPastContInterval->format('%R%a days');
-        // echo " ";
 
         if($latestCatPastCont > $twoWeeksAgo) {
             echo "new";
@@ -279,7 +274,20 @@ if ($resultCatNow->num_rows > 0) {
         // if($resultCatNowCont->num_rows > 0) {
             while($rowCatNowCont = $resultCatNowCont->fetch_assoc()) {
                 echo "
-                            <li class='cat_li'>
+                            <li class='cat_li";
+                //new indicator//
+                $latestCatNowCont = $rowCatNowCont['created'];
+                $twoWeeksAgo = date("Y-m-d h:i:s", strtotime('-2 week'));
+                echo $latestCatNowCont." ";
+                echo $twoWeeksAgo." ";
+
+                if($latestCatNowCont > $twoWeeksAgo) {
+                    echo "new";
+                }
+                //new indicator end//
+
+
+                echo "'>
                                 <a  id = '{$rowCatNowCont['id']}' class = 'cont frontCont' name = '$catId' onclick = 'frontContShow(this.id, this.name)'>
                                      <div class='li_number'>
                                         <p>";
