@@ -949,6 +949,7 @@
         font-size: 4rem;
         line-height: 5rem;
         font-weight: 900;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         /* color: rgba(255, 255, 255, 0.8); */
     }
     
