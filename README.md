@@ -1,10 +1,8 @@
 # 변방의북소리 웹진 '둥둥' - Doong-Doong
-FarAwayBookSound Webzine Doong-Doong
-## 웹진 '둥둥'
-### 공지사항 & 변방의북소리 '둥둥' 소개
-### 매거진
-### 연재물
-### 게시물
+![Doong-Doong](https://raw.githubusercontent.com/fatihohn/doongdoong/master/static/img/doongdoong_web.png)
+[변방의북소리 웹진 Doong-Doong](https://doongdoong.org)
+## 웹진 '둥둥' Storyboard
+![storyboard](https://raw.githubusercontent.com/fatihohn/doongdoong/master/static/img/storyboard_fullsize.jpg)
 
 ## 변방의북소리 - 둥둥 에디터
 둥둥 에디터는 변방의북소리 웹진 '둥둥'의 콘텐츠 매니지먼트 시스템(CMS)입니다.
@@ -30,7 +28,7 @@ FarAwayBookSound Webzine Doong-Doong
 - 스마트에디터 2.0
 - 연재물 별 회차 관리
 - 에디터 이상 등급 외부 발행 가능
-#### 공지&소개 관리
+#### 소개 관리
 - 스마트에디터 2.0
 - 에디터 이상 등급 생성 가능
 
