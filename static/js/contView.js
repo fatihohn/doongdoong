@@ -18,6 +18,13 @@
 
         let cia;
         for (cia = 0; cia < contImgs.length; cia++) {
+
+            contImgs[cia].title = "";
+
+
+
+
+
             contImgs[cia].parentElement.style.textIndent = "0";
             contImgs[cia].style.maxWidth = "100%";
             contImgs[cia].style.height = "auto";
@@ -294,7 +301,7 @@
                 // let cia;
                 // for(cia=0; cia < contImgAll.length; cia++) {
 
-                if (contImgs[cia].title) {
+                // if (contImgs[cia].title === " ") {
                     if (introTitle) {
 
                     } else {
@@ -308,7 +315,7 @@
 
                         }
                     }
-                }
+                // }
 
 
 
@@ -390,3 +397,6 @@
 
             }
         }
+
+
+    
