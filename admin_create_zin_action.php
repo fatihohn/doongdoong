@@ -69,7 +69,7 @@ $sQuote = "'";
         
                 $sql = "
                     INSERT INTO zin
-                        (author, username, title, img, img_dir, zin_detail, display, publish, column, zin_color, title_color, point_color, nav_color, date, created)
+                        (author, username, title, img, img_dir, zin_detail, display, publish, zin_column, zin_color, title_color, point_color, nav_color, date, created)
                     VALUES(
                         '{$author}',
                         '{$username}',
@@ -91,7 +91,7 @@ $sQuote = "'";
             } else if ($publish == "now") {
                 $sql = "
                 INSERT INTO zin
-                    (author, username, title, img, img_dir, zin_detail, display, publish, column, zin_color, title_color, point_color, nav_color, date, created)
+                    (author, username, title, img, img_dir, zin_detail, display, publish, zin_column, zin_color, title_color, point_color, nav_color, date, created)
                 VALUES(
                     '{$author}',
                     '{$username}',
@@ -108,8 +108,7 @@ $sQuote = "'";
                     '{$nav_color}',
                     '{$date}',
                     NOW()
-                    )
-                    ";
+                    )";
                  
                 $updateSql= 
                     "UPDATE zin SET
@@ -119,7 +118,7 @@ $sQuote = "'";
             } else if ($publish == "standing") {
                 $sql = "
                 INSERT INTO zin
-                    (author, username, title, img, img_dir, zin_detail, display, publish, column, zin_color, title_color, point_color, nav_color, date, created)
+                    (author, username, title, img, img_dir, zin_detail, display, publish, zin_column, zin_color, title_color, point_color, nav_color, date, created)
                 VALUES(
                     '{$author}',
                     '{$username}',
@@ -136,8 +135,7 @@ $sQuote = "'";
                     '{$nav_color}',
                     '{$date}',
                     NOW()
-                    )
-                    ";
+                    )";
                  
                 $updateSql= 
                     "UPDATE zin SET
