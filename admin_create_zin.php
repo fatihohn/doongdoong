@@ -116,7 +116,7 @@
             <p>
                 <div class="createInput">
                 <label class="createGrid1">매거진 발행일</label>
-                <input class="createGrid2" name="date" type="date" required/>
+                <input class="createGrid2" name="date" type="date" value="0000-00-00" required/>
                 </div>
             </p>
             <p>
