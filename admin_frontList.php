@@ -9,11 +9,11 @@ if ($conn->connect_error) {
 
 $sqlZinNow = "SELECT * FROM zin WHERE publish='now' AND display = 'on' ORDER BY id DESC LIMIT 1";
 $stmt = mysqli_stmt_init($conn);
-                if (!mysqli_stmt_prepare($stmt, $sqlZinNow)) {
-                } else {
-                    mysqli_stmt_execute($stmt);
-                    $resultZinNow = mysqli_stmt_get_result($stmt);
-                }
+    if (!mysqli_stmt_prepare($stmt, $sqlZinNow)) {
+    } else {
+        mysqli_stmt_execute($stmt);
+        $resultZinNow = mysqli_stmt_get_result($stmt);
+    }
 $rowZinNow = $resultZinNow->fetch_assoc();
 $zinTitle = $rowZinNow['title'];
 $zinDetail = $rowZinNow['zin_detail'];
@@ -22,7 +22,12 @@ $zinDetail = $rowZinNow['zin_detail'];
 $sqlStandingZin = "SELECT * FROM zin WHERE publish = 'standing'";
 $resultStandingZin = $conn->query($sqlStandingZin) or die($conn->error);
 $rowStandingZin = $resultStandingZin->fetch_assoc();
-$zin_Column = $rowStandingZin['zin_column'];
+$standingZinTitle = $rowStandingZin['title'];
+$zin_column = $rowStandingZin['zin_column'];
+$zin_color = $rowStandingZin['zin_color'];
+$title_color = $rowStandingZin['title_color'];
+$point_color = $rowStandingZin['point_color'];
+$nav_color = $rowStandingZin['nav_color'];
 
 
 //****과월호****//
@@ -43,7 +48,9 @@ if ($resultCatPast->num_rows >= 1) {
                     <div id = 'standing_wrap' class = 'mega_title'>
                         <h2 class = 'gg-batang'>
                             <a href='admin_frontIntro.php'>
-                                둥둥
+                            ";
+            echo               $standingZinTitle;
+            echo           "
                             </a>
                         </h2>
                     </div>
@@ -54,13 +61,15 @@ if ($resultCatPast->num_rows >= 1) {
         $resultCatPastCont = ${"resultContPast".$rowCatPast['category']};
         $rowCatPastCat = $rowCatPast['category'];
 
-        // $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = ? ORDER BY sess*1 DESC LIMIT 3";
-        $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = ? ORDER BY sess*1 DESC LIMIT 1";
+        //기획매거진 이외 전부
+        // $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = ? ORDER BY sess*1 DESC LIMIT 1";
+        //상설매거진만
+        $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = ? AND zin = ? ORDER BY sess*1 DESC LIMIT 1";
         
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sqlRowCatPastCont)) {
         } else {
-                mysqli_stmt_bind_param($stmt, "s", $rowCatPastCat);
+                mysqli_stmt_bind_param($stmt, "ss", $rowCatPastCat, $standingZinTitle);
                 mysqli_stmt_execute($stmt);
                 $resultCatPastCont = mysqli_stmt_get_result($stmt);
         }

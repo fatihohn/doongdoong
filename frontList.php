@@ -62,14 +62,16 @@ if ($resultCatPast->num_rows >= 1) {
         $sqlRowCatPastCont = ${"sqlContPast".$rowCatPast['category']};
         $resultCatPastCont = ${"resultContPast".$rowCatPast['category']};
         $rowCatPastCat = $rowCatPast['category'];
-        // $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = ? ORDER BY sess*1 DESC LIMIT 3";
-        $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = ? ORDER BY sess*1 DESC LIMIT 1";
+        //기획매거진 이외 전부
+        // $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = ? ORDER BY sess*1 DESC LIMIT 1";
+        //상설매거진만
+        $sqlRowCatPastCont = "SELECT * FROM contents WHERE display = 'on' AND category = ? AND zin = ? ORDER BY sess*1 DESC LIMIT 1";
 
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sqlRowCatPastCont)) {
                 // echo "sqlRowCatPastCont error";
         } else {
-                mysqli_stmt_bind_param($stmt, "s", $rowCatPastCat);
+                mysqli_stmt_bind_param($stmt, "ss", $rowCatPastCat, $standingZinTitle);
                 mysqli_stmt_execute($stmt);
                 $resultCatPastCont = mysqli_stmt_get_result($stmt);
         }
