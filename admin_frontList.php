@@ -437,9 +437,9 @@ function frontListForm(NumberOfColumn) {
             }
         }
 
-    frontListForm(<?php echo $zin_Column; ?>);
+    frontListForm(<?php echo $zin_column; ?>);
 window.addEventListener("resize", function() {
-    frontListForm(<?php echo $zin_Column; ?>);
+    frontListForm(<?php echo $zin_column; ?>);
 });
         
 </script>
