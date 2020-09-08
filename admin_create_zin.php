@@ -102,7 +102,7 @@
             <p>
                 <div class="createInput">
                 <label class="createGrid1">매거진 표지</label>
-                <input class="createGrid2" type="file" name="img"   />
+                <input class="createGrid2" type="file" name="img"  required />
                 
             </div>
             </p>
@@ -116,7 +116,7 @@
             <p>
                 <div class="createInput">
                 <label class="createGrid1">매거진 발행일</label>
-                <input class="createGrid2" name="date" type="date" value="2020-01-01" />
+                <input class="createGrid2" name="date" type="date" required/>
                 </div>
             </p>
             <p>
