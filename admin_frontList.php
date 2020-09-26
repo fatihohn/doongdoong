@@ -80,13 +80,15 @@ if ($resultCatPast->num_rows >= 1) {
         $latestCatPastCont = $rowCatPastCont['created'];
         
         $catTitlePast = $rowCatPast['category'];
-        $sqlContPast = "SELECT * FROM contents WHERE zin!=? AND category=? AND display='on'";
+        // $sqlContPast = "SELECT * FROM contents WHERE zin!=? AND category=? AND display='on'";
+        $sqlContPast = "SELECT * FROM contents WHERE zin=? AND category=? AND display='on'";
       
         
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sqlContPast)) {
         } else {
-                mysqli_stmt_bind_param($stmt, "ss", $zinTitle, $catTitlePast);
+                // mysqli_stmt_bind_param($stmt, "ss", $zinTitle, $catTitlePast);
+                mysqli_stmt_bind_param($stmt, "ss", $standingZinTitle, $catTitlePast);
                 mysqli_stmt_execute($stmt);
                 $resultContPast = mysqli_stmt_get_result($stmt);
         }
