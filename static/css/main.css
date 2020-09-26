@@ -824,11 +824,11 @@
         border-radius: 4px;
         padding: 2px;
         display: inline-block;
-        float: right;
+        /* float: right; */
         margin-top: 9px;
         margin-right: 7px;
-        /* position: absolute; */
-        position: fixed;
+        position: absolute;
+        /* position: fixed; */
         right: 0;
         /* background-color: rgb(6, 102, 152); */
         /* background-color: rgb(50, 50, 50); */
