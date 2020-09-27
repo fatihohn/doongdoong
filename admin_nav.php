@@ -13,6 +13,11 @@ $rowZinNow = $resultZinNow->fetch_assoc();
 
 $zinTitle = $rowZinNow['title'];
 
+$sqlStandingZin = "SELECT * FROM zin WHERE publish = 'standing' ORDER BY id DESC LIMIT 1";
+$resultStandingZin = $conn->query($sqlStandingZin) or die($conn->error);
+$rowStandingZin = $resultStandingZin->fetch_assoc();
+$standingZinTitle = $rowStandingZin['title'];
+
 //연재중 연재물(category) 목록
 // $sqlCatNow = "SELECT * FROM thumbs WHERE display = 'on' ORDER BY id DESC";
 $sqlCatNow = "SELECT * FROM thumbs WHERE display = 'on' ORDER BY created DESC";
