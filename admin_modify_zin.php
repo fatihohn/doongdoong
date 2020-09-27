@@ -39,11 +39,11 @@
         $sqlZinNow = "SELECT * FROM zin WHERE publish='now' AND display = 'on' ORDER BY id DESC LIMIT 1";
         $resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
         $rowZinNow = $resultZinNow->fetch_assoc();
-        $zin_column = $rowZinNow['zin_column'];
-        $zin_color = $rowZinNow['zin_color'];
-        $title_color = $rowZinNow['title_color'];
-        $point_color = $rowZinNow['point_color'];
-        $nav_color = $rowZinNow['nav_color'];
+        $standing_zin_column = $rowZinNow['zin_column'];
+        $standing_zin_color = $rowZinNow['zin_color'];
+        $standing_title_color = $rowZinNow['title_color'];
+        $standing_point_color = $rowZinNow['point_color'];
+        $standing_nav_color = $rowZinNow['nav_color'];
 
                 
                 // $id = $_POST['username'];
