@@ -23,11 +23,12 @@ $sqlStandingZin = "SELECT * FROM zin WHERE publish = 'standing' ORDER BY id DESC
 $resultStandingZin = $conn->query($sqlStandingZin) or die($conn->error);
 $rowStandingZin = $resultStandingZin->fetch_assoc();
 $standingZinTitle = $rowStandingZin['title'];
-$zin_column = $rowStandingZin['zin_column'];
+// $zin_column = $rowStandingZin['zin_column'];
 // $zin_color = $rowStandingZin['zin_color'];
 // $title_color = $rowStandingZin['title_color'];
 // $point_color = $rowStandingZin['point_color'];
 // $nav_color = $rowStandingZin['nav_color'];
+$zin_column = $rowZinNow['zin_column'];
 $zin_color = $rowZinNow['zin_color'];
 $title_color = $rowZinNow['title_color'];
 $point_color = $rowZinNow['point_color'];

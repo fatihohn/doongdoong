@@ -10,7 +10,7 @@ if ($conn->connect_error) {
   $sqlStandingZin = "SELECT * FROM zin WHERE publish = 'standing'";
 $resultStandingZin = $conn->query($sqlStandingZin) or die($conn->error);
 $rowStandingZin = $resultStandingZin->fetch_assoc();
-$zin_column = $rowStandingZin['zin_column'];
+// $zin_column = $rowStandingZin['zin_column'];
 // $zin_color = $rowStandingZin['zin_color'];
 // $title_color = $rowStandingZin['title_color'];
 // $point_color = $rowStandingZin['point_color'];
@@ -19,6 +19,7 @@ $zin_column = $rowStandingZin['zin_column'];
 $sqlZinNow = "SELECT * FROM zin WHERE publish='now' AND display = 'on' ORDER BY id DESC LIMIT 1";
 $resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
 $rowZinNow = $resultZinNow->fetch_assoc();
+$zin_column = $rowZinNow['zin_column'];
 $zin_color = $rowZinNow['zin_color'];
 $title_color = $rowZinNow['title_color'];
 $point_color = $rowZinNow['point_color'];
