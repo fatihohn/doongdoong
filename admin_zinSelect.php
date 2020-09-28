@@ -52,9 +52,10 @@ if(!isset($_SESSION['username'])) {
 $result = $conn->query($sql) or die($conn->error);
 
 
+// <th onclick='sortTable(1)'>에디터</th> 
 echo "<tr>
 <th onclick='sortTable(0)'>번호</th>
-<th onclick='sortTable(1)'>에디터</th> 
+<th onclick='sortTable(1)'>표지</th> 
 <th onclick='sortTable(2)'>매거진 제목</th> 
 <th onclick='sortTable(3)'>설명</th>
 <th onclick='sortTable(4)'>공개상태</th>   
@@ -67,10 +68,11 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
                         
+        // <td class='{$row["id"]}'>{$row['author']}</td>
 echo
         "<tr id='{$row["id"]}' >
         <td class='{$row["id"]}'>{$row['id']}</td>    
-        <td class='{$row["id"]}'>{$row['author']}</td>
+        <td class='{$row["id"]}'><img style='max-width:100px; height:auto;' src='{$row['img_dir']}'></td>
 
             <td class='{$row["id"]}'>{$row['title']}</td>
             <td class='{$row["id"]}'>{$row['zin_detail']}</td>

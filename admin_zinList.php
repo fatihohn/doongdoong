@@ -81,7 +81,8 @@ $URL = "./admin_index.php";
                     <button class="view_btn1" onclick="location.href='./admin_create_zin.php'">매거진 만들기</button>
                     <select name="searchSlct" id="searchSlct">
                         <option value="0">번호</option>
-                        <option value="1">에디터</option>
+                        <!-- <option value="1">에디터</option> -->
+                        <option value="1">표지</option>
                         <option value="2">매거진 제목</option>
                         <option value="3">설명</option>
                         <option value="4">공개상태</option>
