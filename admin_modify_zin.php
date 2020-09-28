@@ -124,6 +124,7 @@
                 <div class="createInput">
                 <label class="createGrid1">매거진 표지</label>
                 <input class="createGrid2" type="file" name="img" /><?=$img?>
+                <img style="max-width:400px; height:auto;" src="<?=$img_dir?>">
                 
             </div>
             </p>
