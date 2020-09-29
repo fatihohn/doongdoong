@@ -1551,4 +1551,8 @@
         #bbdd_sc_area .view_wrap .view_wrap_line .view_contList .zin_cover img {
             max-width: 260px;
         }
+        #bbdd_sc_area .view_wrap .view_wrap_line .view_cont_content .magazin_title {
+            font-size: 2rem;
+            line-height: 1em;
+        }
     }
