@@ -29,14 +29,14 @@ $rowStandingZin = $resultStandingZin->fetch_assoc();
 // $point_color = $rowStandingZin['point_color'];
 // $nav_color = $rowStandingZin['nav_color'];
 
-$sqlZinNow = "SELECT * FROM zin WHERE publish='now' AND display = 'on' ORDER BY id DESC LIMIT 1";
-$resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
-$rowZinNow = $resultZinNow->fetch_assoc();
-$zin_column = $rowZinNow['zin_column'];
-$zin_color = $rowZinNow['zin_color'];
-$title_color = $rowZinNow['title_color'];
-$point_color = $rowZinNow['point_color'];
-$nav_color = $rowZinNow['nav_color'];
+// $sqlZinNow = "SELECT * FROM zin WHERE publish='now' AND display = 'on' ORDER BY id DESC LIMIT 1";
+// $resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
+// $rowZinNow = $resultZinNow->fetch_assoc();
+// $zin_column = $rowZinNow['zin_column'];
+// $zin_color = $rowZinNow['zin_color'];
+// $title_color = $rowZinNow['title_color'];
+// $point_color = $rowZinNow['point_color'];
+// $nav_color = $rowZinNow['nav_color'];
 
 $q = intval($_GET['q']);
 $r = intval($_GET['r']);
@@ -67,6 +67,11 @@ $resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
 $rowZinNow = $resultZinNow->fetch_assoc();
 
 $zinTitle = $rowZinNow['title'];
+$zin_column = $rowZinNow['zin_column'];
+$zin_color = $rowZinNow['zin_color'];
+$title_color = $rowZinNow['title_color'];
+$point_color = $rowZinNow['point_color'];
+$nav_color = $rowZinNow['nav_color'];
 
 ?>
 
