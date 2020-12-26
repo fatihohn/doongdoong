@@ -183,7 +183,7 @@
                 <div class="createInput">
                     <label class="createGrid1">연재물: </label><?//=$category?>
                     <!-- <input class="createGrid2"  type="hidden" name="category" value="<?//=$category?>" required /> -->
-                    <select name="zin" id="authZin">
+                    <select name="category" id="authCategory">
                     
                         <option></option>
                         <?php
