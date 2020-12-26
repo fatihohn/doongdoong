@@ -7,9 +7,6 @@
 </head>
 
 <body>
-
-
-
     <div id="bbdd_body">
         <header id="bbdd_hd">
            <?php include "admin_header.php"; ?>
@@ -19,99 +16,98 @@
     <section id="bbdd_sc">
     <div id="bbdd_sc_wrap">
         <div id="bbdd_sc_area">
-            <!-- <div class="sc_contain">
-                <div class="sc_list_area"> -->
-                <div class="view_wrap">
-    <div class="view_wrap_line">
-        <div class="contEditor">
+            <div class="view_wrap">
+                <div class="view_wrap_line">
+                    <div class="contEditor">
 
 <?php    
-           include 'bbdd_db_conn.php';   
+    include 'bbdd_db_conn.php';   
 
-           $sqlStandingZin = "SELECT * FROM zin WHERE publish = 'standing'";
-        $resultStandingZin = $conn->query($sqlStandingZin) or die($conn->error);
-        $rowStandingZin = $resultStandingZin->fetch_assoc();
+    $sqlStandingZin = "SELECT * FROM zin WHERE publish = 'standing'";
+    $resultStandingZin = $conn->query($sqlStandingZin) or die($conn->error);
+    $rowStandingZin = $resultStandingZin->fetch_assoc();
         // $zin_column = $rowStandingZin['zin_column'];
         // $zin_color = $rowStandingZin['zin_color'];
         // $title_color = $rowStandingZin['title_color'];
         // $point_color = $rowStandingZin['point_color'];
         // $nav_color = $rowStandingZin['nav_color'];
 
-        $sqlZinNow = "SELECT * FROM zin WHERE publish='now' AND display = 'on' ORDER BY id DESC LIMIT 1";
-$resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
-$rowZinNow = $resultZinNow->fetch_assoc();
-$zin_column = $rowZinNow['zin_column'];
-$zin_color = $rowZinNow['zin_color'];
-$title_color = $rowZinNow['title_color'];
-$point_color = $rowZinNow['point_color'];
-$nav_color = $rowZinNow['nav_color'];
+    $sqlZinNow = "SELECT * FROM zin WHERE publish='now' AND display = 'on' ORDER BY id DESC LIMIT 1";
+    $resultZinNow = $conn->query($sqlZinNow) or die($conn->error);
+    $rowZinNow = $resultZinNow->fetch_assoc();
+    $zin_column = $rowZinNow['zin_column'];
+    $zin_color = $rowZinNow['zin_color'];
+    $title_color = $rowZinNow['title_color'];
+    $point_color = $rowZinNow['point_color'];
+    $nav_color = $rowZinNow['nav_color'];
 
         
 
-                $authorSql = "SELECT * FROM user_data WHERE `cast` != 'normal'";
-                $resultAuthor = $conn->query($authorSql);
+    $authorSql = "SELECT * FROM user_data WHERE `cast` != 'normal'";
+    $resultAuthor = $conn->query($authorSql);
 
-                $q = intval($_GET['id']);
-                $query = "SELECT * FROM contents WHERE id= $q";
-                $result = $conn->query($query);
-                $rows = mysqli_fetch_assoc($result);
-                $author = $rows['author'];
-                $username = $rows['username'];
-                $category = $rows['category'];
-                $sess = $rows['sess'];
-                $zin = $rows['zin'];
-                $title = $rows['title'];
-                $content = $rows['content'];
-                $display = $rows['display'];
-                $memo = $rows['memo'];
+    $q = intval($_GET['id']);
+    $query = "SELECT * FROM contents WHERE id= $q";
+    $result = $conn->query($query);
+    $rows = mysqli_fetch_assoc($result);
+    $author = $rows['author'];
+    $username = $rows['username'];
+    $category = $rows['category'];
+    $sess = $rows['sess'];
+    $zin = $rows['zin'];
+    $title = $rows['title'];
+    $content = $rows['content'];
+    $display = $rows['display'];
+    $memo = $rows['memo'];
 
-                $adminCast = "admin";
-                $editorCast = "editor";
-                $authorCast = "author";
-
-
-                if($_SESSION['cast']==$adminCast || $_SESSION['cast']==$editorCast){
-                    $authCatSql = "SELECT * FROM thumbs";
-                    $resultAuthCat = $conn->query($authCatSql);    
-                     } else if ($_SESSION['cast']==$authorCast) {
-                     $authCatSql = "SELECT * FROM thumbs WHERE `author` = '$author'";
-                     $resultAuthCat = $conn->query($authCatSql);    
-                     
-                    } else {
-                     ?>              <script>
-                     alert("권한이 없습니다.");
-                     location.replace("<?php echo $URL?>");
-             </script>
-         <?php   }
-
-$zinSql = "SELECT * FROM zin WHERE `display` = 'on' OR `display`='ok'";
-           $resultZin = $conn->query($zinSql);     
+    $adminCast = "admin";
+    $editorCast = "editor";
+    $authorCast = "author";
 
 
+    if($_SESSION['cast']==$adminCast || $_SESSION['cast']==$editorCast){
+        $authCatSql = "SELECT * FROM thumbs";
+        $resultAuthCat = $conn->query($authCatSql);    
+    } else if ($_SESSION['cast']==$authorCast) {
+        $authCatSql = "SELECT * FROM thumbs WHERE `author` = '$author'";
+        $resultAuthCat = $conn->query($authCatSql);    
+    } else {
+        ?>              
+        <script>
+            alert("권한이 없습니다.");
+            location.replace("<?php echo $URL?>");
+        </script>
+        <?php   
+    }
 
-                session_start();
+    $zinSql = "SELECT * FROM zin WHERE `display` = 'on' OR `display`='ok'";
+    $resultZin = $conn->query($zinSql);    
+
+    $categorySql = "SELECT * FROM thumbs WHERE `display` = 'on' OR `display`='ok'";
+    $resultCategory = $conn->query($categorySql);    
+
+    session_start();
  
  
-                $URL = "./admin_contList.php";
+    $URL = "./admin_contList.php";
  
-                if(!isset($_SESSION['username'])) {
-        ?>              <script>
-                                alert("권한이 없습니다.");
-                                location.replace("<?php echo $URL?>");
-                        </script>
-        <?php   }
-                //cast: admin||editor인 경우 || 작가 본인
-                else if($_SESSION['cast']==$adminCast || $_SESSION['cast']==$editorCast || $_SESSION['author']==$author || $_SESSION['username']==$username) {
-                // else if($_SESSION['username']==$username || $_SESSION['cast']==$admin) {
+    if(!isset($_SESSION['username'])) {
+        ?>              
+        <script>
+            alert("권한이 없습니다.");
+            location.replace("<?php echo $URL?>");
+        </script>
+        <?php   
+    } else if($_SESSION['cast']==$adminCast || $_SESSION['cast']==$editorCast || $_SESSION['author']==$author || $_SESSION['username']==$username) {//cast: admin||editor인 경우 || 작가 본인
+    // else if($_SESSION['username']==$username || $_SESSION['cast']==$admin) {
         ?>
         <center>
             <h3>게시물 수정</h3>
         </center>
         <form class="createForm" action="admin_modify_cont_action.php" method="POST" enctype="multipart/form-data">
-        <p >
+            <p >
                 <div class="createInput">
                     <label class="createGrid1">작성자: </label>
-                    
                     <?php
                     if($_SESSION['cast']==$adminCast || $_SESSION['cast']==$editorCast) {
                         // echo "
@@ -159,23 +155,21 @@ $zinSql = "SELECT * FROM zin WHERE `display` = 'on' OR `display`='ok'";
                         echo $author;
                     }
                     ?>
-<script>
-                       //게시물 작가설정
-        function contAuthorSet() {
-        let contAuthor = document.querySelectorAll(".contAuth_slct");
-        let contAuthorVal = "<?=$author?>";
-        let i;
-        for(i=0; i < contAuthor.length; i++) {
-            if(contAuthor[i].value == contAuthorVal) {
-                contAuthor[i].selected = true;
-            }
-        }
-    }
-    contAuthorSet();
+                    <script>
+                                        //게시물 작가설정
+                        function contAuthorSet() {
+                            let contAuthor = document.querySelectorAll(".contAuth_slct");
+                            let contAuthorVal = "<?=$author?>";
+                            let i;
+                            for(i=0; i < contAuthor.length; i++) {
+                                if(contAuthor[i].value == contAuthorVal) {
+                                    contAuthor[i].selected = true;
+                                }
+                            }
+                        }
+                        contAuthorSet();
                     </script>
-                    
                 </div>
-                
             </p>
             <p >
                 <div class="createInput">
@@ -188,7 +182,35 @@ $zinSql = "SELECT * FROM zin WHERE `display` = 'on' OR `display`='ok'";
             <p >
                 <div class="createInput">
                     <label class="createGrid1">연재물: </label><?=$category?>
-                    <input class="createGrid2"  type="hidden" name="category" value="<?=$category?>" required />
+                    <!-- <input class="createGrid2"  type="hidden" name="category" value="<?//=$category?>" required /> -->
+                    <select name="zin" id="authZin">
+                    
+                        <option></option>
+                        <?php
+                            if ($resultCategory->num_rows > 0) {
+                                while($rowCategory = $resultCategory->fetch_assoc()){
+                                    $categoryPublishState = $rowCategory['publish'];
+                                    if($categoryPublishState == 'now') {
+                                        $categoryPublishState = "발행중";
+                                    } else if($categoryPublishState == 'ready') {
+                                        $categoryPublishState = "완결";
+                                    }
+
+                                    echo "<option class='zin_slct' value='";
+                                    echo $rowCategory['category'];
+                                    echo "'>[";
+                                    // echo $rowCategory['publish'];
+                                    echo $categoryPublishState;
+                                    echo "] ";
+                                    echo $rowCategory['category'];
+                                    echo "</option>";
+                                    
+                                }
+                            }
+                        
+                        ?>
+
+                    </select>
                     
                 </div>
                 
