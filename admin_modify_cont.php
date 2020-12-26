@@ -198,7 +198,11 @@
 
                                     echo "<option class='zin_slct' value='";
                                     echo $rowCategory['category'];
-                                    echo "'>[";
+                                    echo "'";
+                                    if($category == $rowCategory['category']) {
+                                        echo "selected";
+                                    }
+                                    echo ">[";
                                     // echo $rowCategory['publish'];
                                     echo $categoryPublishState;
                                     echo "] ";
@@ -213,7 +217,6 @@
                     </select>
                     
                 </div>
-                
             
                 </p>
             <p>
