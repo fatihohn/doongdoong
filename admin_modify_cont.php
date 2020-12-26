@@ -181,7 +181,7 @@
             </p>
             <p >
                 <div class="createInput">
-                    <label class="createGrid1">연재물: </label><?=$category?>
+                    <label class="createGrid1">연재물: </label><?//=$category?>
                     <!-- <input class="createGrid2"  type="hidden" name="category" value="<?//=$category?>" required /> -->
                     <select name="zin" id="authZin">
                     
